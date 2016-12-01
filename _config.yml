@@ -23,6 +23,8 @@ url: "http://projects.calebevans.me/jcanvas" # the base hostname & protocol for 
 
 # Build settings
 markdown: kramdown
+include:
+  - _pages
 gems:
   - jekyll-feed
 exclude:
