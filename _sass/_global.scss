@@ -73,9 +73,6 @@ span.c {
   color: #fff;
   color: rgba(#fff, 0.5);
 }
-.hlow {
-  margin-bottom: 0;
-}
 
 strong,
 dfn {
@@ -155,41 +152,6 @@ button,
       opacity: 1;
     }
 
-  }
-}
-
-// Accordion list panels
-.accordion {
-  & > li > ul {
-    display: none;
-    margin: 0;
-    padding: 15px;
-    padding-left: 40px;
-    overflow-x: auto;
-  }
-  // Accordion list item
-  li {
-    position: relative;
-    outline: none;
-    margin: 0;
-    padding: 0;
-
-    h3 {
-      margin: 0;
-      &:hover {
-        text-decoration: underline;
-        cursor: pointer;
-      }
-    }
-    // Function definitions
-    ul.syntax {
-      list-style-type: none;
-      font-size: 10pt;
-      overflow-x: visible;
-      li {
-        white-space: nowrap;
-      }
-    }
   }
 }
 
