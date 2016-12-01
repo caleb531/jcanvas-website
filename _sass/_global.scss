@@ -33,6 +33,14 @@ main {
 	}
 }
 
+// Box section of the page
+.box {
+	border-radius: 5px;
+	box-sizing: border-box;
+	background-color: rgba(#000, 0.15);
+	color: #fff;
+}
+
 // Class for clearing floats
 .clearfix {
 	clear: both;
