@@ -1,0 +1,133 @@
+// General elements
+main {
+	padding: 0;
+	position: relative;
+	text-align: center;
+}
+#canvases {
+	float: right;
+	width: 360px;
+	font-size: 0pt;
+	@include layout(compact) {
+		width: auto;
+		margin: 0;
+		padding: 0;
+		float: none;
+		text-align: center;
+	}
+}
+canvas {
+	position: relative;
+	margin: 0;
+	padding: 0;
+	border: solid 1px $input-border-color;
+	border-radius: 0;
+	background-color: #fff;
+	@include layout(compact) {
+		margin: 5px 0;
+		border: none;
+	}
+}
+#editor {
+	float: left;
+	width: 390px;
+	text-align: center;
+	@include layout(compact) {
+		width: 100%;
+		max-width: 500px;
+		margin: 0 auto;
+		float: none;
+		padding: 0;
+	}
+}
+#controls {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	box-sizing: border-box;
+	text-align: right;
+	@include layout(compact) {
+		padding: 0 10px;
+	}
+}
+button {
+	position: relative;
+	margin-right: 5px;
+	margin-bottom: 2px;
+	padding: 4px 6px;
+	text-align: center;
+}
+label {
+	font-size: 10pt;
+}
+
+// Sample code
+#sample {
+	display: none;
+}
+// Error console
+#console {
+	display: none;
+	height: 60px;
+	padding: 0;
+	border: solid 1px $input-border-color;
+	background-color: #fff;
+	background-clip: padding-box;
+	text-align: left;
+	color: #c33;
+	overflow-x: hidden;
+	overflow-y: scroll;
+}
+// Code error
+#code.error {
+	height: 352px;
+	border-width: 1px;
+}
+#code.error + #console {
+	display: block;
+	padding: 6px 10px;
+}
+
+// Code box
+#code {
+	clear: both;
+	position: relative;
+	height: 426px;
+	margin: 0;
+	margin-top: 1px;
+	font-size: 10pt;
+	text-align: left;
+	resize: none;
+}
+div.CodeMirror {
+	width: 100%;
+	height: inherit;
+	outline: none;
+	border-radius: 0;
+	background-color: #fff;
+}
+div.CodeMirror div.cm-s-default {
+	height: inherit;
+	overflow: scroll;
+}
+div.CodeMirror pre {
+	border: none;
+	overflow: visible;
+}
+// Line numbers
+div.CodeMirror-gutter pre {
+	text-align: right;
+	color: #999;
+}
+
+// Demo images
+.demo.images {
+	opacity: 0;
+}
+
+select,
+input,
+button,
+label {
+	vertical-align: middle;
+}

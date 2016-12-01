@@ -1,0 +1,10 @@
+// Globally-available Sass variables
+
+$sans-serif: 'Ubuntu', sans-serif;
+$input-border-color: rgba(#000, 0.25);
+
+// Responsive widths
+$layout-widths: (
+  compact: 800px,
+  hybrid: 800px
+);

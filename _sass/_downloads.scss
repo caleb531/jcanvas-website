@@ -1,0 +1,17 @@
+// Download links
+#downloads {
+	float: right;
+	width: 300px;
+	margin-left: 50px;
+	margin-bottom: 20px;
+	text-align: right;
+	color: #789;
+	a.button {
+		font-size: 16pt;
+	}
+	@include layout(compact) {
+		float: none;
+		margin: 0 auto;
+		text-align: center;
+	}
+}

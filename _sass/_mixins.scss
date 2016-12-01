@@ -1,0 +1,9 @@
+// Globally-available Sass mixins
+
+// Applies the given styling to a media query
+@mixin layout($layout) {
+  $width: map-get($layout-widths, $layout);
+  @media only screen and (max-width: $width) {
+    @content;
+  }
+}
