@@ -1,142 +1,142 @@
 // Section boxes
 .column {
-	clear: both;
-	width: 100%;
-	margin: 10px 0;
-	padding: 20px;
-	padding-top: 1px;
-	text-align: left;
-	font-size: 13pt;
-	box-sizing: border-box;
-	&.left,
-	&.right {
-		clear: none;
-		width: 48%;
-		@include layout(compact) {
-			width: 100%;
-		}
-	}
-	&.left {
-		float: left;
-	}
-	&.right {
-		float: right;
-	}
+  clear: both;
+  width: 100%;
+  margin: 10px 0;
+  padding: 20px;
+  padding-top: 1px;
+  text-align: left;
+  font-size: 13pt;
+  box-sizing: border-box;
+  &.left,
+  &.right {
+    clear: none;
+    width: 48%;
+    @include layout(compact) {
+      width: 100%;
+    }
+  }
+  &.left {
+    float: left;
+  }
+  &.right {
+    float: right;
+  }
 }
 
 hr {
-	width: 100%;
-	height: 2px;
-	border: none;
-	background-color: #fff;
-	margin: 0 0;
+  width: 100%;
+  height: 2px;
+  border: none;
+  background-color: #fff;
+  margin: 0 0;
 }
 
 // Main block
 #home-intro {
-	height: auto;
-	padding: 15px;
-	text-align: center;
-	@include layout(compact) {
-		margin: 0;
-	}
-	.buttons {
-		text-align: right;
-		font-size: 10pt;
-		@include layout(compact) {
-			text-align: center;
-		}
-	}
-	.last-updated {
-		opacity: 0.75;
-		margin-right: 3px;
-	}
+  height: auto;
+  padding: 15px;
+  text-align: center;
+  @include layout(compact) {
+    margin: 0;
+  }
+  .buttons {
+    text-align: right;
+    font-size: 10pt;
+    @include layout(compact) {
+      text-align: center;
+    }
+  }
+  .last-updated {
+    opacity: 0.75;
+    margin-right: 3px;
+  }
 }
 #home-intro p:last-child {
-	display: inline-block;
-	vertical-align: middle;
-	margin-right: 0;
-	font-size: 16pt;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 0;
+  font-size: 16pt;
   a {
     @extend .button;
   }
 }
 #home-intro p:first-child {
-	display: inline-block;
-	width: 450px;
-	min-width: 400px;
-	margin: 0;
-	padding: 0;
-	font-size: 18pt;
-	text-align: left;
-	vertical-align: middle;
-	@include layout(compact) {
-			display: block;
-			width: auto;
-			min-width: 0;
-			margin: 1em auto 0;
-			padding: 0;
-			text-align: center;
-			font-size: 16pt;
-			font-weight: 400;
-		}
+  display: inline-block;
+  width: 450px;
+  min-width: 400px;
+  margin: 0;
+  padding: 0;
+  font-size: 18pt;
+  text-align: left;
+  vertical-align: middle;
+  @include layout(compact) {
+      display: block;
+      width: auto;
+      min-width: 0;
+      margin: 1em auto 0;
+      padding: 0;
+      text-align: center;
+      font-size: 16pt;
+      font-weight: 400;
+    }
 }
 
 #more {
-	clear: both;
-	padding-top: 1em;
-	text-align: center;
+  clear: both;
+  padding-top: 1em;
+  text-align: center;
 }
 #home-features,
 #home-syntax {
-	min-height: 300px;
+  min-height: 300px;
 }
 
 // Features
 #home-features {
-	@include layout(compact) {
-		float: none;
-	}
-	ul {
-		padding-top: 10px;
-		font-size: 14pt;
-		margin: 0;
-	}
-	li {
-		margin-bottom: 1em;
-	}
-	a {
-		position: relative;
-		top: -14px;
-		left: 3em;
-		font-size: 10pt;
-	}
+  @include layout(compact) {
+    float: none;
+  }
+  ul {
+    padding-top: 10px;
+    font-size: 14pt;
+    margin: 0;
+  }
+  li {
+    margin-bottom: 1em;
+  }
+  a {
+    position: relative;
+    top: -14px;
+    left: 3em;
+    font-size: 10pt;
+  }
 }
 // Syntax
 #home-syntax {
-	@include layout(compact) {
-		float: none;
-	}
-	p {
-		margin-bottom: 0;
-	}
-	.highlighter-rouge {
-		margin: 0;
-		margin-top: 15px;
-		margin-left: auto;
-		margin-right: auto;
-	}
+  @include layout(compact) {
+    float: none;
+  }
+  p {
+    margin-bottom: 0;
+  }
+  .highlighter-rouge {
+    margin: 0;
+    margin-top: 15px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 // Share buttons
 div.footer {
-	margin-top: -8px;
-	text-align: center;
+  margin-top: -8px;
+  text-align: center;
 }
 .twitter-share-button {
-	display: inline-block;
-	margin: 0;
-	padding: 0;
-	border: 0;
-	vertical-align: middle;
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: middle;
 }
