@@ -33,7 +33,7 @@ hr {
 }
 
 // Main block
-#intro {
+#home-intro {
 	height: auto;
 	padding: 15px;
 	text-align: center;
@@ -41,8 +41,6 @@ hr {
 		margin: 0;
 	}
 	.buttons {
-		display: inline-block;
-		vertical-align: middle;
 		text-align: right;
 		font-size: 10pt;
 		@include layout(compact) {
@@ -54,12 +52,16 @@ hr {
 		margin-right: 3px;
 	}
 }
-#download {
-	display: block;
+#home-intro p:last-child {
+	display: inline-block;
+	vertical-align: middle;
 	margin-right: 0;
 	font-size: 16pt;
+  a {
+    @extend .button;
+  }
 }
-p.headline {
+#home-intro p:first-child {
 	display: inline-block;
 	width: 450px;
 	min-width: 400px;
@@ -85,13 +87,13 @@ p.headline {
 	padding-top: 1em;
 	text-align: center;
 }
-#features,
-#syntax {
+#home-features,
+#home-syntax {
 	min-height: 300px;
 }
 
 // Features
-#features {
+#home-features {
 	@include layout(compact) {
 		float: none;
 	}
@@ -111,14 +113,14 @@ p.headline {
 	}
 }
 // Syntax
-#syntax {
+#home-syntax {
 	@include layout(compact) {
 		float: none;
 	}
 	p {
 		margin-bottom: 0;
 	}
-	pre {
+	.highlighter-rouge {
 		margin: 0;
 		margin-top: 15px;
 		margin-left: auto;

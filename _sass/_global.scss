@@ -49,8 +49,14 @@ main {
 
 h1 {
 	margin-bottom: 0;
+  font-size: 2em;
 	text-align: center;
 }
+
+h1, h2, h3 {
+	font-weight: 300;
+}
+
 /*
 span.c {
 	display: inline-block;
@@ -75,6 +81,7 @@ strong,
 dfn {
 	font-weight: 400;
 	font-style: normal;
+  color: #cf0;
 }
 
 // Lists
@@ -88,12 +95,32 @@ main {
 	}
 }
 
+// Inputs and buttons
+button,
+.button {
+	margin: 2px 0;
+	border: solid 1px $input-border-color;
+	border-radius: 3px;
+  padding: 6px 8px;
+	background-color: #5b0;
+	background-clip: padding-box;
+  font-family: $sans-serif;
+  font-weight: 400;
+	color: #fff;
+	text-decoration: none;
+}
+
 // Code snippets
-.code {
+.highlighter-rouge {
 	position: relative;
+	border: solid 1px $input-border-color;
+	border-radius: 5px;
+	padding: 10px 15px;
+	background-color: #fff;
+	color: #000;
 	pre {
 		position: relative;
-		padding-right: 30px;
+		margin: 0;
 		text-align: left;
 		font-size: 11pt;
 		white-space: pre-wrap;
