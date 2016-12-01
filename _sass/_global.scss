@@ -67,6 +67,10 @@ span.c {
 }
  */
 
+a {
+  color: #cf0;
+}
+
 .subtitle {
   display: block;
   margin-bottom: 1em;
@@ -96,8 +100,8 @@ main {
 }
 
 // Inputs and buttons
-button,
-.button {
+button {
+  display: inline-block;
   margin: 2px 0;
   border: solid 1px $input-border-color;
   border-radius: 3px;
@@ -111,7 +115,7 @@ button,
 }
 
 // Code snippets
-.highlighter-rouge {
+div.highlighter-rouge {
   position: relative;
   border: solid 1px $input-border-color;
   border-radius: 5px;
@@ -156,6 +160,11 @@ button,
     }
 
   }
+}
+
+code {
+  font-size: 16px;
+  color: #cf0;
 }
 
 // Drawer

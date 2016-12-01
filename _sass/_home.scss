@@ -58,7 +58,7 @@ hr {
   margin-right: 0;
   font-size: 16pt;
   a {
-    @extend .button;
+    @extend button;
   }
 }
 #home-intro p:first-child {

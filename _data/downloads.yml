@@ -1,4 +1,7 @@
 # jCanvas download URLs and other data
 
 url:
+  source: "https://raw.github.com/caleb531/jcanvas/master/jcanvas.js"
   minified: "https://raw.github.com/caleb531/jcanvas/master/jcanvas.min.js"
+  github: "https://github.com/caleb531/jcanvas"
+  cdnjs: "https://cdnjs.com/libraries/jcanvas"

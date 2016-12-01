@@ -6,7 +6,8 @@
   margin-bottom: 20px;
   text-align: right;
   color: #789;
-  a.button {
+  a {
+    @extend button;
     font-size: 16pt;
   }
   @include layout(compact) {
