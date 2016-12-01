@@ -114,59 +114,6 @@ button {
   text-decoration: none;
 }
 
-// Code snippets
-div.highlighter-rouge {
-  position: relative;
-  border: solid 1px $input-border-color;
-  border-radius: 5px;
-  padding: 10px 15px;
-  background-color: #fff;
-  color: #000;
-  pre {
-    position: relative;
-    margin: 0;
-    text-align: left;
-    font-size: 11pt;
-    white-space: pre-wrap;
-    overflow: auto;
-    @include layout(compact) {
-      font-size: 12pt;
-    }
-  }
-  .actions {
-    position: absolute;
-    top: 0;
-    right: 0;
-    z-index: 2;
-  }
-  .action {
-    display: inline-block;
-    opacity: 1;
-    margin: 6px;
-    margin-left: 0;
-    padding: 1px 6px;
-    border-radius: 3px;
-    background-color: #696;
-    text-align: center;
-    line-height: 1.6em;
-    font-family: $sans-serif;
-    font-size: 10pt;
-    color: #fff;
-    text-decoration: none;
-    cursor: pointer;
-    transition: opacity 250ms ease-in-out;
-    &:hover {
-      opacity: 1;
-    }
-
-  }
-}
-
-code {
-  font-size: 16px;
-  color: #cf0;
-}
-
 // Drawer
 div.drawer {
   position: relative;
