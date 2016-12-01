@@ -16,3 +16,11 @@ permalink: /
 <div id="home-syntax" class="box column right" markdown="1">
   {% include home-syntax.md %}
 </div>
+
+<div id="home-about" class="box column" markdown="1">
+  {% include home-about.md %}
+</div>
+
+<div class="clearfix"></div>
+
+{% include home-more.md %}
