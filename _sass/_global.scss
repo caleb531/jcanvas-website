@@ -4,6 +4,9 @@ body {
   margin: 0;
   margin-bottom: 25px;
   background-color: #25a;
+  background-image: url('../images/grid-bg.svg');
+  background-size: 11px;
+  background-attachment: fixed;
   text-align: center;
   font-family: $sans-serif;
   font-weight: 300;
