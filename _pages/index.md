@@ -23,4 +23,6 @@ permalink: /
 
 <div class="clearfix"></div>
 
-{% include home-more.md %}
+<div id="home-more" markdown="1">
+  {% include home-more.md %}
+</div>
