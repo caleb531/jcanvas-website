@@ -25,7 +25,7 @@ div.highlighter-rouge {
     padding: 10px 15px;
     text-align: left;
     font-size: 11pt;
-    white-space: pre-wrap;
+    white-space: pre;
     overflow: auto;
     @include layout(compact) {
       font-size: 12pt;
