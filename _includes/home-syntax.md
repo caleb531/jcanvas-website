@@ -1,5 +1,5 @@
 
-### Syntax
+## Syntax
 
 jCanvas's simple syntax makes drawing shapes as easy as it should be.
 

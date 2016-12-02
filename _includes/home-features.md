@@ -1,5 +1,5 @@
 
-### Features
+## Features
 
   - A **flexible** API for drawing basic and complex shapes
   - Works on desktop and **mobile**
