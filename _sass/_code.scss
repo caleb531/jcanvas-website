@@ -15,7 +15,6 @@ div.highlighter-rouge {
   margin-top: 20px;
   border: solid 1px $input-border-color;
   border-radius: 5px;
-  padding: 10px 15px;
   background-color: #fff;
   background-clip: padding-box;
   font-family: $monospace;
@@ -23,6 +22,7 @@ div.highlighter-rouge {
   pre {
     position: relative;
     margin: 0;
+    padding: 10px 15px;
     text-align: left;
     font-size: 11pt;
     white-space: pre-wrap;
