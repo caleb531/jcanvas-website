@@ -37,6 +37,7 @@ categories:
       - slices
       - text
       - vectors
+  -
     name: Layers
     sections:
       - layerAPI
@@ -45,6 +46,7 @@ categories:
       - drawLayers
       - manipulateLayers
       - animateLayers
+  -
     name: Events
     sections:
       - eventAPI
