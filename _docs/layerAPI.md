@@ -6,9 +6,9 @@ The jCanvas Layer API provides each canvas with a set of layers that you create.
 
 Each layer can contain only one drawing (rectangle, arc, image, *etc.*). This is because each drawing *is* the layer object itself.
 
-## [Adding Layers](addLayers.md)
-## [Retrieving Layers](retrieveLayers.md)
-## [Drawing Layers](drawLayers.md)
-## [Manipulating Layers](manipulateLayers.md)
-## [Animating Layers](animateLayers.md)
-## [Event API](eventAPI.md)
+## [Adding Layers]({{ site.baseurl }}/docs/addLayers/)
+## [Retrieving Layers]({{ site.baseurl }}/docs/retrieveLayers/)
+## [Drawing Layers]({{ site.baseurl }}/docs/drawLayers/)
+## [Manipulating Layers]({{ site.baseurl }}/docs/manipulateLayers/)
+## [Animating Layers]({{ site.baseurl }}/docs/animateLayers/)
+## [Event API]({{ site.baseurl }}/docs/eventAPI/)

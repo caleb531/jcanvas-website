@@ -2,7 +2,7 @@
 title: Event API
 ---
 
-jCanvas supports mouse and touch events for most drawings through the included Event API. Events are used in conjunction with the [Layer API](layerAPI.md).
+jCanvas supports mouse and touch events for most drawings through the included Event API. Events are used in conjunction with the [Layer API]({{ site.baseurl }}/docs/layerAPI/).
 
 ### Binding Events
 
