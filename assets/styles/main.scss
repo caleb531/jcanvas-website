@@ -5,12 +5,15 @@
 
 @import "variables";
 @import "mixins";
-@import "global";
+@import "containers";
 @import "header";
-@import "docs";
+@import "headings";
+@import "content";
+@import "drawer";
 @import "code";
 @import "home";
 @import "downloads";
+@import "docs";
 @import "sandbox";
 @import "plugins";
 @import "gallery";

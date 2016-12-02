@@ -1,0 +1,54 @@
+$duration: 250ms;
+
+body {
+  margin: 0;
+  margin-bottom: 25px;
+  background-color: #25a;
+  background-image: url('../images/grid-bg.svg');
+  background-size: 11px;
+  background-attachment: fixed;
+  text-align: center;
+  font-family: $sans-serif;
+  font-weight: 300;
+  color: #fff;
+  @include layout(compact) {
+    width: auto;
+    padding: 0;
+    margin: 0;
+  }
+}
+// Main content
+main {
+  display: inline-block;
+  position: relative;
+  max-width: 750px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 20px;
+  padding-bottom: 10px;
+  text-align: left;
+  box-sizing: border-box;
+  @include layout(compact) {
+    max-width: 100%;
+    min-width: 320px;
+  }
+}
+
+// Box section of the page
+.box {
+  border-radius: 5px;
+  box-sizing: border-box;
+  background-color: rgba(#000, 0.15);
+  color: #fff;
+}
+
+// Class for clearing floats
+.clearfix {
+  clear: both;
+}
+
+// Google ad
+body > ins {
+  margin-top: 30px;
+  vertical-align: top;
+}
