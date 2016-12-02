@@ -67,15 +67,23 @@ div.highlighter-rouge {
     color: #25b;
   }
   // Strings (single- and double-quoted)
-  .s, .s1, .s2 {
+  .s1, .s2 {
     color: #c30;
   }
   // Numbers
   .m, .mf, .mi, .mh, .mo {
     color: #096;
   }
-  // Object literal key names
+  // Object literal key names and HTML attribute names
   .na {
     color: #909;
+  }
+  // HTML tag names
+  .nt {
+    color: #25b;
+  }
+  // HTML attribute values
+  .s {
+    color: #096;
   }
 }
