@@ -1,5 +1,5 @@
 ---
-title: Mouse events
+title: Mouse Events
 ---
 
 jCanvas supports a number of standard mouse events that you can use on most types of jCanvas layers.

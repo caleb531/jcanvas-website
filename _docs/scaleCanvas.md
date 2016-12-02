@@ -1,5 +1,5 @@
 ---
-title: Scaling the canvas
+title: Scale Canvas
 ---
 
 ### Scaling the canvas context

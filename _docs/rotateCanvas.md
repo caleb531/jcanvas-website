@@ -1,5 +1,5 @@
 ---
-title: Rotating the canvas
+title: Rotate Canvas
 ---
 
 ### Rotating the canvas context
