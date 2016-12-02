@@ -41,9 +41,9 @@ collections:
 # Set defaults for YAML Front Matter variables
 defaults:
   -
-    # Use the doc-section layout for all doc sections by default
+    # Use the docs layout for all doc sections by default
     scope:
       path: ''
       type: docs
     values:
-      layout: doc-section
+      layout: docs
