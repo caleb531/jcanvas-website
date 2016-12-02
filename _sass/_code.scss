@@ -4,6 +4,7 @@
 
 // One-line code snippet
 code {
+  font-family: $monospace;
   font-size: 16px;
   color: #cf0;
 }
@@ -17,6 +18,7 @@ div.highlighter-rouge {
   padding: 10px 15px;
   background-color: #fff;
   background-clip: padding-box;
+  font-family: $monospace;
   color: #333;
   pre {
     position: relative;
