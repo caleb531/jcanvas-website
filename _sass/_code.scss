@@ -66,8 +66,8 @@ div.highlighter-rouge {
   .k, .kc, .kd {
     color: #25b;
   }
-  // Strings
-  .s, .s1 {
+  // Strings (single- and double-quoted)
+  .s, .s1, .s2 {
     color: #c30;
   }
   // Numbers
