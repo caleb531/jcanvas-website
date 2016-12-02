@@ -23,6 +23,7 @@ url: "http://projects.calebevans.me/jcanvas" # the base hostname & protocol for 
 
 # Build settings
 markdown: kramdown
+incremental: true
 include:
   - _pages
 gems:
@@ -30,3 +31,20 @@ gems:
 exclude:
   - Gemfile
   - Gemfile.lock
+
+# Collections used for new content types
+collections:
+  # Documentation sections
+  docs:
+    output: true
+    permalink: /docs/:path/
+
+# Set defaults for YAML Front Matter variables
+defaults:
+  -
+    # Use the doc-section layout for all doc sections by default
+    scope:
+      path: ''
+      type: docs
+    values:
+      layout: doc-section
