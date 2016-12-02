@@ -6,7 +6,7 @@ h1 {
 
 // Sections
 #docs-sections {
-  float: left;
+  display: inline-block;
   width: 190px;
   position: relative;
   z-index: 1;
@@ -50,7 +50,7 @@ h1 {
 
 // Current section
 #docs-section {
-  float: left;
+  display: inline-block;
   position: relative;
   width: 500px;
   text-align: left;
