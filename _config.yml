@@ -29,7 +29,7 @@ kramdown:
 include:
   - _pages
 gems:
-  - jekyll-feed
+  - stringex
 exclude:
   - Gemfile
   - Gemfile.lock
