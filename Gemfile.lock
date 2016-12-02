@@ -38,6 +38,7 @@ GEM
     rouge (1.11.1)
     safe_yaml (1.0.4)
     sass (3.4.22)
+    stringex (2.6.1)
 
 PLATFORMS
   ruby
@@ -45,9 +46,10 @@ PLATFORMS
 DEPENDENCIES
   jekyll (= 3.3.1)
   jekyll-feed (~> 0.6)
+  stringex (~> 2.6)
 
 RUBY VERSION
-   ruby 2.3.2p217
+   ruby 2.3.1p112
 
 BUNDLED WITH
    1.13.6

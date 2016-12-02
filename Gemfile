@@ -18,4 +18,6 @@ gem "jekyll", "3.3.1"
 # If you have any plugins, put them here!
 group :jekyll_plugins do
    gem "jekyll-feed", "~> 0.6"
+   # stringex is needed for kramdown's transliterated_header_ids option
+   gem "stringex", "~> 2.6"
 end
