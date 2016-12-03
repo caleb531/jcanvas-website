@@ -1,17 +1,17 @@
 ---
 layout: default
 ---
-<article>
+<article class="collection-{{ page.collection }}">
 
-  <h1>Documentation</h1>
-  <span class="subtitle">Learn all about jCanvas</span>
+  <h1>{{ site.data[page.collection].parent_page.title }}</h1>
+  <span class="subtitle">{{ site.data[page.collection].parent_page.subtitle }}</span>
 
   <div id="docs-sections" class="box">
-    {% for category in site.data.docs.categories %}
+    {% for category in site.data[page.collection].categories %}
       <h3>{{ category.name }}</h3>
       <ul>
         {% for section_slug in category.sections %}
-          {% assign doc = site.docs | where: 'slug', section_slug | first %}
+          {% assign doc = site[page.collection] | where: 'slug', section_slug | first %}
           <li class="match"><a href="{{ site.baseurl }}{{ doc.url }}">{{ doc.title }}</a></li>
         {% endfor %}
       </ul>
@@ -21,6 +21,16 @@ layout: default
   <section id="docs-section">
 
     <h2>{{ page.title }}</h2>
+
+    {% if page.collection == 'plugin_docs' %}
+      {% if page.author %}
+        <p class="author">by {{ page.author }}</p>
+      {% endif %}
+      {% if page.download %}
+        <a href="{{ site.baseurl }}/assets/jcanvas/plugins/jcanvas-{{ page.slug }}.min.js" class="button download">Download (minified)</a>
+        <a href="{{ site.baseurl }}/assets/jcanvas/plugins/jcanvas-{{ page.slug }}.js" class="button download">Download (source)</a>
+      {% endif %}
+    {% endif %}
 
     {{ content }}
 

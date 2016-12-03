@@ -1,5 +1,6 @@
 // Buttons
-button {
+button,
+.button {
   display: inline-block;
   margin: 2px 0;
   border: solid 1px $input-border-color;

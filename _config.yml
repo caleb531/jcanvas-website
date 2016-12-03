@@ -36,17 +36,28 @@ exclude:
 
 # Collections used for new content types
 collections:
-  # Documentation sections
-  docs:
+  # Core documentation
+  core_docs:
     output: true
     permalink: /docs/:path/
+  # Plugin documentation
+  plugin_docs:
+    output: true
+    permalink: /plugins/:path/
 
 # Set defaults for YAML Front Matter variables
 defaults:
   -
-    # Use the docs layout for all doc sections by default
+    # Use the core_docs layout for all doc sections by default
     scope:
       path: ''
-      type: docs
+      type: core_docs
+    values:
+      layout: docs
+  -
+    # Use the plugin_docs layout for all plugin doc sections by default
+    scope:
+      path: ''
+      type: plugin_docs
     values:
       layout: docs

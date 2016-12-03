@@ -1,5 +1,9 @@
 # jCanvas documentation data
 
+parent_page:
+  title: Documentation
+  subtitle: Learn all about jCanvas
+
 categories:
   -
     name: jCanvas
