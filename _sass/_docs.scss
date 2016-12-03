@@ -63,14 +63,8 @@ h1 {
     margin-left: 0;
   }
   h3 {
+    display: inline-block;
     position: relative;
-    &:hover {
-      text-decoration: underline;
-    }
-  }
-  a.subsection {
-    color: #fff;
-    text-decoration: none;
   }
 }
 
@@ -137,5 +131,24 @@ h2.menu {
     width: 100%;
     margin: 4px 0;
     font-size: 12pt;
+  }
+}
+
+// Anchor link to a particular subsection
+.subsection-link {
+  $size: 18px;
+  $offset-x: 5px;
+  $offset-y: 1px;
+  // display: none;
+  position: absolute;
+  top: 50%;
+  right: -($size + $offset-x);
+  width: $size;
+  height: $size;
+  margin-top: -($size / 2) + $offset-y;
+  background-image: url('../images/chain.svg');
+  background-size: $size;
+  h3:hover & {
+    display: block;
   }
 }
