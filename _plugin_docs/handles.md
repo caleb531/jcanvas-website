@@ -1,7 +1,7 @@
 ---
 title: Handles
 author: Caleb Evans
-download_filename: jcanvas-handles
+download: true
 ---
 
 This plugin will enable any jCanvas rectangle or image to be resized using draggable handles on its four corners.

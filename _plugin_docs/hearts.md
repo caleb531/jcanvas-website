@@ -1,7 +1,7 @@
 ---
 title: Hearts
 author: Caleb Evans
-download_filename: jcanvas-hearts
+download: true
 ---
 
 This plugin is a more complete version of the [`custom drawHeart()` method in the documentation](/jcanvas/docs/extending/), which supports layer events and transformations.
