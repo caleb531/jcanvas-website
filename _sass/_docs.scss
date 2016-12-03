@@ -152,3 +152,11 @@ h2.menu {
     display: block;
   }
 }
+
+// Reduce extraneous spacing between subsection headings and lists
+h3 + ul,
+h3 + ol,
+ul + h3,
+ol + h3 {
+  margin-top: 0;
+}
