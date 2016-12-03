@@ -1,0 +1,29 @@
+---
+layout: default
+---
+<article>
+
+  <h1>{{ site.data[page.collection].parent_page.title }}</h1>
+  <span class="subtitle">{{ site.data[page.collection].parent_page.subtitle }}</span>
+
+  <div id="docs-sections" class="box">
+    {% for category in site.data[page.collection].categories %}
+      <h3>{{ category.name }}</h3>
+      <ul>
+        {% for section_slug in category.sections %}
+          {% assign doc = site[page.collection] | where: 'slug', section_slug | first %}
+          <li class="match"><a href="{{ site.baseurl }}{{ doc.url }}">{{ doc.title }}</a></li>
+        {% endfor %}
+      </ul>
+    {% endfor %}
+  </div>
+
+  <section id="docs-section">
+
+    <h2>{{ page.title }}</h2>
+
+    {{ content }}
+
+  </section>
+
+</article>

@@ -53,11 +53,11 @@ defaults:
       path: ''
       type: core_docs
     values:
-      layout: core_docs
+      layout: docs
   -
     # Use the plugin_docs layout for all plugin doc sections by default
     scope:
       path: ''
       type: plugin_docs
     values:
-      layout: plugin_docs
+      layout: docs

@@ -1,5 +1,9 @@
 # jCanvas documentation data
 
+parent_page:
+  title: Plugins
+  subtitle: Make jCanvas do more
+
 categories:
   -
     name: About
