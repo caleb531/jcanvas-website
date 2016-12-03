@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-<article>
+<article class="collection-{{ page.collection }}">
 
   <h1>{{ site.data[page.collection].parent_page.title }}</h1>
   <span class="subtitle">{{ site.data[page.collection].parent_page.subtitle }}</span>
@@ -21,6 +21,16 @@ layout: default
   <section id="docs-section">
 
     <h2>{{ page.title }}</h2>
+
+    {% if page.collection == 'plugin_docs' %}
+      {% if page.author %}
+        <p class="author">by {{ page.author }}</p>
+      {% endif %}
+      {% if page.download_filename %}
+        <a href="{{ site.baseurl }}/assets/jcanvas/plugins/{{ page.download_filename }}.min.js" class="button download">Download (minified)</a>
+        <a href="{{ site.baseurl }}/assets/jcanvas/plugins/{{ page.download_filename }}.js" class="button download">Download (source)</a>
+      {% endif %}
+    {% endif %}
 
     {{ content }}
 
