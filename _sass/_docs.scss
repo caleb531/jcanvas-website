@@ -63,7 +63,6 @@ h1 {
     margin-left: 0;
   }
   h3 {
-    display: inline-block;
     position: relative;
   }
 }
@@ -137,26 +136,11 @@ h2.menu {
 // Anchor link to a particular subsection
 .subsection-link {
   $size: 18px;
-  $offset-x: 5px;
-  $offset-y: 1px;
-  // display: none;
-  position: absolute;
-  top: 50%;
-  right: -($size + $offset-x);
+  display: inline-block;
   width: $size;
   height: $size;
-  margin-top: -($size / 2) + $offset-y;
+  margin-left: 5px;
   background-image: url('../images/chain.svg');
   background-size: $size;
-  h3:hover & {
-    display: block;
-  }
-}
-
-// Reduce extraneous spacing between subsection headings and lists
-h3 + ul,
-h3 + ol,
-ul + h3,
-ol + h3 {
-  margin-top: 0;
+  vertical-align: middle;
 }
