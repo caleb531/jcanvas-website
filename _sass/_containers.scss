@@ -34,6 +34,21 @@ main {
   }
 }
 
+// Ensure that all HTML5 semantic elements render properly in all browsers
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+main,
+nav,
+section,
+summary {
+  display: block;
+}
+
 // Box section of the page
 .box {
   border-radius: 5px;
