@@ -1,0 +1,15 @@
+# jCanvas documentation data
+
+categories:
+  -
+    name: About
+    sections:
+      - about
+      - submitting
+  -
+    name: Plugins
+    sections:
+      - crescents
+      - donuts
+      - handles
+      - hearts
