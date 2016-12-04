@@ -144,3 +144,8 @@ h2.menu {
   background-size: $size;
   vertical-align: middle;
 }
+
+// Hidden images used only so code examples can access them by DOM element
+#docs-images {
+  display: none;
+}
