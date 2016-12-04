@@ -1,8 +1,13 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
+<script src="{{ site.baseurl }}/assets/jcanvas/jcanvas.min.js"></script>
 {% if page.collection == 'core_docs' or page.collection == 'plugin_docs' %}
-  <script src="{{ site.baseurl }}/assets/jcanvas/jcanvas.min.js"></script>
   <script src="{{ site.baseurl }}/assets/scripts/docs.js"></script>
   {% if page.collection == 'plugin_docs' %}
     <script src="{{ site.baseurl }}/assets/jcanvas/plugins/jcanvas-{{ page.slug }}.js"></script>
   {% endif %}
+{% endif %}
+{% if page.title == 'Sandbox' %}
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.21.0/codemirror.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.21.0/mode/javascript/javascript.min.js"></script>
+  <script src="{{ site.baseurl }}/assets/scripts/sandbox.js"></script>
 {% endif %}

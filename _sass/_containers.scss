@@ -84,6 +84,11 @@ canvas {
   background-clip: border-box;
 }
 
+// Hidden images used only so code examples can access them by DOM element
+#example-images {
+  display: none;
+}
+
 // Google ad
 body > ins {
   margin-top: 30px;
