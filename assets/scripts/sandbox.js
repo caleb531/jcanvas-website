@@ -59,8 +59,19 @@ function saveCode() {
   }
 }
 
+// Reset all canvases to their original states
+function resetCanvases() {
+  $$.canvases.find('canvas').each(function () {
+    var ctx = this.getContext('2d');
+		ctx.setTransform( 1, 0, 0, 1, 0, 0 );
+		ctx.clearRect( 0, 0, this.width, this.height );
+    $(this).removeLayers();
+  });
+}
+
 // Run code
 function runCode() {
+  resetCanvases($$.canvases);
   $$.cm.removeClass('error');
   $$.console.html('');
   try {
@@ -81,6 +92,7 @@ function duplicate() {
 
 // Click "Run" button to run code
 $$.run.on('click', function() {
+  resetCanvases();
   runCode();
   saveCode();
 });
@@ -126,6 +138,7 @@ $$.cm.on('keydown', function(event) {
   if (event.metaKey || event.ctrlKey) {
     // Press ctrl+enter to test
     if (event.which === 13) {
+      resetCanvases();
       runCode();
       saveCode();
       return false;
