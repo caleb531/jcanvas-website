@@ -10,18 +10,7 @@
     text-align: center;
   }
 }
-canvas {
-  position: relative;
-  margin: 0;
-  padding: 0;
-  border: solid 1px $input-border-color;
-  border-radius: 0;
-  background-color: #fff;
-  @include layout(compact) {
-    margin: 5px 0;
-    border: none;
-  }
-}
+
 #editor {
   float: left;
   width: 390px;

@@ -14,11 +14,20 @@ div.highlighter-rouge {
   position: relative;
   margin-top: 20px;
   border: solid 1px $input-border-color;
-  border-radius: 5px;
+  $border-radius: 5px;
+  border-radius: $border-radius;
   background-color: #fff;
   background-clip: padding-box;
   font-family: $monospace;
   color: #333;
+  &.has-demo {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  & + canvas {
+    border-bottom-left-radius: $border-radius;
+    border-bottom-right-radius: $border-radius;
+  }
   pre {
     position: relative;
     margin: 0;
