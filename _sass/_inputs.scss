@@ -12,4 +12,8 @@ button,
   font-weight: 400;
   color: #fff;
   text-decoration: none;
+  &:focus {
+    outline-width: 0;
+    box-shadow: 0 0 3px 2px #cf0;
+  }
 }
