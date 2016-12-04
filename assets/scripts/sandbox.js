@@ -7,7 +7,6 @@ $('.images').hide();
 var $$ = {
   editor: $('#sandbox-editor'),
   run: $('#sandbox-run'),
-  duplicate: $('#sandbox-duplicate'),
   shareCode: $('#sandbox-shareCode'),
   canvases: $('#sandbox-canvases'),
   ncanvases: $('#sandbox-ncanvases'),
@@ -85,21 +84,11 @@ function runCode() {
   // editor.focus();
 }
 
-// Duplicate sandbox
-function duplicate() {
-  // window.open(getURL());
-}
-
 // Click "Run" button to run code
 $$.run.on('click', function() {
   resetCanvases();
   runCode();
   saveCode();
-});
-
-// Click "Duplicate" button to duplicate code
-$$.duplicate.on('click', function() {
-  duplicate();
 });
 
 // Change number of canvases in sandbox
