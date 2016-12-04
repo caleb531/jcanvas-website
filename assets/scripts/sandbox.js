@@ -26,7 +26,7 @@ function changeCanvasCount() {
   h = Math.round((450 + 2) / settings.ncanvases);
   html = '';
   for (i = 0; i < settings.ncanvases; i += 1) {
-    html += '<canvas width="320" height="' + h + '"></canvas>';
+    html += '<div class="canvas-container"><canvas width="320" height="' + h + '"></canvas></div>';
   }
   $$.canvases.html(html);
   $$.canvas = $('canvas');

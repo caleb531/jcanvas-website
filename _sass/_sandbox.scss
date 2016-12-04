@@ -1,23 +1,36 @@
+article.page-sandbox {
+  padding: 0;
+  text-align: center;
+}
+
 #sandbox-area {
   font-size: 0;
 }
 
 #sandbox-canvases {
   display: inline-block;
-  width: 360px;
   font-size: 0pt;
   vertical-align: top;
   @include layout(compact) {
     width: auto;
     margin: 0;
+    margin-top: 10px;
     padding: 0;
     text-align: center;
   }
 }
 
+// Add border to canvas container instead of the canvas itself (otherwise, the canvas's left border would be clipped incorrectly)
+.canvas-container {
+  border: solid 1px $input-border-color;
+  canvas {
+    border-width: 0;
+  }
+}
+
 #sandbox-editor-container {
   display: inline-block;
-  width: 340px;
+  width: 360px;
   margin-right: 10px;
   text-align: center;
   vertical-align: top;
@@ -92,7 +105,9 @@ div.CodeMirror {
   height: inherit;
   outline: none;
   border-radius: 0;
+  border: solid 1px $input-border-color;
   background-color: #fff;
+  background-clip: padding-box;
   font-family: $monospace;
 }
 div.CodeMirror div.cm-s-default {
