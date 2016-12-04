@@ -23,6 +23,7 @@ url: "http://projects.calebevans.me/jcanvas" # the base hostname & protocol for 
 
 # Build settings
 markdown: kramdown
+incremental: true
 kramdown:
   auto_id_stripping: true
   transliterated_header_ids: true
