@@ -56,7 +56,7 @@ $docsSection.find('div.highlighter-rouge').each(function () {
 });
 
 // Allow user to re-run demo via button
-$('.demo-rerun').on('click', function () {
+$docsSection.on('click', '.demo-rerun', function () {
   var $rerunButton = $(this);
   var code = $rerunButton.parent().prev().text();
   var $demoCanvas = $rerunButton.next();
