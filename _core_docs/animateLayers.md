@@ -24,7 +24,7 @@ $('canvas').drawRect({
   name: 'myBox',
   fillStyle: '#36c',
   x: 50, y: 50,
-  width: 0, height: 0
+  width: 1, height: 1
 });
 
 // Animate layer properties
