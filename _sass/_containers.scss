@@ -24,7 +24,6 @@ main {
   max-width: 750px;
   margin-left: auto;
   margin-right: auto;
-  padding: 0 20px;
   padding-bottom: 10px;
   text-align: left;
   box-sizing: border-box;
@@ -47,6 +46,10 @@ nav,
 section,
 summary {
   display: block;
+}
+
+article {
+  padding: 0 20px;
 }
 
 // Box section of the page
@@ -82,6 +85,11 @@ canvas {
   z-index: 10;
   margin: 0;
   background-clip: border-box;
+}
+
+// Hidden images used only so code examples can access them by DOM element
+#example-images {
+  display: none;
 }
 
 // Google ad

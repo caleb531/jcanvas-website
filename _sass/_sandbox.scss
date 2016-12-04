@@ -1,20 +1,39 @@
-#canvases {
-  float: right;
-  width: 360px;
+article.page-sandbox {
+  padding: 0;
+  text-align: center;
+}
+
+#sandbox-area {
+  font-size: 0;
+}
+
+#sandbox-canvases {
+  display: inline-block;
   font-size: 0pt;
+  vertical-align: top;
   @include layout(compact) {
     width: auto;
     margin: 0;
+    margin-top: 10px;
     padding: 0;
-    float: none;
     text-align: center;
   }
 }
 
-#editor {
-  float: left;
-  width: 390px;
+// Add border to canvas container instead of the canvas itself (otherwise, the canvas's left border would be clipped incorrectly)
+.canvas-container {
+  border: solid 1px $input-border-color;
+  canvas {
+    border-width: 0;
+  }
+}
+
+#sandbox-editor-container {
+  display: inline-block;
+  width: 360px;
+  margin-right: 10px;
   text-align: center;
+  vertical-align: top;
   @include layout(compact) {
     width: 100%;
     max-width: 500px;
@@ -23,15 +42,15 @@
     padding: 0;
   }
 }
-#controls {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+#sandbox-controls {
   box-sizing: border-box;
   text-align: right;
   @include layout(compact) {
     padding: 0 10px;
   }
+}
+#sandbox-button-controls {
+  float: left;
 }
 button {
   position: relative;
@@ -43,13 +62,12 @@ button {
 label {
   font-size: 10pt;
 }
-
-// Sample code
-#sample {
-  display: none;
+#sandbox-ncanvases-controls {
+  float: right;
 }
+
 // Error console
-#console {
+#sandbox-console {
   display: none;
   height: 60px;
   padding: 0;
@@ -62,17 +80,17 @@ label {
   overflow-y: scroll;
 }
 // Code error
-#code.error {
+#sanbox-editor.error {
   height: 352px;
   border-width: 1px;
 }
-#code.error + #console {
+#sandbox-editor.error + #console {
   display: block;
   padding: 6px 10px;
 }
 
-// Code box
-#code {
+// Code editor
+#sandbox-editor {
   clear: both;
   position: relative;
   height: 426px;
@@ -87,7 +105,10 @@ div.CodeMirror {
   height: inherit;
   outline: none;
   border-radius: 0;
+  border: solid 1px $input-border-color;
   background-color: #fff;
+  background-clip: padding-box;
+  font-family: $monospace;
 }
 div.CodeMirror div.cm-s-default {
   height: inherit;
@@ -103,11 +124,11 @@ div.CodeMirror-gutter pre {
   color: #999;
 }
 
-// Demo images
-.demo.images {
-  opacity: 0;
+#sandbox-default-code {
+  display: none;
 }
 
+// Vertically center all form elements
 select,
 input,
 button,

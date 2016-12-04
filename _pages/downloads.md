@@ -3,6 +3,7 @@ layout: page
 title: Downloads
 subtitle: Get your copy of jCanvas here!
 permalink: /downloads/
+id: downloads
 ---
 
 {% include downloads.html %}
