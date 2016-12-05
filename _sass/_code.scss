@@ -17,6 +17,8 @@ div.highlighter-rouge {
   $border-radius: 5px;
   border-radius: $border-radius;
   background-color: #fff;
+  background-image: url('../images/grid-fg.svg');
+  background-size: 11px;
   background-clip: padding-box;
   font-family: $monospace;
   color: #333;
