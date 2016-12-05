@@ -26,7 +26,7 @@ div.highlighter-rouge {
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
   }
-  & + canvas {
+  & + .demo-container > canvas {
     border-bottom-left-radius: $border-radius;
     border-bottom-right-radius: $border-radius;
   }
