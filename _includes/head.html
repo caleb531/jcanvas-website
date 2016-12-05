@@ -3,7 +3,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  {% if page.title %}
+  {% if page.title and page.title != site.title %}
     {% if page.collection %}
       <title>{{ page.title | escape }} | {{ site.title | escape }} {{ site.data[page.collection].parent_page.title }}</title>
     {% else %}
