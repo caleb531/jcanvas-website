@@ -269,52 +269,7 @@ $('canvas').addLayer({
 
 ### Curves
 
-You can also add handles to quadratic or Bézier curve layers.
-
-```javascript
-$('canvas').addLayer({
-  type: 'quadratic',
-  draggable: true,
-  strokeStyle: '#c33',
-  strokeWidth: 2,
-  rounded: true,
-  x1: 50, y1: 50,
-  cx1: 175, cy1: 75,
-  x2: 200, y2: 200,
-  handle: {
-    type: 'arc',
-    fillStyle: '#fff',
-    strokeStyle: '#c33',
-    strokeWidth: 2,
-    radius: 10
-  }
-})
-.drawLayers();
-```
-
-```javascript
-$('canvas').addLayer({
-  type: 'bezier',
-  draggable: true,
-  strokeStyle: '#c33',
-  strokeWidth: 2,
-  rounded: true,
-  x1: 100, y1: 150,
-  cx1: 50, cy1: 50,
-  cx2: 250, cy2: 50,
-  x2: 200, y2: 150,
-  handle: {
-    type: 'arc',
-    fillStyle: '#fff',
-    strokeStyle: '#c33',
-    strokeWidth: 2,
-    radius: 10
-  }
-})
-.drawLayers();
-```
-
-This plugin also allows you to add visual guides to your curves. A guide in jCanvas terminology is simply a line connected from a control point to an anchor point. You can add guides to your curve layer using the `guide` property.
+You can also add handles to quadratic or Bézier curve layers. It is recommended that you also set guides on your curve layers (via the `guide` property) so that the control points and anchor points are visually connected.
 
 ```javascript
 $('canvas').addLayer({
