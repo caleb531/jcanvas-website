@@ -7,7 +7,6 @@ $('.images').hide();
 var $$ = {
   editor: $('#sandbox-editor'),
   run: $('#sandbox-run'),
-  shareCode: $('#sandbox-shareCode'),
   canvases: $('#sandbox-canvases'),
   ncanvases: $('#sandbox-ncanvases'),
   console: $('#sandbox-console'),
