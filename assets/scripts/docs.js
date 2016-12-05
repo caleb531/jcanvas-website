@@ -16,6 +16,7 @@ $docsSection.find('h3').each(function () {
 
 // Run the given demo code on the given canvas
 function runDemo(code, $demoCanvas) {
+  resetDemo($demoCanvas);
   // Modify any image paths to point to the real images directory
   code = code.replace(imagePathPattern, '/jcanvas/assets/$1');
   // Inject canvas jQuery element into demo code
@@ -27,6 +28,7 @@ function runDemo(code, $demoCanvas) {
 function resetDemo($demoCanvas) {
   $demoCanvas.removeLayers();
   $demoCanvas.clearCanvas();
+  $demoCanvas.detectPixelRatio();
 }
 
 // Add live canvas demo of each example (if example draws on canvas)
@@ -60,7 +62,6 @@ $docsSection.on('click', '.demo-rerun', function () {
   var $rerunButton = $(this);
   var code = $rerunButton.parent().prev().text();
   var $demoCanvas = $rerunButton.next();
-  resetDemo($demoCanvas);
   runDemo(code, $demoCanvas);
 });
 
