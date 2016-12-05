@@ -16,7 +16,6 @@ $docsSection.find('h3').each(function () {
 
 // Run the given demo code on the given canvas
 function runDemo(code, $demoCanvas) {
-  resetDemo($demoCanvas);
   // Modify any image paths to point to the real images directory
   code = code.replace(imagePathPattern, '/jcanvas/assets/$1');
   // Inject canvas jQuery element into demo code
@@ -46,6 +45,7 @@ $docsSection.find('div.highlighter-rouge').each(function () {
     $demoContainer.append($demoCanvas);
     // Retrieve the data URI of the blank canvas so we can later detect if the
     // canvas has been drawn on
+    resetDemo($demoCanvas);
     var demoImageBlank = $demoCanvas[0].toDataURL();
     var code = $codeBlock.text();
     runDemo(code, $demoCanvas);
@@ -62,6 +62,7 @@ $docsSection.on('click', '.demo-rerun', function () {
   var $rerunButton = $(this);
   var code = $rerunButton.parent().prev().text();
   var $demoCanvas = $rerunButton.next();
+  resetDemo($demoCanvas);
   runDemo(code, $demoCanvas);
 });
 
