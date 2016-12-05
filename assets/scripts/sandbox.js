@@ -71,13 +71,13 @@ function resetCanvases() {
 // Run code
 function runCode() {
   resetCanvases($$.canvases);
-  $$.cm.removeClass('error');
+  $$.editor.removeClass('error');
   $$.console.html('');
   try {
     new Function(editor.getValue())();
   } catch(error) {
     // Report any errors to the editor
-    $$.cm.addClass('error');
+    $$.editor.addClass('error');
     $$.console.html('Error: ' + error.message);
     console.error(error.stack || String(error));
   }
