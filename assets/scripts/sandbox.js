@@ -13,48 +13,57 @@ var $$ = {
   defaultCode: $('#sandbox-default-code')
 };
 
-function stripWhitespace(str) {
-  str = str.replace(/(^\s+)|(\s+$)/gi, '');
-  return str;
-}
+// Default sandbox state
+var defaultSandboxState = {
+  code: $$.defaultCode.html().replace(/(^\s+)|(\s+$)/gi, ''),
+  cursor: {
+    line: 0,
+    ch: 0
+  },
+  ncanvases: 1
+};
 
 // Change number of canvases with which to test
 function changeCanvasCount() {
   var html, i, h;
-  settings.ncanvases = parseFloat($$.ncanvases.val());
-  h = Math.round((450 + 2) / settings.ncanvases);
+  var ncanvases = parseInt($$.ncanvases.val());
+  h = Math.round((450 + 2) / ncanvases);
   html = '';
-  for (i = 0; i < settings.ncanvases; i += 1) {
+  for (i = 0; i < ncanvases; i += 1) {
     html += '<div class="canvas-container"><canvas width="320" height="' + h + '"></canvas></div>';
   }
   $$.canvases.html(html);
   $$.canvas = $('canvas');
 }
 
-// Load last-saved sandbox settings (or defaults if the don't exist)
-function loadSandboxSettings() {
+// Load last-saved sandbox state (or defaults if the don't exist)
+function loadSandboxState() {
   // Load sandbox settings from local storage
-  settings = sessionStorage.getItem('jcanvas-sandbox');
-  settings = JSON.parse(settings);
-  if (settings !== null) {
-    settings = $.extend({}, defaultSettings, settings);
+  var sandboxState = sessionStorage.getItem('jcanvas-sandbox');
+  sandboxState = JSON.parse(sandboxState);
+  if (sandboxState !== null) {
+    sandboxState = $.extend({}, defaultSandboxState, sandboxState);
   } else {
-    settings = defaultSettings;
+    sandboxState = defaultSandboxState;
   }
-  editor.setValue(settings.code);
-  editor.setCursor(settings.cursor);
-  $$.ncanvases.val(settings.ncanvases);
+  return sandboxState;
+}
+
+function setSandboxSettings(codemirror, sandboxState) {
+  codemirror.setValue(sandboxState.code);
+  codemirror.setCursor(sandboxState.cursor);
+  $$.ncanvases.val(sandboxState.ncanvases);
   changeCanvasCount();
 }
 
-// Save code to page hash
-function saveCode() {
-  // Store the chosen number of canvases
-  if (window.sessionStorage && window.JSON) {
-    settings.cursor = editor.getCursor();
-    settings.code = editor.getValue();
-    sessionStorage.setItem('jcanvas-sandbox', JSON.stringify(settings));
-  }
+// Save code to storage for current page
+function saveSandboxState(codemirror) {
+  var sandboxState = {
+    code: codemirror.getValue(),
+    cursor: codemirror.getCursor(),
+    ncanvases: $$.ncanvases.val()
+  };
+  sessionStorage.setItem('jcanvas-sandbox', JSON.stringify(sandboxState));
 }
 
 // Reset all canvases to their original states
@@ -68,80 +77,76 @@ function resetCanvases() {
 }
 
 // Run code
-function runCode() {
-  resetCanvases($$.canvases);
+function runCode(codemirror) {
+  resetCanvases();
   $$.editor.removeClass('error');
   $$.console.html('');
   try {
-    new Function(editor.getValue())();
+    new Function(codemirror.getValue())();
   } catch(error) {
     // Report any errors to the editor
     $$.editor.addClass('error');
     $$.console.html('Error: ' + error.message);
     console.error(error.stack || String(error));
   }
-  // editor.focus();
 }
 
-// Click "Run" button to run code
-$$.run.on('click', function() {
-  resetCanvases();
-  runCode();
-  saveCode();
-});
+// Initialize the sandbox CodeMirror editor
+function initSandboxEditor(sandboxState) {
 
-// Change number of canvases in sandbox
-$$.ncanvases.on('change', function() {
-  changeCanvasCount();
-  saveCode();
-});
+  // Initialize code editor
+  var codemirror = CodeMirror($$.editor[0], {
+    lineNumbers: true,
+    indentUnit: 2
+  });
 
-var defaultSettings = {
-  code: stripWhitespace($$.defaultCode.html()),
-  ncanvases: 1,
-  cursor: {
-    line: 0,
-    ch: 0
-  }
-};
+  setSandboxSettings(codemirror, sandboxState);
 
-// Initialize code editor
-var editor = CodeMirror($$.editor[0], {
-  lineNumbers: true,
-  indentUnit: 2
-});
+  // Add CSS class for when editor is focused
+  codemirror.on('focus', function(obj) {
+    $$.editor.addClass('focused');
+  });
+  codemirror.on('blur', function(obj) {
+    $$.editor.removeClass('focused');
+  });
 
-// Add CSS class for when editor is focused
-editor.on('focus', function(obj) {
-  $$.editor.addClass('focused');
-});
-editor.on('blur', function(obj) {
-  $$.editor.removeClass('focused');
-});
-
-$$.cm = $('div.CodeMirror');
-
-// Keyboard shortcut bindings
-$$.cm.on('keydown', function(event) {
-  if (event.metaKey || event.ctrlKey) {
-    // Press ctrl+enter to test
-    if (event.which === 13) {
-      resetCanvases();
-      runCode();
-      saveCode();
-      return false;
+  $('div.CodeMirror').on('keydown', function(event) {
+    if (event.metaKey || event.ctrlKey) {
+      // Press ctrl+enter to test
+      if (event.which === 13) {
+        resetCanvases();
+        runCode(codemirror);
+        saveSandboxState(codemirror);
+        return false;
+      }
     }
+  });
+
+  // Click "Run" button to run code
+  $$.run.on('click', function() {
+    resetCanvases();
+    runCode(codemirror);
+    saveSandboxState(codemirror);
+  });
+
+  // Change number of canvases in sandbox when dropdown value is changed
+  $$.ncanvases.on('change', function() {
+    changeCanvasCount();
+    runCode(codemirror);
+    saveSandboxState(codemirror);
+  });
+
+  // Focus window on desktop browsers
+  if (window.ontouchstart === undefined) {
+    codemirror.focus();
   }
-});
 
-var settings;
-loadSandboxSettings();
-runCode();
+  runCode(codemirror);
 
-// Focus window on desktop browsers
-if (window.ontouchstart === undefined) {
-  editor.focus();
 }
+
+var sandboxState = loadSandboxState();
+initSandboxEditor(sandboxState);
 
 });
 }(jQuery));
