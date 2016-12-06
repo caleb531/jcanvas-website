@@ -17,6 +17,8 @@ gem "jekyll", "3.3.1"
 
 # If you have any plugins, put them here!
 group :jekyll_plugins do
-   # stringex is needed for kramdown's transliterated_header_ids option
-   gem "stringex", "~> 2.6"
+  gem 'jekyll-seo-tag', '~>2.0'
+  gem 'jekyll-sitemap', '~>0.10'
+  # stringex is needed for kramdown's transliterated_header_ids option
+  gem "stringex", "~> 2.6"
 end

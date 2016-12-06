@@ -13,6 +13,10 @@
     <title>{{ site.title | escape }} | {{ site.tagline | escape }}</title>
   {% endif %}
 
+  {% if page.sitemap != false %}
+    {% seo title=false %}
+  {% endif %}
+
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oxygen+Mono|Ubuntu:300,300i,400" />
   {% if page.title == 'Sandbox' %}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.21.0/codemirror.min.css" />
