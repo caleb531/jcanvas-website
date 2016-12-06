@@ -43,14 +43,16 @@ article.page-sandbox {
   }
 }
 #sandbox-controls {
+  display: table;
+  width: 100%;
   box-sizing: border-box;
-  text-align: right;
   @include layout(compact) {
     padding: 0 10px;
   }
 }
 #sandbox-button-controls {
-  float: left;
+  display: table-cell;
+  text-align: left;
 }
 button {
   position: relative;
@@ -63,7 +65,11 @@ label {
   font-size: 10pt;
 }
 #sandbox-ncanvases-controls {
-  float: right;
+  display: table-cell;
+  text-align: right;
+}
+#sandbox-ncanvases {
+  margin-left: 2px;
 }
 
 // Code editor
