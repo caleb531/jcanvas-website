@@ -22,18 +22,26 @@ var defaultSandboxState = {
   },
   ncanvases: 1
 };
+var DEFAULT_CANVAS_WIDTH = 320;
 
 // Change number of canvases with which to test
 function changeCanvasCount() {
-  var html, i, h;
-  var ncanvases = parseInt($$.ncanvases.val());
-  h = Math.round((450 + 2) / ncanvases);
-  html = '';
-  for (i = 0; i < ncanvases; i += 1) {
-    html += '<div class="canvas-container"><canvas width="320" height="' + h + '"></canvas></div>';
+  var ncanvases = Number($$.ncanvases.val());
+  var height = Math.round((450 + 2) / ncanvases);
+  $$.canvases.empty();
+  for (var i = 0; i < ncanvases; i += 1) {
+    var $canvasContainer = $('<div>');
+    $canvasContainer.prop({
+      class: 'canvas-container'
+    });
+    var $canvas = $('<canvas>');
+    $canvas.prop({
+      width: DEFAULT_CANVAS_WIDTH,
+      height: height
+    });
+    $canvasContainer.append($canvas);
+    $$.canvases.append($canvasContainer);
   }
-  $$.canvases.html(html);
-  $$.canvas = $('canvas');
 }
 
 // Load last-saved sandbox state (or defaults if the don't exist)
