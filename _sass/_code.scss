@@ -42,29 +42,20 @@ div.highlighter-rouge {
       font-size: 12pt;
     }
   }
-  .action {
-    display: inline-block;
-    position: absolute;
-    top: 0;
-    right: 0;
-    z-index: 2;
-    margin: 6px;
-    margin-left: 0;
-    padding: 1px 6px;
-    border-radius: 3px;
-    background-color: #696;
-    text-align: center;
-    line-height: 1.6em;
-    font-family: $sans-serif;
-    font-size: 10pt;
-    color: #fff;
-    text-decoration: none;
-    cursor: pointer;
-    transition: opacity 250ms ease-in-out;
-  }
   code {
     color: inherit;
   }
+}
+
+// "Try in Sandbox" button
+.try-in-sandbox {
+  display: inline-block;
+  position: absolute;
+  $position: 5px;
+  top: $position;
+  right: $position;
+  z-index: 10;
+  background-clip: border-box;
 }
 
 // Syntax highlighting styles

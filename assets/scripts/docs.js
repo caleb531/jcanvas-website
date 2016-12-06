@@ -31,7 +31,7 @@ function resetDemo($demoCanvas) {
 }
 
 // Add live canvas demo of each example (if example draws on canvas)
-$docsSection.find('div.highlighter-rouge').each(function () {
+$docsSection.find('div.language-javascript').each(function () {
     var $codeBlock = $(this);
     // Initialize a demo canvas
     var $demoCanvas = $(document.createElement('canvas'));
@@ -50,20 +50,35 @@ $docsSection.find('div.highlighter-rouge').each(function () {
     var code = $codeBlock.text();
     runDemo(code, $demoCanvas);
     // If something was drawn on demo canvas (or if code draws asynchronously),
-    // append canvas below code block
     if ($demoCanvas[0].toDataURL() !== demoImageBlank || asyncPattern.test(code)) {
+      // Append canvas below code block
       $codeBlock.after($demoContainer);
       $codeBlock.addClass('has-demo');
+      // Add to code block a button that allows user to try code in Sandbox
+      $codeBlock.prepend('<button class="try-in-sandbox">Try in Sandbox</button>');
     }
 });
 
 // Allow user to re-run demo via button
 $docsSection.on('click', '.demo-rerun', function () {
   var $rerunButton = $(this);
-  var code = $rerunButton.parent().prev().text();
+  var code = $rerunButton.parent().prev().find('pre').text();
   var $demoCanvas = $rerunButton.next();
   resetDemo($demoCanvas);
   runDemo(code, $demoCanvas);
+});
+
+// Allow user to test any example in Sandbox
+$docsSection.on('click', '.try-in-sandbox', function () {
+  // Retrieve code for this example from neighboring <pre>
+  var code = $(this).next().text();
+  // Stage this code to appear on the next new sandbox instance
+  sessionStorage.setItem('jcanvas-sandbox', JSON.stringify({
+    code: code
+  }));
+  // window.open copies the session data from the current page into the session
+  // storage for the new page
+  window.open('/jcanvas/sandbox/');
 });
 
 });
