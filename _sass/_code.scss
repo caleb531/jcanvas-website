@@ -14,21 +14,21 @@ div.highlighter-rouge {
   position: relative;
   margin-top: 20px;
   border: solid 1px $input-border-color;
-  $border-radius: 5px;
-  border-radius: $border-radius;
+  border-radius: $code-block-border-radius;
   background-color: #fff;
   background-image: url('../images/grid-fg.svg');
   background-size: 11px;
   background-clip: padding-box;
   font-family: $monospace;
   color: #333;
+  overflow: scroll;
   &.has-demo {
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
   }
   & + .demo-container > canvas {
-    border-bottom-left-radius: $border-radius;
-    border-bottom-right-radius: $border-radius;
+    border-bottom-left-radius: $code-block-border-radius;
+    border-bottom-right-radius: $code-block-border-radius;
   }
   pre {
     position: relative;
@@ -45,17 +45,6 @@ div.highlighter-rouge {
   code {
     color: inherit;
   }
-}
-
-// "Try in Sandbox" button
-.try-in-sandbox {
-  display: inline-block;
-  position: absolute;
-  $position: 5px;
-  top: $position;
-  right: $position;
-  z-index: 10;
-  background-clip: border-box;
 }
 
 // Syntax highlighting styles
@@ -88,6 +77,10 @@ div.highlighter-rouge {
   .s {
     color: $code-green;
   }
+}
+
+.try-in-sandbox {
+  border-top-right-radius: $code-block-border-radius - 1px;
 }
 
 // CodeMirror code editor

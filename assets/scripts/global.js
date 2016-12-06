@@ -3,7 +3,7 @@ $(document).ready(function() {
 
 // Add jQuery method which adds a "Try in Sandbox"
 $.fn.addSandboxTryButton = function () {
-  this.prepend('<button class="try-in-sandbox">Try in Sandbox</button>');
+  this.prepend('<button class="try-in-sandbox edge-button">Try in Sandbox</button>');
 };
 
 // Allow user to test any example in Sandbox

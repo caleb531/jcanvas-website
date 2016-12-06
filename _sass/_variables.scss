@@ -10,6 +10,9 @@ $layout-widths: (
   hybrid: 800px
 );
 
+// Border radius for syntax-highlighted code example
+$code-block-border-radius: 5px;
+
 // Syntax highlighting colors
 $code-gray: #888;
 $code-blue: #25b;

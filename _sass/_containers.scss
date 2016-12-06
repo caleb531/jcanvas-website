@@ -77,13 +77,26 @@ canvas {
 .demo-container {
   position: relative;
   font-size: 0;
+  border: solid 1px $input-border-color;
+  overflow: hidden;
+  canvas {
+    border-width: 0;
+  }
 }
-.demo-rerun {
+
+// Button fixed to edge of container
+.edge-button {
   position: absolute;
-  top: 5px;
-  right: 5px;
+  $position: 0;
+  top: $position;
+  right: $position;
   z-index: 10;
   margin: 0;
+  border-top-width: 0;
+  border-right-width: 0;
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+  border-bottom-right-radius: 0;
   background-clip: border-box;
 }
 

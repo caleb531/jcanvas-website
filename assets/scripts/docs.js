@@ -50,7 +50,7 @@ $docsSection.find('div.language-javascript').each(function () {
     });
     // Create canvas container (will also contain demo controls like re-run)
     $demoContainer = $('<div class="demo-container">');
-    $demoContainer.append('<button class="demo-rerun">Re-run</button>');
+    $demoContainer.append('<button class="demo-rerun edge-button">Re-run</button>');
     $demoContainer.append($demoCanvas);
     // Retrieve the data URI of the blank canvas so we can later detect if the
     // canvas has been drawn on
