@@ -34,7 +34,7 @@ function changeCanvasCount() {
 // Load last-saved sandbox settings (or defaults if the don't exist)
 function loadSandboxSettings() {
   // Load sandbox settings from local storage
-  settings = localStorage.getItem('jcanvas-sandbox');
+  settings = sessionStorage.getItem('jcanvas-sandbox');
   settings = JSON.parse(settings);
   if (settings !== null) {
     settings = $.extend({}, defaultSettings, settings);
@@ -50,10 +50,10 @@ function loadSandboxSettings() {
 // Save code to page hash
 function saveCode() {
   // Store the chosen number of canvases
-  if (window.localStorage && window.JSON) {
+  if (window.sessionStorage && window.JSON) {
     settings.cursor = editor.getCursor();
     settings.code = editor.getValue();
-    localStorage.setItem('jcanvas-sandbox', JSON.stringify(settings));
+    sessionStorage.setItem('jcanvas-sandbox', JSON.stringify(settings));
   }
 }
 
