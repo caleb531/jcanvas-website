@@ -1,6 +1,7 @@
 (function() {
 $(document).ready(function() {
 
+var $docsSections = $('#docs-sections');
 var $docsSection = $('#docs-section');
 // The pattern to replace jQuery canvas selectors
 var canvasSelectorPattern = /\$\(['"](.*?)canvas(.*?)\1\)/gi;
@@ -12,6 +13,14 @@ var asyncPattern = /drawImage|createPattern|(?:type: (['"])image\1)/gi;
 // Add anchor link to every subsection for easy access later
 $docsSection.find('h3').each(function () {
   $(this).append('<a href="#' + this.id + '" class="subsection-link"></a>');
+});
+
+
+// Add drawers to page where needed
+$('main').find('h1').addClass('drawer-toggle');
+$('.drawer-toggle').on('click', function() {
+  $docsSections.toggleClass('open');
+  $(this).toggleClass('open');
 });
 
 // Run the given demo code on the given canvas

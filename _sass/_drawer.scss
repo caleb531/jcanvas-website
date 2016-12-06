@@ -19,7 +19,9 @@ div.drawer {
       text-decoration: underline;
     }
 
-    .arrow {
+    &:before {
+      content: '';
+      display: inline-block;
       position: absolute;
       top: 50%;
       margin-top: -8px;
@@ -29,7 +31,8 @@ div.drawer {
       border-color: transparent;
       border-right-color: #fff;
     }
-    &.open .arrow {
+    &.open:before {
+      content: '';
       left: 0;
       border-color: transparent;
       border-left-color: #fff;
