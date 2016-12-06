@@ -4,11 +4,11 @@
 jCanvas's simple syntax makes drawing shapes as easy as it should be.
 
 ```js
-// Draw a circle
-$("canvas").drawArc({
+// Draw a pentagon
+$("canvas").drawPolygon({
   draggable: true,
-  fillStyle: "green",
+  fillStyle: "#6c3",
   x: 100, y: 100,
-  radius: 50
+  radius: 50, sides: 5
 });
 ```
