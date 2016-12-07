@@ -5,6 +5,7 @@ $(document).ready(function() {
 $('.images').hide();
 
 var $$ = {
+  editorArea: $('#sandbox-editor-area'),
   editor: $('#sandbox-editor'),
   run: $('#sandbox-run'),
   canvases: $('#sandbox-canvases'),
@@ -13,7 +14,7 @@ var $$ = {
   defaultCode: $('#sandbox-default-code')
 };
 
-// Default sandbox state
+// Defaults and constants
 var defaultSandboxState = {
   code: $$.defaultCode.html().replace(/(^\s+)|(\s+$)/gi, ''),
   cursor: {
@@ -22,12 +23,14 @@ var defaultSandboxState = {
   },
   ncanvases: 1
 };
-var DEFAULT_CANVAS_WIDTH = 320;
+var CANVAS_WIDTH = 320;
+var CANVAS_BORDER_WIDTH = 1;
 
 // Change number of canvases with which to test
 function changeCanvasCount() {
   var ncanvases = Number($$.ncanvases.val());
-  var height = Math.round((450 + 2) / ncanvases);
+  var editorHeight = $$.editorArea.outerHeight();
+  var canvasHeight = Math.round((editorHeight / ncanvases) - (2 * CANVAS_BORDER_WIDTH));
   $$.canvases.empty();
   for (var i = 0; i < ncanvases; i += 1) {
     var $canvasContainer = $('<div>');
@@ -36,8 +39,8 @@ function changeCanvasCount() {
     });
     var $canvas = $('<canvas>');
     $canvas.prop({
-      width: DEFAULT_CANVAS_WIDTH,
-      height: height
+      width: CANVAS_WIDTH,
+      height: canvasHeight
     });
     $canvasContainer.append($canvas);
     $$.canvases.append($canvasContainer);

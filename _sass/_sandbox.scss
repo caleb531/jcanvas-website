@@ -28,7 +28,7 @@ article.page-sandbox {
   }
 }
 
-#sandbox-editor-container {
+#sandbox-editor-area {
   display: inline-block;
   width: 360px;
   margin-right: 10px;
@@ -76,9 +76,8 @@ label {
 #sandbox-editor {
   clear: both;
   position: relative;
-  height: 426px;
+  height: 420px;
   margin: 0;
-  margin-top: 1px;
   font-size: 10pt;
   text-align: left;
   resize: none;
