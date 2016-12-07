@@ -24,8 +24,9 @@ url: "http://projects.calebevans.me/jcanvas" # the base hostname & protocol for 
 # Serve settings
 host: 0.0.0.0 # Enables local site to be accessed from other devices on network
 
-# Google Analytics tracking ID
+# Google tokens
 google_analytics: UA-32407194-1
+google_adsense_client_id: ca-pub-6730292125551254
 
 # Build settings
 markdown: kramdown
