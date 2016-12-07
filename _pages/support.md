@@ -4,6 +4,7 @@ title: Support
 subtitle: Need something?
 permalink: /support/
 id: support
+show_ads: true
 ---
 
 ## License

@@ -4,6 +4,7 @@ title: Downloads
 subtitle: Get your copy of jCanvas here!
 permalink: /downloads/
 id: downloads
+show_ads: true
 ---
 
 {% include downloads.html %}
