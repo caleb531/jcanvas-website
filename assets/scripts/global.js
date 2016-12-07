@@ -19,17 +19,13 @@ $.fn.resetCanvases = function () {
   });
 };
 
-// Allow user to test any example in Sandbox
-$('main').on('click', '.try-in-sandbox', function () {
-  // Retrieve code for this example from neighboring <pre>
-  var code = $(this).next().text();
+// Spawn a new sandbox with the given sandbox state
+$.spawnNewSandbox = function (sandboxState) {
   // Retrieve the sandbox state of the current page
   var originalSandboxState = sessionStorage.getItem('jcanvas-sandbox');
   // Temporarily overwrite the current page's sandbox state with the new sandbox
   // code so that it gets copied into the sandbox state for the spawned page
-  sessionStorage.setItem('jcanvas-sandbox', JSON.stringify({
-    code: code
-  }));
+  sessionStorage.setItem('jcanvas-sandbox', JSON.stringify(sandboxState));
   // window.open copies the session data for the current page into the session
   // storage for the spawned page
   window.open('/jcanvas/sandbox/');
@@ -40,6 +36,16 @@ $('main').on('click', '.try-in-sandbox', function () {
   } else {
     sessionStorage.removeItem('jcanvas-sandbox');
   }
+};
+
+// Allow user to test any example in Sandbox
+$('main').on('click', '.try-in-sandbox', function () {
+  // Retrieve code for this example from neighboring <pre>
+  var code = $(this).next().text();
+  // Open code in a new sandbox instance
+  $.spawnNewSandbox({
+    code: code
+  });
 });
 
 });

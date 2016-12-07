@@ -5,6 +5,7 @@ var $$ = {
   editorArea: $('#sandbox-editor-area'),
   editor: $('#sandbox-editor'),
   run: $('#sandbox-run'),
+  duplicate: $('#sandbox-duplicate'),
   canvases: $('#sandbox-canvases'),
   ncanvases: $('#sandbox-ncanvases'),
   console: $('#sandbox-console'),
@@ -64,13 +65,17 @@ function setSandboxSettings(codemirror, sandboxState) {
   changeCanvasCount();
 }
 
-// Save code to storage for current page
-function saveSandboxState(codemirror) {
-  var sandboxState = {
+function getSandboxState(codemirror) {
+  return {
     code: codemirror.getValue(),
     cursor: codemirror.getCursor(),
     ncanvases: $$.ncanvases.val()
   };
+}
+
+// Save sandbox state to session storage for current page
+function saveSandboxState(codemirror) {
+  var sandboxState = getSandboxState(codemirror);
   sessionStorage.setItem('jcanvas-sandbox', JSON.stringify(sandboxState));
 }
 
@@ -119,13 +124,14 @@ function initSandboxEditor(sandboxState) {
     }
   });
 
-  // Click "Run" button to run code
+  // Add event bindings to sandbox controls
   $$.run.on('click', function() {
     runCode(codemirror);
     saveSandboxState(codemirror);
   });
-
-  // Change number of canvases in sandbox when dropdown value is changed
+  $$.duplicate.on('click', function () {
+    $.spawnNewSandbox(getSandboxState(codemirror));
+  });
   $$.ncanvases.on('change', function() {
     changeCanvasCount();
     runCode(codemirror);
