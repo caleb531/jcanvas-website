@@ -1,11 +1,14 @@
 {% for entry in site.gallery_entries %}
 
-  <div class="entry box">
+  <article class="entry box">
     <h3 class="entry-title"><a href="{{ entry.direct_url }}">{{ entry.title }}</a></h3>
+    {% if entry.github_url %}
+      <a href="{{ entry.github_url }}"><img src="{{ site.baseurl }}/assets/images/github.svg" alt="{{ entry.title }} on GitHub" class="entry-github" /></a>
+    {% endif %}
     <span class="entry-author">by {{ entry.author }}</span>
     <div class="entry-desc">
       {{ entry.content }}
     </div>
-  </div>
+  </article>
 
 {% endfor %}

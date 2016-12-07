@@ -1,5 +1,6 @@
 .entry {
   display: inline-block;
+  position: relative;
   width: 45%;
   margin: 10px;
   padding: 15px;
@@ -25,8 +26,11 @@
       margin-bottom: 0;
     }
   }
-  svg {
-    float: right;
+  .entry-github {
+    position: absolute;
+    $position: 10px;
+    top: $position;
+    right: $position;
     $size: 24px;
     width: $size;
     height: $size;
