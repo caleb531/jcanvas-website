@@ -1,21 +1,31 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
 <script src="{{ site.baseurl }}/assets/jcanvas/jcanvas.min.js"></script>
 <script src="{{ site.baseurl }}/assets/scripts/global.js"></script>
+
 {% if page.collection == 'core_docs' or page.collection == 'plugin_docs' %}
+
   <script src="{{ site.baseurl }}/assets/scripts/docs.js"></script>
+
   {% if page.collection == 'plugin_docs' %}
     <script src="{{ site.baseurl }}/assets/jcanvas/plugins/jcanvas-{{ page.slug }}.js"></script>
   {% endif %}
+
 {% endif %}
+
 {% if page.id == 'sandbox' %}
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.21.0/codemirror.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.21.0/mode/javascript/javascript.min.js"></script>
+
   {% for plugin_doc in site.plugin_docs %}
     {% if plugin_doc.is_plugin %}
       <script src="{{ site.baseurl }}/assets/jcanvas/plugins/jcanvas-{{ plugin_doc.slug }}.min.js"></script>
     {% endif %}
   {% endfor %}
   <script src="{{ site.baseurl }}/assets/scripts/sandbox.js"></script>
+
 {% elsif page.id == 'home' %}
+
   <script src="{{ site.baseurl }}/assets/scripts/home.js"></script>
+
 {% endif %}
