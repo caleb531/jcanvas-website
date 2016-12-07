@@ -1,8 +1,9 @@
 .entry {
   display: inline-block;
+  position: relative;
   width: 45%;
   margin: 10px;
-  padding: 10px 15px;
+  padding: 15px;
   text-align: left;
   vertical-align: top;
   box-sizing: border-box;
@@ -11,20 +12,25 @@
     margin-left: 0;
     margin-right: 0;
   }
-  .name {
+  .entry-title {
     margin-top: 0;
     margin-bottom: 0;
   }
-  .author {
+  .entry-author {
     margin-top: 0;
     font-size: 10pt;
     font-style: italic;
   }
-  .desc {
-    margin-top: 0;
+  .entry-desc {
+    p:last-child {
+      margin-bottom: 0;
+    }
   }
-  svg {
-    float: right;
+  .entry-github {
+    position: absolute;
+    $position: 10px;
+    top: $position;
+    right: $position;
     $size: 24px;
     width: $size;
     height: $size;

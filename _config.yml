@@ -50,6 +50,9 @@ collections:
   plugin_docs:
     output: true
     permalink: /plugins/:path/
+  # Sites and apps in jCanvas gallery
+  gallery_entries:
+    output: false
 
 # Set defaults for YAML Front Matter variables
 defaults:
