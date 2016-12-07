@@ -1,9 +1,6 @@
 (function($) {
 $(document).ready(function() {
 
-// Hide images on page
-$('.images').hide();
-
 var $$ = {
   editorArea: $('#sandbox-editor-area'),
   editor: $('#sandbox-editor'),
