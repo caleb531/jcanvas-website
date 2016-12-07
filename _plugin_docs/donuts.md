@@ -1,7 +1,7 @@
 ---
 title: Donuts
 author: Caleb Evans
-download: true
+is_plugin: true
 ---
 
 This plugin draws a donut shape using the provided `drawDonut()` method.

@@ -10,6 +10,11 @@
 {% if page.id == 'sandbox' %}
   <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.21.0/codemirror.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.21.0/mode/javascript/javascript.min.js"></script>
+  {% for plugin_doc in site.plugin_docs %}
+    {% if plugin_doc.is_plugin %}
+      <script src="{{ site.baseurl }}/assets/jcanvas/plugins/jcanvas-{{ plugin_doc.slug }}.min.js"></script>
+    {% endif %}
+  {% endfor %}
   <script src="{{ site.baseurl }}/assets/scripts/sandbox.js"></script>
 {% elsif page.id == 'home' %}
   <script src="{{ site.baseurl }}/assets/scripts/home.js"></script>

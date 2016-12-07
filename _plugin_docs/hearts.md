@@ -1,7 +1,7 @@
 ---
 title: Hearts
 author: Caleb Evans
-download: true
+is_plugin: true
 ---
 
 This plugin is a more complete version of the [`custom drawHeart()` method in the documentation]({{ site.baseurl }}/docs/extending/), which supports layer events and transformations.

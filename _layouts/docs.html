@@ -26,7 +26,7 @@ layout: default
       {% if page.author %}
         <p class="author">by {{ page.author }}</p>
       {% endif %}
-      {% if page.download %}
+      {% if page.is_plugin %}
         <a href="{{ site.baseurl }}/assets/jcanvas/plugins/jcanvas-{{ page.slug }}.min.js" class="button download">Download (minified)</a>
         <a href="{{ site.baseurl }}/assets/jcanvas/plugins/jcanvas-{{ page.slug }}.js" class="button download">Download (source)</a>
       {% endif %}
