@@ -6,6 +6,15 @@ $.fn.addSandboxTryButton = function () {
   this.prepend('<button class="try-in-sandbox edge-button">Try in Sandbox</button>');
 };
 
+// Reset context all attached data for the given canvas
+$.fn.resetCanvases = function () {
+  this.each(function (canvas) {
+    var $canvas = $(this);
+    $canvas.removeLayers();
+      $canvas.detectPixelRatio();
+  });
+};
+
 // Allow user to test any example in Sandbox
 $('main').on('click', '.try-in-sandbox', function () {
   // Retrieve code for this example from neighboring <pre>

@@ -32,13 +32,6 @@ function runDemo(code, $demoCanvas) {
   new Function(['$demoCanvas'], code)($demoCanvas);
 }
 
-// Resets the demo canvas by resetting its context and removing all layers
-function resetDemo($demoCanvas) {
-  $demoCanvas.removeLayers();
-  $demoCanvas.clearCanvas();
-  $demoCanvas.detectPixelRatio();
-}
-
 // Add live canvas demo of each example (if example draws on canvas)
 $docsSection.find('div.language-javascript').each(function () {
     var $codeBlock = $(this);
@@ -52,9 +45,9 @@ $docsSection.find('div.language-javascript').each(function () {
     $demoContainer = $('<div class="demo-container">');
     $demoContainer.append('<button class="demo-rerun edge-button">Re-run</button>');
     $demoContainer.append($demoCanvas);
+    $demoCanvas.resetCanvases();
     // Retrieve the data URI of the blank canvas so we can later detect if the
     // canvas has been drawn on
-    resetDemo($demoCanvas);
     var demoImageBlank = $demoCanvas[0].toDataURL();
     var code = $codeBlock.text();
     runDemo(code, $demoCanvas);
@@ -73,7 +66,7 @@ $docsSection.on('click', '.demo-rerun', function () {
   var $rerunButton = $(this);
   var code = $rerunButton.parent().prev().find('pre').text();
   var $demoCanvas = $rerunButton.next();
-  resetDemo($demoCanvas);
+  $demoCanvas.resetCanvases();
   runDemo(code, $demoCanvas);
 });
 

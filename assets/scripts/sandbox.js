@@ -74,19 +74,9 @@ function saveSandboxState(codemirror) {
   sessionStorage.setItem('jcanvas-sandbox', JSON.stringify(sandboxState));
 }
 
-// Reset all canvases to their original states
-function resetCanvases() {
-  $$.canvases.find('canvas').each(function () {
-    var ctx = this.getContext('2d');
-		ctx.setTransform( 1, 0, 0, 1, 0, 0 );
-		ctx.clearRect( 0, 0, this.width, this.height );
-    $(this).removeLayers();
-  });
-}
-
 // Run code
 function runCode(codemirror) {
-  resetCanvases();
+  $$.canvases.find('canvas').resetCanvases();
   $$.editor.removeClass('error');
   $$.console.html('');
   try {
@@ -122,7 +112,6 @@ function initSandboxEditor(sandboxState) {
     if (event.metaKey || event.ctrlKey) {
       // Press ctrl+enter to test
       if (event.which === 13) {
-        resetCanvases();
         runCode(codemirror);
         saveSandboxState(codemirror);
         return false;
@@ -132,7 +121,6 @@ function initSandboxEditor(sandboxState) {
 
   // Click "Run" button to run code
   $$.run.on('click', function() {
-    resetCanvases();
     runCode(codemirror);
     saveSandboxState(codemirror);
   });
