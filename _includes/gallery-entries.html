@@ -1,0 +1,11 @@
+{% for entry in site.gallery_entries %}
+
+  <div class="entry box">
+    <h3 class="entry-title"><a href="{{ entry.direct_url }}">{{ entry.title }}</a></h3>
+    <span class="entry-author">by {{ entry.author }}</span>
+    <div class="entry-desc">
+      {{ entry.content }}
+    </div>
+  </div>
+
+{% endfor %}
