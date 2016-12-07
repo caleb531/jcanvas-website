@@ -14,7 +14,7 @@ $.fn.resetCanvases = function () {
   this.each(function (canvas) {
     var $canvas = $(this);
     $canvas.removeLayers();
-      $canvas.detectPixelRatio();
+    $canvas.detectPixelRatio();
   });
 };
 
