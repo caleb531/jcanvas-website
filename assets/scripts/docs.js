@@ -23,6 +23,24 @@ $('.drawer-toggle').on('click', function() {
   $(this).toggleClass('open');
 });
 
+// Add list of subsections to the given documentation section
+$.fn.addDocsSubsectionList = function () {
+  var $section = this;
+  var $subsections = $('<ul id="docs-section-subsections" class="box">');
+  $section.find('h3').each(function () {
+    $subsections.append('<li><a href="#' + this.id + '">' + $(this).text() + '</a>');
+  });
+  $section
+  .find('h2')
+  .append($subsections)
+  .on('click', function() {
+    $(this).toggleClass('open');
+  });
+};
+
+// Add drawers to page where needed
+$docsSection.addDocsSubsectionList();
+
 // Run the given demo code on the given canvas
 function runDemo(code, $demoCanvas) {
   // Modify any image paths to point to the real images directory

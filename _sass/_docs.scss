@@ -81,16 +81,17 @@ h1 {
 }
 
 // Section's menu of subsections
-h2.menu {
+#docs-section > h2 {
   position: relative;
-  padding-left: 20px;
+  padding-left: 10px;
   &:hover {
     text-decoration: underline;
     cursor: pointer;
   }
   $arrow-top: -5px;
   $arrow-height: 6px;
-  .arrow {
+  &:before {
+    content: '';
     display: inline-block;
     position: relative;
     top: $arrow-top;
@@ -102,34 +103,40 @@ h2.menu {
     border-bottom-color: #fff;
   }
   &.open {
-    .arrow {
+    &:before {
       top: $arrow-top + $arrow-height;
       border-color: transparent;
       border-top-color: #fff;
     }
   }
 }
-#subsections {
-  display: none;
+#docs-section-subsections {
+  $transition-duration: 250ms;
+  opacity: 0;
   min-width: 120px;
   position: absolute;
   top: 100%;
   left: 0;
-  z-index: 1;
+  z-index: -1;
+  margin: 0;
   padding: 10px 15px;
-  background-color: #333;
-  background-color: rgba(#000, 0.8);
+  list-style-type: none;
+  background-color: rgba(#038, 0.9);
   font-size: 10pt;
-  ul {
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
-  }
+  transition-duration: $transition-duration, $transition-duration, $transition-duration * 2;
+  transition-timing-function: ease-in-out;
+  transition-property: opacity, top, z-index;
   a {
     display: inline-block;
     width: 100%;
     margin: 4px 0;
     font-size: 12pt;
+  }
+  .open & {
+    opacity: 1;
+    z-index: 10;
+    transition-property: opacity;
+    transition-duration: $transition-duration;
   }
 }
 
