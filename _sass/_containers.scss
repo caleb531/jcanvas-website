@@ -103,12 +103,18 @@ canvas {
 
 // Google ads
 $ad-height: 160px;
-.adsbygoogle {
+#ad-container {
   position: fixed;
   bottom: 0;
+  left: 0;
   z-index: 999;
   width: 100%;
+}
+.adsbygoogle {
+  display: block;
+  width: 100%;
   height: $ad-height;
+  margin: 0 auto;
   text-align: center;
 }
 main {
