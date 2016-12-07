@@ -25,8 +25,7 @@ var CANVAS_WIDTH = 320;
 var CANVAS_BORDER_WIDTH = 1;
 
 // Change number of canvases with which to test
-function changeCanvasCount() {
-  var ncanvases = Number($$.ncanvases.val());
+function changeCanvasCount(ncanvases) {
   var editorHeight = $$.editorArea.outerHeight();
   var canvasHeight = Math.round((editorHeight / ncanvases) - (2 * CANVAS_BORDER_WIDTH));
   $$.canvases.empty();
@@ -62,7 +61,7 @@ function setSandboxSettings(codemirror, sandboxState) {
   codemirror.setValue(sandboxState.code);
   codemirror.setCursor(sandboxState.cursor);
   $$.ncanvases.val(sandboxState.ncanvases);
-  changeCanvasCount();
+  changeCanvasCount(sandboxState.ncanvases);
 }
 
 function getSandboxState(codemirror) {
@@ -133,7 +132,7 @@ function initSandboxEditor(sandboxState) {
     $.spawnNewSandbox(getSandboxState(codemirror));
   });
   $$.ncanvases.on('change', function() {
-    changeCanvasCount();
+    changeCanvasCount(Number(this.value));
     runCode(codemirror);
     saveSandboxState(codemirror);
   });
