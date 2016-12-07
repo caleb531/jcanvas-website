@@ -4,7 +4,6 @@ title: jCanvas
 subtitle: jQuery meets the HTML5 canvas
 permalink: /
 id: home
-scripts: home
 ---
 
 <div id="home-intro" class="home-section box" markdown="1">
