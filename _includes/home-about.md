@@ -1,5 +1,5 @@
 
-### Seriously, what *is* jCanvas?
+### Seriously, what is jCanvas?
 
 jCanvas is a JavaScript library, written using jQuery and for jQuery, that wraps
 around the HTML5 canvas API, adding new features and capabilities, many of which
