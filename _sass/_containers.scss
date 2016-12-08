@@ -117,12 +117,12 @@ $ad-height: 160px;
   max-height: $ad-height;
   margin: 0 auto;
 }
-main {
+#ad-container + main {
   margin-bottom: $ad-height;
 }
 @include layout(compact) {
   $ad-height: 100px;
-  main {
+  #ad-container + main {
     margin-bottom: $ad-height;
   }
   .adsbygoogle {
