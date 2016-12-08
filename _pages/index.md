@@ -15,8 +15,8 @@ show_ads: true
   {% include home-features.md %}
 </div>
 
-<div id="home-syntax" class="home-section box column-right" markdown="1">
-  {% include home-syntax.md %}
+<div id="home-example" class="home-section box column-right" markdown="1">
+  {% include home-example.md %}
 </div>
 
 <div class="clearfix"></div>

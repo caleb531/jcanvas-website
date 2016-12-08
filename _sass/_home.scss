@@ -77,8 +77,8 @@ hr {
   text-align: center;
 }
 #home-features,
-#home-syntax {
-  min-height: 300px;
+#home-example {
+  min-height: 245px;
 }
 
 // Features
@@ -92,7 +92,7 @@ hr {
     margin: 0;
   }
   li {
-    margin-bottom: 1em;
+    margin-bottom: 0.8em;
   }
   a {
     position: relative;
@@ -101,8 +101,8 @@ hr {
     font-size: 10pt;
   }
 }
-// Syntax
-#home-syntax {
+// Code example
+#home-example {
   @include layout(compact) {
     float: none;
   }
