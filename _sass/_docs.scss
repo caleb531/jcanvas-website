@@ -81,7 +81,7 @@ h1 {
 }
 
 // Section's menu of subsections
-#docs-section > h2 {
+#docs-section > h2.menu {
   position: relative;
   padding-left: 10px;
   &:hover {

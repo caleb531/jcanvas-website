@@ -26,16 +26,21 @@ $('.drawer-toggle').on('click', function() {
 // Add list of subsections to the given documentation section
 $.fn.addDocsSubsectionList = function () {
   var $section = this;
-  var $subsections = $('<ul id="docs-section-subsections" class="box">');
-  $section.find('h3').each(function () {
-    $subsections.append('<li><a href="#' + this.id + '">' + $(this).text() + '</a>');
-  });
-  $section
-  .find('h2')
-  .append($subsections)
-  .on('click', function() {
-    $(this).toggleClass('open');
-  });
+  var $subsectionsMenu = $('<ul id="docs-section-subsections" class="box">');
+  var $subsectionHeadings = $section.find('h3');
+  if ($subsectionHeadings.length > 0) {
+    $subsectionHeadings.each(function () {
+      $subsectionsMenu.append('<li><a href="#' + this.id + '">' + $(this).text() + '</a>');
+    });
+    $section
+    .find('h2')
+    .eq(0)
+    .append($subsectionsMenu)
+    .on('click', function() {
+      $(this).toggleClass('open');
+    })
+    .addClass('menu');
+  }
 };
 
 // Add drawers to page where needed
