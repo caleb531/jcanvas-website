@@ -1,5 +1,5 @@
 ---
-title: Bubbletoonz!
+title: Bubbletoonz
 author: Dave Edwards
 direct_url: http://bubbletoonz.com/
 ---
