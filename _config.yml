@@ -41,6 +41,8 @@ gems:
   - jekyll-sitemap
   - stringex
 exclude:
+  - README.md
+  - LICENSE.txt
   - Gemfile
   - Gemfile.lock
 
