@@ -34,6 +34,8 @@ incremental: true
 kramdown:
   auto_id_stripping: true
   transliterated_header_ids: true
+sass:
+  style: :compressed
 include:
   - _pages
 gems:
