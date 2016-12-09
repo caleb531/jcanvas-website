@@ -12,7 +12,7 @@ You are welcome and encouraged to clone this repository so you can have a local 
 ### 1. Clone repository
 
 ```bash
-git clone https://github.com/caleb531/jcanvas-site.git
+git clone https://github.com/caleb531/jcanvas-website.git
 ```
 
 ### 2. Install Jekyll and Bundler
@@ -46,4 +46,4 @@ bundle exec jekyll serve
 
 ## Contributing
 
-See any mistakes in the documentation or errors in the code? Please submit an [issue](https://github.com/caleb531/jcanvas-site/issues) or [pull request](https://github.com/caleb531/jcanvas-site/pulls)! All code contributions are welcome.
+See any mistakes in the documentation or errors in the code? Please submit an [issue](https://github.com/caleb531/jcanvas-website/issues) or [pull request](https://github.com/caleb531/jcanvas-website/pulls)! All code contributions are welcome.
