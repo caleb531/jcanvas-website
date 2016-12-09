@@ -30,7 +30,15 @@ gem install bundler
 bundle install
 ```
 
-### 4. Serve site locally
+### 4. Download submodules
+
+The site includes the jCanvas source repository as a submodule, so be sure to initialize that too.
+
+```bash
+git submodule update --init --recursive
+```
+
+### 5. Serve site locally
 
 ```bash
 bundle exec jekyll serve
