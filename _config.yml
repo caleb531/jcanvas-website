@@ -67,14 +67,14 @@ defaults:
   -
     # Use the core_docs layout for all doc sections by default
     scope:
-      path: ''
+      path: ""
       type: core_docs
     values:
       layout: docs
   -
     # Use the plugin_docs layout for all plugin doc sections by default
     scope:
-      path: ''
+      path: ""
       type: plugin_docs
     values:
       layout: docs
