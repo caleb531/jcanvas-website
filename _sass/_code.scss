@@ -21,7 +21,6 @@ div.highlighter-rouge {
   background-clip: padding-box;
   font-family: $monospace;
   color: #333;
-  overflow: scroll;
   &.has-demo {
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
@@ -37,7 +36,7 @@ div.highlighter-rouge {
     text-align: left;
     font-size: 11pt;
     white-space: pre;
-    overflow: auto;
+    overflow-x: auto;
     @include layout(compact) {
       font-size: 12pt;
     }
