@@ -71,6 +71,7 @@ defaults:
       type: core_docs
     values:
       layout: docs
+      show_ads: true
   -
     # Use the plugin_docs layout for all plugin doc sections by default
     scope:
@@ -78,3 +79,4 @@ defaults:
       type: plugin_docs
     values:
       layout: docs
+      show_ads: true
