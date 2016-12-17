@@ -75,6 +75,10 @@ If you are contacting me to report a jCanvas bug, please include the following i
 
 Remember, the more you tell me, the more I can help. ;)
 
+## Documentation or website updates
+
+The entire jCanvas website (including all documentation) is [publicly available on GitHub](https://github.com/caleb531/jcanvas-website). If you find an issue or want to suggest additional documentation, please [create an issue](https://github.com/caleb531/jcanvas-website/issues) or [submit a pull request](https://github.com/caleb531/jcanvas-website/pulls).
+
 ## Contact Me
 
 If you have any questions regarding jCanvas or have a bug report to submit, please first check the Documentation or the FAQ above; your question may be already answered there! If you still can't find an answer, you can contact me in several ways
