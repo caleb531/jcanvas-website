@@ -19,7 +19,7 @@ email: caleb@calebevans.me
 description: > # this means to ignore newlines until "baseurl:"
   A jQuery plugin that makes the HTML5 canvas easy to work with. Features include layers, events, drag-and-drop, animation, and much more.
 baseurl: "/jcanvas" # the subpath of your site, e.g. /blog
-url: "http://projects.calebevans.me/jcanvas" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://projects.calebevans.me/jcanvas" # the base hostname & protocol for your site, e.g. http://example.com
 
 # Serve settings
 host: 0.0.0.0 # Enables local site to be accessed from other devices on network
