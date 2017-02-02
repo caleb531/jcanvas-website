@@ -1,6 +1,11 @@
 (function() {
 $(document).ready(function() {
 
+// The pattern to replace in image paths; this allows image paths in the live
+// code editors (e.g. "images/fish.jpg" to be rewritten to point to the correct
+// URL on the server (e.g. "assets/images/fish.jpg")
+var imagePathPattern = /(images\/(?:\w+)\.jpg)/gi;
+
 // Initialize FastClick to eliminate the dreaded 300ms tap delay
 FastClick.attach(document.body);
 
@@ -36,6 +41,11 @@ $.spawnNewSandbox = function (sandboxState) {
   } else {
     sessionStorage.removeItem('jcanvas-sandbox');
   }
+};
+
+// Modify any image paths to point to the real images directory
+$.jCanvasCorrectImagePaths = function (code) {
+    return code.replace(imagePathPattern, '/jcanvas/assets/$1');
 };
 
 // Allow user to test any example in Sandbox

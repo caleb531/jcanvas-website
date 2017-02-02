@@ -84,7 +84,7 @@ function runCode(codemirror) {
   $$.editor.removeClass('error');
   $$.console.html('');
   try {
-    new Function(codemirror.getValue())();
+    new Function($.jCanvasCorrectImagePaths(codemirror.getValue()))();
   } catch(error) {
     // Report any errors to the editor
     $$.editor.addClass('error');

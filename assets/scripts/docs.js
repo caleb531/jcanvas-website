@@ -5,8 +5,6 @@ var $docsSections = $('#docs-sections');
 var $docsSection = $('#docs-section');
 // The pattern to replace jQuery canvas selectors
 var canvasSelectorPattern = /\$\(['"](.*?)canvas(.*?)\1\)/gi;
-// The pattern to replace image paths
-var imagePathPattern = /(images\/(?:\w+)\.jpg)/gi;
 // The pattern to detect if code runs asynchronous functions
 var asyncPattern = /drawImage|createPattern|(?:type: (['"])image\1)/gi;
 
@@ -48,8 +46,7 @@ $docsSection.addDocsSubsectionList();
 
 // Run the given demo code on the given canvas
 function runDemo(code, $demoCanvas) {
-  // Modify any image paths to point to the real images directory
-  code = code.replace(imagePathPattern, '/jcanvas/assets/$1');
+  code = $.jCanvasCorrectImagePaths(code);
   // Inject canvas jQuery element into demo code
   code = code.replace(canvasSelectorPattern, '$demoCanvas');
   new Function(['$demoCanvas'], code)($demoCanvas);
