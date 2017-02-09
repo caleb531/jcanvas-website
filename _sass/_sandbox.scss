@@ -107,6 +107,11 @@ div.CodeMirror-gutter pre {
   color: #999;
 }
 
+// Change text selection color to blue
+.CodeMirror-focused .CodeMirror-selected {
+  background-color: #bdf;
+}
+
 // Error console
 #sandbox-console {
   display: none;
