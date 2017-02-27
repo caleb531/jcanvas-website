@@ -26,11 +26,11 @@ For consistency, the same behavior applies when cropping an image, which also ca
 
 It is also important to note that for numerical jCanvas properties such as `x`, `y`, `height`, `strokeWidth`, *etc.*, jCanvas requires that their respective values be numbers, *not* strings.
 
-### My jCanvas handles don't rotate!
+### Why aren't my jCanvas handles rotating?
 
 That's because I haven't added official support for rotation to my Handles plugin. I have [an experimental branch](https://github.com/caleb531/jcanvas/tree/feature-handles-rotation/plugins) on GitHub where I am testing support for rotation, however please be aware that the implementation is rather buggy. Writing the code for dragging rotated handles is surprisingly tricky; I welcome pull requests from any brave souls who wish to give it a try.
 
-### How do I use custom web fonts with jCanvas?
+### Why aren't my custom web fonts rendering?
 
 If your web font CSS is embedded on the page via `<link>`, then the success of your font loading in jCanvas is completely contingent on your font loading before your jCanvas code executes. To ensure this, wrap your relevant jCanvas code in a `window` `load` event callback.
 
@@ -40,7 +40,7 @@ $(window).load(function () {
 });
 ```
 
-### setPixels() doesn't work locally!
+### Why isn't setPixels() working on my local machine?
 
 This is probably because you are testing your app from a `file://` URL, which most browsers won't allow; you need to serve your app from a local server instead. See [this StackOverflow post](http://stackoverflow.com/questions/19869150/getimagedata-cross-origin-error) for more details. 
 
