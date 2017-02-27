@@ -26,6 +26,24 @@ For consistency, the same behavior applies when cropping an image, which also ca
 
 It is also important to note that for numerical jCanvas properties such as `x`, `y`, `height`, `strokeWidth`, *etc.*, jCanvas requires that their respective values be numbers, *not* strings.
 
+### Why are my layers reappearing after calling clearCanvas()?
+
+The `clearCanvas()` method is *not* meant to be used if you are using the jCanvas Layer API, because the API handles redrawing for you in many cases, and so if you try to clear the canvas. you layers will eventually be redrawn by jCanvas when it deems necessary.
+
+If you want to hide a layer temporarily, use `setLayer()` to set the layer's `visible` property, then call `drawLayers()`:
+
+```javascript
+$('canvas').setLayer('myLayerName', {
+  visible: false // set to true instead to show the layer again
+}).drawLayers();
+```
+
+If you want to remove a layer permanently, call `removeLayer()` followed by `drawLayers()`:
+
+```javascript
+$('canvas').removeLayer('myLayerName').drawLayers();
+```
+
 ### Why aren't my jCanvas handles rotating?
 
 That's because I haven't added official support for rotation to my Handles plugin. I have [an experimental branch](https://github.com/caleb531/jcanvas/tree/feature-handles-rotation/plugins) on GitHub where I am testing support for rotation, however please be aware that the implementation is rather buggy. Writing the code for dragging rotated handles is surprisingly tricky; I welcome pull requests from any brave souls who wish to give it a try.
