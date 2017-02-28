@@ -11,7 +11,7 @@ A quadratic curve consists of three components:
 
 You can draw one or more contiguous quadratic curves using the `drawQuadratic()` method.
 
-```javascript
+```js
 $('canvas').drawQuadratic({
   strokeStyle: '#000',
   strokeWidth: 5,
@@ -31,7 +31,7 @@ A Beziér curve consists of four components:
 
 You can draw one or more contiguous Bézier curves using the `drawBezier()` method.
 
-```javascript
+```js
 $('canvas').drawBezier({
   strokeStyle: '#000',
   strokeWidth: 5,

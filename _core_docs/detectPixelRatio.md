@@ -8,7 +8,7 @@ For these devices, the method will increase the dimensional width and height of 
 
 The method also accepts a callback function as its only argument, which, in turn, accepts the device's pixel ratio as *its* only argument.
 
-```javascript
+```js
 $('canvas').detectPixelRatio(function(ratio) {
   // Run some code depending on the device pixel ratio
 });

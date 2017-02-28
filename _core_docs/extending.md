@@ -12,7 +12,7 @@ The `extend()` method accepts one object containing three properties:
     1. The context of the canvas
     2. The parameters object the method will receive when called
 
-```javascript
+```js
 $.jCanvas.extend({
   name: 'pluginName',
   props: {
@@ -28,7 +28,7 @@ $.jCanvas.extend({
 
 To demonstrate how this works, we'll be creating a method that draws a heart on the canvas.
 
-```javascript
+```js
 // Create a drawHeart() method
 $.jCanvas.extend({
   name: 'drawHeart',
@@ -87,11 +87,11 @@ The jCanvas object (`$.jCanvas`) provides a few useful methods for integrating y
   - `setCanvasFont()`: Sets the font of the canvas context based on the `fontStyle`, `fontSize`, and `fontFamily` properties.
   - `measureText()`: Augments the given parameter object with the calculated `width` and `height` of the text. Accepts an array of strings (representing lines of text) as a fourth argument.
 
-```javascript
+```js
 $.jCanvas.detectEvents(this, ctx, params);
 ```
 
-```javascript
+```js
 $.jCanvas.closePath(this, ctx, params);
 ```
 

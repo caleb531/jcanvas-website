@@ -10,7 +10,7 @@ You can draw an arc using the `drawArc()` method. The size of an arc is determin
 
 jCanvas considers zero degrees to lie due north of the arc (like the 12 on an analog clock).
 
-```javascript
+```js
 // Draw a 90-degree arc
 $('canvas').drawArc({
   strokeStyle: '#000',
@@ -24,7 +24,7 @@ $('canvas').drawArc({
 
 If you omit the `start` and `end` properties, the arc defaults to a full circle.
 
-```javascript
+```js
 // Draw a full circle
 $('canvas').drawArc({
   strokeStyle: '#000',
@@ -38,7 +38,7 @@ $('canvas').drawArc({
 
 The `start` and `end` values are measured in degrees by default. If you'd prefer to use radians, include the `inDegrees` property with a value of `false`.
 
-```javascript
+```js
 // Draw a black semicircle
 $('canvas').drawArc({
   fillStyle: 'black',
@@ -54,7 +54,7 @@ $('canvas').drawArc({
 
 Using the `closed` property, you can also close an arc, which connects the start and end points.
 
-```javascript
+```js
 // Draw a closed red arc
 $('canvas').drawArc({
   strokeStyle: '#c33',

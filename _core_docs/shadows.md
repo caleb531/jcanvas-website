@@ -4,7 +4,7 @@ title: Shadows
 
 To create a generic shadow, use the `shadowColor` and `shadowBlur` properties:
 
-```javascript
+```js
 $('canvas').drawArc({
   fillStyle: '#58d',
   shadowColor: '#000',
@@ -18,7 +18,7 @@ $('canvas').drawArc({
 
 The shadow can be offset relative to itself using the `shadowX` and `shadowY` properties:
 
-```javascript
+```js
 $('canvas').drawArc({
   fillStyle: '#58d',
   strokeStyle: '#8e3',

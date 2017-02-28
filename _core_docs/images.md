@@ -2,7 +2,7 @@
 title: Images
 ---
 
-```javascript
+```js
 $('canvas').drawImage({
   source: 'images/fish.jpg',
   x: 150, y: 150
@@ -11,7 +11,7 @@ $('canvas').drawImage({
 
 ### Custom width/height
 
-```javascript
+```js
 $('canvas').drawImage({
   source: 'images/fish.jpg',
   x: 50, y: 50,
@@ -23,7 +23,7 @@ $('canvas').drawImage({
 
 If you want to maintain proportions of an image, use the `scale` property (the scale is a multiple, with `1` as the baseline).
 
-```javascript
+```js
 $('canvas').drawImage({
   source: 'images/fish.jpg',
   x: 150, y: 150,
@@ -35,7 +35,7 @@ $('canvas').drawImage({
 
 You can also use an image DOM element as the value for the `source` property.
 
-```javascript
+```js
 $('canvas').drawImage({
   source: $('#fish')[0],
   x: 50, y: 50,
@@ -50,7 +50,7 @@ In jCanvas, images are drawn asynchronously because they must load before they c
 
 To address this, jCanvas allows you to run a callback function once the image has loaded, using the `load` event.
 
-```javascript
+```js
 // Function for drawing an arc
 function arc() {
   $('canvas').drawArc({
@@ -79,7 +79,7 @@ Including the `sx`, `sy`, `sWidth`, or `sHeight` properties allows you to choose
   - `sx:` Defines the x-position of the crop region
   - `sy:` Defines the y-position of the crop region
 
-```javascript
+```js
 $('canvas').drawImage({
   source: 'images/ladybug.jpg',
   x: 150, y: 150,
@@ -91,7 +91,7 @@ $('canvas').drawImage({
 
 By default, the `sx` and `sy` properties defines the center of the crop region (for consistency). To change this, set the `cropFromCenter` property to `false`.
 
-```javascript
+```js
 $('canvas').drawImage({
   source: 'images/fish.jpg',
   x: 150, y: 150,
@@ -108,7 +108,7 @@ Now, the `sx` and `sy` properties define the top-left corner of the crop region,
 
 Beginning with version 13.04.05, image layers will always load completely before successive layers are drawn, as long as you use `addLayer()` in conjunction with `drawLayers()`:
 
-```javascript
+```js
 $('canvas').addLayer({
   type: 'image',
   source: 'images/fish.jpg',

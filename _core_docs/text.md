@@ -10,7 +10,7 @@ The resulting text on the canvas is determined by the value of the `text` proper
   - `fontSize`
   - `fontFamily`
 
-```javascript
+```js
 $('canvas').drawText({
   fillStyle: '#9cf',
   strokeStyle: '#25a',
@@ -32,7 +32,7 @@ However, you can also specify the number as a string with additional units attac
 
 Just like other shapes, the `drawText()` method respects the value of the `fromCenter` and transformation properties such as `rotate`.
 
-```javascript
+```js
 $('canvas').drawText({
   fillStyle: '#cfc',
   strokeStyle: '#000',
@@ -52,7 +52,7 @@ $('canvas').drawText({
 
 You can animate the font size of text using the `scale`, `scaleX`, or `scaleY` properties.
 
-```javascript
+```js
 $('canvas').drawText({
   layer: true,
   fillStyle: '#9cf',
@@ -80,7 +80,7 @@ The method accepts a layer identifier (either the layer's index, or its name). T
 
 In the example below, the circle is only as wide as the text inside of it.
 
-```javascript
+```js
 // Draw text
 $('canvas').drawText({
   layer: true,
@@ -108,7 +108,7 @@ You can also define a maximum line width for the text using the `maxWidth` prope
 
 Manually adding a line break can be done so by adding the standard newline character in your string (`\n`).
 
-```javascript
+```js
 $('canvas').drawText({
   fillStyle: '#36c',
   fontStyle: 'bold',
@@ -124,7 +124,7 @@ $('canvas').drawText({
 
 If you wish to align your text to the `left` or `right` (rather than the `center` by default), use the `align` property.
 
-```javascript
+```js
 $('canvas').drawText({
   fillStyle: '#36c',
   fontStyle: 'bold',
@@ -143,7 +143,7 @@ With the above `align` property, the text will, by default, appear to align the 
 
 The `respectAlign` property will ensure that the text's (x, y) coordinates are in line with either the left or right margin (depending of the value of the `align` property). Therefore, enabling this property will require you to adjust your `x` position accordingly.
 
-```javascript
+```js
 $('canvas').drawText({
   fillStyle: '#36c',
   fontStyle: 'bold',
@@ -163,7 +163,7 @@ The `lineHeight` property will change the line height of your text. The value of
 
 For example, the demo below will double the line height of the text it draws.
 
-```javascript
+```js
 $('canvas').drawText({
   fillStyle: '#36c',
   fontStyle: 'bold',
@@ -179,7 +179,7 @@ $('canvas').drawText({
 
 A line height with a negative value will swap any lines of text (*e.g.* the top line becomes the bottom line).
 
-```javascript
+```js
 $('canvas').drawText({
   fillStyle: '#36c',
   fontStyle: 'bold',
@@ -199,7 +199,7 @@ Note that a negative line height will produce a negative number when retrieving 
 
 jCanvas can also draw arc text (that is, text along an arc). Doing so only requires specifying one extra property: the `radius` property.
 
-```javascript
+```js
 $('canvas').drawText({
   fillStyle: '#c33',
   fontFamily: 'Ubuntu, sans-serif',
@@ -212,7 +212,7 @@ $('canvas').drawText({
 
 For arc text only, there exists an optional `letterSpacing` which controls the spacing between characters along the arc.
 
-```javascript
+```js
 $('canvas').drawText({
   fillStyle: '#c33',
   fontFamily: 'Ubuntu, sans-serif',
@@ -230,7 +230,7 @@ Technically speaking, the value of the `letterSpacing` property represents a mul
 
 Sometimes, you may wish to orient the text such that it curves upward (like a smile). Normally, attempting to do so will yield undesirable flipped text.
 
-```javascript
+```js
 $('canvas').drawText({
   fillStyle: '#c33',
   fontFamily: 'Ubuntu, sans-serif',
@@ -244,7 +244,7 @@ $('canvas').drawText({
 
 However, you can set the `flipArcText` property to `true` and the text will be flipped to be readable again.
 
-```javascript
+```js
 $('canvas').drawText({
   fillStyle: '#c33',
   fontFamily: 'Ubuntu, sans-serif',

@@ -8,7 +8,7 @@ The `addLayer()` method adds a layer to the canvas in the form of an object or a
 
 If the input is an object, you must specify the `type` property (i.e. the type of drawing associated with the properties you specify). Recognized types include `rectangle`, `arc`, `line`, `quadratic`, `bezier`, `text`, and many others.
 
-```javascript
+```js
 // Create a rectangle layer
 $('canvas').addLayer({
   type: 'rectangle',
@@ -21,7 +21,7 @@ $('canvas').addLayer({
 
 You can also add a layer using the `layer` property with any method.
 
-```javascript
+```js
 // Create and draw a rectangle layer
 $('canvas').drawRect({
   layer: true,
@@ -37,7 +37,7 @@ Because we are creating a layer and calling the `drawRect()` method simultaneous
 
 To name a layer, use the `name` property. This name can be used later to retrieve, remove, or animate the layer.
 
-```javascript
+```js
 // Create a named layer
 $('canvas').drawRect({
   layer: true,
@@ -54,7 +54,7 @@ Note that the layer `name` must be unique (that is, no two layers on the canvas 
 
 To assign one or more groups to a layer, use the `groups` property. Doing so will not change the order in which the layer is drawn. The property is merely for categorization purposes.
 
-```javascript
+```js
 $('canvas').drawRect({
   layer: true,
   groups: ['myBoxes'],
@@ -67,7 +67,7 @@ $('canvas').drawRect({
 
 To dynamically add an existing layer to a group, use the `addLayerToGroup()` method.
 
-```javascript
+```js
 $('canvas').drawRect({
   layer: true,
   name: 'box',
@@ -80,7 +80,7 @@ $('canvas').addLayerToGroup('box', 'myBoxes');
 
 To dynamically remove an existing layer from a group, use the `removeLayerFromGroup()` method. Note that this does not remove the layer from jCanvas.
 
-```javascript
+```js
 $('canvas').drawRect({
   layer: true,
   groups: ['myBoxes'],
@@ -98,7 +98,7 @@ To temporarily hide a layer, set its `visible` property to `false`. This also wi
 
 To show the layer again, set its `visible` property to `true`.
 
-```javascript
+```js
 // This layer should be invisible
 $('canvas').drawRect({
   layer: true,
@@ -115,7 +115,7 @@ Instead of an object, the `addLayer()` method accepts a function using the `fn` 
 
 jCanvas refers to these types of layers as *function layers*.
 
-```javascript
+```js
 // Create a named function layer
 $('canvas').addLayer({
   type: 'function',
@@ -130,7 +130,7 @@ $('canvas').addLayer({
 
 This also works when using the `draw()` method and the `layer` property.
 
-```javascript
+```js
 // Create and draw a named function layer
 $('canvas').draw({
   layer: true,
@@ -146,7 +146,7 @@ $('canvas').draw({
 
 You can also set a layer's index (in the current layers array) using the `index` property.
 
-```javascript
+```js
 $('canvas')
 .addLayer({
   type: 'rectangle',
@@ -180,7 +180,7 @@ Keep in mind that a layer's index cannot be greater than the current number of l
 
 You can also store arbitrary data on any jCanvas layer using the `data` property.
 
-```javascript
+```js
 // Create and draw a rectangle layer
 $('canvas').drawRect({
   layer: true,

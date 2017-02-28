@@ -4,7 +4,7 @@ title: Patterns
 
 The `createPattern()` method returns a canvas pattern object, which can be used as a fill or stroke style for any drawing.
 
-```javascript
+```js
 function draw(patt) {
   $('canvas').drawEllipse({
     fillStyle: patt,
@@ -25,7 +25,7 @@ var patt = $('canvas').createPattern({
 
 You can also use an image DOM element as the value for the `source` property.
 
-```javascript
+```js
 function draw(patt) {
   $('canvas').drawEllipse({
     fillStyle: patt,
@@ -50,7 +50,7 @@ To do so, use a function as the value of the `source` property. In your function
 
 Finally, if you would rather use a existing canvas element, feel free to do so using the `source` property.
 
-```javascript
+```js
 // Create pattern
 var patt = $('canvas').createPattern({
   // Define width/height of pattern (before repeating)

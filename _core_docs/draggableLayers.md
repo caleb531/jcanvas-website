@@ -6,7 +6,7 @@ title: Draggable Layers
 
 Layers can be made draggable using the `draggable` property.
 
-```javascript
+```js
 $('canvas')
 .drawArc({
   layer: true,
@@ -26,7 +26,7 @@ $('canvas')
 
 By default, draggable shapes will *not* move to the front when dragged. To change this behavior, set the `bringToFront` property to `true`.
 
-```javascript
+```js
 $('canvas')
 .drawArc({
   layer: true,
@@ -54,7 +54,7 @@ You can provide callbacks for when any drag event occurs by defining `dragstart`
   - `dragstop`: Triggers when you stop dragging a layer
   - `dragcancel`: Triggers when you drag a layer off the edge of the canvas
 
-```javascript
+```js
 $('canvas')
 .drawArc({
   layer: true,
@@ -85,7 +85,7 @@ jCanvas allows you to assign a drag group to a layer. This means that when the l
 
 This draggable grouping is achieved when you add the `dragGroups` property to any (typically all) layers in the same layer group.
 
-```javascript
+```js
 // Both layers will be dragged together
 $('canvas')
 .drawArc({
@@ -112,7 +112,7 @@ $('canvas')
 
 You can restrict the dragging of any layer to either the *x* or *y* axis using the `restrictDragToAxis` property.
 
-```javascript
+```js
 $('canvas')
 .drawArc({
   layer: true,

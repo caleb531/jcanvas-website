@@ -16,7 +16,7 @@ Note that you are not *required* to specify both the `startArrow` and `endArrow`
 
 ### Lines
 
-```javascript
+```js
 $('canvas').drawLine({
   strokeStyle: '#000',
   strokeWidth: 4,
@@ -32,7 +32,7 @@ $('canvas').drawLine({
 
 ### Vectors
 
-```javascript
+```js
 $('canvas').drawVector({
   strokeStyle: '#000',
   strokeWidth: 4,
@@ -48,7 +48,7 @@ $('canvas').drawVector({
 
 ### Quadratic Curves
 
-```javascript
+```js
 $('canvas').drawQuadratic({
   strokeStyle: '#000',
   strokeWidth: 4,
@@ -64,7 +64,7 @@ $('canvas').drawQuadratic({
 
 ### Bézier Curves
 
-```javascript
+```js
 $('canvas').drawBezier({
   strokeStyle: '#000',
   strokeWidth: 4,
@@ -85,7 +85,7 @@ $('canvas').drawBezier({
 
 ### Arcs
 
-```javascript
+```js
 $('canvas').drawArc({
   strokeStyle: '#000',
   strokeWidth: 4,
@@ -102,7 +102,7 @@ $('canvas').drawArc({
 
 ### Paths
 
-```javascript
+```js
 $('canvas').drawPath({
   strokeStyle: '#000',
   strokeWidth: 5,

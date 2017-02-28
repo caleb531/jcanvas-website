@@ -10,7 +10,7 @@ In any event callback, you have access to the layer's `eventX` and `eventY` prop
 
 In the following example, the closer you hover to the circle's center, the more transparent it will become.
 
-```javascript
+```js
 $('canvas').drawArc({
   layer: true,
   fillStyle: '#c33',
@@ -35,7 +35,7 @@ That is, the larger the values are, the faster you are dragging the layer. Conve
 
 In the following example, the opacity of the circle is determined by the speed at which you drag it; that is, the circle will become more faded the faster you drag it.
 
-```javascript
+```js
 $('canvas').drawArc({
   layer: true,
   draggable: true,
@@ -55,7 +55,7 @@ $('canvas').drawArc({
 
 The `cursors` property is used to display a specific cursor when a particular layer event fires.
 
-```javascript
+```js
 $('canvas').drawText({
   layer: true,
   draggable: true,
@@ -86,7 +86,7 @@ Please note that the cursor always reverts to its previous state when you mouse 
 
 The `intangible` property essentially allows you to "click through" a layer as if it didn't exist.
 
-```javascript
+```js
 $('canvas')
 .drawArc({
   layer: true,

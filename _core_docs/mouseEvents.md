@@ -8,7 +8,7 @@ jCanvas supports a number of standard mouse events that you can use on most type
 
 When you click the star in the demo below, it will spin.
 
-```javascript
+```js
 // Click the star to make it spin
 $('canvas').drawPolygon({
   layer: true,
@@ -32,7 +32,7 @@ This example utilizes multiple layers with events attached.
 
 When calling the `animateLayer()` method, you should pass it the layer object to animate that particular layer. Failing to do so will animate the first layer by default.
 
-```javascript
+```js
 // Create five cascading stars
 for (var i=0; i<5; i+=1) {
 
@@ -58,7 +58,7 @@ for (var i=0; i<5; i+=1) {
 
 The `mouseover` and `mouseout` can be used separately, or together.
 
-```javascript
+```js
 // Hover over the triangle to rotate it
 $('canvas').drawPolygon({
   layer: true,

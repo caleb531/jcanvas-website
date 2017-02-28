@@ -4,7 +4,7 @@ title: Polygons
 
 The `drawPolygon()` method creates a regular (equal-angled) polygon.
 
-```javascript
+```js
 // Draw a triangle
 $('canvas').drawPolygon({
   strokeStyle: 'black',
@@ -15,7 +15,7 @@ $('canvas').drawPolygon({
 });
 ```
 
-```javascript
+```js
 // Draw a polygon
 $('canvas').drawPolygon({
   fillStyle: '#589',
@@ -35,7 +35,7 @@ To create concave polygons (polygons that point inward), include the `concavity`
   - A value equal to `0` does not project at all.
   - A value of `1` will render the polygon invisible, because the sides will point in completely.
 
-```javascript
+```js
 // Draw a star
 $('canvas').drawPolygon({
   fillStyle: '#36c',
@@ -46,7 +46,7 @@ $('canvas').drawPolygon({
 });
 ```
 
-```javascript
+```js
 // Draw a badge-like shape
 $('canvas').drawPolygon({
   fillStyle: '#3c6',
@@ -58,7 +58,7 @@ $('canvas').drawPolygon({
 });
 ```
 
-```javascript
+```js
 // Draw a shield-like shape
 $('canvas').drawPolygon({
   fillStyle: '#36c',

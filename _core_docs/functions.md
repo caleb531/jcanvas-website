@@ -6,7 +6,7 @@ jCanvas allows you to use a user-defined function as the value for any fill or s
 
 Functions as fill/stroke styles can be useful for dynamic computation of those styles.
 
-```javascript
+```js
 // Tshe circle changes color as you drag it
 $('canvas').drawArc({
   layer: true,

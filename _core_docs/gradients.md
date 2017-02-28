@@ -8,7 +8,7 @@ Gradient colors are defined using `c1`, `c2`, `c3`, and so on. Optional color st
 
 ### Linear
 
-```javascript
+```js
 var linear = $('canvas').createGradient({
   x1: 0, y1: 20,
   x2: 0, y2: 80,
@@ -23,7 +23,7 @@ $('canvas').drawArc({
 });
 ```
 
-```javascript
+```js
 var linear = $('canvas').createGradient({
   x1: 0, y1: 20,
   x2: 0, y2: 80,
@@ -42,7 +42,7 @@ $('canvas').drawArc({
 
 Radial gradients are created when the `r1` or `r2` properties are defined.
 
-```javascript
+```js
 var radial = $('canvas').createGradient({
   x1: 50, y1: 50,
   x2: 50, y2: 50,
@@ -63,7 +63,7 @@ There are cases where you may wish to animate a layer that has a gradient fill/s
 
 To demonstrate this behavior, consider the following example:
 
-```javascript
+```js
 // Create and store a linear gradient
 var gradient = $('canvas').createGradient({
   // Gradient is drawn relative to layer position
@@ -87,7 +87,7 @@ $('canvas').animateLayer('box', {
 
 To solve this problem, by using a function as the layer's fill/stroke style, you can achieve a gradient which moves with its layer. Note that the below example assumes that the gradient's coordinates are relative to the layer's size and position.
 
-```javascript
+```js
 // Create layer with gradient fill
 $('canvas').drawRect({
   layer: true,

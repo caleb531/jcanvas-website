@@ -8,7 +8,7 @@ All jCanvas methods are regular jQuery methods, and are used in the same manner.
 
 Most jCanvas methods accept a map of properties, which may be listed in any order.
 
-```javascript
+```js
 // Draw a circle on the canvas
 $('canvas').drawArc({
   fillStyle: 'black',
@@ -25,7 +25,7 @@ Most numeric property values are measured in pixels, although some are relative 
 
 Most jCanvas methods support [chaining](http://tobiasahlin.com/blog/quick-guide-chaining-in-jquery/) for cleaner and faster code.
 
-```javascript
+```js
 $('canvas').drawArc({
   fillStyle: 'black',
   x: 100, y: 100,
@@ -42,7 +42,7 @@ $('canvas').drawArc({
 
 As demonstrated in the examples above, jCanvas can draw the same drawing on multiple canvases.
 
-```javascript
+```js
 // Applies to all canvas elements
 $('canvas').drawArc({
   fillStyle: 'black',
@@ -51,7 +51,7 @@ $('canvas').drawArc({
 });
 ```
 
-```javascript
+```js
 // Applies to all canvas elements with a class of 'demo'
 $('canvas.demo').drawArc({
   fillStyle: 'black',

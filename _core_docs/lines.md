@@ -8,7 +8,7 @@ A line path in jCanvas is, essentially, one or more contiguous line segments.
 
 You can draw a line path using the `drawLine()` method. Coordinates are defined using `x1`, `y1`, `x2`, `y2`, and so on (as many as necessary).
 
-```javascript
+```js
 $('canvas').drawLine({
   strokeStyle: '#000',
   strokeWidth: 10,
@@ -23,7 +23,7 @@ $('canvas').drawLine({
 
 You can, optionally, close a line path, which will connect its start and end points with an extra line. To do so, use the `closed` property.
 
-```javascript
+```js
 $('canvas').drawLine({
   strokeStyle: '#000',
   strokeWidth: 10,
@@ -39,7 +39,7 @@ $('canvas').drawLine({
 
 You can round the corners of a line path using the `rounded` property.
 
-```javascript
+```js
 $('canvas').drawLine({
   strokeStyle: '#000',
   strokeWidth: 10,
@@ -55,7 +55,7 @@ $('canvas').drawLine({
 
 If you wish to utilize an array containing your points, you can easily construct the `drawLine()` object using a loop.
 
-```javascript
+```js
 // The .drawLine() object
 var obj = {
   strokeStyle: '#000',
@@ -87,7 +87,7 @@ Browsers began recently adopting the ability to create dashed lines. To do so in
 
 The `strokeDash` property accepts an array of one or two numbers, and the `strokeDashOffset` property accepts a single number. See the [Properties]({{ site.baseurl }}/docs/properties/) page for specific usage details.
 
-```javascript
+```js
 $('canvas').drawLine({
   strokeStyle: '#000',
   strokeWidth: 3,

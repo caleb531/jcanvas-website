@@ -8,7 +8,7 @@ A rectangle in jCanvas is, essentially, a rectangle of any width or height.
 
 You can draw a rectangle using the `drawRect()` method. The size of a rectangle is determined by its `width` and `height` properties.
 
-```javascript
+```js
 $('canvas').drawRect({
   fillStyle: '#000',
   x: 150, y: 100,
@@ -23,7 +23,7 @@ The `fromCenter` property (used above) determines if a rectangle's `x` and `y` p
 
 For example, consider the following rectangles. They both have the same `x` and `y` property values, but only one has its `fromCenter` property set to `false`.
 
-```javascript
+```js
 $('canvas').drawRect({
   fillStyle: '#c33',
   x: 100, y: 60,
@@ -41,7 +41,7 @@ $('canvas').drawRect({
 
 If you want to make `fromCenter` `false` by default for all shapes, do so using the `$.jCanvas.defaults` object.
 
-```javascript
+```js
 $.jCanvas.defaults.fromCenter = false;
 $('canvas').drawRect({
   fillStyle: '#6a6',
@@ -56,7 +56,7 @@ $('canvas').drawRect({
 
 You may round the corners of a rectangle using the `cornerRadius` property.
 
-```javascript
+```js
 $('canvas').drawRect({
   fillStyle: '#36c',
   x: 150, y: 100,
@@ -66,7 +66,7 @@ $('canvas').drawRect({
 });
 ```
 
-```javascript
+```js
 $('canvas').drawRect({
   strokeStyle: '#c33',
   strokeWidth: 4,

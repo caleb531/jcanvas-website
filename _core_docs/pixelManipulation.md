@@ -13,7 +13,7 @@ The `each` callback function accepts two parameters:
 
 ### Basic usage
 
-```javascript
+```js
 function invert() {
   $(this).setPixels({
     x: 150, y: 100,
@@ -39,7 +39,7 @@ $('canvas').drawImage({
 
 In this example, hovering over the image will manipulate the pixels closest to the part you hovered over.
 
-```javascript
+```js
 function invert(params) {
   $(this).setPixels({
     x: params.eventX, y: params.eventY,

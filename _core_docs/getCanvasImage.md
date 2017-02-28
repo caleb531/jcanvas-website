@@ -4,13 +4,13 @@ title: Get Canvas Image
 
 The `getCanvasImage()` method retrieves the canvas's image data as a string. The string is a base64-encoded image URL, which can be used as a valid image URL for any purpose.
 
-```javascript
+```js
 $('canvas').getCanvasImage();
 ```
 
 The default image type is PNG, although you can specify PNG, or JPEG.
 
-```javascript
+```js
 $('canvas').getCanvasImage('png');
 $('canvas').getCanvasImage('jpeg');
 ```
@@ -19,7 +19,7 @@ $('canvas').getCanvasImage('jpeg');
 
 If you choose to retrieve the canvas image as a JPEG, you may also set the JPEG's quality (which ranges from `0` to `1`).
 
-```javascript
+```js
 $('canvas').getCanvasImage('jpeg', 0.5);
 ```
 

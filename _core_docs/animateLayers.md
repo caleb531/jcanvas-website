@@ -17,7 +17,7 @@ The `animateLayer()` method accepts up to five arguments:
     - A `jQuery.fx` object containing properties related to the animation.
     - The layer being animated.
 
-```javascript
+```js
 // Create and draw a rectangle layer
 $('canvas').drawRect({
   layer: true,
@@ -46,7 +46,7 @@ jCanvas can animate numeric values, as well as colors (hex, RGB, or color names)
 
 Additionally, you may use the string `'+="` or `"-="` to animate a property from the current value.
 
-```javascript
+```js
 $('canvas').animateLayer(0, {
   rotate: '+=360',
   x: '-=50'
@@ -59,7 +59,7 @@ You can also use a callback function . Whatever the function returns will be use
 
 As always, the value of `this` in your callback function is the canvas DOM element.
 
-```javascript
+```js
 $('canvas').animateLayer('myLayer', {
   x: function(layer) {
     return Math.pow(layer.x, 2);
@@ -75,7 +75,7 @@ You can also animate all layers in a layer group using the `animateLayerGroup()`
 
 The method accepts the same basic arguments as the `animateLayer()` method,
 
-```javascript
+```js
 $('canvas')
 // Draw a circle
 .drawArc({
@@ -103,23 +103,23 @@ $('canvas')
 
 Similar to jQuery's `stop()` method, you can stop any layer animation in progress by calling the `stopLayer()` method.
 
-```javascript
+```js
 $('canvas').stopLayer(0);
 ```
 
-```javascript
+```js
 $('canvas').stopLayer('myBox');
 ```
 
 Additionally, you may (optionally) pass in `true` as a second argument, which will also remove any queued animations.
 
-```javascript
+```js
 $('canvas').stopLayer('myBox', true);
 ```
 
 You can also delay animation for all layers in a group using the `delayLayerGroup()` method
 
-```javascript
+```js
 $('canvas').stopLayerGroup('myGroup');
 ```
 
@@ -129,13 +129,13 @@ Similar to jQuery's `delay()` method, you can delay any layer's animation queue 
 
 The method accepts two arguments: the layer name/index, and the number of milliseconds to delay animation.
 
-```javascript
+```js
 $('canvas').delayLayer('myBox', 500);
 ```
 
 You can also delay animation for all layers in a group using the `delayLayerGroup()` method
 
-```javascript
+```js
 $('canvas').delayLayerGroup('myGroup', 500);
 ```
 
@@ -143,7 +143,7 @@ $('canvas').delayLayerGroup('myGroup', 500);
 
 Just like jQuery, the `animateLayer()` method in jCanvas supports an alternate syntax for providing additional options (like a `step` callback).
 
-```javascript
+```js
 $('canvas').animateLayer('myBox', {
   x: 200
 }, {

@@ -6,7 +6,7 @@ title: Masking
 
 To create a shape that masks other shapes, set the `mask` property to `true`.
 
-```javascript
+```js
 // This shape is a mask
 $('canvas').drawArc({
   fillStyle: '#36b',
@@ -30,7 +30,7 @@ To restore the mask and prevent masking of future shapes, call the `restoreCanva
 
 You can also create layers that mask other layers by using the `mask` property. A layer that is a mask is generally referred to as a 'layer mask'.
 
-```javascript
+```js
 // This layer is a mask
 $('canvas').drawArc({
   layer: true,
@@ -58,7 +58,7 @@ However, when creating layer masks, the `restoreCanvas()` method must be made in
 
 In this example, move the shapes to see how layer masks affects the draggability of other shapes.
 
-```javascript
+```js
 // Draw blue square
 $('canvas').drawRect({
   layer: true,

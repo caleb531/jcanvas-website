@@ -4,7 +4,7 @@ title: Translate Canvas
 
 The `translateCanvas()` method translates the canvas by the given values.
 
-```javascript
+```js
 $('canvas').translateCanvas({
   translateX: 200, translateY: 100
 })
@@ -20,7 +20,7 @@ $('canvas').translateCanvas({
 
 You can also set both the `translateX` and `translateY` properties using the `translate` property.
 
-```javascript
+```js
 $('canvas').translateCanvas({
   translate: 100
 })
@@ -36,7 +36,7 @@ $('canvas').translateCanvas({
 
 Rather than translating the entire canvas, you can translate an individual shape using any of these three properties.
 
-```javascript
+```js
 $('canvas')
 .drawRect({
   fillStyle: '#474',
@@ -54,7 +54,7 @@ Although it may seem slightly counterintuitive, the `translateCanvas()` method c
 
 To do this, set the `layer` property to `true`, just as you would to make any other shape a layer. In addition, just as you can with any other type of layer, you can give this layer a name using the `name` property.
 
-```javascript
+```js
 $('canvas').translateCanvas({
   layer: true,
   name: 'translate1'
@@ -63,7 +63,7 @@ $('canvas').translateCanvas({
 
 However, whenever you're done translating the canvas, you must restore the transformation using the `restoreCanvas()` method.
 
-```javascript
+```js
 $('canvas').restoreCanvas({
   layer: true
 });

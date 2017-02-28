@@ -10,7 +10,7 @@ This method is *not* meant to be used if you are using the jCanvas Layer API, be
 
 If you want to hide a layer temporarily, use `setLayer()` to set the layer's `visible` property, then call `drawLayers()`:
 
-```javascript
+```js
 $('canvas').setLayer('myLayerName', {
   visible: false // set to true instead to show the layer again
 }).drawLayers();
@@ -18,7 +18,7 @@ $('canvas').setLayer('myLayerName', {
 
 If you want to remove a layer permanently, call `removeLayer()` followed by `drawLayers()`:
 
-```javascript
+```js
 $('canvas').removeLayer('myLayerName').drawLayers();
 ```
 
@@ -26,7 +26,7 @@ $('canvas').removeLayer('myLayerName').drawLayers();
 
 If nothing is passed, the entire canvas is cleared.
 
-```javascript
+```js
 $('canvas').clearCanvas()
 ```
 
@@ -34,7 +34,7 @@ $('canvas').clearCanvas()
 
 Clearing a section works in the same way as [drawing a rectangle]({{ site.baseurl }}/docs/rectangles/), with the rectangle being drawn from its center (by default).
 
-```javascript
+```js
 $('canvas')
 .drawEllipse({
   fillStyle: '#000',

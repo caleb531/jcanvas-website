@@ -6,7 +6,7 @@ title: Scale Canvas
 
 The `scaleCanvas()` method scales the canvas from the included point.
 
-```javascript
+```js
 $('canvas').scaleCanvas({
   x: 100, y: 100,
   scaleX: 1.5, scaleY: 3
@@ -23,7 +23,7 @@ $('canvas').scaleCanvas({
 
 You can also set both the `scaleX` and `scaleY` properties using the `scale` property.
 
-```javascript
+```js
 $('canvas').scaleCanvas({
   scale: 2
 })
@@ -39,7 +39,7 @@ $('canvas').scaleCanvas({
 
 Rather than scaling the entire canvas, you can scale an individual shape using any of these three properties: `scale`, `scaleX`, or `scaleY`.
 
-```javascript
+```js
 // This square is scaled to be a rectangle
 $('canvas').drawRect({
   fillStyle: '#36c',
@@ -55,7 +55,7 @@ Although it may seem slightly counterintuitive, the `scaleCanvas()` method can a
 
 To do this, set the `layer` property to `true`, just as you would to make any other shape a layer. In addition, just as you can with any other type of layer, you can give this layer a name using the `name` property.
 
-```javascript
+```js
 $('canvas').scaleCanvas({
   layer: true,
   name: 'scale1'
@@ -64,7 +64,7 @@ $('canvas').scaleCanvas({
 
 However, whenever you're done scaling the canvas, you must restore the transformation using the `restoreCanvas()` method.
 
-```javascript
+```js
 $('canvas').restoreCanvas({
   layer: true
 });

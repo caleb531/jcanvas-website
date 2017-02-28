@@ -10,7 +10,7 @@ You can draw a path using the `drawPath()` method. It accepts a variable number 
 
 Note that for each of these subpath arguments, you must specify the type of the subpath (for instance, `type: 'line'`).
 
-```javascript
+```js
 // Draw the outline of a cartoon face
 $('canvas').drawPath({
   strokeStyle: '#000',
@@ -34,7 +34,7 @@ Now, if you were to draw the quadratic curve in the above example using the `dra
 
 If you *were* to include the `x1` and `y1` properties, the curve would no longer be connected to the previous subpath. Consider the following example.
 
-```javascript
+```js
 // Draw a face with the jaw disconnected
 $('canvas').drawPath({
   strokeStyle: '#000',
@@ -61,7 +61,7 @@ You can also use the `drawPath()` method to create sequences of interconnected a
 
 The following example will create a flower shape using arcs.
 
-```javascript
+```js
 $('canvas')
 .drawPath({
   strokeStyle: '#000',
@@ -109,7 +109,7 @@ Just like every other path type in jCanvas, generic paths support arrows at eith
 
 For generic paths, arrow properties must be specified in a subpath object, not the entire path object.
 
-```javascript
+```js
 // Draw the outline of a cartoon face
 $('canvas').drawPath({
   strokeStyle: '#000',

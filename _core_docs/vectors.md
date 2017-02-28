@@ -6,7 +6,7 @@ Besides using the `drawLine()` method for drawing line segments on the canvas, y
 
 Using the `drawVector()` method, each line segment is created from an angle and a length. These segments are defined using `a1`, `l1`, `a2`, `l2`, and so on.
 
-```javascript
+```js
 // Draw a line that is 100px long at 45deg from the north
 $('canvas').drawVector({
   strokeStyle: '#000',
@@ -19,7 +19,7 @@ $('canvas').drawVector({
 
 Additionally, you can specify a starting point for your vector using the `x` and `y` properties.
 
-```javascript
+```js
 $('canvas').drawVector({
   strokeStyle: '#000',
   strokeWidth: 4,
@@ -32,7 +32,7 @@ $('canvas').drawVector({
 
 Of course, you can create multiple vectors. Keep in mind that no matter where any vector is positioned, its angle is always relative to the north (or 12:00 according to any analog clock).
 
-```javascript
+```js
 // Draw a bent path
 $('canvas').drawVector({
   strokeStyle: '#000',
@@ -47,7 +47,7 @@ $('canvas').drawVector({
 
 Because the `drawVector()` method creates line segments just like the `drawLine()` method, the `drawVector()` method  accepts many of the same properties as `drawLine()`. These properties include (but are not limited to) `closed` and `rounded`.
 
-```javascript
+```js
 // Draw a closed path (making a triangle)
 $('canvas').drawVector({
   strokeStyle: '#000',

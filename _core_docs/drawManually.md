@@ -4,7 +4,7 @@ title: Draw Manually
 
 With the `draw()` method, you can draw on the canvas using native canvas methods (or any method, for that matter). To do this, write your code inside a function 
 
-```javascript
+```js
 $('canvas').draw({
   fn: function(ctx) {
     ctx.fillStyle = '#333';
@@ -17,7 +17,7 @@ $('canvas').draw({
 
 The `draw()` method can be used to draw any other jCanvas drawing (although usually this is not necessary).
 
-```javascript
+```js
 $('canvas').draw({
   type: 'rectangle',
   fillStyle: '#c33',
@@ -28,7 +28,7 @@ $('canvas').draw({
 
 The above code is equivalent to the following:
 
-```javascript
+```js
 $('canvas').drawRect({
   fillStyle: '#c33',
   x: 100, y: 100,

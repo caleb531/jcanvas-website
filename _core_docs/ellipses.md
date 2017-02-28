@@ -8,7 +8,7 @@ An ellipse in jCanvas is, essentially, an elongated circle. The size of an ellip
 
 You can draw an ellipse using the `drawEllipse()` method.
 
-```javascript
+```js
 $('canvas').drawEllipse({
   fillStyle: '#c33',
   x: 150, y: 100,
@@ -16,7 +16,7 @@ $('canvas').drawEllipse({
 });
 ```
 
-```javascript
+```js
 $('canvas').drawEllipse({
   strokeStyle: '#36c',
   strokeWidth: 4,

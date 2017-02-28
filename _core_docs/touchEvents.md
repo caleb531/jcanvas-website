@@ -4,7 +4,7 @@ title: Touch Events
 
 jCanvas supports native touch events on iOS and Android using the `touchstart`, `touchend`, and `touchmove` events.
 
-```javascript
+```js
 // This demo will only work on iOS and Android
 $('canvas').drawRect({
   layer: true,
@@ -30,7 +30,7 @@ $('canvas').drawRect({
 
 As a bonus, jCanvas will also convert existing `mousedown`, `mouseup`, and `mousemove` callbacks to their respective touch events on iOS and Android. In other words, jCanvas code that you've written for desktop browsers will be automatically optimized for mobile browsers on iOS and Android.
 
-```javascript
+```js
 // This demo will work on iOS, Android, and desktop browsers
 $('canvas').drawRect({
   layer: true,

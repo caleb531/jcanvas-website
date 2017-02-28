@@ -10,7 +10,7 @@ jCanvas supports a type of event hook called a canvas event hook. Canvas event h
 
 To define an event hook, call the `setEventHooks()` method with the event hooks you would like to set. If you wish to remove an existing event hook, simply set its value to `null`.
 
-```javascript
+```js
 $('canvas').setEventHooks({
   add: function(layer) {
     // code to run whenever a layer is added
@@ -20,7 +20,7 @@ $('canvas').setEventHooks({
 
 Similarly, to retrieve the object containing all event hooks for a canvas, use the `getEventHooks()` method.
 
-```javascript
+```js
 $('canvas').getEventHooks();
 ```
 
@@ -28,7 +28,7 @@ $('canvas').getEventHooks();
 
 jCanvas supports another type of event hook called a global event hook. Global event hooks apply to all layers on all canvases, and do not override canvas event hooks.
 
-```javascript
+```js
 $.jCanvas.eventHooks.add = function(layer) {
   // code to run when any layer on any canvas is added
 };

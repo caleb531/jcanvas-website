@@ -8,7 +8,7 @@ jCanvas allows you to run a callback when you perform a layer-related action, su
 
 The `add` event fires when a layer is added (but *before* it is drawn).
 
-```javascript
+```js
 $('canvas').drawRect({
   layer: true,
   fillStyle: '#6c0',
@@ -24,7 +24,7 @@ $('canvas').drawRect({
 
 The `remove` event fires when a layer is removed using the `removeLayer()` method.
 
-```javascript
+```js
 $('canvas').drawRect({
   layer: true,
   fillStyle: '#6c0',
@@ -42,7 +42,7 @@ Note that when using methods such as the `removeLayerGroup()` method, a `remove`
 
 The `change` event fires when a layer's properties are changed using the `setLayer()` method.
 
-```javascript
+```js
 $('canvas').drawRect({
   layer: true,
   fillStyle: '#6c0',
@@ -60,7 +60,7 @@ Note that when using methods such as the `setLayerGroup()` method, a `change` ev
 
 The `move` event fires when a layer is moved to a new position using the `moveLayer()` method.
 
-```javascript
+```js
 $('canvas').drawRect({
   fillStyle: '#6c0',
   x: 100, y: 100,
@@ -75,7 +75,7 @@ $('canvas').drawRect({
 
 jCanvas provides the following events pertaining to animation: `animatestart`, `animate`, and `animateend`.
 
-```javascript
+```js
 $('canvas').drawRect({
   fillStyle: '#6c0',
   x: 100, y: 100,
@@ -95,7 +95,7 @@ $('canvas').drawRect({
 
 jCanvas also supports a `stop` event, which fires when the `stopLayer()` method is called.
 
-```javascript
+```js
 $('canvas').drawRect({
   fillStyle: '#6c0',
   x: 100, y: 100,
@@ -108,7 +108,7 @@ $('canvas').drawRect({
 
 Similarly, jCanvas supports a `delay` event, which fires when the `delayLayer()` method is called.
 
-```javascript
+```js
 $('canvas').drawRect({
   fillStyle: '#6c0',
   x: 100, y: 100,

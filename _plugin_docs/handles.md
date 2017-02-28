@@ -14,7 +14,7 @@ It's important to note that each drag handle is an actual jCanvas layer.
 
 The following example will draw a resizable rectangle.
 
-```javascript
+```js
 // Add rectangle layer w/o drawing
 $('canvas').addLayer({
   type: 'rectangle',
@@ -41,7 +41,7 @@ $('canvas').addLayer({
 
 By default, plugin resizes the rectangle from its center. However, you can easily change this behavior by setting the `resizeFromCenter` property to `false`.
 
-```javascript
+```js
 $('canvas').addLayer({
   type: 'rectangle',
   draggable: true,
@@ -67,7 +67,7 @@ $('canvas').addLayer({
 
 You can also constrain the original proportions of the shape using the `constrainProportions` property.
 
-```javascript
+```js
 $('canvas').addLayer({
   type: 'rectangle',
   draggable: true,
@@ -90,7 +90,7 @@ $('canvas').addLayer({
 
 Of course, this constraining also works when resizing from a corner (that is, when `resizeFromCenter` is `false`).
 
-```javascript
+```js
 $('canvas').addLayer({
   type: 'rectangle',
   draggable: true,
@@ -115,7 +115,7 @@ $('canvas').addLayer({
 
 The aspect ratio to which the image is constrained is determined by the layer's initial `width` and `height` attributes. However, you can also define an explicit aspect ratio for the layer using the `aspectRatio` property.
 
-```javascript
+```js
 $('canvas').addLayer({
   type: 'rectangle',
   draggable: true,
@@ -146,7 +146,7 @@ The plugin allows for handles to be placed on either the corners of the layer, o
 
 To specify where handles are placed, specify the `handlePlacement` property with any of the following values: `'corners'`, `'sides'`, or `'both'`. The default value is `'corners'`.
 
-```javascript
+```js
 $('canvas').addLayer({
   type: 'rectangle',
   draggable: true,
@@ -168,7 +168,7 @@ $('canvas').addLayer({
 .drawLayers();
 ```
 
-```javascript
+```js
 $('canvas').addLayer({
   type: 'rectangle',
   draggable: true,
@@ -194,7 +194,7 @@ $('canvas').addLayer({
 
 You can also add handles to ellipse layers in the same manner, though this is more practical using the `handlePlacement` property.
 
-```javascript
+```js
 $('canvas').addLayer({
   type: 'ellipse',
   draggable: true,
@@ -220,7 +220,7 @@ $('canvas').addLayer({
 
 You can also add handles to image layers in the same manner. However, note that in order for this to work properly, you *must* specify the `width` and `height` properties.
 
-```javascript
+```js
 // Draw a resizable image
 $('canvas').addLayer({
   type: 'image',
@@ -246,7 +246,7 @@ $('canvas').addLayer({
 
 You can also add handles to line layers in the same manner.
 
-```javascript
+```js
 $('canvas').addLayer({
   type: 'line',
   draggable: true,
@@ -271,7 +271,7 @@ $('canvas').addLayer({
 
 You can also add handles to quadratic or Bézier curve layers. It is recommended that you also set guides on your curve layers (via the `guide` property) so that the control points and anchor points are visually connected.
 
-```javascript
+```js
 $('canvas').addLayer({
   type: 'quadratic',
   draggable: true,
@@ -297,7 +297,7 @@ $('canvas').addLayer({
 .drawLayers();
 ```
 
-```javascript
+```js
 $('canvas').addLayer({
   type: 'bezier',
   draggable: true,
@@ -327,7 +327,7 @@ $('canvas').addLayer({
 
 The plugin also adds the following custom events: `handlestart`, `handlemove`, `handlestop`
 
-```javascript
+```js
 // Add rectangle layer w/o drawing
 $('canvas').addLayer({
   type: 'rectangle',

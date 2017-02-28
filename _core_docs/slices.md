@@ -10,7 +10,7 @@ You can draw a slice using the `drawSlice()` method. The size of a slice is dete
 
 The position of a slice is determined by its `x` and `y` properties. These coordinates lie at the tip of the slice.
 
-```javascript
+```js
 // Draw a 60&deg; slice
 $('canvas').drawSlice({
   fillStyle: '#f63',
@@ -27,7 +27,7 @@ You can create a simple pie chart in jCanvas using the `drawSlice()` method.
 
 In the example below, the `spread` property determines the spacing between slices. The property's value is a multiple of the slice's radius (from 0 to 1).
 
-```javascript
+```js
 $('canvas')
 .drawSlice({
   layer: true,
@@ -63,7 +63,7 @@ $('canvas')
 
 To add a text label to your pie chart, create a text layer using the `drawText()` method.
 
-```javascript
+```js
 $('canvas')
 .drawSlice({
   layer: true,

@@ -11,7 +11,7 @@ Using the `setLayer()` method, you can set the properties of a layer. The method
 
 Note that this method does not automatically redraw the canvas.
 
-```javascript
+```js
 $('canvas').setLayer('myBox', {
   fillStyle: '#36b',
   rotate: 30,
@@ -25,7 +25,7 @@ Note that the you can use the `'+="` and `"-="` strings to increment and decreme
 
 You can also set properties on *all* layers using the `setLayers()` method.
 
-```javascript
+```js
 // Set properties of all layers
 $('canvas').setLayers({
   fillStyle: '#36b',
@@ -36,7 +36,7 @@ $('canvas').setLayers({
 
 Note that the `setLayers()` method also accepts a callback function as s second argument, which filters the layers.
 
-```javascript
+```js
 // Set properties of all draggable layers
 $('canvas').setLayers({
   fillStyle: '#36b',
@@ -53,7 +53,7 @@ Using the `setLayerGroup()` method, you can set any properties of all layers in 
 
 Also note that this method does not automatically redraw the canvas.
 
-```javascript
+```js
 // Set properties for all layers
 // in the group 'myBoxes'
 $('canvas').setLayerGroup('myBoxes', {
@@ -71,7 +71,7 @@ The method accepts a layer ID (name, index, or object), and the new index to whi
 
 Also note that this method does not automatically redraw the canvas.
 
-```javascript
+```js
 // Move the layer with the name 'box' to index 1
 $('canvas').moveLayer('box', 1);
 ```
@@ -82,26 +82,26 @@ jCanvas provides a `removeLayer()` method for removing one layer from the jCanva
 
 Also note that this method does not automatically redraw the canvas.
 
-```javascript
+```js
 // Removes the layer at index 0
 $('canvas').removeLayer(0);
 ```
 
-```javascript
+```js
 // Removes the layer with the name 'myBox'
 $('canvas').removeLayer('myBox');
 ```
 
 Furthermore, you can remove all layers using the `removeLayers()` method.
 
-```javascript
+```js
 // Remove all layers
 $('canvas').removeLayers();
 ```
 
 As with the `getLayers()` and `setLayers()` methods, the `removeLayers()` method also accepts a callback function.
 
-```javascript
+```js
 // Remove all draggable layers
 $('canvas').removeLayers(function(layer) {
   return (layer.draggable === true);
@@ -112,14 +112,14 @@ $('canvas').removeLayers(function(layer) {
 
 Using the `removeLayerGroup()` method, You can remove any layers from the layers array which are in the same layer group.
 
-```javascript
+```js
 // Remove all layers in the group 'myBoxes'
 $('canvas').removeLayerGroup('myBoxes');
 ```
 
 To dynamically remove an existing layer from a group, use the `removeLayerFromGroup()` method.
 
-```javascript
+```js
 // Remove the layer with the name 'box'
 // from the group 'myBoxes'
 $('canvas').removeLayerFromGroup('box', 'myBoxes');

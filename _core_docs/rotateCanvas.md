@@ -8,7 +8,7 @@ The `rotateCanvas()` method rotates the canvas from the included point.
 
 The `x` and `y` properties define the center of rotation.
 
-```javascript
+```js
 $('canvas').rotateCanvas({
   rotate: 45,
   x: 100, y: 100
@@ -25,7 +25,7 @@ $('canvas').rotateCanvas({
 
 Rather than rotating the entire canvas, you can rotate an individual shape using the `rotate` properties.
 
-```javascript
+```js
 // Rotate this rectangle by 30 degrees
 $('canvas').drawRect({
   fillStyle: '#c33',
@@ -37,7 +37,7 @@ $('canvas').drawRect({
 
 Please note that you can offset the center of rotation by specifying the `translateX` and `translateY` properties.
 
-```javascript
+```js
 // Rectangle rotates from its center
 $('canvas').drawRect({
   fillStyle: '#c33',
@@ -62,7 +62,7 @@ Although it may seem slightly counterintuitive, the `rotateCanvas()` method can 
 
 To do this, set the `layer` property to `true`, just as you would to make any other shape a layer. In addition, just as you can with any other type of layer, you can give this layer a name using the `name` property.
 
-```javascript
+```js
 $('canvas').rotateCanvas({
   layer: true,
   name: 'rotate1'
@@ -71,7 +71,7 @@ $('canvas').rotateCanvas({
 
 However, whenever you're done rotating the canvas, you must restore the transformation using the `restoreCanvas()` method.
 
-```javascript
+```js
 $('canvas').restoreCanvas({
   layer: true
 });

@@ -12,7 +12,7 @@ The event property's name is always the name of the event itself (`click`, `mous
 
 The value of this event property must be a function. This callback function also accepts one argument, which is the layer's object of properties, as used below. Additionally, the `this` keyword refers to the canvas DOM element.
 
-```javascript
+```js
 // Draw a green rectangle
 $('canvas').drawRect({
   layer: true,
@@ -29,11 +29,11 @@ $('canvas').drawRect({
 
 You can also manually trigger an existing event or trigger a nonexisting event to create your own. To do so, use the `triggerLayerEvent()` method.
 
-```javascript
+```js
 $('canvas').triggerLayerEvent('myLayer', 'click');
 ```
 
-```javascript
+```js
 $('canvas').triggerLayerEvent('myLayer', 'resize');
 ```
 
