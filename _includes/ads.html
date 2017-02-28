@@ -1,4 +1,4 @@
-{% if page.show_ads %}
+{% if jekyll.environment == 'production' and page.show_ads %}
   <div id="ad-container">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     <!-- jCanvas (responsive) -->
