@@ -53,7 +53,7 @@ function runDemo(code, $demoCanvas) {
 }
 
 // Add live canvas demo of each example (if example draws on canvas)
-$docsSection.find('div.language-javascript').each(function () {
+$docsSection.find('div.language-js').each(function () {
     var $codeBlock = $(this);
     // Initialize a demo canvas
     var $demoCanvas = $(document.createElement('canvas'));
