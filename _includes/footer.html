@@ -1,5 +1,9 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
-<script src="{{ site.baseurl }}/assets/jcanvas/jcanvas.min.js"></script>
+{% if jekyll.environment == 'production' %}
+  <script src="{{ site.baseurl }}/assets/jcanvas/jcanvas.min.js"></script>
+{% else %}
+  <script src="{{ site.baseurl }}/assets/jcanvas/jcanvas.js"></script>
+{% endif %}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js"></script>
 <script src="{{ site.baseurl }}/assets/scripts/global.js"></script>
 
