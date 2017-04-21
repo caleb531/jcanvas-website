@@ -11,7 +11,7 @@
 
   <script src="{{ site.baseurl }}/assets/scripts/docs.js"></script>
 
-  {% if page.collection == 'plugin_docs' %}
+  {% if page.collection == 'plugin_docs' and page.is_plugin %}
     <script src="{{ site.baseurl }}/assets/jcanvas/plugins/jcanvas-{{ page.slug }}.js"></script>
   {% endif %}
 
