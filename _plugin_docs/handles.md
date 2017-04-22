@@ -122,8 +122,8 @@ $('canvas').addLayer({
   fillStyle: '#fff',
   strokeStyle: '#c33',
   strokeWidth: 2,
-  x: 160, y: 150,
-  width: 150, height: 80,
+  x: 160, y: 130,
+  width: 80, height: 80,
   constrainProportions: true,
   // Constrain the rectangle to a square shape
   aspectRatio: 1,
