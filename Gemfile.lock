@@ -52,7 +52,7 @@ DEPENDENCIES
   stringex (~> 2.6)
 
 RUBY VERSION
-   ruby 2.3.2p217
+   ruby 2.4.1p111
 
 BUNDLED WITH
-   1.13.6
+   1.14.6
