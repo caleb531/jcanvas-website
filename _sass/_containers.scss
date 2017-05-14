@@ -138,7 +138,8 @@ $ad-height: 600px;
     height: $ad-height;
   }
   // Ensure that content at bottom of page is not obscured by floating ad
-  main {
+  main,
+  #docs-sections {
     margin-bottom: $ad-height;
   }
 }
