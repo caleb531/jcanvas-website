@@ -1,8 +1,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
 {% if jekyll.environment == 'production' %}
-  <script src="{{ site.baseurl }}/assets/jcanvas/jcanvas.min.js"></script>
+  <script src="{{ site.baseurl }}/assets/jcanvas/dist/min/jcanvas.min.js"></script>
 {% else %}
-  <script src="{{ site.baseurl }}/assets/jcanvas/jcanvas.js"></script>
+  <script src="{{ site.baseurl }}/assets/jcanvas/dist/jcanvas.js"></script>
 {% endif %}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js"></script>
 <script src="{{ site.baseurl }}/assets/scripts/global.js"></script>
@@ -12,7 +12,7 @@
   <script src="{{ site.baseurl }}/assets/scripts/docs.js"></script>
 
   {% if page.collection == 'plugin_docs' and page.is_plugin %}
-    <script src="{{ site.baseurl }}/assets/jcanvas/plugins/jcanvas-{{ page.slug }}.js"></script>
+    <script src="{{ site.baseurl }}/assets/jcanvas/dist/jcanvas-{{ page.slug }}.js"></script>
   {% endif %}
 
 {% endif %}
@@ -25,9 +25,9 @@
   {% for plugin_doc in site.plugin_docs %}
     {% if plugin_doc.is_plugin %}
       {% if jekyll.environment == 'production' %}
-        <script src="{{ site.baseurl }}/assets/jcanvas/plugins/jcanvas-{{ plugin_doc.slug }}.min.js"></script>
+        <script src="{{ site.baseurl }}/assets/jcanvas/dist/min/jcanvas-{{ plugin_doc.slug }}.min.js"></script>
       {% else %}
-        <script src="{{ site.baseurl }}/assets/jcanvas/plugins/jcanvas-{{ plugin_doc.slug }}.js"></script>
+        <script src="{{ site.baseurl }}/assets/jcanvas/dist/jcanvas-{{ plugin_doc.slug }}.js"></script>
       {% endif %}
     {% endif %}
   {% endfor %}
