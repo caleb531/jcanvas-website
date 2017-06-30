@@ -466,6 +466,18 @@ These are descriptions of every jCanvas property, their supported methods, and t
   - **Methods:** All drawing methods
   - **Values:** `null`, `'rectangle'`, `'arc'`, `'circle'`, `'ellipse'`, `'polygon'`, `'line'`, `'vector'`, `'quadratic'`, `'bezier'`, `'image'`, `'text'`, `'function'`
 
+### updateDragX
+
+  - **Description:** A callback function that modifies the x-value of a layer while it's being dragged; receives `layer` and `x` as arguments; must return a new x-value
+  - **Methods:** All drawing methods
+  - **Values:** `null`, any function
+
+### updateDragY
+
+  - **Description:** A callback function that modifies the y-value of a layer while it's being dragged; receives `layer` and `y` as arguments; must return a new y-value
+  - **Methods:** All drawing methods
+  - **Values:** `null`, any function
+
 ### visible
 
   - **Description:** If a jCanvas layer is drawn on the canvas
