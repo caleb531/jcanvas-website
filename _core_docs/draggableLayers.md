@@ -133,3 +133,31 @@ $('canvas')
 ```
 
 Please note that if a layer in a drag group has restricted draggability, then all the draggability of all other layers in that drag group will also be restricted *only when the original layer is dragged*.
+
+### Snap-to-grid dragging
+
+If you wish to have your layers snap to a grid when dragged, you can do with the
+`updateDragX` and `updateDragY` callbacks, along with some simple math.
+
+```js
+// The pixel multiple to snap to
+var snapToAmount = 40;
+// Round the given value to the nearest multiple of n
+function nearest(value, n) {
+  return Math.round(value / n) * n;
+}
+$('canvas')
+.drawArc({
+  layer: true,
+  draggable: true,
+  fillStyle: '#36c',
+  x: 160, y: 120,
+  radius: 50,
+  updateDragX: function (layer, x) {
+    return nearest(x, snapToAmount);
+  },
+  updateDragY: function (layer, y) {
+    return nearest(y, snapToAmount);
+  }
+})
+```
