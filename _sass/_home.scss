@@ -50,9 +50,14 @@ hr {
 #home-intro p:last-child {
   display: inline-block;
   vertical-align: middle;
-  font-size: 16pt;
-  a {
+  line-height: normal;
+  font-size: 0;
+  a:first-of-type {
     @extend button;
+    font-size: 16pt;
+  }
+  a:last-of-type {
+    font-size: 14px;
   }
 }
 #home-intro p:first-child {
