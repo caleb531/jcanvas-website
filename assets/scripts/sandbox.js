@@ -111,6 +111,13 @@ function initSandboxEditor(sandboxState) {
   codemirror.on('blur', function(obj) {
     $$.editor.removeClass('focused');
   });
+  // Insert spaces when tab key is pressed
+  codemirror.setOption('extraKeys', {
+    Tab: function (cm) {
+      var spaces = Array(cm.getOption('indentUnit') + 1).join(" ");
+      cm.replaceSelection(spaces);
+    }
+  });
 
   $('div.CodeMirror').on('keydown', function(event) {
     if (event.metaKey || event.ctrlKey) {
