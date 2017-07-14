@@ -55,8 +55,7 @@ You can provide callbacks for when any drag event occurs by defining `dragstart`
   - `dragcancel`: Triggers when you drag a layer off the edge of the canvas
 
 ```js
-$('canvas')
-.drawArc({
+$('canvas').drawArc({
   layer: true,
   draggable: true,
   bringToFront: true,
@@ -146,8 +145,7 @@ var snapToAmount = 40;
 function nearest(value, n) {
   return Math.round(value / n) * n;
 }
-$('canvas')
-.drawArc({
+$('canvas').drawArc({
   layer: true,
   draggable: true,
   fillStyle: '#36c',
