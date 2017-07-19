@@ -176,6 +176,37 @@ $('canvas')
 
 Keep in mind that a layer's index cannot be greater than the current number of layers. Therefore, you couldn't assign the first layer an index, because there are no other existing layers at that moment.
 
+You can also use a negative index; a value of `-1` will insert the layer before
+the last.
+
+```js
+$('canvas')
+.addLayer({
+  type: 'rectangle',
+  name: 'redBox',
+  fillStyle: '#c33',
+  x: 180, y: 150,
+  width: 100, height: 100
+})
+.addLayer({
+  type: 'rectangle',
+  name: 'greenBox',
+  fillStyle: '#585',
+  x: 150, y: 200,
+  width: 100, height: 100
+})
+// Normally on top, but moved to the bottom
+.addLayer({
+  type: 'rectangle',
+  name: 'blueBox',
+  index: -1,
+  fillStyle: '#36b',
+  x: 230, y: 180,
+  width: 100, height: 100
+})
+.drawLayers();
+```
+
 ### Storing Data
 
 You can also store arbitrary data on any jCanvas layer using the `data` property.
