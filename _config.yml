@@ -44,6 +44,7 @@ exclude:
   - LICENSE.txt
   - Gemfile
   - Gemfile.lock
+  - assets/jcanvas/node_modules
 
 # Collections used for new content types
 collections:
