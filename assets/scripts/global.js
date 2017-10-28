@@ -4,7 +4,7 @@ $(document).ready(function() {
 // The pattern to replace in image paths; this allows image paths in the live
 // code editors (e.g. "images/fish.jpg" to be rewritten to point to the correct
 // URL on the server (e.g. "assets/images/fish.jpg")
-var imagePathPattern = /(images\/(?:\w+)\.jpg)/gi;
+var imagePathPattern = /(images\/(?:\w+)\.(jpg|png|svg))/gi;
 
 // Initialize FastClick to eliminate the dreaded 300ms tap delay
 FastClick.attach(document.body);
