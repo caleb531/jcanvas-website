@@ -12,10 +12,7 @@ The `animateLayer()` method accepts up to five arguments:
   2. An object containing the properties to animate and their end values
   3. The duration of the animation in milliseconds (optional; defaults to `400`)
   4. The easing of the animation (optional; defaults to `'swing'`)
-  5. A callback function that runs when the animation completes (optional). It accepts the following arguments:
-    - The percentage of the animation which has completed (as a value from `0` to `1`).
-    - A `jQuery.fx` object containing properties related to the animation.
-    - The layer being animated.
+  5. A callback function that runs when the animation completes (optional); it accepts the layer object as its only argument
 
 ```js
 // Create and draw a rectangle layer
