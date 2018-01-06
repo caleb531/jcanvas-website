@@ -11,22 +11,24 @@ The `add` event fires when a layer is added (but *before* it is drawn).
 ```js
 $('canvas').drawRect({
   layer: true,
+  name: 'box',
   fillStyle: '#6c0',
   x: 100, y: 100,
   width: 100, height: 100,
   add: function(layer) {
-    // code to run when layer is added
+    // code to run when layer is first added
   }
 });
 ```
 
 ### The `remove` event
 
-The `remove` event fires when a layer is removed using the `removeLayer()` method.
+The `remove` event fires when a layer is removed using the `removeLayer()` method (or indirectly via `removeLayers()` or `removeLayerGroup()`).
 
 ```js
 $('canvas').drawRect({
   layer: true,
+  name: 'box',
   fillStyle: '#6c0',
   x: 100, y: 100,
   width: 100, height: 100,
@@ -34,41 +36,45 @@ $('canvas').drawRect({
     // code to run when layer is removed
   }
 });
+$('canvas').removeLayer('box');
 ```
-
-Note that when using methods such as the `removeLayerGroup()` method, a `remove` event will fire for each layer in the group.
 
 ### The `change` event
 
-The `change` event fires when a layer's properties are changed using the `setLayer()` method.
+The `change` event fires when a layer's properties are changed using the `setLayer()` method (or indirectly via `setLayers()` or `setLayerGroup()`).
 
 ```js
 $('canvas').drawRect({
   layer: true,
+  name: 'box',
   fillStyle: '#6c0',
   x: 100, y: 100,
   width: 100, height: 100,
   change: function(layer, props) {
-    // code to run when layer properties are changed
+    // code to run when layer properties change
   }
+});
+$('canvas').setLayer('box', {
+  x: 200
 });
 ```
 
-Note that when using methods such as the `setLayerGroup()` method, a `change` event will fire for each layer in the group.
-
 ### The `move` event
 
-The `move` event fires when a layer is moved to a new position using the `moveLayer()` method.
+The `move` event fires when a layer is moved to a new position using the `moveLayer()` method (or indirectly via `moveLayers()` or `moveLayerGroup()`).
 
 ```js
 $('canvas').drawRect({
+  layer: true,
+  name: 'box',
   fillStyle: '#6c0',
   x: 100, y: 100,
   width: 100, height: 100,
   move: function(layer) {
-    // code to run when layer is moved
+    // code to run when layer's order on canvas is changed
   }
 });
+$('canvas').moveLayer('box', 2);
 ```
 
 ### Animation events
@@ -77,6 +83,8 @@ jCanvas provides the following events pertaining to animation: `animatestart`, `
 
 ```js
 $('canvas').drawRect({
+  layer: true,
+  name: 'box',
   fillStyle: '#6c0',
   x: 100, y: 100,
   width: 100, height: 100,
@@ -91,12 +99,17 @@ $('canvas').drawRect({
     // code to run when animation ends
   }
 });
+$('canvas').animateLayer('box', {
+  x: 200, y: 300
+});
 ```
 
-jCanvas also supports a `stop` event, which fires when the `stopLayer()` method is called.
+jCanvas also supports a `stop` event, which fires when the animation is stopped using the `stoplayer()` method (or indirectly via `stopLayerGroup()`).
 
 ```js
 $('canvas').drawRect({
+  layer: true,
+  name: 'box',
   fillStyle: '#6c0',
   x: 100, y: 100,
   width: 100, height: 100,
@@ -104,9 +117,10 @@ $('canvas').drawRect({
     // code to run when animation is stopped
   }
 });
+$('canvas').stopLayer('box');
 ```
 
-Similarly, jCanvas supports a `delay` event, which fires when the `delayLayer()` method is called.
+Similarly, jCanvas supports a `delay` event, which fires when the `delayLayer()` method is called (or indirectly via `delayLayerGroup()`).
 
 ```js
 $('canvas').drawRect({
@@ -117,4 +131,5 @@ $('canvas').drawRect({
     // code to run when animation is delayed
   }
 });
+$('canvas').delayLayer('box', 300);
 ```
