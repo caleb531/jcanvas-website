@@ -114,7 +114,7 @@ Additionally, you may (optionally) pass in `true` as a second argument, which wi
 $('canvas').stopLayer('myBox', true);
 ```
 
-You can also delay animation for all layers in a group using the `delayLayerGroup()` method
+You can also stop animation for all layers in a group using the `stopLayerGroup()` method
 
 ```js
 $('canvas').stopLayerGroup('myGroup');
