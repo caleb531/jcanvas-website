@@ -127,7 +127,7 @@ $('canvas').drawRect({
   fillStyle: '#6c0',
   x: 100, y: 100,
   width: 100, height: 100,
-  delayed: function(layer) {
+  delay: function(layer) {
     // code to run when animation is delayed
   }
 });
