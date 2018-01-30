@@ -52,7 +52,7 @@ $('canvas').drawArc({
 });
 ```
 
-However, when creating layer masks, the `restoreCanvas()` method must be made into a layer using the `layer` property, as demonstrated above. For more information, see the [Restore Canvas]({{ site.baseurl }}/docs/restoreCanvas/) section.
+However, when creating layer masks, the `restoreCanvas()` method must be made into a layer using the `layer` property, as demonstrated above.
 
 ### Masking draggable layers
 
