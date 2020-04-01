@@ -54,7 +54,7 @@ hr {
   font-size: 0;
   a:first-of-type {
     @extend button;
-    font-size: 16pt;
+    font-size: 16pt !important;
   }
   a:last-of-type {
     font-size: 14px;
