@@ -2,7 +2,7 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://*.gstatic.com; img-src 'self' data: https://www.gravatar.com https://*.google-analytics.com; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdnjs.cloudflare.com https://*.google-analytics.com https://*.googlesyndication.com https://*.google.com; frame-src https://googleads.g.doubleclick.net; connect-src https://www.google-analytics.com" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://*.gstatic.com; img-src 'self' data: https://www.gravatar.com https://*.google-analytics.com https://www.googletagmanager.com; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdnjs.cloudflare.com https://*.google-analytics.com https://*.googlesyndication.com https://*.google.com https://www.googletagmanager.com; frame-src https://googleads.g.doubleclick.net; connect-src https://www.google-analytics.com https://www.googletagmanager.com" />
 
   {% if page.title and page.title != site.title %}
     {% if page.collection %}
@@ -34,6 +34,15 @@
       })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
       ga( 'create', '{{ site.google_analytics }}', 'auto' );
       ga( 'send', 'pageview' );
+    </script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SBMJ4WDFQL"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-SBMJ4WDFQL');
     </script>
   {% endif %}
 
