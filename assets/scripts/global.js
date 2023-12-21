@@ -6,9 +6,6 @@ $(document).ready(function() {
 // URL on the server (e.g. "assets/images/fish.jpg")
 var imagePathPattern = /(images\/(?:\w+)\.(jpg|png|svg))/gi;
 
-// Initialize FastClick to eliminate the dreaded 300ms tap delay
-FastClick.attach(document.body);
-
 // Add jQuery method which adds a "Try in Sandbox"
 $.fn.addSandboxTryButton = function () {
   this.prepend('<button class="try-in-sandbox edge-button">Try in Sandbox</button>');
