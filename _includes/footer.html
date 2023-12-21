@@ -2,7 +2,7 @@
 {% if jekyll.environment == 'production' %}
   <script src="{{ site.baseurl }}/assets/jcanvas/dist/min/jcanvas.min.js"></script>
 {% else %}
-  <script src="{{ site.baseurl }}/assets/jcanvas/dist/jcanvas.js"></script>
+  <script src="{{ site.baseurl }}/assets/jcanvas/dist/umd/jcanvas.js"></script>
 {% endif %}
 <script src="{{ site.baseurl }}/assets/scripts/global.js"></script>
 
@@ -11,7 +11,7 @@
   <script src="{{ site.baseurl }}/assets/scripts/docs.js"></script>
 
   {% if page.collection == 'plugin_docs' and page.is_plugin %}
-    <script src="{{ site.baseurl }}/assets/jcanvas/dist/jcanvas-{{ page.slug }}.js"></script>
+    <script src="{{ site.baseurl }}/assets/jcanvas/dist/umd/jcanvas-{{ page.slug }}.js"></script>
   {% endif %}
 
 {% endif %}
@@ -24,9 +24,9 @@
   {% for plugin_doc in site.plugin_docs %}
     {% if plugin_doc.is_plugin %}
       {% if jekyll.environment == 'production' %}
-        <script src="{{ site.baseurl }}/assets/jcanvas/dist/min/jcanvas-{{ plugin_doc.slug }}.min.js"></script>
+        <script src="{{ site.baseurl }}/assets/jcanvas/dist/umd/jcanvas-{{ plugin_doc.slug }}.js"></script>
       {% else %}
-        <script src="{{ site.baseurl }}/assets/jcanvas/dist/jcanvas-{{ plugin_doc.slug }}.js"></script>
+        <script src="{{ site.baseurl }}/assets/jcanvas/dist/umd/jcanvas-{{ plugin_doc.slug }}.js"></script>
       {% endif %}
     {% endif %}
   {% endfor %}
