@@ -1,6 +1,9 @@
 <script>
+  import { Prec } from "@codemirror/state"
+  import { keymap } from "@codemirror/view"
+  import { jCanvasLoad } from '$lib';
   import CodeMirror from "svelte-codemirror-editor";
-  import { basicSetup } from "codemirror"
+  import { minimalSetup } from "codemirror"
   import { javascript } from "@codemirror/lang-javascript"
   import { onMount } from 'svelte';
   import ExampleImages from '../ExampleImages.svelte';
@@ -93,7 +96,8 @@
   }
 
   // Run code
-  function runCode(codemirror) {
+  async function runCode(codemirror) {
+    await jCanvasLoad();
     resetCanvases(sandboxArea.querySelectorAll('canvas'));
     editorError = null;
     try {
@@ -114,32 +118,16 @@
     spawnNewSandbox(getSandboxState(codemirror));
   }
 
-  // Initialize the sandbox CodeMirror editor
-  function initSandboxEditor(sandboxState) {
-
-    setSandboxSettings(sandboxState);
-
-    // Add CSS class for when editor is focused
-    // codemirror.on('focus', function(obj) {
-    //   editor.addClass('focused');
-    // });
-    // codemirror.on('blur', function(obj) {
-    //   editor.removeClass('focused');
-    // });
-    // Insert spaces when tab key is pressed
-    jQuery('.cm-editor').on('keydown', function(event) {
-      if (event.metaKey || event.ctrlKey) {
-        // Press ctrl+enter to test
-        if (event.which === 13) {
-          runCode(codemirror);
-          saveSandboxState(codemirror);
-          return false;
-        }
-      }
-    });
-
-    runCode(codemirror);
-
+  function runCodeOnMetaEnter(codemirror, event) {
+    runCode();
+    saveSandboxState(codemirror);
+    // Per the CodeMirror 6 KeyBinding docs, returning false will run other
+    // handlers for the same key binding (causing a line break to be inserted in
+    // addition to running the new code); it seems that returning undefined /
+    // void will do the same, but returning `true` seems to do the trick to
+    // prevent this behavior altogether (source:
+    // <https://codemirror.net/docs/ref/#view.KeyBinding.run>)
+    return true;
   }
 
   onMount(() => {
@@ -147,7 +135,8 @@
       return;
     }
     let sandboxState = loadSandboxState();
-    initSandboxEditor(sandboxState);
+    setSandboxSettings(sandboxState);
+    runCode();
     editorHeight = sandboxArea.querySelector('#sandbox-editor-area').getBoundingClientRect().height;
   })
 
@@ -173,8 +162,14 @@
         </select>
       </div>
     </div>
-    <div id="sandbox-editor" class:error={editorError}>
-      <CodeMirror bind:value={editorContents} useTab extensions={[basicSetup]} lang={javascript()}  />
+    <!-- svelte-ignore a11y-no-static-element-interactions -->
+    <div id="sandbox-editor" class:error={editorError} >
+      <CodeMirror bind:value={editorContents} useTab extensions={[
+        minimalSetup,
+        Prec.highest(keymap.of([
+          { key: 'Mod-Enter', run: runCodeOnMetaEnter, preventDefault: true }
+        ]))
+      ]} lang={javascript()}  />
     </div>
     <div id="sandbox-console">
       {#if editorError}

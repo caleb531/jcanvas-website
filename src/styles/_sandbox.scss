@@ -43,7 +43,8 @@ article.page-sandbox {
   }
 }
 #sandbox-controls {
-  display: table;
+  display: flex;
+  align-items: center;
   width: 100%;
   box-sizing: border-box;
   padding: 2px 0;
@@ -52,7 +53,6 @@ article.page-sandbox {
   }
 }
 #sandbox-button-controls {
-  display: table-cell;
   text-align: left;
 }
 button {
@@ -66,11 +66,11 @@ button {
 label {
   font-size: 10pt;
 }
-#sandbox-ncanvases-controls {
-  display: table-cell;
+#sandbox-canvas-count-controls {
+  flex-grow: 1;
   text-align: right;
 }
-#sandbox-ncanvases {
+#sandbox-canvas-count {
   margin-left: 2px;
 }
 
@@ -86,6 +86,7 @@ label {
 }
 .codemirror-wrapper {
   height: 100%;
+  color: #000;
 }
 .cm-editor {
   width: 100%;
@@ -105,7 +106,7 @@ label {
 }
 
 // Change text selection color to blue
-.cm-editor-focused .cm-editor-selected {
+.cm-focused .cm-editor-selected {
   background-color: #bdf;
 }
 

@@ -2,6 +2,21 @@
 
 import jQuery from 'jquery';
 
+let jCanvasPromise = null;
+
+export function jCanvasLoad() {
+  if (typeof window === 'undefined') {
+    // In an SSR context, this promise should not resolve or reject
+    return new Promise(() => {});
+  }
+  window.jQuery = jQuery;
+  window.$ = jQuery;
+  if (!jCanvasPromise) {
+    jCanvasPromise = import('jcanvas');
+  }
+  return jCanvasPromise;
+}
+
 // Reset context all attached data for the given canvases
 export function resetCanvases(canvases) {
   canvases?.forEach((canvas) => {

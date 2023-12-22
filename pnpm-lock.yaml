@@ -11,6 +11,9 @@ dependencies:
   '@codemirror/lang-javascript':
     specifier: ^6.2.1
     version: 6.2.1
+  '@codemirror/state':
+    specifier: ^6.3.3
+    version: 6.3.3
   '@codemirror/view':
     specifier: ^6.22.3
     version: 6.22.3
