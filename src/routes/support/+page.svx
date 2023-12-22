@@ -37,7 +37,7 @@ The `clearCanvas()` method is *not* meant to be used if you are using the jCanva
 If you want to hide a layer temporarily, use `setLayer()` to set the layer's `visible` property, then call `drawLayers()`:
 
 ```js
-$('canvas').setLayer('myLayerName', &#123;
+$('canvas').setLayer('myLayerName', {
   visible: false // set to true instead to show the layer again
 }).drawLayers();
 ```
@@ -57,9 +57,9 @@ That's because I haven't added official support for rotation to my Handles plugi
 If your web font CSS is embedded on the page via `<link>`, then the success of your font loading in jCanvas is completely contingent on your font loading before your jCanvas code executes. To ensure this, wrap your relevant jCanvas code in a `window` `load` event callback.
 
 ```js
-$(window).load(function () &#123;
+$(window).load(function () {
   // Add jCanvas text drawings here
-&#124;);
+});
 ```
 
 ### Why isn't setPixels() working on my local machine?
@@ -72,16 +72,16 @@ To toggle the visibility of a layer, You can use the `setLayer()` method to set 
 
 ```js
 // Hide layer temporarily
-$('#mycanvas').setLayer('myLayerName', &#123;
+$('#mycanvas').setLayer('myLayerName', {
   visible: false
-&#124;);
+});
 ```
 
 ```js
 // Show layer again
-$('#mycanvas').setLayer('myLayerName', &#123;
+$('#mycanvas').setLayer('myLayerName', {
   visible: true
-&#124;);
+});
 ```
 
 ## Bug Reports
