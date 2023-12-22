@@ -84,7 +84,7 @@ label {
   text-align: left;
   resize: none;
 }
-div.CodeMirror {
+.cm-editor {
   width: 100%;
   height: inherit;
   outline: none;
@@ -95,22 +95,14 @@ div.CodeMirror {
   box-sizing: border-box;
   font-family: $monospace;
 }
-div.CodeMirror div.cm-s-default {
-  height: inherit;
-  overflow: scroll;
-}
-div.CodeMirror pre {
-  border: none;
-  overflow: visible;
-}
 // Line numbers
-div.CodeMirror-gutter pre {
+.cm-editor .cm-gutters {
   text-align: right;
   color: #999;
 }
 
 // Change text selection color to blue
-.CodeMirror-focused .CodeMirror-selected {
+.cm-editor-focused .cm-editor-selected {
   background-color: #bdf;
 }
 

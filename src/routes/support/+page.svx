@@ -7,6 +7,10 @@ id: support
 show_ads: true
 ---
 
+<script>
+  import { base } from '$app/paths';
+</script>
+
 ## License
 
 jCanvas is licensed under the MIT license. This means you can use jCanvas for whatever purpose under two conditions:
@@ -33,7 +37,7 @@ The `clearCanvas()` method is *not* meant to be used if you are using the jCanva
 If you want to hide a layer temporarily, use `setLayer()` to set the layer's `visible` property, then call `drawLayers()`:
 
 ```js
-$('canvas').setLayer('myLayerName', {
+$('canvas').setLayer('myLayerName', &#123;
   visible: false // set to true instead to show the layer again
 }).drawLayers();
 ```
@@ -53,14 +57,14 @@ That's because I haven't added official support for rotation to my Handles plugi
 If your web font CSS is embedded on the page via `<link>`, then the success of your font loading in jCanvas is completely contingent on your font loading before your jCanvas code executes. To ensure this, wrap your relevant jCanvas code in a `window` `load` event callback.
 
 ```js
-$(window).load(function () {
+$(window).load(function () &#123;
   // Add jCanvas text drawings here
-});
+&#124;);
 ```
 
 ### Why isn't setPixels() working on my local machine?
 
-This is probably because you are testing your app from a `file://` URL, which most browsers won't allow; you need to serve your app from a local server instead. See [this StackOverflow post](http://stackoverflow.com/questions/19869150/getimagedata-cross-origin-error) for more details. 
+This is probably because you are testing your app from a `file://` URL, which most browsers won't allow; you need to serve your app from a local server instead. See [this StackOverflow post](http://stackoverflow.com/questions/19869150/getimagedata-cross-origin-error) for more details.
 
 ### How do I temporarily show/hide a layer?
 
@@ -68,16 +72,16 @@ To toggle the visibility of a layer, You can use the `setLayer()` method to set 
 
 ```js
 // Hide layer temporarily
-$('#mycanvas').setLayer('myLayerName', {
+$('#mycanvas').setLayer('myLayerName', &#123;
   visible: false
-});
+&#124;);
 ```
 
 ```js
 // Show layer again
-$('#mycanvas').setLayer('myLayerName', {
+$('#mycanvas').setLayer('myLayerName', &#123;
   visible: true
-});
+&#124;);
 ```
 
 ## Bug Reports

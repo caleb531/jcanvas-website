@@ -8,13 +8,16 @@ var $$ = {
   duplicate: $('#sandbox-duplicate'),
   canvases: $('#sandbox-canvases'),
   ncanvases: $('#sandbox-ncanvases'),
-  console: $('#sandbox-console'),
-  defaultCode: $('#sandbox-default-code')
+  console: $('#sandbox-console')
 };
 
 // Defaults and constants
 var defaultSandboxState = {
-  code: $$.defaultCode.html().replace(/(^\s+)|(\s+$)/gi, ''),
+  code: `$('canvas').drawArc({
+  fillStyle: '#000',
+  x: 100, y: 100,
+  radius: 50
+});`,
   cursor: {
     line: 0,
     ch: 0
