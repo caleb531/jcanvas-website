@@ -21,25 +21,18 @@
 });`,
     canvasCount: 1
   };
-  let editorContents = defaultSandboxState.code;
 
   let sandboxArea;
   let editorHeight;
+
   let CANVAS_WIDTH = 320;
   let CANVAS_BORDER_WIDTH = 1;
-
   let canvasWidth;
-  let canvasHeight
+  let canvasHeight;
+
+  let editorContents = defaultSandboxState.code;
   let canvasCount;
-
-  let editorArea;
-  let codemirror;
   let editorError = null;
-
-  let editor;
-  let run;
-  let duplicate;
-  let sandboxConsole;
 
   function getCanvasWidth(newCanvasCount) {
     return CANVAS_WIDTH;
@@ -75,14 +68,7 @@
     return sandboxState;
   }
 
-  function setSandboxSettings(sandboxState) {
-    editorContents = sandboxState.code;
-    // codemirror.dispatch({ selection: sandboxState.cursor });
-    canvasCount = sandboxState.canvasCount;
-    changeCanvasCount(sandboxState.canvasCount);
-  }
-
-  function getSandboxState(codemirror) {
+  function getSandboxState() {
     return {
       code: editorContents,
       canvasCount: canvasCount
@@ -96,7 +82,7 @@
   }
 
   // Run code
-  async function runCode(codemirror) {
+  async function runCode() {
     await jCanvasLoad();
     resetCanvases(sandboxArea.querySelectorAll('canvas'));
     editorError = null;
@@ -110,15 +96,15 @@
   }
 
   function clickRunButton() {
-    runCode(codemirror);
-    saveSandboxState(codemirror);
+    runCode();
+    saveSandboxState();
   }
 
   function clickDuplicateButton() {
-    spawnNewSandbox(getSandboxState(codemirror));
+    spawnNewSandbox(getSandboxState());
   }
 
-  function runCodeOnMetaEnter(codemirror, event) {
+  function runCodeOnModEnter(codemirror, event) {
     runCode();
     saveSandboxState(codemirror);
     // Per the CodeMirror 6 KeyBinding docs, returning false will run other
@@ -135,7 +121,9 @@
       return;
     }
     let sandboxState = loadSandboxState();
-    setSandboxSettings(sandboxState);
+    editorContents = sandboxState.code;
+    canvasCount = sandboxState.canvasCount;
+    changeCanvasCount(sandboxState.canvasCount);
     runCode();
     editorHeight = sandboxArea.querySelector('#sandbox-editor-area').getBoundingClientRect().height;
   })
@@ -167,7 +155,7 @@
       <CodeMirror bind:value={editorContents} useTab extensions={[
         minimalSetup,
         Prec.highest(keymap.of([
-          { key: 'Mod-Enter', run: runCodeOnMetaEnter, preventDefault: true }
+          { key: 'Mod-Enter', run: runCodeOnModEnter, preventDefault: true }
         ]))
       ]} lang={javascript()}  />
     </div>
