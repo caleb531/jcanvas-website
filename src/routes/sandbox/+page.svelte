@@ -1,12 +1,13 @@
 <script>
+  import CodeMirror from "svelte-codemirror-editor";
   import { basicSetup } from "codemirror"
-  import { EditorView, keymap } from "@codemirror/view"
-  import { indentWithTab } from "@codemirror/commands"
   import { javascript } from "@codemirror/lang-javascript"
   import { onMount } from 'svelte';
   import ExampleImages from '../ExampleImages.svelte';
   import jQuery from 'jquery';
   import { browser } from '$app/environment';
+  import { resetCanvases, correctImagePaths, spawnNewSandbox } from '$lib';
+
 
   // Defaults and constants
   let defaultSandboxState = {
@@ -15,12 +16,11 @@
   x: 100, y: 100,
   radius: 50
 });`,
-    cursor: {
-      line: 0,
-      ch: 0
-    },
-    ncanvases: 1
+    canvasCount: 1
   };
+  let editorContents = defaultSandboxState.code;
+
+  let sandboxArea;
   let editorHeight;
   let CANVAS_WIDTH = 320;
   let CANVAS_BORDER_WIDTH = 1;
@@ -31,18 +31,32 @@
 
   let editorArea;
   let codemirror;
+  let editorError = null;
 
   let editor;
   let run;
   let duplicate;
-  let canvases;
   let sandboxConsole;
+
+  function getCanvasWidth(newCanvasCount) {
+    return CANVAS_WIDTH;
+  }
+
+  function getCanvasHeight(newCanvasCount) {
+    return editorHeight ? Math.round((editorHeight / newCanvasCount) - (2 * CANVAS_BORDER_WIDTH)) : 0;
+  }
+
+  function resizeCanvases(newCanvasCount) {
+    canvasWidth = getCanvasWidth(newCanvasCount);
+    canvasHeight = getCanvasHeight(newCanvasCount);
+  }
 
   // Change number of canvases with which to test
   function changeCanvasCount(newCanvasCount) {
     canvasCount = newCanvasCount;
-    runCode(codemirror);
-    saveSandboxState(codemirror);
+    runCode();
+    saveSandboxState();
+    resizeCanvases(canvasCount);
   }
 
   // Load last-saved sandbox state (or defaults if the don't exist)
@@ -59,53 +73,49 @@
   }
 
   function setSandboxSettings(sandboxState) {
-    codemirror.dispatch({from: 0, to: codemirror.state.doc.length, insert: sandboxState.code});
+    editorContents = sandboxState.code;
     // codemirror.dispatch({ selection: sandboxState.cursor });
-    canvasCount = sandboxState.ncanvases;
-    changeCanvasCount(sandboxState.ncanvases);
+    canvasCount = sandboxState.canvasCount;
+    changeCanvasCount(sandboxState.canvasCount);
   }
 
   function getSandboxState(codemirror) {
     return {
-      code: codemirror.state.doc.toString(),
-      cursor: codemirror.state.selection.main.head,
-      ncanvases: canvasCount
+      code: editorContents,
+      canvasCount: canvasCount
     };
   }
 
   // Save sandbox state to session storage for current page
-  function saveSandboxState(codemirror) {
-    let sandboxState = getSandboxState(codemirror);
+  function saveSandboxState() {
+    let sandboxState = getSandboxState();
     sessionStorage.setItem('jcanvas-sandbox', JSON.stringify(sandboxState));
   }
 
   // Run code
   function runCode(codemirror) {
-    canvases.find('canvas').resetCanvases();
-    editor.removeClass('error');
-    sandboxConsole.html('');
+    resetCanvases(sandboxArea.querySelectorAll('canvas'));
+    editorError = null;
     try {
-      new Function(jQuery.jCanvasCorrectImagePaths(codemirror.state.doc.toString()))();
+      new Function(correctImagePaths(editorContents))();
     } catch(error) {
       // Report any errors to the editor
-      editor.addClass('error');
-      sandboxConsole.html('Error: ' + error.message);
+      editorError = error;
       console.error(error.stack || String(error));
     }
   }
 
+  function clickRunButton() {
+    runCode(codemirror);
+    saveSandboxState(codemirror);
+  }
+
+  function clickDuplicateButton() {
+    spawnNewSandbox(getSandboxState(codemirror));
+  }
+
   // Initialize the sandbox CodeMirror editor
   function initSandboxEditor(sandboxState) {
-
-    // Initialize code editor
-    codemirror = new EditorView({
-      extensions: [
-        basicSetup,
-        keymap.of([indentWithTab]),
-        javascript()
-      ],
-      parent: editor[0]
-    });
 
     setSandboxSettings(sandboxState);
 
@@ -117,7 +127,7 @@
     //   editor.removeClass('focused');
     // });
     // Insert spaces when tab key is pressed
-    jQuery('div.CodeMirror').on('keydown', function(event) {
+    jQuery('.cm-editor').on('keydown', function(event) {
       if (event.metaKey || event.ctrlKey) {
         // Press ctrl+enter to test
         if (event.which === 13) {
@@ -128,20 +138,6 @@
       }
     });
 
-    // Add event bindings to sandbox controls
-    run.on('click', function() {
-      runCode(codemirror);
-      saveSandboxState(codemirror);
-    });
-    duplicate.on('click', function () {
-      jQuery.spawnNewSandbox(getSandboxState(codemirror));
-    });
-
-    // Focus window on desktop browsers
-    if (window.ontouchstart === undefined) {
-      codemirror.focus();
-    }
-
     runCode(codemirror);
 
   }
@@ -150,53 +146,54 @@
     if (!browser || !console) {
       return;
     }
-    editorArea = jQuery('#sandbox-editor-area');
-    editor = jQuery('#sandbox-editor');
-    run = jQuery('#sandbox-run');
-    duplicate = jQuery('#sandbox-duplicate');
-    canvases = jQuery('#sandbox-canvases');
-    // Be careful not to shadow the `console` global
-    sandboxConsole = jQuery('#sandbox-console');
-
     let sandboxState = loadSandboxState();
     initSandboxEditor(sandboxState);
-    editorHeight = editorArea.outerHeight();
+    editorHeight = sandboxArea.querySelector('#sandbox-editor-area').getBoundingClientRect().height;
   })
 
   $: {
-    canvasWidth = CANVAS_WIDTH;
-    canvasHeight = Math.round((editorHeight / canvasCount) - (2 * CANVAS_BORDER_WIDTH))
+    resizeCanvases(canvasCount);
   }
 
 </script>
 
-<div id="sandbox-area">
+<div id="sandbox-area" bind:this={sandboxArea}>
   <div id="sandbox-editor-area">
     <div id="sandbox-controls">
       <div id="sandbox-button-controls">
-        <button id="sandbox-run">Run</button>
-        <button id="sandbox-duplicate">Duplicate</button>
+        <button id="sandbox-run" on:click={clickRunButton}>Run</button>
+        <button id="sandbox-duplicate" on:click={clickDuplicateButton}>Duplicate</button>
       </div>
-      <div id="sandbox-ncanvases-controls">
-        <label for="sandbox-ncanvases">Canvases:</label>
-        <select id="sandbox-ncanvases" on:change={changeCanvasCount}>
-          <option>1</option>
-          <option>2</option>
-          <option>3</option>
+      <div id="sandbox-canvas-count-controls">
+        <label for="sandbox-canvas-count">Canvases:</label>
+        <select id="sandbox-canvas-count" on:change={(event) => changeCanvasCount(Number(event.target.value))} value={canvasCount}>
+          {#each {length: 3} as _, i}
+            <option value={i + 1}>{i + 1}</option>
+          {/each}
         </select>
       </div>
     </div>
-    <div id="sandbox-editor"></div>
-    <div id="sandbox-console"></div>
+    <div id="sandbox-editor" class:error={editorError}>
+      <CodeMirror bind:value={editorContents} useTab extensions={[basicSetup]} lang={javascript()}  />
+    </div>
+    <div id="sandbox-console">
+      {#if editorError}
+        Error: {editorError?.message ?? 'Unexpeted error'}
+      {/if}
+    </div>
   </div>
 
+  {#if sandboxArea}
   <div id="sandbox-canvases">
     {#each {length: canvasCount} as _, i}
       <div class="canvas-container">
-        <canvas width={canvasWidth} height={canvasHeight} data-index={i}></canvas>
+        {#key `canvas-${i}-${canvasWidth}x${canvasHeight}`}
+          <canvas width={canvasWidth} height={canvasHeight} data-index={i}></canvas>
+        {/key}
       </div>
     {/each}
   </div>
+  {/if}
 </div>
 
 <ExampleImages />

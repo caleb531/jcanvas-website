@@ -27,6 +27,7 @@
 		"@codemirror/view": "^6.22.3",
 		"codemirror": "^6.0.1",
 		"jcanvas": "link:../jcanvas",
-		"jquery": "^3.7.1"
+		"jquery": "^3.7.1",
+		"svelte-codemirror-editor": "^1.2.0"
 	}
 }

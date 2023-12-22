@@ -84,6 +84,9 @@ label {
   text-align: left;
   resize: none;
 }
+.codemirror-wrapper {
+  height: 100%;
+}
 .cm-editor {
   width: 100%;
   height: inherit;

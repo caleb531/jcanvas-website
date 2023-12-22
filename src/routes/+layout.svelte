@@ -1,4 +1,4 @@
-<script>
+  <script>
   import { page } from '$app/stores';
   import Header from './Header.svelte';
   import jQuery from 'jquery';
