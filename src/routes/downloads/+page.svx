@@ -1,16 +1,15 @@
----
-layout: page
-title: Downloads
-subtitle: Get your copy of jCanvas here!
-permalink: /downloads/
-id: downloads
-show_ads: true
----
+<script>
+  import { version as latestVersion } from '$data/downloads.json';
+</script>
 
-{% include downloads.html %}
+<div id="downloads">
+  <a href="https://raw.githubusercontent.com/caleb531/jcanvas/{latestVersion}/dist/esm/jcanvas.js">jCanvas (ESM)</a>
+  <a href="https://github.com/caleb531/jcanvas">jCanvas (GitHub)</a>
+  <a href="https://cdnjs.com/libraries/jcanvas">jCanvas (cdnjs)</a>
+</div>
 
 jCanvas requires [jQuery](https://jquery.org/) version 1.4 or newer. If you're
-already using jQuery, you can just add jCanvas to your page (via `<script>`).
+already using jQuery, you can just add jCanvas to your page (via `&lt;script&gt;`).
 
 jCanvas is licensed under the MIT license, which you can view on
 [GitHub](https://github.com/caleb531/jcanvas/blob/master/LICENSE.txt).

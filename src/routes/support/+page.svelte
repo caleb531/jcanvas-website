@@ -109,13 +109,13 @@ If you choose to submit an issue on GitHub, please don't submit a follow-up emai
 
 ## Plugins
 
-If you wish to extend jCanvas with your own methods, you can learn to do so using the [Plugin API]({{ site.baseurl }}/docs/extending/).
+If you wish to extend jCanvas with your own methods, you can learn to do so using the [Plugin API]({base}/docs/extending/).
 
-If you would like to submit your jCanvas plugin to the public gallery, follow [the procedure for submitting a plugin]({{ site.baseurl }}/lugins/submitting/).
+If you would like to submit your jCanvas plugin to the public gallery, follow [the procedure for submitting a plugin]({base}/lugins/submitting/).
 
 ## Gallery
 
-If you would like to submit your jCanvas project to the [public gallery]({{ site.baseurl }}/gallery/), please contact me (see above) with the following information:
+If you would like to submit your jCanvas project to the [public gallery]({base}/gallery/), please contact me (see above) with the following information:
 
 - A link to your site/app
 - A name to display publicly as the app's author (could be you or someone else)

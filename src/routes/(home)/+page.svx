@@ -1,30 +1,29 @@
----
-layout: page
-title: jCanvas
-subtitle: jQuery meets the HTML5 canvas
-permalink: /
-id: home
-show_ads: true
----
+<script>
+  import HomeIntro from './HomeIntro.svx';
+  import HomeAbout from './HomeAbout.svx';
+  import HomeFeatures from './HomeFeatures.svx';
+  import HomeExample from './HomeExample.svx';
+  import HomeMore from './HomeMore.svx';
+</script>
 
 <div id="home-intro" class="home-section box" markdown="1">
-  {% include home-intro.md %}
+  <HomeIntro />
 </div>
 
 <div id="home-features" class="home-section box column-left" markdown="1">
-  {% include home-features.md %}
+  <HomeFeatures />
 </div>
 
 <div id="home-example" class="home-section box column-right" markdown="1">
-  {% include home-example.md %}
+  <HomeExample />
 </div>
 
 <div class="clearfix"></div>
 
 <div id="home-about" class="home-section box" markdown="1">
-  {% include home-about.md %}
+  <HomeAbout />
 </div>
 
 <div id="home-more" markdown="1">
-  {% include home-more.md %}
+  <HomeMore />
 </div>

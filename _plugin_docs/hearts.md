@@ -4,7 +4,7 @@ author: Caleb Evans
 is_plugin: true
 ---
 
-This plugin is a more complete version of the [`custom drawHeart()` method in the documentation]({{ site.baseurl }}/docs/extending/), which supports layer events and transformations.
+This plugin is a more complete version of the [`custom drawHeart()` method in the documentation]({base}/docs/extending/), which supports layer events and transformations.
 
 ```js
 $('canvas').drawHeart({

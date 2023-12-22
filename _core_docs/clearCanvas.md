@@ -32,7 +32,7 @@ $('canvas').clearCanvas()
 
 ## Clear a section
 
-Clearing a section works in the same way as [drawing a rectangle]({{ site.baseurl }}/docs/rectangles/), with the rectangle being drawn from its center (by default).
+Clearing a section works in the same way as [drawing a rectangle]({base}/docs/rectangles/), with the rectangle being drawn from its center (by default).
 
 ```js
 $('canvas')

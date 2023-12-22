@@ -1,0 +1,8 @@
+<script>
+  import { version as latestVersion } from '$data/downloads.json';
+</script>
+
+jCanvas is a jQuery plugin that makes the HTML5 canvas **easy** to work with.
+
+[Download jCanvas](https://raw.githubusercontent.com/caleb531/jcanvas/{latestVersion}/dist/umd/jcanvas.js)  
+[{latestVersion} Release Notes](https://github.com/caleb531/jcanvas/releases/tag/{latestVersion})

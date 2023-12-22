@@ -12,7 +12,7 @@ layout: default
       <ul>
         {% for section_slug in category.sections %}
           {% assign doc = site[page.collection] | where: 'slug', section_slug | first %}
-          <li class="match"><a href="{{ site.baseurl }}{{ doc.url }}">{{ doc.title }}</a></li>
+          <li class="match"><a href="{base}{{ doc.url }}">{{ doc.title }}</a></li>
         {% endfor %}
       </ul>
     {% endfor %}
@@ -27,8 +27,8 @@ layout: default
         <p class="author">by {{ page.author }}</p>
       {% endif %}
       {% if page.is_plugin %}
-        <a href="{{ site.baseurl }}/assets/jcanvas/plugins/jcanvas-{{ page.slug }}.min.js" class="button download">Download (minified)</a>
-        <a href="{{ site.baseurl }}/assets/jcanvas/plugins/jcanvas-{{ page.slug }}.js" class="button download">Download (source)</a>
+        <a href="{base}/assets/jcanvas/plugins/jcanvas-{{ page.slug }}.min.js" class="button download">Download (minified)</a>
+        <a href="{base}/assets/jcanvas/plugins/jcanvas-{{ page.slug }}.js" class="button download">Download (source)</a>
       {% endif %}
     {% endif %}
 
