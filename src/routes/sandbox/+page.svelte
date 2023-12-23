@@ -1,19 +1,18 @@
 <script lang="ts">
-  import { Prec } from '@codemirror/state';
-  import { EditorView, keymap } from '@codemirror/view';
-  import { jCanvasLoad } from '$src/lib';
-  import CodeMirror from 'svelte-codemirror-editor';
-  import { minimalSetup } from 'codemirror';
-  import { javascript } from '@codemirror/lang-javascript';
-  import { onMount } from 'svelte';
-  import ExampleImages from '../ExampleImages.svelte';
-  import jQuery from 'jquery';
   import { browser } from '$app/environment';
-  import { resetCanvases, correctImagePaths, spawnNewSandbox } from '$src/lib';
+  import { correctImagePaths, jCanvasLoad, resetCanvases, spawnNewSandbox } from '$src/lib';
+  import { javascript } from '@codemirror/lang-javascript';
+  import { Prec } from '@codemirror/state';
+  import { keymap } from '@codemirror/view';
+  import { minimalSetup } from 'codemirror';
+  import jQuery from 'jquery';
+  import { onMount } from 'svelte';
+  import CodeMirror from 'svelte-codemirror-editor';
+  import ExampleImages from '../ExampleImages.svelte';
 
   // Defaults and constants
   let defaultSandboxState = {
-    code: `jQuery('canvas').drawArc({
+    code: `$('canvas').drawArc({
   fillStyle: '#000',
   x: 100, y: 100,
   radius: 50
@@ -82,7 +81,7 @@
   // Run code
   async function runCode() {
     await jCanvasLoad();
-    resetCanvases(sandboxArea.querySelectorAll('canvas'));
+    resetCanvases(Array.from(sandboxArea.querySelectorAll('canvas')));
     editorError = null;
     try {
       new Function(correctImagePaths(editorContents))();
