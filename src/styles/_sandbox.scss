@@ -83,10 +83,15 @@ label {
   font-size: 10pt;
   text-align: left;
   resize: none;
+  color: #000;
+}
+// Hide default code behind loading indicator
+.scm-pre {
+  color: transparent;
+  user-select: none;
 }
 .codemirror-wrapper {
   height: 100%;
-  color: #000;
 }
 .cm-editor {
   width: 100%;
