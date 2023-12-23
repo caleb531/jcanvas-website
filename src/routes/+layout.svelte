@@ -1,8 +1,17 @@
 <script lang="ts">
   import { page } from '$app/stores';
-  import Header from './Header.svelte';
   import '../styles/index.scss';
+  import Header from './Header.svelte';
 </script>
+
+<svelte:head>
+  <title
+    >{$page.data.id === 'home'
+      ? `${$page.data.title} | ${$page.data.subtitle}`
+      : `${$page.data.title} | jCanvas`}</title
+  >
+  <meta name="description" content={$page.data.description} />
+</svelte:head>
 
 <Header />
 
