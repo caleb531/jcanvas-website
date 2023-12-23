@@ -35,11 +35,11 @@ var imagePathPattern = /(images\/(?:\w+)\.(jpg|png|svg))/gi;
 
 // Modify any image paths to point to the real images directory
 export function correctImagePaths(code: string) {
-    return code.replace(imagePathPattern, '/jcanvas/assets/$1');
+  return code.replace(imagePathPattern, '/jcanvas/assets/$1');
 }
 
 // Spawn a new sandbox with the given sandbox state
-export function spawnNewSandbox(sandboxState: { code: string, canvasCount: number }) {
+export function spawnNewSandbox(sandboxState: { code: string; canvasCount: number }) {
   // Retrieve the sandbox state of the current page
   var originalSandboxState = sessionStorage.getItem('jcanvas-sandbox');
   // Temporarily overwrite the current page's sandbox state with the new sandbox

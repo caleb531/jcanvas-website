@@ -2,28 +2,33 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' data: https://*.gstatic.com; img-src 'self' data: https://www.gravatar.com https://*.google-analytics.com https://www.googletagmanager.com; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdnjs.cloudflare.com https://plausible.io; frame-src https://googleads.g.doubleclick.net; connect-src https://plausible.io" />
+  <meta
+    http-equiv="Content-Security-Policy"
+    content="default-src 'none'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' data: https://*.gstatic.com; img-src 'self' data: https://www.gravatar.com https://*.google-analytics.com https://www.googletagmanager.com; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdnjs.cloudflare.com https://plausible.io; frame-src https://googleads.g.doubleclick.net; connect-src https://plausible.io"
+  />
 
-  {% if page.title and page.title != site.title %}
-    {% if page.collection %}
-      <title>{{ page.title | escape }} | {{ site.title | escape }} {{ site.data[page.collection].parent_page.title }}</title>
-    {% else %}
-      <title>{{ page.title | escape }} | {{ site.title | escape }}</title>
-    {% endif %}
+  {% if page.title and page.title != site.title %} {% if page.collection %}
+  <title>
+    {{ page.title | escape }} | {{ site.title | escape }} {{
+    site.data[page.collection].parent_page.title }}
+  </title>
   {% else %}
-    <title>{{ site.title | escape }} | {{ site.tagline | escape }}</title>
-  {% endif %}
+  <title>{{ page.title | escape }} | {{ site.title | escape }}</title>
+  {% endif %} {% else %}
+  <title>{{ site.title | escape }} | {{ site.tagline | escape }}</title>
+  {% endif %} {% if page.sitemap != false %} {% seo title=false %} {% endif %}
 
-  {% if page.sitemap != false %}
-    {% seo title=false %}
-  {% endif %}
-
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oxygen+Mono|Ubuntu:300,300i,400" />
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Oxygen+Mono|Ubuntu:300,300i,400"
+  />
   {% if page.title == 'Sandbox' %}
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.21.0/codemirror.min.css" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.21.0/codemirror.min.css"
+  />
   {% endif %}
   <link rel="stylesheet" href="{base}/assets/styles/main.css" />
 
   <link rel="shortcut icon" href="{base}/assets/images/favicon.ico" />
-
 </head>

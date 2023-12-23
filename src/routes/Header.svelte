@@ -6,7 +6,9 @@
   <nav>
     <ul>
       <li class="logo"><a href="{base}/">jCanvas</a></li>
-      <li class="author"><a href="https://calebevans.me/"><span class="by">by</span> Caleb Evans</a></li>
+      <li class="author">
+        <a href="https://calebevans.me/"><span class="by">by</span> Caleb Evans</a>
+      </li>
       <li><a href="{base}/downloads/">Downloads</a></li>
       <li><a href="{base}/docs/">Docs</a></li>
       <li><a href="{base}/sandbox/">Sandbox</a></li>

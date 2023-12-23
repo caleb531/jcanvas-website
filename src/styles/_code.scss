@@ -49,19 +49,30 @@ div.highlighter-rouge {
 // Syntax highlighting styles
 .highlight {
   // Comments
-  .c, .c1, .cm, .cp, .cs {
+  .c,
+  .c1,
+  .cm,
+  .cp,
+  .cs {
     color: $code-gray;
   }
   // Keywords
-  .k, .kc, .kd {
+  .k,
+  .kc,
+  .kd {
     color: $code-blue;
   }
   // Strings (single- and double-quoted)
-  .s1, .s2 {
+  .s1,
+  .s2 {
     color: $code-orange;
   }
   // Numbers
-  .m, .mf, .mi, .mh, .mo {
+  .m,
+  .mf,
+  .mi,
+  .mh,
+  .mo {
     color: $code-green;
   }
   // Object literal key names and HTML attribute names

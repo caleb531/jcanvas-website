@@ -1,7 +1,7 @@
 # jCanvas Website
 
-*Copyright 2016-2020, Caleb Evans*  
-*Released under the MIT license*
+_Copyright 2016-2020, Caleb Evans_  
+_Released under the MIT license_
 
 This repository hosts the official website for [jCanvas](https://projects.calebevans.me/jcanvas/), the jQuery canvas library.
 

@@ -1,16 +1,15 @@
 <script lang="ts">
-  import { Prec } from "@codemirror/state"
-  import { EditorView, keymap } from "@codemirror/view"
+  import { Prec } from '@codemirror/state';
+  import { EditorView, keymap } from '@codemirror/view';
   import { jCanvasLoad } from '$src/lib';
-  import CodeMirror from "svelte-codemirror-editor";
-  import { minimalSetup } from "codemirror"
-  import { javascript } from "@codemirror/lang-javascript"
+  import CodeMirror from 'svelte-codemirror-editor';
+  import { minimalSetup } from 'codemirror';
+  import { javascript } from '@codemirror/lang-javascript';
   import { onMount } from 'svelte';
   import ExampleImages from '../ExampleImages.svelte';
   import jQuery from 'jquery';
   import { browser } from '$app/environment';
   import { resetCanvases, correctImagePaths, spawnNewSandbox } from '$src/lib';
-
 
   // Defaults and constants
   let defaultSandboxState = {
@@ -39,7 +38,7 @@
   }
 
   function getCanvasHeight(newCanvasCount: number) {
-    return editorHeight ? Math.round((editorHeight / newCanvasCount) - (2 * CANVAS_BORDER_WIDTH)) : 0;
+    return editorHeight ? Math.round(editorHeight / newCanvasCount - 2 * CANVAS_BORDER_WIDTH) : 0;
   }
 
   function resizeCanvases(newCanvasCount: number) {
@@ -87,7 +86,7 @@
     editorError = null;
     try {
       new Function(correctImagePaths(editorContents))();
-    } catch(error) {
+    } catch (error) {
       // Report any errors to the editor
       editorError = error as Error;
       console.error((error as Error).stack || String(error));
@@ -124,13 +123,13 @@
     canvasCount = sandboxState.canvasCount;
     changeCanvasCount(sandboxState.canvasCount);
     runCode();
-    editorHeight = sandboxArea.querySelector('#sandbox-editor-area')?.getBoundingClientRect().height || 0;
-  })
+    editorHeight =
+      sandboxArea.querySelector('#sandbox-editor-area')?.getBoundingClientRect().height || 0;
+  });
 
   $: {
     resizeCanvases(canvasCount);
   }
-
 </script>
 
 <div id="sandbox-area" bind:this={sandboxArea}>
@@ -142,21 +141,30 @@
       </div>
       <div id="sandbox-canvas-count-controls">
         <label for="sandbox-canvas-count">Canvases:</label>
-        <select id="sandbox-canvas-count" on:change={(event) => changeCanvasCount(Number(event.currentTarget.value))} value={canvasCount}>
-          {#each {length: 3} as _, i}
+        <select
+          id="sandbox-canvas-count"
+          on:change={(event) => changeCanvasCount(Number(event.currentTarget.value))}
+          value={canvasCount}
+        >
+          {#each { length: 3 } as _, i}
             <option value={i + 1}>{i + 1}</option>
           {/each}
         </select>
       </div>
     </div>
     <!-- svelte-ignore a11y-no-static-element-interactions -->
-    <div id="sandbox-editor" class:error={editorError} >
-      <CodeMirror bind:value={editorContents} useTab extensions={[
-        minimalSetup,
-        Prec.highest(keymap.of([
-          { key: 'Mod-Enter', run: runCodeOnModEnter, preventDefault: true }
-        ]))
-      ]} lang={javascript()}  />
+    <div id="sandbox-editor" class:error={editorError}>
+      <CodeMirror
+        bind:value={editorContents}
+        useTab
+        extensions={[
+          minimalSetup,
+          Prec.highest(
+            keymap.of([{ key: 'Mod-Enter', run: runCodeOnModEnter, preventDefault: true }])
+          )
+        ]}
+        lang={javascript()}
+      />
     </div>
     <div id="sandbox-console">
       {#if editorError}
@@ -166,15 +174,15 @@
   </div>
 
   {#if sandboxArea}
-  <div id="sandbox-canvases">
-    {#each {length: canvasCount} as _, i}
-      <div class="canvas-container">
-        {#key `canvas-${i}-${canvasWidth}x${canvasHeight}`}
-          <canvas width={canvasWidth} height={canvasHeight} data-index={i}></canvas>
-        {/key}
-      </div>
-    {/each}
-  </div>
+    <div id="sandbox-canvases">
+      {#each { length: canvasCount } as _, i}
+        <div class="canvas-container">
+          {#key `canvas-${i}-${canvasWidth}x${canvasHeight}`}
+            <canvas width={canvasWidth} height={canvasHeight} data-index={i}></canvas>
+          {/key}
+        </div>
+      {/each}
+    </div>
   {/if}
 </div>
 

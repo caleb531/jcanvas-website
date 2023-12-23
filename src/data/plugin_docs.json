@@ -1,19 +1,16 @@
-# jCanvas documentation data
-
-parent_page:
-  title: Plugins
-  subtitle: Make jCanvas do more
-
-categories:
-  -
-    name: About
-    sections:
-      - about
-      - submitting
-  -
-    name: Plugins
-    sections:
-      - crescents
-      - donuts
-      - handles
-      - hearts
+{
+  "parent_page": {
+    "title": "Plugins",
+    "subtitle": "Make jCanvas do more"
+  },
+  "categories": [
+    {
+      "name": "About",
+      "sections": ["about", "submitting"]
+    },
+    {
+      "name": "Plugins",
+      "sections": ["crescents", "donuts", "handles", "hearts"]
+    }
+  ]
+}

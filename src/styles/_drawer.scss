@@ -8,10 +8,8 @@ div.drawer {
 }
 
 @include layout(compact) {
-
   // Drawer toggle headings
   .drawer-toggle {
-
     position: relative;
     cursor: pointer;
 
@@ -37,11 +35,9 @@ div.drawer {
       border-color: transparent;
       border-left-color: #fff;
     }
-
   }
 
   h2.drawer-toggle {
     padding-left: 20px;
   }
-
 }

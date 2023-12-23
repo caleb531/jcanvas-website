@@ -6,14 +6,7 @@
   "categories": [
     {
       "name": "jCanvas",
-      "sections": [
-        "introduction",
-        "syntax",
-        "object",
-        "extending",
-        "properties",
-        "methods"
-      ]
+      "sections": ["introduction", "syntax", "object", "extending", "properties", "methods"]
     },
     {
       "name": "Canvas",
@@ -71,13 +64,7 @@
     },
     {
       "name": "Styles",
-      "sections": [
-        "colors",
-        "shadows",
-        "gradients",
-        "patterns",
-        "functions"
-      ]
+      "sections": ["colors", "shadows", "gradients", "patterns", "functions"]
     }
   ]
 }
