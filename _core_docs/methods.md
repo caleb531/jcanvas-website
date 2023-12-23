@@ -4,336 +4,336 @@ title: Methods
 
 This is a reference of every jCanvas method, for quick access.
 
-### [addLayer]({base}/docs/addLayers/)
+### [addLayer](/jcanvas/docs/addLayers/)
 
-  - Syntax
-    - `addLayer( properties )`
-  - Returns
-    - `jQuery`
+- Syntax
+  - `addLayer( properties )`
+- Returns
+  - `jQuery`
 
-### [addLayerToGroup]({base}/docs/addLayers/)
+### [addLayerToGroup](/jcanvas/docs/addLayers/)
 
-  - Syntax
-    - `addLayerToGroup( layerId, groupName )`
-  - Returns
-    - `jQuery`
+- Syntax
+  - `addLayerToGroup( layerId, groupName )`
+- Returns
+  - `jQuery`
 
-### [animateLayer]({base}/docs/animateLayers/)
+### [animateLayer](/jcanvas/docs/animateLayers/)
 
-  - Syntax
-    - `animateLayer( layerId, properties [, duration ] [, easing ] [, callback ] )`
-    - `animateLayer( layerId, properties, options )`
-  - Returns
-    - `jQuery`
+- Syntax
+  - `animateLayer( layerId, properties [, duration ] [, easing ] [, callback ] )`
+  - `animateLayer( layerId, properties, options )`
+- Returns
+  - `jQuery`
 
-### [animateLayerGroup]({base}/docs/animateLayers/)
+### [animateLayerGroup](/jcanvas/docs/animateLayers/)
 
-  - Syntax
-    - `animateLayerGroup( groupId, properties [, duration ] [, easing ] [, callback ] )`
-    - `animateLayerGroup( groupId, properties, options )`
-  - Returns
-    - `jQuery`
+- Syntax
+  - `animateLayerGroup( groupId, properties [, duration ] [, easing ] [, callback ] )`
+  - `animateLayerGroup( groupId, properties, options )`
+- Returns
+  - `jQuery`
 
-### [clearCanvas]({base}/docs/clearCanvas/)
+### [clearCanvas](/jcanvas/docs/clearCanvas/)
 
-  - Syntax
-    - `clearCanvas( properties )`
-  - Returns
-    - `jQuery`
+- Syntax
+  - `clearCanvas( properties )`
+- Returns
+  - `jQuery`
 
-### [createGradient]({base}/docs/gradients/)
+### [createGradient](/jcanvas/docs/gradients/)
 
-  - Syntax
-    - `createGradient( properties )`
-  - Returns
-    - `CanvasGradient`
+- Syntax
+  - `createGradient( properties )`
+- Returns
+  - `CanvasGradient`
 
-### [createPattern]({base}/docs/patterns/)
+### [createPattern](/jcanvas/docs/patterns/)
 
-  - Syntax
-    - `createPattern( properties )`
-  - Returns
-    - `CanvasPattern`
+- Syntax
+  - `createPattern( properties )`
+- Returns
+  - `CanvasPattern`
 
-### [delayLayer]({base}/docs/animateLayers/)
+### [delayLayer](/jcanvas/docs/animateLayers/)
 
-  - Syntax
-    - `delayLayer( layerId [, duration ] )`
-  - Returns
-    - `jQuery`
+- Syntax
+  - `delayLayer( layerId [, duration ] )`
+- Returns
+  - `jQuery`
 
-### [delayLayerGroup]({base}/docs/animateLayers/)
+### [delayLayerGroup](/jcanvas/docs/animateLayers/)
 
-  - Syntax
-    - `delayLayerGroup( groupId [, duration ] )`
-  - Returns
-    - `jQuery`
+- Syntax
+  - `delayLayerGroup( groupId [, duration ] )`
+- Returns
+  - `jQuery`
 
-### [detectPixelRatio]({base}/docs/detectPixelRatio/)
+### [detectPixelRatio](/jcanvas/docs/detectPixelRatio/)
 
-  - Syntax
-    - `detectPixelRatio( [ callback ] )`
-  - Returns
-    - `jQuery`
+- Syntax
+  - `detectPixelRatio( [ callback ] )`
+- Returns
+  - `jQuery`
 
-### [draw]({base}/docs/drawManually/)
+### [draw](/jcanvas/docs/drawManually/)
 
-  - Syntax
-    - `draw( properties )`
-  - Returns
-    - `jQuery`
+- Syntax
+  - `draw( properties )`
+- Returns
+  - `jQuery`
 
-### [drawArc]({base}/docs/arcs/)
+### [drawArc](/jcanvas/docs/arcs/)
 
-  - Syntax
-    - `drawArc( properties )`
-  - Returns
-    - `jQuery`
+- Syntax
+  - `drawArc( properties )`
+- Returns
+  - `jQuery`
 
-### [drawBezier]({base}/docs/curves/)
+### [drawBezier](/jcanvas/docs/curves/)
 
-  - Syntax
-    - `drawBezier( properties )`
-  - Returns
-    - `jQuery`
+- Syntax
+  - `drawBezier( properties )`
+- Returns
+  - `jQuery`
 
-### [drawEllipse]({base}/docs/ellipses/)
+### [drawEllipse](/jcanvas/docs/ellipses/)
 
-  - Syntax
-    - `drawEllipse( properties )`
-  - Returns
-    - `jQuery`
+- Syntax
+  - `drawEllipse( properties )`
+- Returns
+  - `jQuery`
 
-### [drawImage]({base}/docs/images/)
+### [drawImage](/jcanvas/docs/images/)
 
-  - Syntax
-    - `drawImage( properties )`
-  - Returns
-    - `jQuery`
+- Syntax
+  - `drawImage( properties )`
+- Returns
+  - `jQuery`
 
-### [drawLayers]({base}/docs/drawLayers/)
+### [drawLayers](/jcanvas/docs/drawLayers/)
 
-  - Syntax
-    - `drawLayers( )`
-  - Returns
-    - `jQuery`
+- Syntax
+  - `drawLayers( )`
+- Returns
+  - `jQuery`
 
-### [drawLine]({base}/docs/lines/)
+### [drawLine](/jcanvas/docs/lines/)
 
-  - Syntax
-    - `drawLine( properties )`
-  - Returns
-    - `jQuery`
+- Syntax
+  - `drawLine( properties )`
+- Returns
+  - `jQuery`
 
-### [drawPolygon]({base}/docs/polygons/)
+### [drawPolygon](/jcanvas/docs/polygons/)
 
-  - Syntax
-    - `drawPolygon( properties )`
-  - Returns
-    - `jQuery`
+- Syntax
+  - `drawPolygon( properties )`
+- Returns
+  - `jQuery`
 
-### [drawQuadratic]({base}/docs/curves/)
+### [drawQuadratic](/jcanvas/docs/curves/)
 
-  - Syntax
-    - `drawQuadratic( properties )`
-  - Returns
-    - `jQuery`
+- Syntax
+  - `drawQuadratic( properties )`
+- Returns
+  - `jQuery`
 
-### [drawRect]({base}/docs/rectangles/)
+### [drawRect](/jcanvas/docs/rectangles/)
 
-  - Syntax
-    - `drawRect( properties )`
-  - Returns
-    - `jQuery`
+- Syntax
+  - `drawRect( properties )`
+- Returns
+  - `jQuery`
 
-### [drawSlice]({base}/docs/slices/)
+### [drawSlice](/jcanvas/docs/slices/)
 
-  - Syntax
-    - `drawSlice( properties )`
-  - Returns
-    - `jQuery`
+- Syntax
+  - `drawSlice( properties )`
+- Returns
+  - `jQuery`
 
-### [drawText]({base}/docs/text/)
+### [drawText](/jcanvas/docs/text/)
 
-  - Syntax
-    - `drawText( properties )`
-  - Returns
-    - `jQuery`
+- Syntax
+  - `drawText( properties )`
+- Returns
+  - `jQuery`
 
-### [drawVector]({base}/docs/vectors/)
+### [drawVector](/jcanvas/docs/vectors/)
 
-  - Syntax
-    - `drawVector( properties )`
-  - Returns
-    - `jQuery`
+- Syntax
+  - `drawVector( properties )`
+- Returns
+  - `jQuery`
 
-### [getCanvasImage]({base}/docs/getCanvasImage/)
+### [getCanvasImage](/jcanvas/docs/getCanvasImage/)
 
-  - Syntax
-    - `getCanvasImage( [ imageType ] )`
-  - Returns
-    - `String`
+- Syntax
+  - `getCanvasImage( [ imageType ] )`
+- Returns
+  - `String`
 
-### [getEventHooks]({base}/docs/eventHooks/)
+### [getEventHooks](/jcanvas/docs/eventHooks/)
 
-  - Syntax
-    - `getEventHooks( )`
-  - Returns
-    - `Object`
+- Syntax
+  - `getEventHooks( )`
+- Returns
+  - `Object`
 
-### [getLayer]({base}/docs/retrieveLayers/)
+### [getLayer](/jcanvas/docs/retrieveLayers/)
 
-  - Syntax
-    - `getLayer( layerId )`
-  - Returns
-    - `Layer`
+- Syntax
+  - `getLayer( layerId )`
+- Returns
+  - `Layer`
 
-### [getLayerGroup]({base}/docs/retrieveLayers/)
+### [getLayerGroup](/jcanvas/docs/retrieveLayers/)
 
-  - Syntax
-    - `getLayerGroup( groupId )`
-  - Returns
-    - `Layer`
+- Syntax
+  - `getLayerGroup( groupId )`
+- Returns
+  - `Layer`
 
-### [getLayerIndex]({base}/docs/retrieveLayers/)
+### [getLayerIndex](/jcanvas/docs/retrieveLayers/)
 
-  - Syntax
-    - `getLayerIndex( layerId )`
-  - Returns
-    - `Number`
+- Syntax
+  - `getLayerIndex( layerId )`
+- Returns
+  - `Number`
 
-### [getLayers]({base}/docs/retrieveLayers/)
+### [getLayers](/jcanvas/docs/retrieveLayers/)
 
-  - Syntax
-    - `getLayers( [ callback ] )`
-  - Returns
-    - `Array`
+- Syntax
+  - `getLayers( [ callback ] )`
+- Returns
+  - `Array`
 
-### [jCanvas.extend]({base}/docs/extending/)
+### [jCanvas.extend](/jcanvas/docs/extending/)
 
-  - Syntax
-    - `jCanvas.extend( properties )`
-  - Returns
-    - `Function`
+- Syntax
+  - `jCanvas.extend( properties )`
+- Returns
+  - `Function`
 
-### [measureText]({base}/docs/text/)
+### [measureText](/jcanvas/docs/text/)
 
-  - Syntax
-    - `measureText( properties )`
-    - `measureText( layerId )`
-  - Returns
-    - `Object`
+- Syntax
+  - `measureText( properties )`
+  - `measureText( layerId )`
+- Returns
+  - `Object`
 
-### [moveLayer]({base}/docs/manipulateLayers/)
+### [moveLayer](/jcanvas/docs/manipulateLayers/)
 
-  - Syntax
-    - `moveLayer( layerId, groupName )`
-  - Returns
-    - `jQuery`
+- Syntax
+  - `moveLayer( layerId, groupName )`
+- Returns
+  - `jQuery`
 
-### [removeLayer]({base}/docs/manipulateLayers/)
+### [removeLayer](/jcanvas/docs/manipulateLayers/)
 
-  - Syntax
-    - `removeLayer( layerId )`
-  - Returns
-    - `jQuery`
+- Syntax
+  - `removeLayer( layerId )`
+- Returns
+  - `jQuery`
 
-### [removeLayerFromGroup]({base}/docs/manipulateLayers/)
+### [removeLayerFromGroup](/jcanvas/docs/manipulateLayers/)
 
-  - Syntax
-    - `removeLayerFromGroup( layerId, groupName )`
-  - Returns
-    - `jQuery`
+- Syntax
+  - `removeLayerFromGroup( layerId, groupName )`
+- Returns
+  - `jQuery`
 
-### [removeLayerGroup]({base}/docs/manipulateLayers/)
+### [removeLayerGroup](/jcanvas/docs/manipulateLayers/)
 
-  - Syntax
-    - `removeLayerGroup( groupId )`
-  - Returns
-    - `jQuery`
+- Syntax
+  - `removeLayerGroup( groupId )`
+- Returns
+  - `jQuery`
 
-### [removeLayers]({base}/docs/manipulateLayers/)
+### [removeLayers](/jcanvas/docs/manipulateLayers/)
 
-  - Syntax
-    - `removeLayers( )`
-  - Returns
-    - `jQuery`
+- Syntax
+  - `removeLayers( )`
+- Returns
+  - `jQuery`
 
 ### restoreCanvas( )
 
-  - Syntax
-    - `restoreCanvas( properties )`
-  - Returns
-    - `jQuery`
-  - Notes
-    - For usage details, see the documentation for [`rotateCanvas()`]({base}/docs/rotateCanvas/), [`scaleCanvas()`]({base}/docs/scaleCanvas/), [`translateCanvas()`]({base}/docs/translateCanvas/), or [Masking]({base}/docs/masking/).
+- Syntax
+  - `restoreCanvas( properties )`
+- Returns
+  - `jQuery`
+- Notes
+  - For usage details, see the documentation for [`rotateCanvas()`](/jcanvas/docs/rotateCanvas/), [`scaleCanvas()`](/jcanvas/docs/scaleCanvas/), [`translateCanvas()`](/jcanvas/docs/translateCanvas/), or [Masking](/jcanvas/docs/masking/).
 
-### [rotateCanvas]({base}/docs/rotateCanvas/)
+### [rotateCanvas](/jcanvas/docs/rotateCanvas/)
 
-  - Syntax
-    - `rotateCanvas( properties )`
-  - Returns
-    - `jQuery`
+- Syntax
+  - `rotateCanvas( properties )`
+- Returns
+  - `jQuery`
 
-### [scaleCanvas]({base}/docs/scaleCanvas/)
+### [scaleCanvas](/jcanvas/docs/scaleCanvas/)
 
-  - Syntax
-    - `scaleCanvas( properties )`
-  - Returns
-    - `jQuery`
+- Syntax
+  - `scaleCanvas( properties )`
+- Returns
+  - `jQuery`
 
-### [setEventHooks]({base}/docs/eventHooks/)
+### [setEventHooks](/jcanvas/docs/eventHooks/)
 
-  - Syntax
-    - `setEventHooks( properties )`
-  - Returns
-    - `jQuery`
+- Syntax
+  - `setEventHooks( properties )`
+- Returns
+  - `jQuery`
 
-### [setLayer]({base}/docs/manipulateLayers/)
+### [setLayer](/jcanvas/docs/manipulateLayers/)
 
-  - Syntax
-    - `setLayer( layerId, properties )`
-  - Returns
-    - `jQuery`
+- Syntax
+  - `setLayer( layerId, properties )`
+- Returns
+  - `jQuery`
 
-### [setLayerGroup]({base}/docs/manipulateLayers/)
+### [setLayerGroup](/jcanvas/docs/manipulateLayers/)
 
-  - Syntax
-    - `setLayerGroup( groupId, properties )`
-  - Returns
-    - `jQuery`
+- Syntax
+  - `setLayerGroup( groupId, properties )`
+- Returns
+  - `jQuery`
 
-### [setLayers]({base}/docs/manipulateLayers/)
+### [setLayers](/jcanvas/docs/manipulateLayers/)
 
-  - Syntax
-    - `setLayers( properties [, callback ] )`
-  - Returns
-    - `jQuery`
+- Syntax
+  - `setLayers( properties [, callback ] )`
+- Returns
+  - `jQuery`
 
-### [setPixels]({base}/docs/pixelManipulation/)
+### [setPixels](/jcanvas/docs/pixelManipulation/)
 
-  - Syntax
-    - `setPixels( properties )`
-  - Returns
-    - `jQuery`
+- Syntax
+  - `setPixels( properties )`
+- Returns
+  - `jQuery`
 
-### [stopLayer]({base}/docs/animateLayers/)
+### [stopLayer](/jcanvas/docs/animateLayers/)
 
-  - Syntax
-    - `stopLayer( layerId [, clearQueue ] )`
-  - Returns
-    - `jQuery`
+- Syntax
+  - `stopLayer( layerId [, clearQueue ] )`
+- Returns
+  - `jQuery`
 
-### [stopLayerGroup]({base}/docs/animateLayers/)
+### [stopLayerGroup](/jcanvas/docs/animateLayers/)
 
-  - Syntax
-    - `stopLayerGroup( groupId [, clearQueue ] )`
-  - Returns
-    - `jQuery`
+- Syntax
+  - `stopLayerGroup( groupId [, clearQueue ] )`
+- Returns
+  - `jQuery`
 
-### [translateCanvas]({base}/docs/translateCanvas/)
+### [translateCanvas](/jcanvas/docs/translateCanvas/)
 
-  - Syntax
-    - `translateCanvas( properties )`
-  - Returns
-    - `jQuery`
+- Syntax
+  - `translateCanvas( properties )`
+- Returns
+  - `jQuery`

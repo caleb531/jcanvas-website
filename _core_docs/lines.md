@@ -12,10 +12,14 @@ You can draw a line path using the `drawLine()` method. Coordinates are defined 
 $('canvas').drawLine({
   strokeStyle: '#000',
   strokeWidth: 10,
-  x1: 100, y1: 50,
-  x2: 100, y2: 150,
-  x3: 200, y3: 100,
-  x4: 150, y4: 200
+  x1: 100,
+  y1: 50,
+  x2: 100,
+  y2: 150,
+  x3: 200,
+  y3: 100,
+  x4: 150,
+  y4: 200
 });
 ```
 
@@ -27,10 +31,14 @@ You can, optionally, close a line path, which will connect its start and end poi
 $('canvas').drawLine({
   strokeStyle: '#000',
   strokeWidth: 10,
-  x1: 100, y1: 50,
-  x2: 100, y2: 150,
-  x3: 200, y3: 100,
-  x4: 150, y4: 200,
+  x1: 100,
+  y1: 50,
+  x2: 100,
+  y2: 150,
+  x3: 200,
+  y3: 100,
+  x4: 150,
+  y4: 200,
   closed: true
 });
 ```
@@ -44,10 +52,14 @@ $('canvas').drawLine({
   strokeStyle: '#000',
   strokeWidth: 10,
   rounded: true,
-  x1: 80, y1: 50,
-  x2: 100, y2: 150,
-  x3: 200, y3: 100,
-  x4: 150, y4: 200
+  x1: 80,
+  y1: 50,
+  x2: 100,
+  y2: 150,
+  x3: 200,
+  y3: 100,
+  x4: 150,
+  y4: 200
 });
 ```
 
@@ -73,8 +85,8 @@ var pts = [
 
 // Add the points from the array to the object
 for (var p = 0; p < pts.length; p += 1) {
-  obj['x'+(p+1)] = pts[p][0];
-  obj['y'+(p+1)] = pts[p][1];
+  obj['x' + (p + 1)] = pts[p][0];
+  obj['y' + (p + 1)] = pts[p][1];
 }
 
 // Draw the line
@@ -85,7 +97,7 @@ $('canvas').drawLine(obj);
 
 Browsers began recently adopting the ability to create dashed lines. To do so in jCanvas, specify the `strokeDash` and `strokeDashOffset` properties.
 
-The `strokeDash` property accepts an array of one or two numbers, and the `strokeDashOffset` property accepts a single number. See the [Properties]({base}/docs/properties/) page for specific usage details.
+The `strokeDash` property accepts an array of one or two numbers, and the `strokeDashOffset` property accepts a single number. See the [Properties](/jcanvas/docs/properties/) page for specific usage details.
 
 ```js
 $('canvas').drawLine({
@@ -93,13 +105,17 @@ $('canvas').drawLine({
   strokeWidth: 3,
   strokeDash: [5],
   strokeDashOffset: 0,
-  x1: 100, y1: 50,
-  x2: 100, y2: 150,
-  x3: 200, y3: 100,
-  x4: 150, y4: 200
+  x1: 100,
+  y1: 50,
+  x2: 100,
+  y2: 150,
+  x3: 200,
+  y3: 100,
+  x4: 150,
+  y4: 200
 });
 ```
 
 ### Vectors
 
-Instead of the `drawLine()` method, you can also plot line segments using the `[drawVector()]({base}/docs/vectors/)` method (which draws lines using vectors rather than (*x*, *y*) coordinates).
+Instead of the `drawLine()` method, you can also plot line segments using the `[drawVector()](/jcanvas/docs/vectors/)` method (which draws lines using vectors rather than (_x_, _y_) coordinates).
