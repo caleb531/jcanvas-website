@@ -106,7 +106,7 @@ If you choose to submit an issue on GitHub, please don't submit a follow-up emai
 
 If you wish to extend jCanvas with your own methods, you can learn to do so using the [Plugin API]({base}/docs/extending/).
 
-If you would like to submit your jCanvas plugin to the public gallery, follow [the procedure for submitting a plugin]({base}/lugins/submitting/).
+If you would like to submit your jCanvas plugin to the public gallery, follow [the procedure for submitting a plugin]({base}/plugins/submitting/).
 
 ## Gallery
 
