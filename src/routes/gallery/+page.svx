@@ -1,0 +1,10 @@
+<script lang="ts">
+  import GalleryEntries from './GalleryEntries.svelte';  
+</script>
+
+<p>
+  This is a collection of sites and apps that use jCanvas. If you would like to submit your project
+  to the gallery, please <a href="/jcanvas/support/#gallery">follow the steps for doing so</a>.
+</p>
+
+<GalleryEntries />

@@ -1,17 +1,17 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 {% if jekyll.environment == 'production' %}
-<script src="{base}/assets/jcanvas/dist/min/jcanvas.min.js"></script>
+<script src="/jcanvas/assets/jcanvas/dist/min/jcanvas.min.js"></script>
 {% else %}
-<script src="{base}/assets/jcanvas/dist/umd/jcanvas.js"></script>
+<script src="/jcanvas/assets/jcanvas/dist/umd/jcanvas.js"></script>
 {% endif %}
-<script src="{base}/assets/scripts/global.js"></script>
+<script src="/jcanvas/assets/scripts/global.js"></script>
 
 {% if page.collection == 'core_docs' or page.collection == 'plugin_docs' %}
 
-<script src="{base}/assets/scripts/docs.js"></script>
+<script src="/jcanvas/assets/scripts/docs.js"></script>
 
 {% if page.collection == 'plugin_docs' and page.is_plugin %}
-<script src="{base}/assets/jcanvas/dist/umd/jcanvas-{{ page.slug }}.js"></script>
+<script src="/jcanvas/assets/jcanvas/dist/umd/jcanvas-{{ page.slug }}.js"></script>
 {% endif %} {% endif %} {% if page.id == 'sandbox' %}
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.21.0/codemirror.min.js"></script>
@@ -19,15 +19,15 @@
 
 {% for plugin_doc in site.plugin_docs %} {% if plugin_doc.is_plugin %} {% if jekyll.environment ==
 'production' %}
-<script src="{base}/assets/jcanvas/dist/umd/jcanvas-{{ plugin_doc.slug }}.js"></script>
+<script src="/jcanvas/assets/jcanvas/dist/umd/jcanvas-{{ plugin_doc.slug }}.js"></script>
 {% else %}
-<script src="{base}/assets/jcanvas/dist/umd/jcanvas-{{ plugin_doc.slug }}.js"></script>
+<script src="/jcanvas/assets/jcanvas/dist/umd/jcanvas-{{ plugin_doc.slug }}.js"></script>
 {% endif %} {% endif %} {% endfor %}
-<script src="{base}/assets/scripts/sandbox.js"></script>
+<script src="/jcanvas/assets/scripts/sandbox.js"></script>
 
 {% elsif page.id == 'home' %}
 
-<script src="{base}/assets/scripts/home.js"></script>
+<script src="/jcanvas/assets/scripts/home.js"></script>
 
 {% endif %}
 

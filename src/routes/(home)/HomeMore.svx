@@ -1,0 +1,1 @@
+To get started, check out the [Documentation](/jcanvas/docs).

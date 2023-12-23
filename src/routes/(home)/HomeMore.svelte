@@ -1,5 +1,0 @@
-<script lang="ts">
-  import { base } from '$app/paths';
-</script>
-
-To get started, check out the [Documentation]({base}/docs).

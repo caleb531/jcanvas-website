@@ -1,9 +1,9 @@
 <script lang="ts">
-  import HomeAbout from './HomeAbout.svelte';
-  import HomeExample from './HomeExample.svelte';
-  import HomeFeatures from './HomeFeatures.svelte';
-  import HomeIntro from './HomeIntro.svelte';
-  import HomeMore from './HomeMore.svelte';
+  import HomeAbout from './HomeAbout.svx';
+  import HomeExample from './HomeExample.svx';
+  import HomeFeatures from './HomeFeatures.svx';
+  import HomeIntro from './HomeIntro.svx';
+  import HomeMore from './HomeMore.svx';
 </script>
 
 <div id="home-intro" class="home-section box">

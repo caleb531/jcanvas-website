@@ -1,7 +1,3 @@
-<script lang="ts">
-  import { base } from '$app/paths';
-</script>
-
 ## License
 
 jCanvas is licensed under the MIT license. This means you can use jCanvas for whatever purpose under two conditions:
@@ -19,18 +15,20 @@ By default, jCanvas considers a shape's center at its (`x`, `y`) position. You c
 
 For consistency, the same behavior applies when cropping an image, which also can be reverted using the `cropFromCenter` property.
 
-It is also important to note that for numerical jCanvas properties such as `x`, `y`, `height`, `strokeWidth`, *etc.*, jCanvas requires that their respective values be numbers, *not* strings.
+It is also important to note that for numerical jCanvas properties such as `x`, `y`, `height`, `strokeWidth`, _etc._, jCanvas requires that their respective values be numbers, _not_ strings.
 
 ### Why are my layers reappearing after calling clearCanvas()?
 
-The `clearCanvas()` method is *not* meant to be used if you are using the jCanvas Layer API, because the API handles redrawing for you in many cases, and so if you try to clear the canvas. you layers will eventually be redrawn by jCanvas when it deems necessary.
+The `clearCanvas()` method is _not_ meant to be used if you are using the jCanvas Layer API, because the API handles redrawing for you in many cases, and so if you try to clear the canvas. you layers will eventually be redrawn by jCanvas when it deems necessary.
 
 If you want to hide a layer temporarily, use `setLayer()` to set the layer's `visible` property, then call `drawLayers()`:
 
 ```js
-$('canvas').setLayer('myLayerName', {
-  visible: false // set to true instead to show the layer again
-}).drawLayers();
+$('canvas')
+  .setLayer('myLayerName', {
+    visible: false // set to true instead to show the layer again
+  })
+  .drawLayers();
 ```
 
 If you want to remove a layer permanently, call `removeLayer()` followed by `drawLayers()`:
@@ -104,15 +102,15 @@ If you choose to submit an issue on GitHub, please don't submit a follow-up emai
 
 ## Plugins
 
-If you wish to extend jCanvas with your own methods, you can learn to do so using the [Plugin API]({base}/docs/extending/).
+If you wish to extend jCanvas with your own methods, you can learn to do so using the [Plugin API](/jcanvas/docs/extending/).
 
-If you would like to submit your jCanvas plugin to the public gallery, follow [the procedure for submitting a plugin]({base}/plugins/submitting/).
+If you would like to submit your jCanvas plugin to the public gallery, follow [the procedure for submitting a plugin](/jcanvas/plugins/submitting/).
 
 ## Gallery
 
-If you would like to submit your jCanvas project to the [public gallery]({base}/gallery/), please contact me (see above) with the following information:
+If you would like to submit your jCanvas project to the [public gallery](/jcanvas/gallery/), please contact me (see above) with the following information:
 
 - A link to your site/app
 - A name to display publicly as the app's author (could be you or someone else)
 - A short description of your site/app (I would include this in the gallery)
-- Anything else you'd like me to know (link to GitHub, *etc.*)
+- Anything else you'd like me to know (link to GitHub, _etc._)
