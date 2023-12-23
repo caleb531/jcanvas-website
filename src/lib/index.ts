@@ -2,7 +2,8 @@
 
 import jQuery from 'jquery';
 
-let jCanvasPromise = null;
+// TODO: eliminate the `any` type here
+let jCanvasPromise: Promise<any>;
 
 export function jCanvasLoad() {
   if (typeof window === 'undefined') {
@@ -18,7 +19,7 @@ export function jCanvasLoad() {
 }
 
 // Reset context all attached data for the given canvases
-export function resetCanvases(canvases) {
+export function resetCanvases(canvases: HTMLCanvasElement[]) {
   canvases?.forEach((canvas) => {
     var $canvas = jQuery(canvas);
     $canvas.removeLayers();
@@ -33,12 +34,12 @@ export function resetCanvases(canvases) {
 var imagePathPattern = /(images\/(?:\w+)\.(jpg|png|svg))/gi;
 
 // Modify any image paths to point to the real images directory
-export function correctImagePaths(code) {
+export function correctImagePaths(code: string) {
     return code.replace(imagePathPattern, '/jcanvas/assets/$1');
 }
 
 // Spawn a new sandbox with the given sandbox state
-export function spawnNewSandbox(sandboxState) {
+export function spawnNewSandbox(sandboxState: { code: string, canvasCount: number }) {
   // Retrieve the sandbox state of the current page
   var originalSandboxState = sessionStorage.getItem('jcanvas-sandbox');
   // Temporarily overwrite the current page's sandbox state with the new sandbox

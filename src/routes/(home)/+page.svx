@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import HomeIntro from './HomeIntro.svx';
   import HomeAbout from './HomeAbout.svx';
   import HomeFeatures from './HomeFeatures.svx';

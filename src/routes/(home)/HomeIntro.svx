@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { version as latestVersion } from '$data/downloads.json';
 </script>
 

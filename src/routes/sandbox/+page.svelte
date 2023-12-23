@@ -1,7 +1,7 @@
-<script>
+<script lang="ts">
   import { Prec } from "@codemirror/state"
-  import { keymap } from "@codemirror/view"
-  import { jCanvasLoad } from '$lib';
+  import { EditorView, keymap } from "@codemirror/view"
+  import { jCanvasLoad } from '$src/lib';
   import CodeMirror from "svelte-codemirror-editor";
   import { minimalSetup } from "codemirror"
   import { javascript } from "@codemirror/lang-javascript"
@@ -9,7 +9,7 @@
   import ExampleImages from '../ExampleImages.svelte';
   import jQuery from 'jquery';
   import { browser } from '$app/environment';
-  import { resetCanvases, correctImagePaths, spawnNewSandbox } from '$lib';
+  import { resetCanvases, correctImagePaths, spawnNewSandbox } from '$src/lib';
 
 
   // Defaults and constants
@@ -22,33 +22,33 @@
     canvasCount: 1
   };
 
-  let sandboxArea;
-  let editorHeight;
+  let sandboxArea: HTMLElement;
+  let editorHeight: number;
 
   let CANVAS_WIDTH = 320;
   let CANVAS_BORDER_WIDTH = 1;
-  let canvasWidth;
-  let canvasHeight;
+  let canvasWidth: number;
+  let canvasHeight: number;
 
   let editorContents = defaultSandboxState.code;
-  let canvasCount;
-  let editorError = null;
+  let canvasCount: number;
+  let editorError: Error | null = null;
 
-  function getCanvasWidth(newCanvasCount) {
+  function getCanvasWidth(newCanvasCount: number) {
     return CANVAS_WIDTH;
   }
 
-  function getCanvasHeight(newCanvasCount) {
+  function getCanvasHeight(newCanvasCount: number) {
     return editorHeight ? Math.round((editorHeight / newCanvasCount) - (2 * CANVAS_BORDER_WIDTH)) : 0;
   }
 
-  function resizeCanvases(newCanvasCount) {
+  function resizeCanvases(newCanvasCount: number) {
     canvasWidth = getCanvasWidth(newCanvasCount);
     canvasHeight = getCanvasHeight(newCanvasCount);
   }
 
   // Change number of canvases with which to test
-  function changeCanvasCount(newCanvasCount) {
+  function changeCanvasCount(newCanvasCount: number) {
     canvasCount = newCanvasCount;
     runCode();
     saveSandboxState();
@@ -59,13 +59,12 @@
   function loadSandboxState() {
     // Load sandbox settings from local storage
     let sandboxState = sessionStorage.getItem('jcanvas-sandbox');
-    sandboxState = JSON.parse(sandboxState);
+    sandboxState = JSON.parse(String(sandboxState));
     if (sandboxState !== null) {
-      sandboxState = jQuery.extend({}, defaultSandboxState, sandboxState);
+      return jQuery.extend({}, defaultSandboxState, sandboxState);
     } else {
-      sandboxState = defaultSandboxState;
+      return defaultSandboxState;
     }
-    return sandboxState;
   }
 
   function getSandboxState() {
@@ -90,8 +89,8 @@
       new Function(correctImagePaths(editorContents))();
     } catch(error) {
       // Report any errors to the editor
-      editorError = error;
-      console.error(error.stack || String(error));
+      editorError = error as Error;
+      console.error((error as Error).stack || String(error));
     }
   }
 
@@ -104,9 +103,9 @@
     spawnNewSandbox(getSandboxState());
   }
 
-  function runCodeOnModEnter(codemirror, event) {
+  function runCodeOnModEnter() {
     runCode();
-    saveSandboxState(codemirror);
+    saveSandboxState();
     // Per the CodeMirror 6 KeyBinding docs, returning false will run other
     // handlers for the same key binding (causing a line break to be inserted in
     // addition to running the new code); it seems that returning undefined /
@@ -125,7 +124,7 @@
     canvasCount = sandboxState.canvasCount;
     changeCanvasCount(sandboxState.canvasCount);
     runCode();
-    editorHeight = sandboxArea.querySelector('#sandbox-editor-area').getBoundingClientRect().height;
+    editorHeight = sandboxArea.querySelector('#sandbox-editor-area')?.getBoundingClientRect().height || 0;
   })
 
   $: {
@@ -143,7 +142,7 @@
       </div>
       <div id="sandbox-canvas-count-controls">
         <label for="sandbox-canvas-count">Canvases:</label>
-        <select id="sandbox-canvas-count" on:change={(event) => changeCanvasCount(Number(event.target.value))} value={canvasCount}>
+        <select id="sandbox-canvas-count" on:change={(event) => changeCanvasCount(Number(event.currentTarget.value))} value={canvasCount}>
           {#each {length: 3} as _, i}
             <option value={i + 1}>{i + 1}</option>
           {/each}

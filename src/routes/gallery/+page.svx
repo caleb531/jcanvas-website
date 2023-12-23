@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { base } from '$app/paths';
   const entries = Object.values(import.meta.glob('$src/gallery-entries/*.md', { eager: true }));
 </script>
