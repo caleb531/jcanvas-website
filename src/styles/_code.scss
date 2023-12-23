@@ -10,13 +10,18 @@ code {
 }
 
 // Code blocks
-div.highlighter-rouge {
+pre {
   position: relative;
-  margin-top: 20px;
+  margin: 0;
+  padding: 10px 15px;
+  text-align: left;
+  font-size: 11pt;
+  white-space: pre;
+  overflow-x: auto;
   border: solid 1px $input-border-color;
   border-radius: $code-block-border-radius;
   background-color: #fff;
-  background-image: url('../images/grid-fg.svg');
+  background-image: url('/images/grid-fg.svg');
   background-size: 11px;
   background-clip: padding-box;
   font-family: $monospace;
@@ -29,17 +34,8 @@ div.highlighter-rouge {
     border-bottom-left-radius: $code-block-border-radius;
     border-bottom-right-radius: $code-block-border-radius;
   }
-  pre {
-    position: relative;
-    margin: 0;
-    padding: 10px 15px;
-    text-align: left;
-    font-size: 11pt;
-    white-space: pre;
-    overflow-x: auto;
-    @include layout(compact) {
-      font-size: 12pt;
-    }
+  @include layout(compact) {
+    font-size: 12pt;
   }
   code {
     color: inherit;
@@ -47,46 +43,38 @@ div.highlighter-rouge {
 }
 
 // Syntax highlighting styles
-.highlight {
-  // Comments
-  .c,
-  .c1,
-  .cm,
-  .cp,
-  .cs {
-    color: $code-gray;
-  }
-  // Keywords
-  .k,
-  .kc,
-  .kd {
-    color: $code-blue;
-  }
-  // Strings (single- and double-quoted)
-  .s1,
-  .s2 {
-    color: $code-orange;
-  }
-  // Numbers
-  .m,
-  .mf,
-  .mi,
-  .mh,
-  .mo {
-    color: $code-green;
-  }
-  // Object literal key names and HTML attribute names
-  .na {
-    color: $code-purple;
-  }
-  // HTML tag names
-  .nt {
-    color: $code-blue;
-  }
-  // HTML attribute values
-  .s {
-    color: $code-green;
-  }
+// Comments
+.token.comment {
+  color: $code-gray;
+}
+// Keywords
+.token.keyword,
+.token.boolean {
+  color: $code-blue;
+}
+// Strings (single- and double-quoted)
+.token.string {
+  color: $code-orange;
+}
+// Numbers
+.token.number {
+  color: $code-green;
+}
+// Object literal key names and HTML attribute names
+.token.literal-property.property {
+  color: $code-purple;
+}
+// HTML tag names
+.token.tag {
+  color: $code-blue;
+}
+// HTML attribute names
+.token.attr-name {
+  color: $code-purple;
+}
+// HTML attribute values
+.token.attr-value {
+  color: $code-green;
 }
 
 .try-in-sandbox {
