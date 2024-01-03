@@ -25,6 +25,13 @@ You also need to add jCanvas to your page somehow (usually a `<script>` element 
 <script src="jcanvas.min.js"></script>
 ```
 
+If your application is bundled or uses ES Modules (ESM), you can import jCanvas like so (remember to `npm install jcanvas` first!):
+
+```js
+import $ from 'jquery';
+import 'jcanvas';
+```
+
 ### Drawing
 
 HTML5 provides [a native JavaScript API](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Drawing_shapes) for drawing on the canvas. However, we will be using jCanvas instead.
