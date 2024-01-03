@@ -17,14 +17,10 @@ jCanvas is licensed under the MIT license, which you can view on
 
 ## Supported Browsers
 
-- [Google Chrome](https://www.google.com/chrome/) 20+
-- [Mozilla Firefox](https://www.mozilla.org/en-US/firefox/new/) 10.0+
-- [Apple Safari](https://www.apple.com/safari/) 5.0+
+- [Chrome](https://www.google.com/chrome/) 20+
+- [Firefox](https://www.mozilla.org/en-US/firefox/new/) 10.0+
+- [Safari](https://www.apple.com/safari/) 5.0+
 - [Opera](https://www.opera.com/)
-- Internet Explorer 9+
-
-For Internet Explorer 8 and older, try using jCanvas with
-[FlashCanvas](http://flashcanvas.net/).
 
 ## Supported Platforms
 
