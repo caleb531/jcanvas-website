@@ -15,7 +15,16 @@ Before you can draw on the canvas, you need to create one.
 
 Of course, the canvas can be any width/height you want. You may also wish to give the canvas an ID (for future reference).
 
-As a side note, you cannot accurately set a canvas's width and height via CSS; you can only do so through the canvas element's `width` and `height` attributes.
+#### Note: Setting width and height properly
+
+As a side note, you cannot accurately set a canvas's width and height via CSS; you can only do so through the canvas element's `width` and `height` attributes. This is best achieved through jQuery's `prop()` method.
+
+```js
+// BAD (will stretch and distort the canvas)
+$('#myCanvas').css({ width: 800, height: 500 });
+// GOOD (correct way)
+$('#myCanvas').prop({ width: 800, height: 500 });
+```
 
 ### Importing jCanvas
 
