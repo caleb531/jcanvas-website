@@ -138,7 +138,7 @@ $('canvas').drawPath({
 You can also draw an SVG path with `drawPath()` via the `d` property (new as of jCanvas v22.1.0). This allows you to integrate SVG with jCanvas, and even take advantage of jCanvas features like [masking]({{ site.baseurl }}/docs/masking/).
 
 ```js
-// Draw the outline of a cartoon face
+// Draw an SVG path directly onto the canvas
 $('canvas').drawPath({
   strokeStyle: '#000',
   strokeWidth: 4,
