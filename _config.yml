@@ -21,10 +21,6 @@ description: > # this means to ignore newlines until "baseurl:"
 baseurl: "/jcanvas" # the subpath of your site, e.g. /blog
 url: "https://projects.calebevans.me/jcanvas" # the base hostname & protocol for your site, e.g. http://example.com
 
-# Google tokens
-google_analytics: UA-32407194-1
-google_adsense_client_id: ca-pub-6730292125551254
-
 # Build settings
 markdown: kramdown
 kramdown:
