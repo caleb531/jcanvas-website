@@ -121,11 +121,12 @@ h1 {
   margin: 0;
   padding: 10px 15px;
   list-style-type: none;
-  background-color: rgba(#038, 0.9);
+  background-color: rgba(#038, 0.75);
   font-size: 10pt;
   transition-duration: $transition-duration, $transition-duration, $transition-duration * 2;
   transition-timing-function: ease-in-out;
   transition-property: opacity, top, z-index;
+  backdrop-filter: blur(10px);
   a {
     display: inline-block;
     width: 100%;
