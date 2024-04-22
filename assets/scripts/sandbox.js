@@ -149,6 +149,16 @@ function initSandboxEditor(sandboxState) {
     codemirror.focus();
   }
 
+  // Fix an issue where the editor cursor/selection would be mispositioned
+  // visually
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        codemirror.refresh();
+      });
+    });
+  });
+
   runCode(codemirror);
 
 }
