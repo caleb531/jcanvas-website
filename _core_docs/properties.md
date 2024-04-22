@@ -88,6 +88,12 @@ These are descriptions of every jCanvas property, their supported methods, and t
   - **Methods:** All drawing methods
   - **Values:** An object where the keys are event names and the values are valid CSS cursor values. For examples of each cursor value, visit [Mozilla's example page](https://developer.mozilla.org/en-US/docs/Web/CSS/cursor)
 
+### d
+
+  - **Description:** An SVG path to draw on the canvas; compatible with jCanvas features like [masking]({{ site.baseurl }}/docs/masking/)
+  - **Methods:** `drawPath()`
+  - **Values:** A string representing an SVG path (i.e. the value of an SVG `<path>` element's `d` attribute)
+
 ### data
 
   - **Description:** An object that can store any user-defined data for a jCanvas layer
@@ -129,6 +135,12 @@ These are descriptions of every jCanvas property, their supported methods, and t
   - **Description:** The fill color of a shape or path
   - **Methods:** All drawing methods
   - **Values:** `'transparent'`, any valid color string
+
+### fillRule
+
+  - **Description:** The algorithm by which to determine if a point is inside or outside the filling region. See [MDN](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/fill#fillrule)
+  - **Methods:** All drawing methods
+  - **Values:** `'nonzero'`, `'evenodd'`
 
 ### flipArcText
 

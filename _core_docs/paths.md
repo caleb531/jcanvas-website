@@ -132,3 +132,16 @@ $('canvas').drawPath({
   }
 });
 ```
+
+### SVG Paths
+
+You can also draw an SVG path with `drawPath()` via the `d` property (new as of jCanvas v22.1.0):
+
+```js
+// Draw the outline of a cartoon face
+$('canvas').drawPath({
+  strokeStyle: '#000',
+  strokeWidth: 4,
+  d: 'M 25 25 l 50 50 q 25 -25 50 0 t 50 50 c 25 25 50 25 75 0 s 50 -25 75 0 a 20 20 0 0 1 25 25 z'
+});
+```
