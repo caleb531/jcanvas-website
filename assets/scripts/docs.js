@@ -47,9 +47,12 @@ $docsSection.addDocsSubsectionList();
 // Run the given demo code on the given canvas
 function runDemo(code, $demoCanvas) {
   code = $.jCanvasCorrectImagePaths(code);
-  // Inject canvas jQuery element into demo code
-  code = code.replace(canvasSelectorPattern, '$demoCanvas');
-  new Function(['$demoCanvas'], code)($demoCanvas);
+  // If code contains a jCanvas method acting on a canvas element
+  if (canvasSelectorPattern.test(code)) {
+    // Inject canvas jQuery element into demo code
+    code = code.replace(canvasSelectorPattern, '$demoCanvas');
+    new Function(['$demoCanvas'], code)($demoCanvas);
+  }
 }
 
 // Add live canvas demo of each example (if example draws on canvas)
