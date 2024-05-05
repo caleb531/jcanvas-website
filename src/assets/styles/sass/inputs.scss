@@ -1,0 +1,19 @@
+// Buttons
+button,
+.button {
+  display: inline-block;
+  margin: 2px 0;
+  border: solid 1px $input-border-color;
+  border-radius: 3px;
+  padding: 6px 8px;
+  background-color: #5b0;
+  background-clip: padding-box;
+  font-family: $sans-serif;
+  font-weight: 400;
+  color: #fff;
+  text-decoration: none;
+  &:focus {
+    outline-width: 0;
+    box-shadow: 0 0 3px 2px #cf0;
+  }
+}

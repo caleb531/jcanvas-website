@@ -1,0 +1,27 @@
+// Globally-available Sass variables
+
+$sans-serif: 'Ubuntu', sans-serif;
+$monospace: 'Oxygen Mono', monospace;
+$input-border-color: rgba(#000, 0.25);
+
+// Responsive widths
+$layout-widths: (
+  compact: 800px,
+  hybrid: 800px
+);
+
+// The maximum width of the site's main content area
+$main-max-width: 750px;
+
+// Border radius for syntax-highlighted code example
+$code-block-border-radius: 5px;
+
+// Syntax highlighting colors
+$code-gray: #888;
+$code-blue: #25b;
+$code-orange: #c30;
+$code-green: #085;
+$code-purple: #909;
+
+// The top margin for page headings (stored as a variable)
+$h1-margin-top: 30px;

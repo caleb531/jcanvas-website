@@ -5,45 +5,43 @@
 
 This repository hosts the official website for [jCanvas](https://projects.calebevans.me/jcanvas/), the jQuery canvas library.
 
-## Running the website locally
+## 🚀 Project Structure
 
-You are welcome and encouraged to clone this repository so you can have a local copy of the entire jCanvas documentation.
+Inside of your Astro project, you'll see the following folders and files:
 
-### 1. Clone repository
-
-```bash
-git clone https://github.com/caleb531/jcanvas-website.git
+```text
+/
+├── public/
+│   └── favicon.svg
+├── src/
+│   ├── components/
+│   │   └── Card.astro
+│   ├── layouts/
+│   │   └── Layout.astro
+│   └── pages/
+│       └── index.astro
+└── package.json
 ```
 
-### 2. Install Jekyll and Bundler
+Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
 
-The site requires Jekyll (3.0 or newer) and Bundler (1.12 or newer).
+There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
 
-```bash
-gem install jekyll
-gem install bundler
-```
+Any static assets, like images, can be placed in the `public/` directory.
 
-### 3. Install site gems
+## 🧞 Commands
 
-```bash
-bundle install
-```
+All commands are run from the root of the project, from a terminal:
 
-### 4. Download submodules
+| Command                   | Action                                           |
+| :------------------------ | :----------------------------------------------- |
+| `npm install`             | Installs dependencies                            |
+| `npm run dev`             | Starts local dev server at `localhost:4321`      |
+| `npm run build`           | Build your production site to `./dist/`          |
+| `npm run preview`         | Preview your build locally, before deploying     |
+| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
+| `npm run astro -- --help` | Get help using the Astro CLI                     |
 
-The site includes the jCanvas source repository as a submodule, so be sure to initialize that too.
+## 👀 Want to learn more?
 
-```bash
-git submodule update --init --recursive
-```
-
-### 5. Serve site locally
-
-```bash
-bundle exec jekyll serve
-```
-
-## Contributing
-
-See any mistakes in the documentation or errors in the code? Please submit an [issue](https://github.com/caleb531/jcanvas-website/issues) or [pull request](https://github.com/caleb531/jcanvas-website/pulls)! All code contributions are welcome.
+Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).

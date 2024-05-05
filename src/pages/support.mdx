@@ -1,0 +1,122 @@
+---
+title: Support
+subtitle: Need something?
+layout: '~/layouts/Page.astro'
+id: support
+show_ads: true
+---
+
+## License
+
+jCanvas is licensed under the MIT license. This means you can use jCanvas for whatever purpose under two conditions:
+
+- Leave the copyright notice as it is
+- Don't sue me
+
+You can read the full license [on GitHub](https://github.com/caleb531/jcanvas/blob/master/LICENSE.txt).
+
+## Frequently Asked Questions
+
+### Why are my jCanvas shapes mispositioned?
+
+By default, jCanvas considers a shape's center at its (`x`, `y`) position. You can change this behavior using the `fromCenter` property, which will measure a shape's (`x`, `y`) from its top-left corner.
+
+For consistency, the same behavior applies when cropping an image, which also can be reverted using the `cropFromCenter` property.
+
+It is also important to note that for numerical jCanvas properties such as `x`, `y`, `height`, `strokeWidth`, *etc.*, jCanvas requires that their respective values be numbers, *not* strings.
+
+### Why are my layers reappearing after calling clearCanvas()?
+
+The `clearCanvas()` method is *not* meant to be used if you are using the jCanvas Layer API, because the API handles redrawing for you in many cases, and so if you try to clear the canvas. you layers will eventually be redrawn by jCanvas when it deems necessary.
+
+If you want to hide a layer temporarily, use `setLayer()` to set the layer's `visible` property, then call `drawLayers()`:
+
+```js
+$('canvas').setLayer('myLayerName', {
+  visible: false // set to true instead to show the layer again
+}).drawLayers();
+```
+
+If you want to remove a layer permanently, call `removeLayer()` followed by `drawLayers()`:
+
+```js
+$('canvas').removeLayer('myLayerName').drawLayers();
+```
+
+### Why aren't my jCanvas handles rotating?
+
+That's because I haven't added official support for rotation to my Handles plugin. I have [an experimental branch](https://github.com/caleb531/jcanvas/tree/feature-handles-rotation/plugins) on GitHub where I am testing support for rotation, however please be aware that the implementation is rather buggy. Writing the code for dragging rotated handles is surprisingly tricky; I welcome pull requests from any brave souls who wish to give it a try.
+
+### Why aren't my custom web fonts rendering?
+
+If your web font CSS is embedded on the page via `<link>`, then the success of your font loading in jCanvas is completely contingent on your font loading before your jCanvas code executes. To ensure this, wrap your relevant jCanvas code in a `window` `load` event callback.
+
+```js
+$(window).load(function () {
+  // Add jCanvas text drawings here
+});
+```
+
+### Why isn't setPixels() working on my local machine?
+
+This is probably because you are testing your app from a `file://` URL, which most browsers won't allow; you need to serve your app from a local server instead. See [this StackOverflow post](http://stackoverflow.com/questions/19869150/getimagedata-cross-origin-error) for more details. 
+
+### How do I temporarily show/hide a layer?
+
+To toggle the visibility of a layer, You can use the `setLayer()` method to set the layer's `visible` property to either `true` or `false` (depending on whether you want to show or hid it):
+
+```js
+// Hide layer temporarily
+$('#mycanvas').setLayer('myLayerName', {
+  visible: false
+});
+```
+
+```js
+// Show layer again
+$('#mycanvas').setLayer('myLayerName', {
+  visible: true
+});
+```
+
+## Bug Reports
+
+If you are experiencing an issue with jCanvas, please ensure that you are using the [latest version of jCanvas](https://github.com/caleb531/jcanvas) before contacting me.
+
+If you are contacting me to report a jCanvas bug, please include the following information:
+
+- The version of jCanvas you used
+- A complete code sample that reproduces the issue
+- What you expected to happen
+- What happened instead
+
+Remember, the more you tell me, the more I can help. ;)
+
+## Documentation or website updates
+
+The entire jCanvas website (including all documentation) is [publicly available on GitHub](https://github.com/caleb531/jcanvas-website). If you find an issue or want to suggest additional documentation, please [create an issue](https://github.com/caleb531/jcanvas-website/issues) or [submit a pull request](https://github.com/caleb531/jcanvas-website/pulls).
+
+## Contact Me
+
+If you have any questions regarding jCanvas or have a bug report to submit, please first check the Documentation or the FAQ above; your question may be already answered there! If you still can't find an answer, you can contact me in several ways
+
+- [Email me](mailto:caleb@calebevans.me)
+- [Submit an issue on GitHub](https://github.com/caleb531/jcanvas/issues)
+- [Tweet me on Twitter](https://twitter.com/caleb531) (only for quick questions, please)
+
+If you choose to submit an issue on GitHub, please don't submit a follow-up email notifying me that you submitted an issue. I receive immediate notification for all new emails and GitHub issues, so rest assured I will see your post.
+
+## Plugins
+
+If you wish to extend jCanvas with your own methods, you can learn to do so using the [Plugin API](/docs/extending/).
+
+If you would like to submit your jCanvas plugin to the public gallery, follow [the procedure for submitting a plugin](/plugins/submitting/).
+
+## Gallery
+
+If you would like to submit your jCanvas project to the [public gallery](/gallery/), please contact me (see above) with the following information:
+
+- A link to your site/app
+- A name to display publicly as the app's author (could be you or someone else)
+- A short description of your site/app (I would include this in the gallery)
+- Anything else you'd like me to know (link to GitHub, *etc.*)

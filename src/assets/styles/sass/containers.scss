@@ -1,0 +1,103 @@
+$duration: 250ms;
+
+body {
+  margin: 0;
+  margin-bottom: 25px;
+  background-color: #148;
+  background-image: url('../images/grid-bg.svg');
+  background-size: 11px;
+  background-attachment: fixed;
+  text-align: center;
+  font-family: $sans-serif;
+  font-weight: 300;
+  color: #fff;
+}
+
+// Ensure that all HTML5 semantic elements render properly in all browsers
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+main,
+nav,
+section,
+summary {
+  display: block;
+}
+
+// Main content
+main {
+  display: inline-block;
+  position: relative;
+  max-width: $main-max-width;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 10px;
+  text-align: left;
+  box-sizing: border-box;
+  @include layout(compact) {
+    max-width: 100%;
+    min-width: 320px;
+  }
+}
+
+article {
+  padding: 0 20px;
+}
+
+// Box section of the page
+.box {
+  border: solid 1px rgba(#000, 0.35);
+  border-radius: 5px;
+  box-sizing: border-box;
+  background-color: rgba(#000, 0.15);
+  color: #fff;
+}
+
+// Class for clearing floats
+.clearfix {
+  clear: both;
+}
+
+canvas {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  border: solid 1px $input-border-color;
+  background-color: #fff;
+  background-clip: padding-box;
+}
+
+.demo-container {
+  position: relative;
+  font-size: 0;
+  border: solid 1px $input-border-color;
+  overflow: hidden;
+  canvas {
+    border-width: 0;
+  }
+}
+
+// Button fixed to edge of container
+.edge-button {
+  position: absolute;
+  $position: 0;
+  top: $position;
+  right: $position;
+  z-index: 10;
+  margin: 0;
+  border-top-width: 0;
+  border-right-width: 0;
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+  border-bottom-right-radius: 0;
+  background-clip: border-box;
+}
+
+// Hidden images used only so code examples can access them by DOM element
+#example-images {
+  display: none;
+}

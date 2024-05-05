@@ -1,0 +1,21 @@
+---
+import { getCollection } from "astro:content";
+const allGalleries = await getCollection("galleries");
+import githubIcon from '~/assets/images/github.svg'; 
+---
+
+  {
+      allGalleries.map((gallery) => (
+ <article class="entry box">
+    <h3 class="entry-title"><a class="underline" href={gallery.data.direct_url}>{ gallery.data.title }</a></h3>
+    { gallery.data.github_url && 
+      <a href={gallery.data.github_url}><img src={githubIcon.src} alt=`${gallery.data.title} on GitHub` class="entry-github" /></a>
+     }
+    <span class="entry-author">by { gallery.data.author }</span>
+    <div class="entry-desc mt-2">
+      { gallery.body }
+    </div>
+  </article>
+  ))}
+ 
+

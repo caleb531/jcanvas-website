@@ -1,0 +1,154 @@
+// Headers
+h1 {
+  position: relative;
+  text-align: center;
+}
+
+// Sections
+#docs-sections {
+  display: inline-block;
+  width: 190px;
+  position: relative;
+  z-index: 1;
+  margin-right: 15px;
+  padding: 10px 15px 20px;
+  border-radius: 5px;
+  vertical-align: top;
+  box-sizing: border-box;
+  transition: all 250ms ease-in-out;
+  transition-property: left;
+  @include layout(compact) {
+    position: absolute;
+    left: -200px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    &.open {
+      left: 0;
+      & + #docs-section {
+        opacity: 0;
+      }
+    }
+  }
+  h3 {
+    margin: 10px 0  0;
+  }
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+  li {
+    display: none;
+    margin: 0;
+    margin-left: 10px;
+    font-weight: normal;
+    font-size: 12pt;
+  }
+  li.match {
+    display: block;
+  }
+}
+
+// Current section
+#docs-section {
+  display: inline-block;
+  position: relative;
+  width: 500px;
+  text-align: left;
+  vertical-align: top;
+  transition: all 250ms ease-in-out;
+  transition-property: opacity;
+  @include layout(compact) {
+    float: none;
+    width: 100%;
+    margin-left: 0;
+  }
+  h3 {
+    position: relative;
+  }
+}
+
+// Search feature
+#search {
+  width: 150px;
+  margin: 0;
+  padding: 4px;
+  padding-left: 24px;
+  background-image: url('../../images/search.svg');
+  background-repeat: no-repeat;
+  background-size: 14px;
+  background-position: 5px 4px;
+  vertical-align: middle;
+}
+
+// Section's menu of subsections
+#docs-section > h2.menu {
+  position: relative;
+  padding-left: 10px;
+  &:hover {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  $arrow-top: -5px;
+  $arrow-height: 6px;
+  &:before {
+    content: '';
+    display: inline-block;
+    position: relative;
+    top: $arrow-top;
+    left: -10px;
+    z-index: 10;
+    border-style: solid;
+    border-width: $arrow-height;
+    border-color: transparent;
+    border-bottom-color: #fff;
+  }
+  &.open {
+    &:before {
+      top: $arrow-top + $arrow-height;
+      border-color: transparent;
+      border-top-color: #fff;
+    }
+  }
+}
+#docs-section-subsections {
+  $transition-duration: 250ms;
+  opacity: 0;
+  min-width: 120px;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: -1;
+  margin: 0;
+  padding: 10px 15px;
+  list-style-type: none;
+  background-color: rgba(#038, 0.75);
+  font-size: 10pt;
+  transition-duration: $transition-duration, $transition-duration, $transition-duration * 2;
+  transition-timing-function: ease-in-out;
+  transition-property: opacity, top, z-index;
+  backdrop-filter: blur(10px);
+  a {
+    display: inline-block;
+    width: 100%;
+    margin: 4px 0;
+    font-size: 12pt;
+  }
+  .open & {
+    opacity: 1;
+    z-index: 10;
+    transition-property: opacity;
+    transition-duration: $transition-duration;
+  }
+}
+
+// Anchor link to a particular subsection
+.subsection-link {
+  $size: 18px;
+  display: inline-block;
+  width: $size;
+  height: $size;
+  margin-left: 5px;
+  background-image: url('../images/chain.svg');
+  background-size: $size;
+  vertical-align: middle;
+}

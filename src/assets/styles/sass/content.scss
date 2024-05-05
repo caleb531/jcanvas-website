@@ -1,0 +1,26 @@
+// Textual content
+
+p {
+  line-height: 1.3em;
+}
+
+a {
+  color: #cf0;
+  code {
+    color: inherit;
+  }
+}
+
+strong {
+  font-weight: 400;
+  font-style: normal;
+  color: #cf0;
+}
+
+// Lists
+ul {
+  list-style-type: square;
+}
+li {
+  line-height: 1.3em;
+}

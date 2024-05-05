@@ -1,0 +1,44 @@
+// Contact container
+.contacts {
+  text-align: left;
+  @include layout(compact) {
+    text-align: center;
+  }
+}
+
+// Contact card
+address.contact {
+  display: inline-block;
+  width: 250px;
+  margin: 10px;
+  padding: 20px;
+  text-align: left;
+  font-style: normal;
+  vertical-align: top;
+  .avatar {
+    float: left;
+    position: relative;
+    z-index: 5;
+    margin-right: 10px;
+    width: 80px;
+    height: 80px;
+    border-radius: 4px;
+    border: solid 1px #000;
+    border: none;
+  }
+  div.info {
+    position: relative;
+    top: 6px;
+  }
+  span.info {
+    display: block;
+    font-size: 13pt;
+  }
+  .info.name {
+    font-size: 14pt;
+    font-weight: 400;
+  }
+  .info.title {
+    font-size: 8pt;
+  }
+}
