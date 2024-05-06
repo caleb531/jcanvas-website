@@ -14,6 +14,13 @@ export default defineConfig({
     starlight({
       title: 'jCanvas Documentation',
 			// customCss: ['./src/styles/sass/doc.scss'],
+			sidebar: [
+				{
+				label: 'Documentation',
+				// Autogenerate a group of links for the 'constellations' directory.
+				autogenerate: { directory: 'docs' },
+				},
+			],
 			editLink: {
 				baseUrl: 'https://github.com/caleb531/jcanvas-website/edit/main',
 			},
