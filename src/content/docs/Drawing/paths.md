@@ -3,7 +3,7 @@ title: Paths
 slug: docs/paths
 ---
 
-A path in jCanvas consists of one or more connected [lines]({{ site.baseurl }}/docs/lines/), [arcs]({{ site.baseurl }}/docs/arcs/), [curves]({{ site.baseurl }}/docs/curves/), or [vectors]({{ site.baseurl }}/docs/vectors/).
+A path in jCanvas consists of one or more connected [lines](/docs/lines/), [arcs](/docs/arcs/), [curves](/docs/curves/), or [vectors](/docs/vectors/).
 
 ### Basic usage
 
@@ -106,7 +106,7 @@ Also note that the subpath objects inherit default property values from the glob
 
 ### Arrows
 
-Just like every other path type in jCanvas, generic paths support arrows at either end of the path. See [the section on arrows]({{ site.baseurl }}/docs/arrows/) for descriptions of the arrow properties.
+Just like every other path type in jCanvas, generic paths support arrows at either end of the path. See [the section on arrows](/docs/arrows/) for descriptions of the arrow properties.
 
 For generic paths, arrow properties must be specified in a subpath object, not the entire path object.
 
@@ -136,7 +136,7 @@ $('canvas').drawPath({
 
 ### SVG Paths
 
-You can also draw an SVG path with `drawPath()` via the `d` property (new as of jCanvas v22.1.0). This allows you to integrate SVG with jCanvas, and even take advantage of jCanvas features like [masking]({{ site.baseurl }}/docs/masking/).
+You can also draw an SVG path with `drawPath()` via the `d` property (new as of jCanvas v22.1.0). This allows you to integrate SVG with jCanvas, and even take advantage of jCanvas features like [masking](/docs/masking/).
 
 ```js
 // Draw an SVG path directly onto the canvas

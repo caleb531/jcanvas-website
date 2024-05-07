@@ -1,6 +1,7 @@
 ---
 title: Properties
 slug: docs/properties
+order: 5
 ---
 
 These are descriptions of every jCanvas property, their supported methods, and their possible values. Default property values are listed first.
@@ -91,7 +92,7 @@ These are descriptions of every jCanvas property, their supported methods, and t
 
 ### d
 
-  - **Description:** An SVG path to draw on the canvas; compatible with jCanvas features like [masking]({{ site.baseurl }}/docs/masking/)
+  - **Description:** An SVG path to draw on the canvas; compatible with jCanvas features like [masking](/docs/masking/)
   - **Methods:** `drawPath()`
   - **Values:** A string representing an SVG path (i.e. the value of an SVG `<path>` element's `d` attribute)
 

@@ -1,6 +1,7 @@
 ---
 title: Syntax
 slug: docs/syntax
+order: 2
 ---
 
 All jCanvas methods are regular jQuery methods, and are used in the same manner. Calling a jCanvas method will apply to all canvas elements in the jQuery collection.
