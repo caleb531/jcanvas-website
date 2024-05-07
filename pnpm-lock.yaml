@@ -28,6 +28,9 @@ dependencies:
     version: 5.4.5
 
 devDependencies:
+  astro-vtbot:
+    specifier: ^1.7.15
+    version: 1.7.15
   codemirror:
     specifier: ^6.0.1
     version: 6.0.1(@lezer/common@1.2.1)
@@ -1734,6 +1737,10 @@ packages:
       astro: 4.7.1(sass@1.76.0)(typescript@5.4.5)
       rehype-expressive-code: 0.35.3
     dev: false
+
+  /astro-vtbot@1.7.15:
+    resolution: {integrity: sha512-TPqNlrnPKhm2t1yDjj7JyquKcW8WDQYmwsaMdk2ofkyc6LCP5JRvyMofA49wtbuLppV2irYIwq/uZw1TLMEW7w==}
+    dev: true
 
   /astro@4.7.1(sass@1.76.0)(typescript@5.4.5):
     resolution: {integrity: sha512-3o+VmnIPBiCm0QVyyTC/F8humNXny5YpI+MKvBTksviRtKxhnztEA3+GAR2XWLUSOx1+/GVjz7mExq3hJGOeqQ==}

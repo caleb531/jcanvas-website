@@ -25,6 +25,7 @@
     "typescript": "^5.4.5"
   },
   "devDependencies": {
+    "astro-vtbot": "^1.7.15",
     "codemirror": "^6.0.1",
     "jquery": "^3.7.1",
     "sass": "^1.76.0",

@@ -13,10 +13,12 @@ export default defineConfig({
     astroExpressiveCode(), 
     starlight({
             title: 'jCanvas',
+				components: {
+					Head: "./src/components/starlight/Head.astro",
+				},
 			  sidebar: [
-				{
-				label: 'Home',
-				items: [
+		{ label: 'Home',
+      autogenerate: { directory: 'Home	' } },
 					{ label: 'jCanvas',
       autogenerate: { directory: 'jCanvas' } },
 					{ label: 'Canvas',
@@ -29,8 +31,8 @@ export default defineConfig({
       autogenerate: { directory: 'Events' } },
 					{ label: 'Styles',
       autogenerate: { directory: 'Styles' } },
-				],
-				},
+				// ],
+				// },
 			],
 			editLink: {
 				baseUrl: 'https://github.com/caleb531/jcanvas-website/edit/main',
