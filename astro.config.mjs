@@ -3,7 +3,7 @@ import mdx from "@astrojs/mdx";
 import astroExpressiveCode from 'astro-expressive-code';
 import starlight from "@astrojs/starlight";
 
-const site = 'http://localhost:4321//';
+const site = 'http://localhost:4321/';
 
 
 // https://astro.build/config
@@ -12,15 +12,7 @@ export default defineConfig({
   integrations: [
     astroExpressiveCode(), 
     starlight({
-      title: 'jCanvas Documentation',
-			// customCss: ['./src/styles/sass/doc.scss'],
-			sidebar: [
-				{
-				label: 'Documentation',
-				// Autogenerate a group of links for the 'constellations' directory.
-				autogenerate: { directory: 'docs' },
-				},
-			],
+      title: 'jCanvas',
 			editLink: {
 				baseUrl: 'https://github.com/caleb531/jcanvas-website/edit/main',
 			},
