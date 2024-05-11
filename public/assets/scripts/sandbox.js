@@ -13,7 +13,7 @@
 
     // Defaults and constants
     var defaultSandboxState = {
-      code: $$.defaultCode.html().replace(/(^\s+)|(\s+$)/gi, ''),
+      code: $$.defaultCode.html()?.replace(/(^\s+)|(\s+$)/gi, '') || '',
       cursor: {
         line: 0,
         ch: 0
@@ -81,7 +81,11 @@
 
     // Run code
     function runCode(codemirror) {
-      $$.canvases.find('canvas').resetCanvases();
+      var $canvasElems = $$.canvases.find('canvas');
+      if ($canvasElems.length === 0) {
+        return;
+      }
+      $canvasElems.resetCanvases();
       $$.editor.removeClass('error');
       $$.console.html('');
       try {
