@@ -13,6 +13,7 @@ export default defineConfig({
       components: {
         Head: './src/components/starlight/Head.astro'
       },
+      customCss: ['./src/assets/styles/docs.scss'],
       sidebar: [
         { label: 'jCanvas', autogenerate: { directory: 'jCanvas' } },
         { label: 'Canvas', autogenerate: { directory: 'Canvas' } },
