@@ -1,8 +1,8 @@
 {
   "name": "jcanvas-website",
   "type": "module",
-  "version": "22.1.3",
-  "description": "A jQuery canvas library",
+  "private": true,
+  "description": "The official website for jCanvas, the jQuery canvas library",
   "repository": {
     "type": "git",
     "url": "git@github.com:caleb531/jcanvas-website.git"
