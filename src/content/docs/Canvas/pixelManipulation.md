@@ -1,6 +1,8 @@
 ---
 title: Pixel Manipulation
 slug: docs/pixelManipulation
+sidebar:
+  order: 5
 ---
 
 The `setPixels()` method allows for modification of a specific section of pixels from the canvas.

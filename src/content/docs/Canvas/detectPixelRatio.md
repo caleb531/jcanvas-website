@@ -1,6 +1,8 @@
 ---
 title: Detect Pixel Ratio
 slug: docs/detectPixelRatio
+sidebar:
+  order: 8
 ---
 
 jCanvas offers a `detectPixelRatio()` method for detecting high-resolution displays (including devices with retina displays).

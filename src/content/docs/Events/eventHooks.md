@@ -1,6 +1,8 @@
 ---
 title: Event Hooks
 slug: docs/eventHooks
+sidebar:
+  order: 7
 ---
 
 Event hooks are, essentially, event callbacks that apply to all jCanvas layers. They do not override any existing event callbacks, but rather, complement them.

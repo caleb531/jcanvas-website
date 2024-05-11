@@ -1,6 +1,8 @@
 ---
 title: Rotate Canvas
 slug: docs/rotateCanvas
+sidebar:
+  order: 2
 ---
 
 ### Rotating the canvas context

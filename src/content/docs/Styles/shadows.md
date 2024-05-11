@@ -1,6 +1,8 @@
 ---
 title: Shadows
 slug: docs/shadows
+sidebar:
+  order: 2
 ---
 
 To create a generic shadow, use the `shadowColor` and `shadowBlur` properties:

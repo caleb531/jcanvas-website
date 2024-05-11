@@ -1,6 +1,8 @@
 ---
 title: Get Canvas Image
 slug: docs/getCanvasImage
+sidebar:
+  order: 6
 ---
 
 The `getCanvasImage()` method retrieves the canvas's image data as a string. The string is a base64-encoded image URL, which can be used as a valid image URL for any purpose.

@@ -1,6 +1,8 @@
 ---
 title: Layer API
 slug: docs/layerAPI
+sidebar:
+  order: 1
 ---
 
 The jCanvas Layer API provides each canvas with a set of layers that you create. These layers provide a higher degree of interactivity on the canvas.

@@ -1,6 +1,8 @@
 ---
 title: Animating layers
 slug: docs/animateLayers
+sidebar:
+  order: 6
 ---
 
 ### Animating layers

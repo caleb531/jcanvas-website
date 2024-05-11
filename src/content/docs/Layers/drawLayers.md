@@ -1,6 +1,8 @@
 ---
 title: Drawing layers
 slug: docs/drawLayers
+sidebar:
+  order: 4
 ---
 
 The `drawLayers()` method clears the canvas, and draws the canvas's layers.

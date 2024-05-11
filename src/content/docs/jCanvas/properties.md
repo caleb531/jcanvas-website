@@ -1,7 +1,8 @@
 ---
 title: Properties
 slug: docs/properties
-order: 5
+sidebar:
+  order: 5
 ---
 
 These are descriptions of every jCanvas property, their supported methods, and their possible values. Default property values are listed first.

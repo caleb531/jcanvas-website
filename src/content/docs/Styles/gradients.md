@@ -1,6 +1,8 @@
 ---
 title: Gradients
 slug: docs/gradients
+sidebar:
+  order: 3
 ---
 
 The `createGradient()` method returns a canvas gradient object, which is used as a fill or stroke style.

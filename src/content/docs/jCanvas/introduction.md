@@ -1,7 +1,8 @@
 ---
 title: Introduction
 slug: docs/introduction
-order: 1
+sidebar:
+  order: 1
 ---
 
 The `<canvas>` element is a new element apart of HTML5. It allows you to draw shapes, paths, images, and other drawings on a blank element called the canvas.

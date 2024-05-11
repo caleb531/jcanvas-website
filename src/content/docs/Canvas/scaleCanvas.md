@@ -1,6 +1,8 @@
 ---
 title: Scale Canvas
 slug: docs/scaleCanvas
+sidebar:
+  order: 3
 ---
 
 ### Scaling the canvas context

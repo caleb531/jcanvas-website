@@ -1,6 +1,8 @@
 ---
 title: Patterns
 slug: docs/patterns
+sidebar:
+  order: 4
 ---
 
 The `createPattern()` method returns a canvas pattern object, which can be used as a fill or stroke style for any drawing.

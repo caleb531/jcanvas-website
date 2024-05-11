@@ -1,6 +1,8 @@
 ---
 title: Translate Canvas
 slug: docs/translateCanvas
+sidebar:
+  order: 4
 ---
 
 The `translateCanvas()` method translates the canvas by the given values.

@@ -1,6 +1,8 @@
 ---
 title: Event Properties
 slug: docs/eventProperties
+sidebar:
+  order: 4
 ---
 
 jCanvas supports a number of event-related properties which make the Event API more powerful and flexible.

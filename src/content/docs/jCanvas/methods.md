@@ -1,7 +1,8 @@
 ---
 title: Methods
 slug: docs/methods
-order: 6
+sidebar:
+  order: 6
 ---
 
 This is a reference of every jCanvas method, for quick access.

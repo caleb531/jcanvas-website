@@ -1,6 +1,8 @@
 ---
 title: Touch Events
 slug: docs/touchEvents
+sidebar:
+  order: 6
 ---
 
 jCanvas supports native touch events on iOS and Android using the `touchstart`, `touchend`, and `touchmove` events.

@@ -1,6 +1,8 @@
 ---
 title: Clear Canvas
 slug: docs/clearCanvas
+sidebar:
+  order: 1
 ---
 
 This `clearCanvas()` clears all or any part of the canvas.

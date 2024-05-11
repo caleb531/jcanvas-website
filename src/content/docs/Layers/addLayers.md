@@ -1,6 +1,8 @@
 ---
 title: Adding layers
 slug: docs/addLayers
+sidebar:
+  order: 2
 ---
 
 ### Adding layers

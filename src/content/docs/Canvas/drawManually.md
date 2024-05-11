@@ -1,6 +1,8 @@
 ---
 title: Draw Manually
 slug: docs/drawManually
+sidebar:
+  order: 7
 ---
 
 With the `draw()` method, you can draw on the canvas using native canvas methods (or any method, for that matter). To do this, write your code inside a function 

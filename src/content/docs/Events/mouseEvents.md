@@ -1,6 +1,8 @@
 ---
 title: Mouse Events
 slug: docs/mouseEvents
+sidebar:
+  order: 2
 ---
 
 jCanvas supports a number of standard mouse events that you can use on most types of jCanvas layers.

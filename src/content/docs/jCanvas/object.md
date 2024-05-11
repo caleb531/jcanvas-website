@@ -1,7 +1,8 @@
 ---
 title: jCanvas Object
 slug: docs/object
-order: 3
+sidebar:
+  order: 3
 ---
 
 jCanvas includes a `jCanvas` object as part of the `jQuery` object.

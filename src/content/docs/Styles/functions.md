@@ -1,6 +1,8 @@
 ---
 title: Functions
 slug: docs/functions
+sidebar:
+  order: 5
 ---
 
 jCanvas allows you to use a user-defined function as the value for any fill or stroke style. The function accepts one argument: the parameters object passed into the method (or the layer object if the drawing is a layer).

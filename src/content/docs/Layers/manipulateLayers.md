@@ -1,6 +1,8 @@
 ---
 title: Manipulating Layers
 slug: docs/manipulateLayers
+sidebar:
+  order: 5
 ---
 
 ### Setting layer properties

@@ -1,7 +1,8 @@
 ---
 title: Extending jCanvas
 slug: docs/extending
-order: 4
+sidebar:
+  order: 4
 ---
 
 jCanvas provides a plugin API so you can create methods which integrate with jCanvas. To do so, use the `jCanvas.extend()` method.

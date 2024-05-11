@@ -1,6 +1,8 @@
 ---
 title: Mechanical Events
 slug: docs/mechanicalEvents
+sidebar:
+  order: 3
 ---
 
 jCanvas allows you to run a callback when you perform a layer-related action, such as adding a new layer or removing an existing layer. These events are referred to in jCanvas terminology as *mechanical events*, though they work like any other jCanvas event.

@@ -1,6 +1,8 @@
 ---
 title: Draggable Layers
 slug: docs/draggableLayers
+sidebar:
+  order: 5
 ---
 
 ### Basic Usage

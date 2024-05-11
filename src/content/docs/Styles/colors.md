@@ -1,7 +1,10 @@
 ---
 title: Colors
 slug: docs/colors
+sidebar:
+  order: 1
 ---
+
 ### Color Names
 ```js
 $('canvas').drawArc({

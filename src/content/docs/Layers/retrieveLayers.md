@@ -1,6 +1,8 @@
 ---
 title: Retrieving layers
 slug: docs/retrieveLayers
+sidebar:
+  order: 3
 ---
 
 ### Retrieving a single layer
