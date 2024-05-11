@@ -1,6 +1,6 @@
 ---
 title: Introduction
-slug: docs/introduction
+slug: docs
 sidebar:
   order: 1
 ---

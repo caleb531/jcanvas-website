@@ -17,8 +17,6 @@ export default defineConfig({
 					Head: "./src/components/starlight/Head.astro",
 				},
 			  sidebar: [
-		{ label: 'Home',
-      autogenerate: { directory: 'Home	' } },
 					{ label: 'jCanvas',
       autogenerate: { directory: 'jCanvas' } },
 					{ label: 'Canvas',
