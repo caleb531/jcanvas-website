@@ -68,12 +68,12 @@ hr {
   text-align: left;
   vertical-align: middle;
   @include layout(compact) {
-      display: block;
-      width: auto;
-      min-width: 0;
-      text-align: center;
-      font-size: 16pt;
-    }
+    display: block;
+    width: auto;
+    min-width: 0;
+    text-align: center;
+    font-size: 16pt;
+  }
 }
 
 #more {
