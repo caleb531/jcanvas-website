@@ -9,45 +9,51 @@ sidebar:
 
 Using the `setLayer()` method, you can set the properties of a layer. The method's arguments include:
 
-  1. The `name` or index of the layer, or the layer itself
-  2. The object of properties to set.
+1. The `name` or index of the layer, or the layer itself
+2. The object of properties to set.
 
 Note that this method does not automatically redraw the canvas.
 
 ```js
-$('canvas').setLayer('myBox', {
-  fillStyle: '#36b',
-  rotate: 30,
-  x: '+=100',
-  y: '-=100'
-})
-.drawLayers();
+$('canvas')
+  .setLayer('myBox', {
+    fillStyle: '#36b',
+    rotate: 30,
+    x: '+=100',
+    y: '-=100'
+  })
+  .drawLayers();
 ```
 
 Note that the you can use the `'+="` and `"-="` strings to increment and decrement numbers, respectively.
 
-You can also set properties on *all* layers using the `setLayers()` method.
+You can also set properties on _all_ layers using the `setLayers()` method.
 
 ```js
 // Set properties of all layers
-$('canvas').setLayers({
-  fillStyle: '#36b',
-  rotate: 30
-})
-.drawLayers();
+$('canvas')
+  .setLayers({
+    fillStyle: '#36b',
+    rotate: 30
+  })
+  .drawLayers();
 ```
 
 Note that the `setLayers()` method also accepts a callback function as s second argument, which filters the layers.
 
 ```js
 // Set properties of all draggable layers
-$('canvas').setLayers({
-  fillStyle: '#36b',
-  rotate: 30
-}, function(layer) {
-  return (layer.draggable === true);
-})
-.drawLayers();
+$('canvas')
+  .setLayers(
+    {
+      fillStyle: '#36b',
+      rotate: 30
+    },
+    function (layer) {
+      return layer.draggable === true;
+    }
+  )
+  .drawLayers();
 ```
 
 ### Setting layer group properties
@@ -59,11 +65,12 @@ Also note that this method does not automatically redraw the canvas.
 ```js
 // Set properties for all layers
 // in the group 'myBoxes'
-$('canvas').setLayerGroup('myBoxes', {
-  fillStyle: '#36b',
-  rotate: 30
-})
-.drawLayers();
+$('canvas')
+  .setLayerGroup('myBoxes', {
+    fillStyle: '#36b',
+    rotate: 30
+  })
+  .drawLayers();
 ```
 
 ### Moving layers
@@ -106,8 +113,8 @@ As with the `getLayers()` and `setLayers()` methods, the `removeLayers()` method
 
 ```js
 // Remove all draggable layers
-$('canvas').removeLayers(function(layer) {
-  return (layer.draggable === true);
+$('canvas').removeLayers(function (layer) {
+  return layer.draggable === true;
 });
 ```
 
@@ -130,4 +137,4 @@ $('canvas').removeLayerFromGroup('box', 'myBoxes');
 
 ### Notes
 
-None of the above methods redraw the canvas after being called. Therefore, you will need to redraw the canvas using the  `drawLayers()` method to see the changes visually.
+None of the above methods redraw the canvas after being called. Therefore, you will need to redraw the canvas using the `drawLayers()` method to see the changes visually.

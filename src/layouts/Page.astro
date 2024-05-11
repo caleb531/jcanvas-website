@@ -1,5 +1,5 @@
 ---
-import DefaultLayout from "./Default.astro";
+import DefaultLayout from './Default.astro';
 const { frontmatter } = Astro.props;
 ---
 
@@ -8,7 +8,7 @@ const { frontmatter } = Astro.props;
     <h1>{frontmatter.title}</h1>
     <span class="subtitle">{frontmatter.subtitle}</span>
     <!-- <div class="flex flex-col gap-y-4"> -->
-    <slot/>
+    <slot />
     <!-- </div> -->
   </article>
 </DefaultLayout>

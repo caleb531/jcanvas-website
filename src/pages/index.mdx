@@ -5,30 +5,31 @@ layout: '~/layouts/Page.astro'
 # permalink: /
 id: home
 ---
-import HomeIntro from '~/components/Home/HomeIntro.mdx'
-import HomeFeatures from '~/components/Home/HomeFeatures.mdx'
-import HomeExample from '~/components/Home/HomeExample.mdx'
-import HomeAbout from '~/components/Home/HomeAbout.mdx'
-import HomeMore from '~/components/Home/HomeMore.mdx'
- 
+
+import HomeIntro from '~/components/Home/HomeIntro.mdx';
+import HomeFeatures from '~/components/Home/HomeFeatures.mdx';
+import HomeExample from '~/components/Home/HomeExample.mdx';
+import HomeAbout from '~/components/Home/HomeAbout.mdx';
+import HomeMore from '~/components/Home/HomeMore.mdx';
+
 <div id="home-intro" class="home-section box" markdown="1">
-<HomeIntro/>
+  <HomeIntro />
 </div>
 
 <div id="home-features" class="home-section box column-left" markdown="1">
-  <HomeFeatures/>
+  <HomeFeatures />
 </div>
 
 <div id="home-example" class="home-section box column-right" markdown="1">
-<HomeExample/>
+  <HomeExample />
 </div>
 
 <div class="clearfix"></div>
 
 <div id="home-about" class="home-section box" markdown="1">
-  <HomeAbout/>
+  <HomeAbout />
 </div>
 
 <div id="home-more" markdown="1">
-  <HomeMore/>
+  <HomeMore />
 </div>

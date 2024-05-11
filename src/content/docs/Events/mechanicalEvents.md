@@ -5,20 +5,22 @@ sidebar:
   order: 3
 ---
 
-jCanvas allows you to run a callback when you perform a layer-related action, such as adding a new layer or removing an existing layer. These events are referred to in jCanvas terminology as *mechanical events*, though they work like any other jCanvas event.
+jCanvas allows you to run a callback when you perform a layer-related action, such as adding a new layer or removing an existing layer. These events are referred to in jCanvas terminology as _mechanical events_, though they work like any other jCanvas event.
 
 ### The `add` event
 
-The `add` event fires when a layer is added (but *before* it is drawn).
+The `add` event fires when a layer is added (but _before_ it is drawn).
 
 ```js
 $('canvas').drawRect({
   layer: true,
   name: 'box',
   fillStyle: '#6c0',
-  x: 100, y: 100,
-  width: 100, height: 100,
-  add: function(layer) {
+  x: 100,
+  y: 100,
+  width: 100,
+  height: 100,
+  add: function (layer) {
     // code to run when layer is first added
   }
 });
@@ -33,9 +35,11 @@ $('canvas').drawRect({
   layer: true,
   name: 'box',
   fillStyle: '#6c0',
-  x: 100, y: 100,
-  width: 100, height: 100,
-  remove: function(layer) {
+  x: 100,
+  y: 100,
+  width: 100,
+  height: 100,
+  remove: function (layer) {
     // code to run when layer is removed
   }
 });
@@ -51,9 +55,11 @@ $('canvas').drawRect({
   layer: true,
   name: 'box',
   fillStyle: '#6c0',
-  x: 100, y: 100,
-  width: 100, height: 100,
-  change: function(layer, props) {
+  x: 100,
+  y: 100,
+  width: 100,
+  height: 100,
+  change: function (layer, props) {
     // code to run when layer properties change
   }
 });
@@ -71,9 +77,11 @@ $('canvas').drawRect({
   layer: true,
   name: 'box',
   fillStyle: '#6c0',
-  x: 100, y: 100,
-  width: 100, height: 100,
-  move: function(layer) {
+  x: 100,
+  y: 100,
+  width: 100,
+  height: 100,
+  move: function (layer) {
     // code to run when layer's order on canvas is changed
   }
 });
@@ -89,21 +97,24 @@ $('canvas').drawRect({
   layer: true,
   name: 'box',
   fillStyle: '#6c0',
-  x: 100, y: 100,
-  width: 100, height: 100,
-  animatestart: function(layer) {
+  x: 100,
+  y: 100,
+  width: 100,
+  height: 100,
+  animatestart: function (layer) {
     // code to run when animation starts
   },
-  animate: function(layer, fx) {
+  animate: function (layer, fx) {
     // code to run on each frame of the animation
     // fx contains animation-related properties
   },
-  animateend: function(layer) {
+  animateend: function (layer) {
     // code to run when animation ends
   }
 });
 $('canvas').animateLayer('box', {
-  x: 200, y: 300
+  x: 200,
+  y: 300
 });
 ```
 
@@ -114,9 +125,11 @@ $('canvas').drawRect({
   layer: true,
   name: 'box',
   fillStyle: '#6c0',
-  x: 100, y: 100,
-  width: 100, height: 100,
-  stop: function(layer) {
+  x: 100,
+  y: 100,
+  width: 100,
+  height: 100,
+  stop: function (layer) {
     // code to run when animation is stopped
   }
 });
@@ -128,9 +141,11 @@ Similarly, jCanvas supports a `delay` event, which fires when the `delayLayer()`
 ```js
 $('canvas').drawRect({
   fillStyle: '#6c0',
-  x: 100, y: 100,
-  width: 100, height: 100,
-  delay: function(layer) {
+  x: 100,
+  y: 100,
+  width: 100,
+  height: 100,
+  delay: function (layer) {
     // code to run when animation is delayed
   }
 });

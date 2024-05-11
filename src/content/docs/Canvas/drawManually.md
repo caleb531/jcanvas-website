@@ -5,11 +5,11 @@ sidebar:
   order: 7
 ---
 
-With the `draw()` method, you can draw on the canvas using native canvas methods (or any method, for that matter). To do this, write your code inside a function 
+With the `draw()` method, you can draw on the canvas using native canvas methods (or any method, for that matter). To do this, write your code inside a function
 
 ```js
 $('canvas').draw({
-  fn: function(ctx) {
+  fn: function (ctx) {
     ctx.fillStyle = '#333';
     ctx.fillRect(50, 50, 100, 100);
   }
@@ -24,8 +24,10 @@ The `draw()` method can be used to draw any other jCanvas drawing (although usua
 $('canvas').draw({
   type: 'rectangle',
   fillStyle: '#c33',
-  x: 100, y: 100,
-  width: 100, height: 80
+  x: 100,
+  y: 100,
+  width: 100,
+  height: 80
 });
 ```
 
@@ -34,8 +36,10 @@ The above code is equivalent to the following:
 ```js
 $('canvas').drawRect({
   fillStyle: '#c33',
-  x: 100, y: 100,
-  width: 100, height: 80
+  x: 100,
+  y: 100,
+  width: 100,
+  height: 80
 });
 ```
 

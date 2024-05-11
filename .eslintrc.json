@@ -1,0 +1,17 @@
+{
+  "root": true,
+  "extends": ["eslint:recommended", "prettier"],
+  "env": {
+    "browser": true,
+    "es2017": true,
+    "node": true
+  },
+  "globals": {
+    "$": true,
+    "jQuery": true,
+    "CodeMirror": true
+  },
+  "rules": {
+    "no-unused-vars": "off"
+  }
+}

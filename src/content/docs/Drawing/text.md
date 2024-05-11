@@ -7,16 +7,17 @@ To draw text on the canvas, use the `drawText()` method.
 
 The resulting text on the canvas is determined by the value of the `text` property, as well as any of the following font properties:
 
-  - `fontStyle`
-  - `fontSize`
-  - `fontFamily`
+- `fontStyle`
+- `fontSize`
+- `fontFamily`
 
 ```js
 $('canvas').drawText({
   fillStyle: '#9cf',
   strokeStyle: '#25a',
   strokeWidth: 2,
-  x: 150, y: 100,
+  x: 150,
+  y: 100,
   fontSize: 48,
   fontFamily: 'Verdana, sans-serif',
   text: 'Hello'
@@ -25,9 +26,9 @@ $('canvas').drawText({
 
 ### Font Sizes
 
-The value for the `fontSize` property accepts two different types of values. If you specify the value as a plain number (*e.g.* `48`), the font size is interpreted in pixels.
+The value for the `fontSize` property accepts two different types of values. If you specify the value as a plain number (_e.g._ `48`), the font size is interpreted in pixels.
 
-However, you can also specify the number as a string with additional units attached (*e.g.* `'36pt'`). Examples of both use cases can be found throughout this section.
+However, you can also specify the number as a string with additional units attached (_e.g._ `'36pt'`). Examples of both use cases can be found throughout this section.
 
 ### Transforming text
 
@@ -38,7 +39,8 @@ $('canvas').drawText({
   fillStyle: '#cfc',
   strokeStyle: '#000',
   strokeWidth: 2,
-  x: 150, y: 100,
+  x: 150,
+  y: 100,
   fontSize: '50pt',
   fontFamily: 'Arial',
   text: 'Hello',
@@ -59,16 +61,21 @@ $('canvas').drawText({
   fillStyle: '#9cf',
   strokeStyle: '#25a',
   strokeWidth: 2,
-  x: 200, y: 100,
+  x: 200,
+  y: 100,
   fontSize: '36pt',
   fontFamily: 'Verdana, sans-serif',
   text: 'Hello',
   scale: 2,
-  click: function() {
+  click: function () {
     // Click the text to make it grow
-    $(this).animateLayer(0, {
-      scale: '+=0.25',
-    }, 250);
+    $(this).animateLayer(
+      0,
+      {
+        scale: '+=0.25'
+      },
+      250
+    );
   }
 });
 ```
@@ -83,24 +90,27 @@ In the example below, the circle is only as wide as the text inside of it.
 
 ```js
 // Draw text
-$('canvas').drawText({
-  layer: true,
-  name: 'myText',
-  fillStyle: '#36c',
-  strokeWidth: 2,
-  x: 180, y: 150,
-  fontSize: '36pt',
-  fontFamily: 'Verdana, sans-serif',
-  text: 'Hello'
-})
-// Draw circle as wide as the text
-.drawArc({
-  layer: true,
-  strokeStyle: '#000',
-  strokeWidth: 4,
-  x: 180, y: 150,
-  radius: $('canvas').measureText('myText').width / 2
-});
+$('canvas')
+  .drawText({
+    layer: true,
+    name: 'myText',
+    fillStyle: '#36c',
+    strokeWidth: 2,
+    x: 180,
+    y: 150,
+    fontSize: '36pt',
+    fontFamily: 'Verdana, sans-serif',
+    text: 'Hello'
+  })
+  // Draw circle as wide as the text
+  .drawArc({
+    layer: true,
+    strokeStyle: '#000',
+    strokeWidth: 4,
+    x: 180,
+    y: 150,
+    radius: $('canvas').measureText('myText').width / 2
+  });
 ```
 
 ### Wrapping text
@@ -116,7 +126,8 @@ $('canvas').drawText({
   fontSize: '20pt',
   fontFamily: 'Trebuchet MS, sans-serif',
   text: 'The quick brown fox jumps over the lazy dog.',
-  x: 180, y: 100,
+  x: 180,
+  y: 100,
   maxWidth: 300
 });
 ```
@@ -132,7 +143,8 @@ $('canvas').drawText({
   fontSize: '20pt',
   fontFamily: 'Trebuchet MS, sans-serif',
   text: 'The quick brown fox jumps over the lazy dog.',
-  x: 180, y: 100,
+  x: 180,
+  y: 100,
   align: 'left',
   maxWidth: 300
 });
@@ -151,7 +163,8 @@ $('canvas').drawText({
   fontSize: '20pt',
   fontFamily: 'Trebuchet MS, sans-serif',
   text: 'The quick brown fox jumps over the lazy dog.',
-  x: 80, y: 100,
+  x: 80,
+  y: 100,
   align: 'left',
   respectAlign: true,
   maxWidth: 300
@@ -171,14 +184,15 @@ $('canvas').drawText({
   fontSize: '20pt',
   fontFamily: 'Trebuchet MS, sans-serif',
   text: 'The quick brown fox jumps over the lazy dog.',
-  x: 180, y: 100,
+  x: 180,
+  y: 100,
   align: 'left',
   maxWidth: 300,
   lineHeight: 2
 });
 ```
 
-A line height with a negative value will swap any lines of text (*e.g.* the top line becomes the bottom line).
+A line height with a negative value will swap any lines of text (_e.g._ the top line becomes the bottom line).
 
 ```js
 $('canvas').drawText({
@@ -187,7 +201,8 @@ $('canvas').drawText({
   fontSize: '20pt',
   fontFamily: 'Trebuchet MS, sans-serif',
   text: 'The quick brown fox jumps over the lazy dog.',
-  x: 180, y: 100,
+  x: 180,
+  y: 100,
   align: 'left',
   maxWidth: 300,
   lineHeight: -2
@@ -206,7 +221,8 @@ $('canvas').drawText({
   fontFamily: 'Ubuntu, sans-serif',
   fontSize: 18,
   text: 'THIS IS THE FIRST LINE\nTHIS IS THE SECOND LINE\nTHIS IS THE THIRD LINE',
-  x: 160, y: 200,
+  x: 160,
+  y: 200,
   radius: 150
 });
 ```
@@ -219,13 +235,14 @@ $('canvas').drawText({
   fontFamily: 'Ubuntu, sans-serif',
   fontSize: 18,
   text: 'THIS IS THE FIRST LINE\nTHIS IS THE SECOND LINE\nTHIS IS THE THIRD LINE',
-  x: 160, y: 200,
+  x: 160,
+  y: 200,
   radius: 150,
   letterSpacing: 0.02
 });
 ```
 
-Technically speaking, the value of the `letterSpacing` property represents a multiple of *pi*, which in turn represents the angular distance between each letter. For example, a value of `0.05` implies that each character is 9 degrees apart (0.05&pi; is equivalent to 9&deg;)
+Technically speaking, the value of the `letterSpacing` property represents a multiple of _pi_, which in turn represents the angular distance between each letter. For example, a value of `0.05` implies that each character is 9 degrees apart (0.05&pi; is equivalent to 9&deg;)
 
 #### Flipping arc text
 
@@ -237,7 +254,8 @@ $('canvas').drawText({
   fontFamily: 'Ubuntu, sans-serif',
   fontSize: 18,
   text: 'THIS IS THE FIRST LINE\nTHIS IS THE SECOND LINE\nTHIS IS THE THIRD LINE',
-  x: 160, y: 200,
+  x: 160,
+  y: 200,
   radius: 150,
   rotate: 180
 });
@@ -251,7 +269,8 @@ $('canvas').drawText({
   fontFamily: 'Ubuntu, sans-serif',
   fontSize: 18,
   text: 'THIS IS THE FIRST LINE\nTHIS IS THE SECOND LINE\nTHIS IS THE THIRD LINE',
-  x: 160, y: 200,
+  x: 160,
+  y: 200,
   radius: 150,
   rotate: 180,
   flipArcText: true

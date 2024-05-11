@@ -8,13 +8,13 @@ sidebar:
 jCanvas includes a `jCanvas` object as part of the `jQuery` object.
 
 ```js
-$.jCanvas
+$.jCanvas;
 ```
 
 The `jCanvas` object contains the following properties/methods:
 
-  - `defaults`: an object containing jCanvas's default properties
-  - `extend`: a method for extending jCanvas with custom methods.
+- `defaults`: an object containing jCanvas's default properties
+- `extend`: a method for extending jCanvas with custom methods.
 
 ### Overriding jCanvas defaults
 

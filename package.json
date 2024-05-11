@@ -27,7 +27,11 @@
   "devDependencies": {
     "astro-vtbot": "^1.7.15",
     "codemirror": "^6.0.1",
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^9.1.0",
     "jquery": "^3.7.1",
+    "prettier": "^3.2.5",
+    "prettier-plugin-astro": "^0.13.0",
     "sass": "^1.76.0",
     "stylelint": "^16.5.0",
     "stylelint-config-recommended-scss": "^14.0.0",

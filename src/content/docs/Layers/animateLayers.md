@@ -11,11 +11,11 @@ jCanvas provides an `animateLayer()` method for animating the properties of a jC
 
 The `animateLayer()` method accepts up to five arguments:
 
-  1. The `index` or `name` of the layer to be animated. The layer object itself is also an acceptable value.
-  2. An object containing the properties to animate and their end values
-  3. The duration of the animation in milliseconds (optional; defaults to `400`)
-  4. The easing of the animation (optional; defaults to `'swing'`)
-  5. A callback function that runs when the animation completes (optional); it accepts the layer object as its only argument
+1. The `index` or `name` of the layer to be animated. The layer object itself is also an acceptable value.
+2. An object containing the properties to animate and their end values
+3. The duration of the animation in milliseconds (optional; defaults to `400`)
+4. The easing of the animation (optional; defaults to `'swing'`)
+5. A callback function that runs when the animation completes (optional); it accepts the layer object as its only argument
 
 ```js
 // Create and draw a rectangle layer
@@ -23,23 +23,37 @@ $('canvas').drawRect({
   layer: true,
   name: 'myBox',
   fillStyle: '#36c',
-  x: 50, y: 50,
-  width: 1, height: 1
+  x: 50,
+  y: 50,
+  width: 1,
+  height: 1
 });
 
 // Animate layer properties
-$('canvas')
-.animateLayer('myBox', {
-  x: 150, y: 150,
-  width: 100, height: 50
-}, 1000, function(layer) {
-  // Callback function
-  $(this).animateLayer(layer, {
-    fillStyle: 'rgb(204, 51, 51)',
-    x: 250, y: 100,
-    rotate: 360
-  }, 'slow', 'swing');
-});
+$('canvas').animateLayer(
+  'myBox',
+  {
+    x: 150,
+    y: 150,
+    width: 100,
+    height: 50
+  },
+  1000,
+  function (layer) {
+    // Callback function
+    $(this).animateLayer(
+      layer,
+      {
+        fillStyle: 'rgb(204, 51, 51)',
+        x: 250,
+        y: 100,
+        rotate: 360
+      },
+      'slow',
+      'swing'
+    );
+  }
+);
 ```
 
 jCanvas can animate numeric values, as well as colors (hex, RGB, or color names). jCanvas also enables jQuery to utilize this color animation for HTML elements.
@@ -61,7 +75,7 @@ As always, the value of `this` in your callback function is the canvas DOM eleme
 
 ```js
 $('canvas').animateLayer('myLayer', {
-  x: function(layer) {
+  x: function (layer) {
     return Math.pow(layer.x, 2);
   }
 });
@@ -77,26 +91,32 @@ The method accepts the same basic arguments as the `animateLayer()` method,
 
 ```js
 $('canvas')
-// Draw a circle
-.drawArc({
-  layer: true,
-  groups: ['circles'],
-  fillStyle: '#c33',
-  x: 100, y: 100,
-  radius: 50
-})
-// Draw another circle
-.drawArc({
-  layer: true,
-  groups: ['circles'],
-  fillStyle: '#36c',
-  x: 220, y: 100,
-  radius: 50
-})
-// Animate all layers in the group 'circles'
-.animateLayerGroup('circles', {
-  y: 200
-}, 500);
+  // Draw a circle
+  .drawArc({
+    layer: true,
+    groups: ['circles'],
+    fillStyle: '#c33',
+    x: 100,
+    y: 100,
+    radius: 50
+  })
+  // Draw another circle
+  .drawArc({
+    layer: true,
+    groups: ['circles'],
+    fillStyle: '#36c',
+    x: 220,
+    y: 100,
+    radius: 50
+  })
+  // Animate all layers in the group 'circles'
+  .animateLayerGroup(
+    'circles',
+    {
+      y: 200
+    },
+    500
+  );
 ```
 
 ### Stopping animation
@@ -144,22 +164,25 @@ $('canvas').delayLayerGroup('myGroup', 500);
 Just like jQuery, the `animateLayer()` method in jCanvas supports an alternate syntax for providing additional options (like a `step` callback).
 
 ```js
-$('canvas').animateLayer('myBox', {
-  x: 200
-}, {
-  duration: 1000,
-  easing: 'swing',
-  step: function (now, fx, layer) {
-    // do something for each step of the animation
+$('canvas').animateLayer(
+  'myBox',
+  {
+    x: 200
   },
-  complete: function (layer) {
-    // still do something at end of animation
+  {
+    duration: 1000,
+    easing: 'swing',
+    step: function (now, fx, layer) {
+      // do something for each step of the animation
+    },
+    complete: function (layer) {
+      // still do something at end of animation
+    }
   }
-
-});
+);
 ```
 
 ### Notes
 
 Multiple `animateLayer()` calls can be queued up rather than using multiple callback functions.
-The callback parameter for the `animateLayerGroup()` method will run when *each* layer in the group finishes animating.
+The callback parameter for the `animateLayerGroup()` method will run when _each_ layer in the group finishes animating.

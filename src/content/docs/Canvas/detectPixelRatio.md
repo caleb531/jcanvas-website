@@ -9,10 +9,10 @@ jCanvas offers a `detectPixelRatio()` method for detecting high-resolution displ
 
 For these devices, the method will increase the dimensional width and height of the canvas, scale its context to match, then scale it down using CSS. This will result in the device rendering the canvas at a higher pixel density.
 
-The method also accepts a callback function as its only argument, which, in turn, accepts the device's pixel ratio as *its* only argument.
+The method also accepts a callback function as its only argument, which, in turn, accepts the device's pixel ratio as _its_ only argument.
 
 ```js
-$('canvas').detectPixelRatio(function(ratio) {
+$('canvas').detectPixelRatio(function (ratio) {
   // Run some code depending on the device pixel ratio
 });
 ```

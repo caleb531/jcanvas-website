@@ -17,9 +17,10 @@ In the following example, the closer you hover to the circle's center, the more 
 $('canvas').drawArc({
   layer: true,
   fillStyle: '#c33',
-  x: 160, y: 200,
+  x: 160,
+  y: 200,
   radius: 100,
-  mousemove: function(layer) {
+  mousemove: function (layer) {
     var distX, distY, dist;
     distX = layer.eventX - layer.x;
     distY = layer.eventY - layer.y;
@@ -43,9 +44,10 @@ $('canvas').drawArc({
   layer: true,
   draggable: true,
   fillStyle: '#c33',
-  x: 160, y: 160,
+  x: 160,
+  y: 160,
   radius: 50,
-  mousemove: function(layer) {
+  mousemove: function (layer) {
     var delta = Math.sqrt(Math.pow(layer.dx, 2) + Math.pow(layer.dy, 2));
     if (delta !== 0) {
       layer.opacity = 1 / delta;
@@ -65,7 +67,8 @@ $('canvas').drawText({
   fillStyle: '#9cf',
   strokeStyle: '#000',
   strokeWidth: 2,
-  x: 180, y: 100,
+  x: 180,
+  y: 100,
   text: 'Click here',
   fontFamily: 'Trebuchet MS',
   fontSize: 64,
@@ -91,21 +94,24 @@ The `intangible` property essentially allows you to "click through" a layer as i
 
 ```js
 $('canvas')
-.drawArc({
-  layer: true,
-  draggable: true,
-  fillStyle: '#36c',
-  x: 150, y: 150,
-  radius: 50
-})
-.drawRect({
-  layer: true,
-  draggable: true,
-  // Slight transparency, just for fun
-  opacity: 0.5,
-  intangible: true,
-  fillStyle: '#6c1',
-  x: 100, y: 100,
-  width: 100, height: 100
-});
+  .drawArc({
+    layer: true,
+    draggable: true,
+    fillStyle: '#36c',
+    x: 150,
+    y: 150,
+    radius: 50
+  })
+  .drawRect({
+    layer: true,
+    draggable: true,
+    // Slight transparency, just for fun
+    opacity: 0.5,
+    intangible: true,
+    fillStyle: '#6c1',
+    x: 100,
+    y: 100,
+    width: 100,
+    height: 100
+  });
 ```

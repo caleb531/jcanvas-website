@@ -12,7 +12,8 @@ You can draw a rectangle using the `drawRect()` method. The size of a rectangle 
 ```js
 $('canvas').drawRect({
   fillStyle: '#000',
-  x: 150, y: 100,
+  x: 150,
+  y: 100,
   width: 200,
   height: 100
 });
@@ -27,13 +28,15 @@ For example, consider the following rectangles. They both have the same `x` and 
 ```js
 $('canvas').drawRect({
   fillStyle: '#c33',
-  x: 100, y: 60,
+  x: 100,
+  y: 60,
   width: 100,
   height: 80
 });
 $('canvas').drawRect({
   fillStyle: '#6a6',
-  x: 100, y: 60,
+  x: 100,
+  y: 60,
   width: 100,
   height: 80,
   fromCenter: false
@@ -46,7 +49,8 @@ If you want to make `fromCenter` `false` by default for all shapes, do so using 
 $.jCanvas.defaults.fromCenter = false;
 $('canvas').drawRect({
   fillStyle: '#6a6',
-  x: 100, y: 60,
+  x: 100,
+  y: 60,
   width: 100,
   height: 80,
   fromCenter: false
@@ -60,7 +64,8 @@ You may round the corners of a rectangle using the `cornerRadius` property.
 ```js
 $('canvas').drawRect({
   fillStyle: '#36c',
-  x: 150, y: 100,
+  x: 150,
+  y: 100,
   width: 200,
   height: 100,
   cornerRadius: 10
@@ -71,7 +76,8 @@ $('canvas').drawRect({
 $('canvas').drawRect({
   strokeStyle: '#c33',
   strokeWidth: 4,
-  x: 150, y: 100,
+  x: 150,
+  y: 100,
   width: 200,
   height: 100,
   cornerRadius: 10

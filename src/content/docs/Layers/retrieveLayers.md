@@ -53,8 +53,8 @@ The `getLayers()` method accepts one optional argument: a callback function whic
 
 ```js
 // Returns an array containing all draggable layers
-$('canvas').getLayers(function(layer) {
-  return (layer.draggable === true);
+$('canvas').getLayers(function (layer) {
+  return layer.draggable === true;
 });
 ```
 

@@ -8,15 +8,19 @@ sidebar:
 The `translateCanvas()` method translates the canvas by the given values.
 
 ```js
-$('canvas').translateCanvas({
-  translateX: 200, translateY: 100
-})
-.drawRect({
-  fillStyle: '#000',
-  x: 50, y: 50,
-  width: 100, height: 50
-})
-.restoreCanvas();
+$('canvas')
+  .translateCanvas({
+    translateX: 200,
+    translateY: 100
+  })
+  .drawRect({
+    fillStyle: '#000',
+    x: 50,
+    y: 50,
+    width: 100,
+    height: 50
+  })
+  .restoreCanvas();
 ```
 
 ### The `translate` property
@@ -24,15 +28,18 @@ $('canvas').translateCanvas({
 You can also set both the `translateX` and `translateY` properties using the `translate` property.
 
 ```js
-$('canvas').translateCanvas({
-  translate: 100
-})
-.drawRect({
-  fillStyle: '#000',
-  x: 100, y: 100,
-  width: 100, height: 50
-})
-.restoreCanvas();
+$('canvas')
+  .translateCanvas({
+    translate: 100
+  })
+  .drawRect({
+    fillStyle: '#000',
+    x: 100,
+    y: 100,
+    width: 100,
+    height: 50
+  })
+  .restoreCanvas();
 ```
 
 ### Translating an individual shape
@@ -40,12 +47,14 @@ $('canvas').translateCanvas({
 Rather than translating the entire canvas, you can translate an individual shape using any of these three properties.
 
 ```js
-$('canvas')
-.drawRect({
+$('canvas').drawRect({
   fillStyle: '#474',
-  x: 50, y: 50,
-  width: 100, height: 50,
-  translateX: 200, translateY: 100
+  x: 50,
+  y: 50,
+  width: 100,
+  height: 50,
+  translateX: 200,
+  translateY: 100
 });
 ```
 

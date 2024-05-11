@@ -12,7 +12,8 @@ Using the `drawVector()` method, each line segment is created from an angle and 
 $('canvas').drawVector({
   strokeStyle: '#000',
   strokeWidth: 4,
-  a1: 135, l1: 100
+  a1: 135,
+  l1: 100
 });
 ```
 
@@ -24,8 +25,10 @@ Additionally, you can specify a starting point for your vector using the `x` and
 $('canvas').drawVector({
   strokeStyle: '#000',
   strokeWidth: 4,
-  x: 50, y: 50,
-  a1: 120, l1: 100
+  x: 50,
+  y: 50,
+  a1: 120,
+  l1: 100
 });
 ```
 
@@ -38,15 +41,18 @@ Of course, you can create multiple vectors. Keep in mind that no matter where an
 $('canvas').drawVector({
   strokeStyle: '#000',
   strokeWidth: 4,
-  x: 50, y: 150,
-  a1: 45, l1: 100,
-  a2: 135, l2: 220
+  x: 50,
+  y: 150,
+  a1: 45,
+  l1: 100,
+  a2: 135,
+  l2: 220
 });
 ```
 
 ### Using line properties
 
-Because the `drawVector()` method creates line segments just like the `drawLine()` method, the `drawVector()` method  accepts many of the same properties as `drawLine()`. These properties include (but are not limited to) `closed` and `rounded`.
+Because the `drawVector()` method creates line segments just like the `drawLine()` method, the `drawVector()` method accepts many of the same properties as `drawLine()`. These properties include (but are not limited to) `closed` and `rounded`.
 
 ```js
 // Draw a closed path (making a triangle)
@@ -55,9 +61,12 @@ $('canvas').drawVector({
   strokeWidth: 4,
   rounded: true,
   closed: true,
-  x: 50, y: 150,
-  a1: 45, l1: 100,
-  a2: 135, l2: 220
+  x: 50,
+  y: 150,
+  a1: 45,
+  l1: 100,
+  a2: 135,
+  l2: 220
 });
 ```
 

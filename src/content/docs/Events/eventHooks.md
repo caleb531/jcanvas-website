@@ -15,7 +15,7 @@ To define an event hook, call the `setEventHooks()` method with the event hooks 
 
 ```js
 $('canvas').setEventHooks({
-  add: function(layer) {
+  add: function (layer) {
     // code to run whenever a layer is added
   }
 });
@@ -32,7 +32,7 @@ $('canvas').getEventHooks();
 jCanvas supports another type of event hook called a global event hook. Global event hooks apply to all layers on all canvases, and do not override canvas event hooks.
 
 ```js
-$.jCanvas.eventHooks.add = function(layer) {
+$.jCanvas.eventHooks.add = function (layer) {
   // code to run when any layer on any canvas is added
 };
 ```
@@ -41,9 +41,9 @@ $.jCanvas.eventHooks.add = function(layer) {
 
 With the addition of event hooks, all jCanvas events bubble up, meaning for any jCanvas event that is triggered:
 
-  1. The layer event callback runs first (if it exists)
-  2. The canvas event hook runs second (if it exists)
-  3. The global event hook runs last (if it exists)
+1. The layer event callback runs first (if it exists)
+2. The canvas event hook runs second (if it exists)
+3. The global event hook runs last (if it exists)
 
 ### Notes
 

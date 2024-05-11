@@ -11,7 +11,7 @@ jCanvas supports mouse and touch events for most drawings through the included E
 
 Any number of jCanvas events can be bound to any jCanvas layer.
 
-The event property's name is always the name of the event itself (`click`, `mousedown`, *etc.*). These properties should be defined in the object passed to the `addLayer()` method.
+The event property's name is always the name of the event itself (`click`, `mousedown`, _etc._). These properties should be defined in the object passed to the `addLayer()` method.
 
 The value of this event property must be a function. This callback function also accepts one argument, which is the layer's object of properties, as used below. Additionally, the `this` keyword refers to the canvas DOM element.
 
@@ -20,9 +20,11 @@ The value of this event property must be a function. This callback function also
 $('canvas').drawRect({
   layer: true,
   fillStyle: '#6c0',
-  x: 100, y: 100,
-  width: 100, height: 80,
-  click: function(layer) {
+  x: 100,
+  y: 100,
+  width: 100,
+  height: 80,
+  click: function (layer) {
     // code to run when square is clicked
   }
 });
@@ -44,30 +46,30 @@ Note that the `triggerLayerEvent()` method will trigger all defined event callba
 
 ### Supported Methods
 
-  - `drawRect()`
-  - `drawArc()`
-  - `drawEllipse()`
-  - `drawLine()`
-  - `drawQuadratic()`
-  - `drawBezier()`
-  - `drawVector()`
-  - `drawGraph()`
-  - `drawPolygon()`
-  - `drawImage()`
-  - `drawText()`
+- `drawRect()`
+- `drawArc()`
+- `drawEllipse()`
+- `drawLine()`
+- `drawQuadratic()`
+- `drawBezier()`
+- `drawVector()`
+- `drawGraph()`
+- `drawPolygon()`
+- `drawImage()`
+- `drawText()`
 
 ### Supported Events
 
-  - `click`
-  - `dblclick`
-  - `mousedown`
-  - `mouseup`
-  - `mousemove`
-  - `mouseover`
-  - `mouseout`
-  - `dragstart`
-  - `drag`
-  - `dragstop`
-  - `touchstart`
-  - `touchend`
-  - `touchmove`
+- `click`
+- `dblclick`
+- `mousedown`
+- `mouseup`
+- `mousemove`
+- `mouseover`
+- `mouseout`
+- `dragstart`
+- `drag`
+- `dragstop`
+- `touchstart`
+- `touchend`
+- `touchmove`

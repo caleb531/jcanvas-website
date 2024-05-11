@@ -7,19 +7,22 @@ sidebar:
 
 ### Adding layers
 
-The `addLayer()` method adds a layer to the canvas in the form of an object or a function. The layer is *not* drawn after calling this method.
+The `addLayer()` method adds a layer to the canvas in the form of an object or a function. The layer is _not_ drawn after calling this method.
 
 If the input is an object, you must specify the `type` property (i.e. the type of drawing associated with the properties you specify). Recognized types include `rectangle`, `arc`, `line`, `quadratic`, `bezier`, `text`, and many others.
 
 ```js
 // Create a rectangle layer
-$('canvas').addLayer({
-  type: 'rectangle',
-  fillStyle: '#585',
-  x: 100, y: 100,
-  width: 100, height: 50
-})
-.drawLayers();
+$('canvas')
+  .addLayer({
+    type: 'rectangle',
+    fillStyle: '#585',
+    x: 100,
+    y: 100,
+    width: 100,
+    height: 50
+  })
+  .drawLayers();
 ```
 
 You can also add a layer using the `layer` property with any method.
@@ -29,8 +32,10 @@ You can also add a layer using the `layer` property with any method.
 $('canvas').drawRect({
   layer: true,
   fillStyle: '#585',
-  x: 100, y: 100,
-  width: 100, height: 50
+  x: 100,
+  y: 100,
+  width: 100,
+  height: 50
 });
 ```
 
@@ -46,8 +51,10 @@ $('canvas').drawRect({
   layer: true,
   name: 'myBox',
   fillStyle: '#585',
-  x: 100, y: 100,
-  width: 100, height: 50
+  x: 100,
+  y: 100,
+  width: 100,
+  height: 50
 });
 ```
 
@@ -63,8 +70,10 @@ $('canvas').drawRect({
   groups: ['myBoxes'],
   name: 'box',
   fillStyle: '#585',
-  x: 100, y: 100,
-  width: 100, height: 50
+  x: 100,
+  y: 100,
+  width: 100,
+  height: 50
 });
 ```
 
@@ -75,8 +84,10 @@ $('canvas').drawRect({
   layer: true,
   name: 'box',
   fillStyle: '#585',
-  x: 100, y: 100,
-  width: 100, height: 50
+  x: 100,
+  y: 100,
+  width: 100,
+  height: 50
 });
 $('canvas').addLayerToGroup('box', 'myBoxes');
 ```
@@ -89,8 +100,10 @@ $('canvas').drawRect({
   groups: ['myBoxes'],
   name: 'box',
   fillStyle: '#585',
-  x: 100, y: 100,
-  width: 100, height: 50
+  x: 100,
+  y: 100,
+  width: 100,
+  height: 50
 });
 $('canvas').removeLayerFromGroup('box', 'myBoxes');
 ```
@@ -107,8 +120,10 @@ $('canvas').drawRect({
   layer: true,
   visible: false,
   fillStyle: '#585',
-  x: 100, y: 100,
-  width: 100, height: 50
+  x: 100,
+  y: 100,
+  width: 100,
+  height: 50
 });
 ```
 
@@ -116,19 +131,20 @@ $('canvas').drawRect({
 
 Instead of an object, the `addLayer()` method accepts a function using the `fn` property (this function will run when the layer is drawn). The function also accepts one parameter: the canvas context.
 
-jCanvas refers to these types of layers as *function layers*.
+jCanvas refers to these types of layers as _function layers_.
 
 ```js
 // Create a named function layer
-$('canvas').addLayer({
-  type: 'function',
-  name: 'myBox',
-  fn: function(ctx) {
-    ctx.fillStyle = '#36c';
-    ctx.fillRect(50, 50, 100, 50);
-  }
-})
-.drawLayers();
+$('canvas')
+  .addLayer({
+    type: 'function',
+    name: 'myBox',
+    fn: function (ctx) {
+      ctx.fillStyle = '#36c';
+      ctx.fillRect(50, 50, 100, 50);
+    }
+  })
+  .drawLayers();
 ```
 
 This also works when using the `draw()` method and the `layer` property.
@@ -138,7 +154,7 @@ This also works when using the `draw()` method and the `layer` property.
 $('canvas').draw({
   layer: true,
   name: 'myBox',
-  fn: function(ctx) {
+  fn: function (ctx) {
     ctx.fillStyle = '#36c';
     ctx.fillRect(50, 50, 100, 50);
   }
@@ -151,30 +167,36 @@ You can also set a layer's index (in the current layers array) using the `index`
 
 ```js
 $('canvas')
-.addLayer({
-  type: 'rectangle',
-  name: 'redBox',
-  fillStyle: '#c33',
-  x: 180, y: 150,
-  width: 100, height: 100
-})
-.addLayer({
-  type: 'rectangle',
-  name: 'greenBox',
-  fillStyle: '#585',
-  x: 150, y: 200,
-  width: 100, height: 100
-})
-// Normally on top, but moved to the bottom
-.addLayer({
-  type: 'rectangle',
-  name: 'blueBox',
-  index: 0,
-  fillStyle: '#36b',
-  x: 230, y: 180,
-  width: 100, height: 100
-})
-.drawLayers();
+  .addLayer({
+    type: 'rectangle',
+    name: 'redBox',
+    fillStyle: '#c33',
+    x: 180,
+    y: 150,
+    width: 100,
+    height: 100
+  })
+  .addLayer({
+    type: 'rectangle',
+    name: 'greenBox',
+    fillStyle: '#585',
+    x: 150,
+    y: 200,
+    width: 100,
+    height: 100
+  })
+  // Normally on top, but moved to the bottom
+  .addLayer({
+    type: 'rectangle',
+    name: 'blueBox',
+    index: 0,
+    fillStyle: '#36b',
+    x: 230,
+    y: 180,
+    width: 100,
+    height: 100
+  })
+  .drawLayers();
 ```
 
 Keep in mind that a layer's index cannot be greater than the current number of layers. Therefore, you couldn't assign the first layer an index, because there are no other existing layers at that moment.
@@ -184,30 +206,36 @@ the last.
 
 ```js
 $('canvas')
-.addLayer({
-  type: 'rectangle',
-  name: 'redBox',
-  fillStyle: '#c33',
-  x: 180, y: 150,
-  width: 100, height: 100
-})
-.addLayer({
-  type: 'rectangle',
-  name: 'greenBox',
-  fillStyle: '#585',
-  x: 150, y: 200,
-  width: 100, height: 100
-})
-// Normally on top, but moved to the bottom
-.addLayer({
-  type: 'rectangle',
-  name: 'blueBox',
-  index: -1,
-  fillStyle: '#36b',
-  x: 230, y: 180,
-  width: 100, height: 100
-})
-.drawLayers();
+  .addLayer({
+    type: 'rectangle',
+    name: 'redBox',
+    fillStyle: '#c33',
+    x: 180,
+    y: 150,
+    width: 100,
+    height: 100
+  })
+  .addLayer({
+    type: 'rectangle',
+    name: 'greenBox',
+    fillStyle: '#585',
+    x: 150,
+    y: 200,
+    width: 100,
+    height: 100
+  })
+  // Normally on top, but moved to the bottom
+  .addLayer({
+    type: 'rectangle',
+    name: 'blueBox',
+    index: -1,
+    fillStyle: '#36b',
+    x: 230,
+    y: 180,
+    width: 100,
+    height: 100
+  })
+  .drawLayers();
 ```
 
 ### Storing Data
@@ -222,7 +250,9 @@ $('canvas').drawRect({
     something: true
   },
   fillStyle: '#585',
-  x: 100, y: 100,
-  width: 100, height: 50
+  x: 100,
+  y: 100,
+  width: 100,
+  height: 50
 });
 ```

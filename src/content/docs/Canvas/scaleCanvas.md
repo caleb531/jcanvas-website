@@ -10,16 +10,20 @@ sidebar:
 The `scaleCanvas()` method scales the canvas from the included point.
 
 ```js
-$('canvas').scaleCanvas({
-  x: 100, y: 100,
-  scaleX: 1.5, scaleY: 3
-})
-.drawArc({
-  fillStyle: '#000',
-  x: 100, y: 100,
-  radius: 20
-})
-.restoreCanvas();
+$('canvas')
+  .scaleCanvas({
+    x: 100,
+    y: 100,
+    scaleX: 1.5,
+    scaleY: 3
+  })
+  .drawArc({
+    fillStyle: '#000',
+    x: 100,
+    y: 100,
+    radius: 20
+  })
+  .restoreCanvas();
 ```
 
 ### The `scale` property
@@ -27,15 +31,18 @@ $('canvas').scaleCanvas({
 You can also set both the `scaleX` and `scaleY` properties using the `scale` property.
 
 ```js
-$('canvas').scaleCanvas({
-  scale: 2
-})
-.drawRect({
-  fillStyle: '#000',
-  x: 100, y: 100,
-  width: 100, height: 50
-})
-.restoreCanvas();
+$('canvas')
+  .scaleCanvas({
+    scale: 2
+  })
+  .drawRect({
+    fillStyle: '#000',
+    x: 100,
+    y: 100,
+    width: 100,
+    height: 50
+  })
+  .restoreCanvas();
 ```
 
 ### Scaling an individual shape
@@ -46,8 +53,10 @@ Rather than scaling the entire canvas, you can scale an individual shape using a
 // This square is scaled to be a rectangle
 $('canvas').drawRect({
   fillStyle: '#36c',
-  x: 200, y: 100,
-  width: 100, height: 100,
+  x: 200,
+  y: 100,
+  width: 100,
+  height: 100,
   scaleX: 3
 });
 ```

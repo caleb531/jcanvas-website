@@ -11,8 +11,10 @@ The `createPattern()` method returns a canvas pattern object, which can be used 
 function draw(patt) {
   $('canvas').drawEllipse({
     fillStyle: patt,
-    x: 160, y: 100,
-    width: 250, height: 100
+    x: 160,
+    y: 100,
+    width: 250,
+    height: 100
   });
 }
 
@@ -32,8 +34,10 @@ You can also use an image DOM element as the value for the `source` property.
 function draw(patt) {
   $('canvas').drawEllipse({
     fillStyle: patt,
-    x: 200, y: 100,
-    width: 250, height: 100
+    x: 200,
+    y: 100,
+    width: 250,
+    height: 100
   });
 }
 
@@ -57,15 +61,18 @@ Finally, if you would rather use a existing canvas element, feel free to do so u
 // Create pattern
 var patt = $('canvas').createPattern({
   // Define width/height of pattern (before repeating)
-  width: 40, height: 40,
-  source: function(context) {
+  width: 40,
+  height: 40,
+  source: function (context) {
     // Draw rectangle (which will repeat)
     $(this).drawRect({
       fillStyle: '#bcdeb2',
       strokeStyle: '#009c56',
       strokeWidth: 1,
-      x: 0, y: 0,
-      width: 40, height: 40,
+      x: 0,
+      y: 0,
+      width: 40,
+      height: 40,
       fromCenter: false,
       cornerRadius: 6
     });
@@ -76,10 +83,13 @@ var patt = $('canvas').createPattern({
 $('canvas').drawEllipse({
   fillStyle: patt,
   strokeStyle: '#009c56',
-  x: 200, y: 100,
-  width: 300, height: 100
+  x: 200,
+  y: 100,
+  width: 300,
+  height: 100
 });
 ```
 
 ### Notes
+
 By default, the pattern repeats on both the X- and Y-axis

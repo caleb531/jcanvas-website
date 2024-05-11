@@ -15,7 +15,8 @@ Most jCanvas methods accept a map of properties, which may be listed in any orde
 // Draw a circle on the canvas
 $('canvas').drawArc({
   fillStyle: 'black',
-  x: 100, y: 100,
+  x: 100,
+  y: 100,
   radius: 50
 });
 ```
@@ -29,16 +30,19 @@ Most numeric property values are measured in pixels, although some are relative 
 Most jCanvas methods support [chaining](http://tobiasahlin.com/blog/quick-guide-chaining-in-jquery/) for cleaner and faster code.
 
 ```js
-$('canvas').drawArc({
-  fillStyle: 'black',
-  x: 100, y: 100,
-  radius: 50
-})
-.drawArc({
-  fillStyle: '#36b',
-  x: 300, y: 150,
-  radius: 50
-});
+$('canvas')
+  .drawArc({
+    fillStyle: 'black',
+    x: 100,
+    y: 100,
+    radius: 50
+  })
+  .drawArc({
+    fillStyle: '#36b',
+    x: 300,
+    y: 150,
+    radius: 50
+  });
 ```
 
 ### Multiple Canvases
@@ -49,7 +53,8 @@ As demonstrated in the examples above, jCanvas can draw the same drawing on mult
 // Applies to all canvas elements
 $('canvas').drawArc({
   fillStyle: 'black',
-  x: 100, y: 100,
+  x: 100,
+  y: 100,
   radius: 50
 });
 ```
@@ -58,7 +63,8 @@ $('canvas').drawArc({
 // Applies to all canvas elements with a class of 'demo'
 $('canvas.demo').drawArc({
   fillStyle: 'black',
-  x: 100, y: 100,
+  x: 100,
+  y: 100,
   radius: 50
 });
 ```

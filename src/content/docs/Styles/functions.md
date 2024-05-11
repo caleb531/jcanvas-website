@@ -14,10 +14,11 @@ Functions as fill/stroke styles can be useful for dynamic computation of those s
 $('canvas').drawArc({
   layer: true,
   draggable: true,
-  x: 50, y: 50,
+  x: 50,
+  y: 50,
   radius: 30,
-  fillStyle: function(layer) {
-    var value = Math.round(layer.x / this.width * 360);
+  fillStyle: function (layer) {
+    var value = Math.round((layer.x / this.width) * 360);
     value = Math.min(value, 360);
     return 'hsl(' + value + ', 50%, 50%)';
   }
