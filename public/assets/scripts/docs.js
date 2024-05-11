@@ -12,40 +12,6 @@
       $(this).append('<a href="#' + this.id + '" class="subsection-link"></a>');
     });
 
-    // Add drawers to page where needed
-    $('main').find('h1').addClass('drawer-toggle');
-    $('.drawer-toggle').on('click', function () {
-      $docsSections.toggleClass('open');
-      $(this).toggleClass('open');
-    });
-
-    // Add list of subsections to the given documentation section
-    $.fn.addDocsSubsectionList = function () {
-      var $section = this;
-      var $subsectionsMenu = $(
-        '<ul id="docs-section-subsections" class="box">'
-      );
-      var $subsectionHeadings = $section.find('h3');
-      if ($subsectionHeadings.length > 0) {
-        $subsectionHeadings.each(function () {
-          $subsectionsMenu.append(
-            '<li><a href="#' + this.id + '">' + $(this).text() + '</a>'
-          );
-        });
-        $section
-          .find('h2')
-          .eq(0)
-          .append($subsectionsMenu)
-          .on('click', function () {
-            $(this).toggleClass('open');
-          })
-          .addClass('menu');
-      }
-    };
-
-    // Add drawers to page where needed
-    $docsSection.addDocsSubsectionList();
-
     // Run the given demo code on the given canvas
     function runDemo(code, $demoCanvas) {
       code = $.jCanvasCorrectImagePaths(code);
