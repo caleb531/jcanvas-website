@@ -3,12 +3,9 @@ import mdx from "@astrojs/mdx";
 import astroExpressiveCode from 'astro-expressive-code';
 import starlight from "@astrojs/starlight";
 
-const site = 'http://localhost:4321/';
-
-
 // https://astro.build/config
 export default defineConfig({
-  	site,
+  	site: 'http://localhost:4321/',
   integrations: [
     astroExpressiveCode(), 
     starlight({
