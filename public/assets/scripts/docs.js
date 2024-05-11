@@ -67,7 +67,7 @@
         height: 250
       });
       // Create canvas container (will also contain demo controls like re-run)
-      $demoContainer = $('<div class="demo-container">');
+      var $demoContainer = $('<div class="demo-container">');
       $demoContainer.append(
         '<button class="demo-rerun edge-button">Re-run</button>'
       );
