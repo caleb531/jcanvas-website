@@ -41,7 +41,6 @@ export default defineConfig({
 			social: {
 				github: 'https://github.com/caleb531/jcanvas-website',
 			},
-			pagefind: false,
 			head: [
 				// Add ICO favicon fallback for Safari.
 				{
