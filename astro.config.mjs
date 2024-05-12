@@ -35,17 +35,7 @@ export default defineConfig({
       social: {
         github: 'https://github.com/caleb531/jcanvas-website'
       },
-      head: [
-        // Add ICO favicon fallback for Safari.
-        {
-          tag: 'link',
-          attrs: {
-            rel: 'icon',
-            href: 'assets/images/favicon.ico',
-            sizes: '32x32'
-          }
-        }
-      ]
+      favicon: '/assets/images/favicon.png'
     }),
     mdx()
   ]
