@@ -81,20 +81,23 @@ canvas {
   }
 }
 
-// Button fixed to edge of container
-.edge-button {
+// Button fixed to edge of code block container
+button.edge-button {
   position: absolute;
-  $position: 0;
-  top: $position;
-  right: $position;
+  --button-position: 0;
+  top: var(--button-position);
+  right: var(--button-position);
   z-index: 10;
   margin: 0;
-  border-top-width: 0;
-  border-right-width: 0;
+  padding: 4px 6px;
+  font-size: 12px;
   border-top-right-radius: 0;
   border-top-left-radius: 0;
   border-bottom-right-radius: 0;
   background-clip: border-box;
+}
+.expressive-code button.edge-button {
+  border-top-right-radius: inherit;
 }
 
 // Hidden images used only so code examples can access them by DOM element

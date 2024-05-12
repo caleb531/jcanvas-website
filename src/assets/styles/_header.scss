@@ -1,5 +1,5 @@
 // Site Header
-.header {
+.site-header {
   position: relative;
   z-index: 10;
   width: 100%;
@@ -58,11 +58,11 @@
 }
 
 // Logo
-li.logo,
-li.author {
+li.site-logo,
+li.site-author {
   float: left;
 }
-li.logo {
+li.site-logo {
   @include layout(compact) {
     display: block;
     float: none;
@@ -81,7 +81,7 @@ li.logo {
   }
 }
 // Author
-li.author {
+li.site-author {
   @include layout(compact) {
     position: absolute;
     top: 5px;

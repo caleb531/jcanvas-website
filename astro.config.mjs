@@ -10,7 +10,16 @@ export default defineConfig({
   integrations: [
     astroExpressiveCode({
       // Available Themes: <https://expressive-code.com/guides/themes/>
-      themes: ['github-dark']
+      themes: ['github-dark'],
+      frames: {
+        // Disable "Copy to Clipboard" button on each code block for the time
+        // being, since it gets in the way of the "Try in Sandbox" button
+        showCopyToClipboardButton: false
+      },
+      // Wrap all Expressive Code styles in a @layer with the given name to allow us to override
+      // them without struggle (see
+      // <https://expressive-code.com/reference/configuration/#cascadelayer>)
+      cascadeLayer: 'ec-layer'
     }),
     starlight({
       title: 'jCanvas Documentation',
