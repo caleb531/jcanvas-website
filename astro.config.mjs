@@ -7,7 +7,10 @@ import { defineConfig } from 'astro/config';
 export default defineConfig({
   site: 'http://localhost:4321/',
   integrations: [
-    astroExpressiveCode(),
+    astroExpressiveCode({
+      // Available Themes: <https://expressive-code.com/guides/themes/>
+      themes: ['github-dark']
+    }),
     starlight({
       title: 'jCanvas',
       components: {
