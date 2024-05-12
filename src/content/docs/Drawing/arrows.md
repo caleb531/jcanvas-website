@@ -98,8 +98,7 @@ $('canvas').drawArc({
   arrowRadius: 15,
   arrowAngle: 90,
   x: 160, y: 120,
-  start: 90,
-  end: 360,
+  start: 90, end: 360,
   radius: 50
 });
 ```

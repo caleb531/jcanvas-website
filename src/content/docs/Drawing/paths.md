@@ -72,32 +72,28 @@ $('canvas').drawPath({
   p1: {
     type: 'arc',
     x: 0, y: -50,
-    start: -90,
-    end: 90,
+    start: -90, end: 90,
     radius: 50
   },
   // Right petal
   p2: {
     type: 'arc',
     x: 50, y: 0,
-    start: 0,
-    end: 180,
+    start: 0, end: 180,
     radius: 50
   },
   // Bottom petal
   p3: {
     type: 'arc',
     x: 0, y: 50,
-    start: 90,
-    end: 270,
+    start: 90, end: 270,
     radius: 50
   },
   // Left petal
   p4: {
     type: 'arc',
     x: -50, y: 0,
-    start: 180,
-    end: 360,
+    start: 180, end: 360,
     radius: 50
   }
 });

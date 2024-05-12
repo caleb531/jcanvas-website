@@ -18,8 +18,7 @@ $('canvas').drawSlice({
   x: 100, y: 100,
   radius: 150,
   // start and end angles in degrees
-  start: 60,
-  end: 120
+  start: 60, end: 120
 });
 ```
 
@@ -37,8 +36,7 @@ $('canvas')
     groups: ['chart', 'slices'],
     fillStyle: '#c33',
     x: 180, y: 110,
-    start: -45,
-    end: 15,
+    start: -45, end: 15,
     radius: 100,
     spread: 1 / 40
   })
@@ -48,8 +46,7 @@ $('canvas')
     groups: ['chart', 'slices'],
     fillStyle: '#6c0',
     x: 180, y: 110,
-    start: -135,
-    end: -45,
+    start: -135, end: -45,
     radius: 100,
     spread: 1 / 40
   })
@@ -59,8 +56,7 @@ $('canvas')
     groups: ['chart', 'slices'],
     fillStyle: '#36c',
     x: 180, y: 110,
-    start: 15,
-    end: -135,
+    start: 15, end: -135,
     radius: 100,
     spread: 1 / 40
   });
@@ -76,8 +72,7 @@ $('canvas')
     groups: ['chart', 'slices'],
     fillStyle: '#c33',
     x: 180, y: 110,
-    start: -45,
-    end: 15,
+    start: -45, end: 15,
     radius: 100,
     spread: 1 / 40
   })
@@ -87,8 +82,7 @@ $('canvas')
     groups: ['chart', 'slices'],
     fillStyle: '#6c0',
     x: 180, y: 110,
-    start: -135,
-    end: -45,
+    start: -135, end: -45,
     radius: 100,
     spread: 1 / 40
   })
@@ -98,8 +92,7 @@ $('canvas')
     groups: ['chart', 'slices'],
     fillStyle: '#36c',
     x: 180, y: 110,
-    start: 15,
-    end: -135,
+    start: 15, end: -135,
     radius: 100,
     spread: 1 / 40
   })

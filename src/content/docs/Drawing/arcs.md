@@ -19,8 +19,7 @@ $('canvas').drawArc({
   x: 100, y: 100,
   radius: 50,
   // start and end angles in degrees
-  start: 0,
-  end: 90
+  start: 0, end: 90
 });
 ```
 
@@ -46,8 +45,7 @@ $('canvas').drawArc({
   fillStyle: 'black',
   x: 100, y: 100,
   radius: 50,
-  start: 0,
-  end: Math.PI,
+  start: 0, end: Math.PI,
   ccw: true,
   inDegrees: false
 });
@@ -64,8 +62,7 @@ $('canvas').drawArc({
   strokeWidth: 5,
   x: 100, y: 100,
   radius: 50,
-  start: 45,
-  end: 225,
+  start: 45, end: 225,
   closed: true
 });
 ```
