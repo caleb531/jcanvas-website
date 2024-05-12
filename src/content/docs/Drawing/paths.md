@@ -18,21 +18,15 @@ $('canvas').drawPath({
   strokeWidth: 4,
   p1: {
     type: 'line',
-    x1: 200,
-    y1: 50,
-    x2: 100,
-    y2: 150,
-    x3: 200,
-    y3: 150,
-    x4: 120,
-    y4: 200
+    x1: 200, y1: 50,
+    x2: 100, y2: 150,
+    x3: 200, y3: 150,
+    x4: 120, y4: 200
   },
   p2: {
     type: 'quadratic',
-    cx1: 175,
-    cy1: 250,
-    x2: 225,
-    y2: 200
+    cx1: 175, cy1: 250,
+    x2: 225, y2: 200
   }
 });
 ```
@@ -48,23 +42,16 @@ $('canvas').drawPath({
   strokeWidth: 4,
   p1: {
     type: 'line',
-    x1: 200,
-    y1: 50,
-    x2: 100,
-    y2: 150,
-    x3: 200,
-    y3: 150,
-    x4: 120,
-    y4: 200
+    x1: 200, y1: 50,
+    x2: 100, y2: 150,
+    x3: 200, y3: 150,
+    x4: 120, y4: 200
   },
   p2: {
     type: 'quadratic',
-    x1: 130,
-    y1: 210,
-    cx1: 180,
-    cy1: 250,
-    x2: 225,
-    y2: 200
+    x1: 130, y1: 210,
+    cx1: 180, cy1: 250,
+    x2: 225, y2: 200
   }
 });
 ```
@@ -80,13 +67,11 @@ $('canvas').drawPath({
   strokeStyle: '#000',
   strokeWidth: 4,
   closed: true,
-  x: 160,
-  y: 150,
+  x: 160, y: 150,
   // Top petal
   p1: {
     type: 'arc',
-    x: 0,
-    y: -50,
+    x: 0, y: -50,
     start: -90,
     end: 90,
     radius: 50
@@ -94,8 +79,7 @@ $('canvas').drawPath({
   // Right petal
   p2: {
     type: 'arc',
-    x: 50,
-    y: 0,
+    x: 50, y: 0,
     start: 0,
     end: 180,
     radius: 50
@@ -103,8 +87,7 @@ $('canvas').drawPath({
   // Bottom petal
   p3: {
     type: 'arc',
-    x: 0,
-    y: 50,
+    x: 0, y: 50,
     start: 90,
     end: 270,
     radius: 50
@@ -112,8 +95,7 @@ $('canvas').drawPath({
   // Left petal
   p4: {
     type: 'arc',
-    x: -50,
-    y: 0,
+    x: -50, y: 0,
     start: 180,
     end: 360,
     radius: 50
@@ -141,17 +123,14 @@ $('canvas').drawPath({
     startArrow: true,
     arrowAngle: 60,
     arrowRadius: 30,
-    x: 200,
-    y: 50,
+    x: 200, y: 50,
     a1: 225,
     l1: 200
   },
   p2: {
     type: 'quadratic',
-    cx1: 150,
-    cy1: 250,
-    x2: 225,
-    y2: 200,
+    cx1: 150, cy1: 250,
+    x2: 225, y2: 200,
     endArrow: true,
     arrowAngle: 60,
     arrowRadius: 30

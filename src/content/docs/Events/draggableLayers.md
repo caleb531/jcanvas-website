@@ -15,18 +15,15 @@ $('canvas')
     layer: true,
     draggable: true,
     fillStyle: '#36c',
-    x: 150,
-    y: 150,
+    x: 150, y: 150,
     radius: 50
   })
   .drawRect({
     layer: true,
     draggable: true,
     fillStyle: '#6c1',
-    x: 100,
-    y: 100,
-    width: 100,
-    height: 100
+    x: 100, y: 100,
+    width: 100, height: 100
   });
 ```
 
@@ -39,8 +36,7 @@ $('canvas')
     draggable: true,
     bringToFront: true,
     fillStyle: '#36c',
-    x: 150,
-    y: 150,
+    x: 150, y: 150,
     radius: 50
   })
   .drawRect({
@@ -48,10 +44,8 @@ $('canvas')
     draggable: true,
     bringToFront: true,
     fillStyle: '#6c1',
-    x: 100,
-    y: 100,
-    width: 100,
-    height: 100
+    x: 100, y: 100,
+    width: 100, height: 100
   });
 ```
 
@@ -70,8 +64,7 @@ $('canvas').drawArc({
   draggable: true,
   bringToFront: true,
   fillStyle: '#36c',
-  x: 150,
-  y: 150,
+  x: 150, y: 150,
   radius: 50,
   dragstart: function () {
     // code to run when dragging starts
@@ -104,8 +97,7 @@ $('canvas')
     groups: ['shapes'],
     dragGroups: ['shapes'],
     fillStyle: '#36c',
-    x: 150,
-    y: 150,
+    x: 150, y: 150,
     radius: 50
   })
   .drawRect({
@@ -114,10 +106,8 @@ $('canvas')
     groups: ['shapes'],
     dragGroups: ['shapes'],
     fillStyle: '#6c1',
-    x: 100,
-    y: 100,
-    width: 100,
-    height: 100
+    x: 100, y: 100,
+    width: 100, height: 100
   });
 ```
 
@@ -131,8 +121,7 @@ $('canvas')
     layer: true,
     draggable: true,
     fillStyle: '#36c',
-    x: 150,
-    y: 150,
+    x: 150, y: 150,
     radius: 50,
     restrictDragToAxis: 'x'
   })
@@ -140,10 +129,8 @@ $('canvas')
     layer: true,
     draggable: true,
     fillStyle: '#6c1',
-    x: 100,
-    y: 100,
-    width: 100,
-    height: 100,
+    x: 100, y: 100,
+    width: 100, height: 100,
     restrictDragToAxis: 'y'
   });
 ```
@@ -166,8 +153,7 @@ $('canvas').drawArc({
   layer: true,
   draggable: true,
   fillStyle: '#36c',
-  x: 160,
-  y: 120,
+  x: 160, y: 120,
   radius: 50,
   updateDragX: function (layer, x) {
     return nearest(x, snapToAmount);

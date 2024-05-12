@@ -5,9 +5,7 @@
 $('canvas').drawPolygon({
   draggable: true,
   fillStyle: '#6c3',
-  x: 100,
-  y: 100,
-  radius: 50,
-  sides: 5
+  x: 100, y: 100,
+  radius: 50, sides: 5
 });
 ```

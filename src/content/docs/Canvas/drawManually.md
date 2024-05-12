@@ -24,10 +24,8 @@ The `draw()` method can be used to draw any other jCanvas drawing (although usua
 $('canvas').draw({
   type: 'rectangle',
   fillStyle: '#c33',
-  x: 100,
-  y: 100,
-  width: 100,
-  height: 80
+  x: 100, y: 100,
+  width: 100, height: 80
 });
 ```
 
@@ -36,10 +34,8 @@ The above code is equivalent to the following:
 ```js
 $('canvas').drawRect({
   fillStyle: '#c33',
-  x: 100,
-  y: 100,
-  width: 100,
-  height: 80
+  x: 100, y: 100,
+  width: 100, height: 80
 });
 ```
 

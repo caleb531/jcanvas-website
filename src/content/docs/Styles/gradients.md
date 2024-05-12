@@ -13,28 +13,23 @@ Gradient colors are defined using `c1`, `c2`, `c3`, and so on. Optional color st
 
 ```js
 var linear = $('canvas').createGradient({
-  x1: 0,
-  y1: 20,
-  x2: 0,
-  y2: 80,
+  x1: 0, y1: 20,
+  x2: 0, y2: 80,
   c1: 'rgb(0, 0, 0)',
   c2: '#0f0',
   c3: 'blue'
 });
 $('canvas').drawArc({
   fillStyle: linear,
-  x: 50,
-  y: 50,
+  x: 50, y: 50,
   radius: 30
 });
 ```
 
 ```js
 var linear = $('canvas').createGradient({
-  x1: 0,
-  y1: 20,
-  x2: 0,
-  y2: 80,
+  x1: 0, y1: 20,
+  x2: 0, y2: 80,
   c1: 'rgb(0, 0, 0)',
   c2: '#0f0',
   s2: 0.2,
@@ -43,8 +38,7 @@ var linear = $('canvas').createGradient({
 });
 $('canvas').drawArc({
   fillStyle: linear,
-  x: 50,
-  y: 50,
+  x: 50, y: 50,
   radius: 30
 });
 ```
@@ -55,10 +49,8 @@ Radial gradients are created when the `r1` or `r2` properties are defined.
 
 ```js
 var radial = $('canvas').createGradient({
-  x1: 50,
-  y1: 50,
-  x2: 50,
-  y2: 50,
+  x1: 50, y1: 50,
+  x2: 50, y2: 50,
   r1: 10,
   r2: 30,
   c1: 'rgba(255, 0, 0, 0.75)',
@@ -66,8 +58,7 @@ var radial = $('canvas').createGradient({
 });
 $('canvas').drawArc({
   fillStyle: radial,
-  x: 50,
-  y: 50,
+  x: 50, y: 50,
   radius: 30
 });
 ```
@@ -82,10 +73,8 @@ To demonstrate this behavior, consider the following example:
 // Create and store a linear gradient
 var gradient = $('canvas').createGradient({
   // Gradient is drawn relative to layer position
-  x1: 0,
-  y1: 20,
-  x2: 0,
-  y2: 140,
+  x1: 0, y1: 20,
+  x2: 0, y2: 140,
   c1: '#36c',
   c2: '#c33'
 });
@@ -94,17 +83,14 @@ $('canvas').drawRect({
   layer: true,
   name: 'box',
   fillStyle: gradient,
-  x: 100,
-  y: 80,
-  width: 100,
-  height: 60
+  x: 100, y: 80,
+  width: 100, height: 60
 });
 // Animate layer
 $('canvas').animateLayer(
   'box',
   {
-    x: 220,
-    y: 150
+    x: 220, y: 150
   },
   1000
 );
@@ -121,25 +107,20 @@ $('canvas').drawRect({
   fillStyle: function (layer) {
     return $(this).createGradient({
       // Gradient is drawn relative to layer position
-      x1: 0,
-      y1: layer.y - layer.height,
-      x2: 0,
-      y2: layer.y + layer.height,
+      x1: 0, y1: layer.y - layer.height,
+      x2: 0, y2: layer.y + layer.height,
       c1: '#36c',
       c2: '#c33'
     });
   },
-  x: 100,
-  y: 80,
-  width: 100,
-  height: 60
+  x: 100, y: 80,
+  width: 100, height: 60
 });
 // Animate layer
 $('canvas').animateLayer(
   'box',
   {
-    x: 220,
-    y: 150
+    x: 220, y: 150
   },
   1000
 );

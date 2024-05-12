@@ -17,10 +17,8 @@ $('canvas')
   .addLayer({
     type: 'rectangle',
     fillStyle: '#585',
-    x: 100,
-    y: 100,
-    width: 100,
-    height: 50
+    x: 100, y: 100,
+    width: 100, height: 50
   })
   .drawLayers();
 ```
@@ -32,10 +30,8 @@ You can also add a layer using the `layer` property with any method.
 $('canvas').drawRect({
   layer: true,
   fillStyle: '#585',
-  x: 100,
-  y: 100,
-  width: 100,
-  height: 50
+  x: 100, y: 100,
+  width: 100, height: 50
 });
 ```
 
@@ -51,10 +47,8 @@ $('canvas').drawRect({
   layer: true,
   name: 'myBox',
   fillStyle: '#585',
-  x: 100,
-  y: 100,
-  width: 100,
-  height: 50
+  x: 100, y: 100,
+  width: 100, height: 50
 });
 ```
 
@@ -70,10 +64,8 @@ $('canvas').drawRect({
   groups: ['myBoxes'],
   name: 'box',
   fillStyle: '#585',
-  x: 100,
-  y: 100,
-  width: 100,
-  height: 50
+  x: 100, y: 100,
+  width: 100, height: 50
 });
 ```
 
@@ -84,10 +76,8 @@ $('canvas').drawRect({
   layer: true,
   name: 'box',
   fillStyle: '#585',
-  x: 100,
-  y: 100,
-  width: 100,
-  height: 50
+  x: 100, y: 100,
+  width: 100, height: 50
 });
 $('canvas').addLayerToGroup('box', 'myBoxes');
 ```
@@ -100,10 +90,8 @@ $('canvas').drawRect({
   groups: ['myBoxes'],
   name: 'box',
   fillStyle: '#585',
-  x: 100,
-  y: 100,
-  width: 100,
-  height: 50
+  x: 100, y: 100,
+  width: 100, height: 50
 });
 $('canvas').removeLayerFromGroup('box', 'myBoxes');
 ```
@@ -120,10 +108,8 @@ $('canvas').drawRect({
   layer: true,
   visible: false,
   fillStyle: '#585',
-  x: 100,
-  y: 100,
-  width: 100,
-  height: 50
+  x: 100, y: 100,
+  width: 100, height: 50
 });
 ```
 
@@ -171,19 +157,15 @@ $('canvas')
     type: 'rectangle',
     name: 'redBox',
     fillStyle: '#c33',
-    x: 180,
-    y: 150,
-    width: 100,
-    height: 100
+    x: 180, y: 150,
+    width: 100, height: 100
   })
   .addLayer({
     type: 'rectangle',
     name: 'greenBox',
     fillStyle: '#585',
-    x: 150,
-    y: 200,
-    width: 100,
-    height: 100
+    x: 150, y: 200,
+    width: 100, height: 100
   })
   // Normally on top, but moved to the bottom
   .addLayer({
@@ -191,10 +173,8 @@ $('canvas')
     name: 'blueBox',
     index: 0,
     fillStyle: '#36b',
-    x: 230,
-    y: 180,
-    width: 100,
-    height: 100
+    x: 230, y: 180,
+    width: 100, height: 100
   })
   .drawLayers();
 ```
@@ -210,19 +190,15 @@ $('canvas')
     type: 'rectangle',
     name: 'redBox',
     fillStyle: '#c33',
-    x: 180,
-    y: 150,
-    width: 100,
-    height: 100
+    x: 180, y: 150,
+    width: 100, height: 100
   })
   .addLayer({
     type: 'rectangle',
     name: 'greenBox',
     fillStyle: '#585',
-    x: 150,
-    y: 200,
-    width: 100,
-    height: 100
+    x: 150, y: 200,
+    width: 100, height: 100
   })
   // Normally on top, but moved to the bottom
   .addLayer({
@@ -230,10 +206,8 @@ $('canvas')
     name: 'blueBox',
     index: -1,
     fillStyle: '#36b',
-    x: 230,
-    y: 180,
-    width: 100,
-    height: 100
+    x: 230, y: 180,
+    width: 100, height: 100
   })
   .drawLayers();
 ```
@@ -250,9 +224,7 @@ $('canvas').drawRect({
     something: true
   },
   fillStyle: '#585',
-  x: 100,
-  y: 100,
-  width: 100,
-  height: 50
+  x: 100, y: 100,
+  width: 100, height: 50
 });
 ```

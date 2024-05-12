@@ -12,10 +12,8 @@ jCanvas supports native touch events on iOS and Android using the `touchstart`, 
 $('canvas').drawRect({
   layer: true,
   fillStyle: '#36c',
-  x: 150,
-  y: 100,
-  width: 120,
-  height: 80,
+  x: 150, y: 100,
+  width: 120, height: 80,
   touchstart: function (layer) {
     // Animate layer when touched
     $(this).animateLayer(
@@ -48,10 +46,8 @@ As a bonus, jCanvas will also convert existing `mousedown`, `mouseup`, and `mous
 $('canvas').drawRect({
   layer: true,
   fillStyle: '#36c',
-  x: 150,
-  y: 100,
-  width: 120,
-  height: 80,
+  x: 150, y: 100,
+  width: 120, height: 80,
   mousedown: function (layer) {
     // Animate layer when moused on or touched
     $(this).animateLayer(

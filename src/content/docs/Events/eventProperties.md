@@ -17,8 +17,7 @@ In the following example, the closer you hover to the circle's center, the more 
 $('canvas').drawArc({
   layer: true,
   fillStyle: '#c33',
-  x: 160,
-  y: 200,
+  x: 160, y: 200,
   radius: 100,
   mousemove: function (layer) {
     var distX, distY, dist;
@@ -44,8 +43,7 @@ $('canvas').drawArc({
   layer: true,
   draggable: true,
   fillStyle: '#c33',
-  x: 160,
-  y: 160,
+  x: 160, y: 160,
   radius: 50,
   mousemove: function (layer) {
     var delta = Math.sqrt(Math.pow(layer.dx, 2) + Math.pow(layer.dy, 2));
@@ -67,8 +65,7 @@ $('canvas').drawText({
   fillStyle: '#9cf',
   strokeStyle: '#000',
   strokeWidth: 2,
-  x: 180,
-  y: 100,
+  x: 180, y: 100,
   text: 'Click here',
   fontFamily: 'Trebuchet MS',
   fontSize: 64,
@@ -98,8 +95,7 @@ $('canvas')
     layer: true,
     draggable: true,
     fillStyle: '#36c',
-    x: 150,
-    y: 150,
+    x: 150, y: 150,
     radius: 50
   })
   .drawRect({
@@ -109,9 +105,7 @@ $('canvas')
     opacity: 0.5,
     intangible: true,
     fillStyle: '#6c1',
-    x: 100,
-    y: 100,
-    width: 100,
-    height: 100
+    x: 100, y: 100,
+    width: 100, height: 100
   });
 ```

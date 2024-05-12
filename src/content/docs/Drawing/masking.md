@@ -12,18 +12,15 @@ To create a shape that masks other shapes, set the `mask` property to `true`.
 $('canvas')
   .drawArc({
     fillStyle: '#36b',
-    x: 150,
-    y: 150,
+    x: 150, y: 150,
     radius: 50,
     mask: true
   })
   // This shape is being masked
   .drawRect({
     fillStyle: '#6c1',
-    x: 100,
-    y: 120,
-    width: 100,
-    height: 100
+    x: 100, y: 120,
+    width: 100, height: 100
   })
   // Restore mask
   .restoreCanvas();
@@ -41,8 +38,7 @@ $('canvas')
   .drawArc({
     layer: true,
     fillStyle: '#36b',
-    x: 150,
-    y: 150,
+    x: 150, y: 150,
     radius: 50,
     mask: true
   })
@@ -50,10 +46,8 @@ $('canvas')
   .drawRect({
     layer: true,
     fillStyle: '#6c1',
-    x: 100,
-    y: 120,
-    width: 100,
-    height: 100
+    x: 100, y: 120,
+    width: 100, height: 100
   })
   // Restore layer mask
   .restoreCanvas({
@@ -76,10 +70,8 @@ $('canvas')
     mask: true,
     name: 'blue',
     fillStyle: '#36c',
-    x: 150,
-    y: 150,
-    width: 150,
-    height: 150
+    x: 150, y: 150,
+    width: 150, height: 150
   })
   // Draw orange rectangle
   .drawRect({
@@ -87,10 +79,8 @@ $('canvas')
     draggable: true,
     name: 'orange',
     fillStyle: '#f63',
-    x: 80,
-    y: 120,
-    width: 80,
-    height: 30
+    x: 80, y: 120,
+    width: 80, height: 30
   })
   // Restore blue mask
   .restoreCanvas({
@@ -103,8 +93,7 @@ $('canvas')
     draggable: true,
     name: 'green',
     fillStyle: '#6c1',
-    x: 200,
-    y: 200,
+    x: 200, y: 200,
     radius: 50
   })
   // Draw red rectangle
@@ -113,10 +102,8 @@ $('canvas')
     draggable: true,
     name: 'red',
     fillStyle: '#c33',
-    x: 180,
-    y: 180,
-    width: 50,
-    height: 30
+    x: 180, y: 180,
+    width: 50, height: 30
   })
   // Restore green mask
   .restoreCanvas({

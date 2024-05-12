@@ -16,10 +16,8 @@ $('canvas').drawRect({
   layer: true,
   name: 'box',
   fillStyle: '#6c0',
-  x: 100,
-  y: 100,
-  width: 100,
-  height: 100,
+  x: 100, y: 100,
+  width: 100, height: 100,
   add: function (layer) {
     // code to run when layer is first added
   }
@@ -35,10 +33,8 @@ $('canvas').drawRect({
   layer: true,
   name: 'box',
   fillStyle: '#6c0',
-  x: 100,
-  y: 100,
-  width: 100,
-  height: 100,
+  x: 100, y: 100,
+  width: 100, height: 100,
   remove: function (layer) {
     // code to run when layer is removed
   }
@@ -55,10 +51,8 @@ $('canvas').drawRect({
   layer: true,
   name: 'box',
   fillStyle: '#6c0',
-  x: 100,
-  y: 100,
-  width: 100,
-  height: 100,
+  x: 100, y: 100,
+  width: 100, height: 100,
   change: function (layer, props) {
     // code to run when layer properties change
   }
@@ -77,10 +71,8 @@ $('canvas').drawRect({
   layer: true,
   name: 'box',
   fillStyle: '#6c0',
-  x: 100,
-  y: 100,
-  width: 100,
-  height: 100,
+  x: 100, y: 100,
+  width: 100, height: 100,
   move: function (layer) {
     // code to run when layer's order on canvas is changed
   }
@@ -97,10 +89,8 @@ $('canvas').drawRect({
   layer: true,
   name: 'box',
   fillStyle: '#6c0',
-  x: 100,
-  y: 100,
-  width: 100,
-  height: 100,
+  x: 100, y: 100,
+  width: 100, height: 100,
   animatestart: function (layer) {
     // code to run when animation starts
   },
@@ -113,8 +103,7 @@ $('canvas').drawRect({
   }
 });
 $('canvas').animateLayer('box', {
-  x: 200,
-  y: 300
+  x: 200, y: 300
 });
 ```
 
@@ -125,10 +114,8 @@ $('canvas').drawRect({
   layer: true,
   name: 'box',
   fillStyle: '#6c0',
-  x: 100,
-  y: 100,
-  width: 100,
-  height: 100,
+  x: 100, y: 100,
+  width: 100, height: 100,
   stop: function (layer) {
     // code to run when animation is stopped
   }
@@ -141,10 +128,8 @@ Similarly, jCanvas supports a `delay` event, which fires when the `delayLayer()`
 ```js
 $('canvas').drawRect({
   fillStyle: '#6c0',
-  x: 100,
-  y: 100,
-  width: 100,
-  height: 100,
+  x: 100, y: 100,
+  width: 100, height: 100,
   delay: function (layer) {
     // code to run when animation is delayed
   }

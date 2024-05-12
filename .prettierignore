@@ -12,3 +12,7 @@ node_modules
 pnpm-lock.yaml
 package-lock.json
 yarn.lock
+
+# Do not format code snippets in static Markdown files (since jCanvas coding
+# style prefers to have some property pairs on the same line, rather than on
+*.md

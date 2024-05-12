@@ -13,14 +13,10 @@ You can draw a line path using the `drawLine()` method. Coordinates are defined 
 $('canvas').drawLine({
   strokeStyle: '#000',
   strokeWidth: 10,
-  x1: 100,
-  y1: 50,
-  x2: 100,
-  y2: 150,
-  x3: 200,
-  y3: 100,
-  x4: 150,
-  y4: 200
+  x1: 100, y1: 50,
+  x2: 100, y2: 150,
+  x3: 200, y3: 100,
+  x4: 150, y4: 200
 });
 ```
 
@@ -32,14 +28,10 @@ You can, optionally, close a line path, which will connect its start and end poi
 $('canvas').drawLine({
   strokeStyle: '#000',
   strokeWidth: 10,
-  x1: 100,
-  y1: 50,
-  x2: 100,
-  y2: 150,
-  x3: 200,
-  y3: 100,
-  x4: 150,
-  y4: 200,
+  x1: 100, y1: 50,
+  x2: 100, y2: 150,
+  x3: 200, y3: 100,
+  x4: 150, y4: 200,
   closed: true
 });
 ```
@@ -53,14 +45,10 @@ $('canvas').drawLine({
   strokeStyle: '#000',
   strokeWidth: 10,
   rounded: true,
-  x1: 80,
-  y1: 50,
-  x2: 100,
-  y2: 150,
-  x3: 200,
-  y3: 100,
-  x4: 150,
-  y4: 200
+  x1: 80, y1: 50,
+  x2: 100, y2: 150,
+  x3: 200, y3: 100,
+  x4: 150, y4: 200
 });
 ```
 
@@ -106,14 +94,10 @@ $('canvas').drawLine({
   strokeWidth: 3,
   strokeDash: [5],
   strokeDashOffset: 0,
-  x1: 100,
-  y1: 50,
-  x2: 100,
-  y2: 150,
-  x3: 200,
-  y3: 100,
-  x4: 150,
-  y4: 200
+  x1: 100, y1: 50,
+  x2: 100, y2: 150,
+  x3: 200, y3: 100,
+  x4: 150, y4: 200
 });
 ```
 

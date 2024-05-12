@@ -19,8 +19,7 @@ $('canvas')
   .setLayer('myBox', {
     fillStyle: '#36b',
     rotate: 30,
-    x: '+=100',
-    y: '-=100'
+    x: '+=100', y: '-=100'
   })
   .drawLayers();
 ```

@@ -20,10 +20,8 @@ The value of this event property must be a function. This callback function also
 $('canvas').drawRect({
   layer: true,
   fillStyle: '#6c0',
-  x: 100,
-  y: 100,
-  width: 100,
-  height: 80,
+  x: 100, y: 100,
+  width: 100, height: 80,
   click: function (layer) {
     // code to run when square is clicked
   }

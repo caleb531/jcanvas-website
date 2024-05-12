@@ -15,15 +15,12 @@ The `x` and `y` properties define the center of rotation.
 $('canvas')
   .rotateCanvas({
     rotate: 45,
-    x: 100,
-    y: 100
+    x: 100, y: 100
   })
   .drawRect({
     fillStyle: '#000',
-    x: 100,
-    y: 100,
-    width: 100,
-    height: 50
+    x: 100, y: 100,
+    width: 100, height: 50
   })
   .restoreCanvas();
 ```
@@ -36,10 +33,8 @@ Rather than rotating the entire canvas, you can rotate an individual shape using
 // Rotate this rectangle by 30 degrees
 $('canvas').drawRect({
   fillStyle: '#c33',
-  x: 200,
-  y: 100,
-  width: 150,
-  height: 80,
+  x: 200, y: 100,
+  width: 150, height: 80,
   rotate: 30
 });
 ```
@@ -50,19 +45,15 @@ Please note that you can offset the center of rotation by specifying the `transl
 // Rectangle rotates from its center
 $('canvas').drawRect({
   fillStyle: '#c33',
-  x: 150,
-  y: 100,
-  width: 150,
-  height: 80,
+  x: 150, y: 100,
+  width: 150, height: 80,
   rotate: 30
 });
 // Rectangle rotates from its top-left corner
 $('canvas').drawRect({
   fillStyle: '#6c3',
-  x: 150,
-  y: 100,
-  width: 150,
-  height: 80,
+  x: 150, y: 100,
+  width: 150, height: 80,
   translateX: 75, // width / 2
   translateY: 40, // height / 2
   rotate: 30

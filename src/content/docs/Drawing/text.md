@@ -16,8 +16,7 @@ $('canvas').drawText({
   fillStyle: '#9cf',
   strokeStyle: '#25a',
   strokeWidth: 2,
-  x: 150,
-  y: 100,
+  x: 150, y: 100,
   fontSize: 48,
   fontFamily: 'Verdana, sans-serif',
   text: 'Hello'
@@ -39,8 +38,7 @@ $('canvas').drawText({
   fillStyle: '#cfc',
   strokeStyle: '#000',
   strokeWidth: 2,
-  x: 150,
-  y: 100,
+  x: 150, y: 100,
   fontSize: '50pt',
   fontFamily: 'Arial',
   text: 'Hello',
@@ -61,8 +59,7 @@ $('canvas').drawText({
   fillStyle: '#9cf',
   strokeStyle: '#25a',
   strokeWidth: 2,
-  x: 200,
-  y: 100,
+  x: 200, y: 100,
   fontSize: '36pt',
   fontFamily: 'Verdana, sans-serif',
   text: 'Hello',
@@ -96,8 +93,7 @@ $('canvas')
     name: 'myText',
     fillStyle: '#36c',
     strokeWidth: 2,
-    x: 180,
-    y: 150,
+    x: 180, y: 150,
     fontSize: '36pt',
     fontFamily: 'Verdana, sans-serif',
     text: 'Hello'
@@ -107,8 +103,7 @@ $('canvas')
     layer: true,
     strokeStyle: '#000',
     strokeWidth: 4,
-    x: 180,
-    y: 150,
+    x: 180, y: 150,
     radius: $('canvas').measureText('myText').width / 2
   });
 ```
@@ -126,8 +121,7 @@ $('canvas').drawText({
   fontSize: '20pt',
   fontFamily: 'Trebuchet MS, sans-serif',
   text: 'The quick brown fox jumps over the lazy dog.',
-  x: 180,
-  y: 100,
+  x: 180, y: 100,
   maxWidth: 300
 });
 ```
@@ -143,8 +137,7 @@ $('canvas').drawText({
   fontSize: '20pt',
   fontFamily: 'Trebuchet MS, sans-serif',
   text: 'The quick brown fox jumps over the lazy dog.',
-  x: 180,
-  y: 100,
+  x: 180, y: 100,
   align: 'left',
   maxWidth: 300
 });
@@ -163,8 +156,7 @@ $('canvas').drawText({
   fontSize: '20pt',
   fontFamily: 'Trebuchet MS, sans-serif',
   text: 'The quick brown fox jumps over the lazy dog.',
-  x: 80,
-  y: 100,
+  x: 80, y: 100,
   align: 'left',
   respectAlign: true,
   maxWidth: 300
@@ -184,8 +176,7 @@ $('canvas').drawText({
   fontSize: '20pt',
   fontFamily: 'Trebuchet MS, sans-serif',
   text: 'The quick brown fox jumps over the lazy dog.',
-  x: 180,
-  y: 100,
+  x: 180, y: 100,
   align: 'left',
   maxWidth: 300,
   lineHeight: 2
@@ -201,8 +192,7 @@ $('canvas').drawText({
   fontSize: '20pt',
   fontFamily: 'Trebuchet MS, sans-serif',
   text: 'The quick brown fox jumps over the lazy dog.',
-  x: 180,
-  y: 100,
+  x: 180, y: 100,
   align: 'left',
   maxWidth: 300,
   lineHeight: -2
@@ -221,8 +211,7 @@ $('canvas').drawText({
   fontFamily: 'Ubuntu, sans-serif',
   fontSize: 18,
   text: 'THIS IS THE FIRST LINE\nTHIS IS THE SECOND LINE\nTHIS IS THE THIRD LINE',
-  x: 160,
-  y: 200,
+  x: 160, y: 200,
   radius: 150
 });
 ```
@@ -235,8 +224,7 @@ $('canvas').drawText({
   fontFamily: 'Ubuntu, sans-serif',
   fontSize: 18,
   text: 'THIS IS THE FIRST LINE\nTHIS IS THE SECOND LINE\nTHIS IS THE THIRD LINE',
-  x: 160,
-  y: 200,
+  x: 160, y: 200,
   radius: 150,
   letterSpacing: 0.02
 });
@@ -254,8 +242,7 @@ $('canvas').drawText({
   fontFamily: 'Ubuntu, sans-serif',
   fontSize: 18,
   text: 'THIS IS THE FIRST LINE\nTHIS IS THE SECOND LINE\nTHIS IS THE THIRD LINE',
-  x: 160,
-  y: 200,
+  x: 160, y: 200,
   radius: 150,
   rotate: 180
 });
@@ -269,8 +256,7 @@ $('canvas').drawText({
   fontFamily: 'Ubuntu, sans-serif',
   fontSize: 18,
   text: 'THIS IS THE FIRST LINE\nTHIS IS THE SECOND LINE\nTHIS IS THE THIRD LINE',
-  x: 160,
-  y: 200,
+  x: 160, y: 200,
   radius: 150,
   rotate: 180,
   flipArcText: true

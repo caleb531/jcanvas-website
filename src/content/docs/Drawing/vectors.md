@@ -25,8 +25,7 @@ Additionally, you can specify a starting point for your vector using the `x` and
 $('canvas').drawVector({
   strokeStyle: '#000',
   strokeWidth: 4,
-  x: 50,
-  y: 50,
+  x: 50, y: 50,
   a1: 120,
   l1: 100
 });
@@ -41,8 +40,7 @@ Of course, you can create multiple vectors. Keep in mind that no matter where an
 $('canvas').drawVector({
   strokeStyle: '#000',
   strokeWidth: 4,
-  x: 50,
-  y: 150,
+  x: 50, y: 150,
   a1: 45,
   l1: 100,
   a2: 135,
@@ -61,8 +59,7 @@ $('canvas').drawVector({
   strokeWidth: 4,
   rounded: true,
   closed: true,
-  x: 50,
-  y: 150,
+  x: 50, y: 150,
   a1: 45,
   l1: 100,
   a2: 135,

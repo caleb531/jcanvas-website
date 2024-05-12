@@ -12,8 +12,7 @@ $('canvas').drawArc({
   fillStyle: '#58d',
   shadowColor: '#000',
   shadowBlur: 10,
-  x: 50,
-  y: 50,
+  x: 50, y: 50,
   radius: 30
 });
 ```
@@ -31,8 +30,7 @@ $('canvas').drawArc({
   shadowBlur: 5,
   shadowX: -5,
   shadowY: 5,
-  x: 50,
-  y: 50,
+  x: 50, y: 50,
   radius: 30
 });
 ```

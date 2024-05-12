@@ -19,10 +19,8 @@ The `each` callback function accepts two parameters:
 ```js
 function invert() {
   $(this).setPixels({
-    x: 150,
-    y: 100,
-    width: 220,
-    height: 138,
+    x: 150, y: 100,
+    width: 220, height: 138,
     // loop through each pixel
     each: function (px) {
       px.r = 255 - px.r;
@@ -34,8 +32,7 @@ function invert() {
 
 $('canvas').drawImage({
   source: 'images/fish.jpg',
-  x: 150,
-  y: 100,
+  x: 150, y: 100,
   // Invert image color when image loads
   load: invert
 });
@@ -48,10 +45,8 @@ In this example, hovering over the image will manipulate the pixels closest to t
 ```js
 function invert(params) {
   $(this).setPixels({
-    x: params.eventX,
-    y: params.eventY,
-    width: 50,
-    height: 50,
+    x: params.eventX, y: params.eventY,
+    width: 50, height: 50,
     // loop through each pixel
     each: function (px) {
       px.r = 255 - px.r;
@@ -64,8 +59,7 @@ function invert(params) {
 $('canvas').drawImage({
   layer: true,
   source: 'images/fish.jpg',
-  x: 150,
-  y: 100,
+  x: 150, y: 100,
   mousemove: invert
 });
 ```

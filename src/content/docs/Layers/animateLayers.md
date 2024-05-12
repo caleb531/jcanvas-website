@@ -23,20 +23,16 @@ $('canvas').drawRect({
   layer: true,
   name: 'myBox',
   fillStyle: '#36c',
-  x: 50,
-  y: 50,
-  width: 1,
-  height: 1
+  x: 50, y: 50,
+  width: 1, height: 1
 });
 
 // Animate layer properties
 $('canvas').animateLayer(
   'myBox',
   {
-    x: 150,
-    y: 150,
-    width: 100,
-    height: 50
+    x: 150, y: 150,
+    width: 100, height: 50
   },
   1000,
   function (layer) {
@@ -45,8 +41,7 @@ $('canvas').animateLayer(
       layer,
       {
         fillStyle: 'rgb(204, 51, 51)',
-        x: 250,
-        y: 100,
+        x: 250, y: 100,
         rotate: 360
       },
       'slow',
@@ -96,8 +91,7 @@ $('canvas')
     layer: true,
     groups: ['circles'],
     fillStyle: '#c33',
-    x: 100,
-    y: 100,
+    x: 100, y: 100,
     radius: 50
   })
   // Draw another circle
@@ -105,8 +99,7 @@ $('canvas')
     layer: true,
     groups: ['circles'],
     fillStyle: '#36c',
-    x: 220,
-    y: 100,
+    x: 220, y: 100,
     radius: 50
   })
   // Animate all layers in the group 'circles'

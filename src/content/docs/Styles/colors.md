@@ -10,8 +10,7 @@ sidebar:
 ```js
 $('canvas').drawArc({
   fillStyle: 'darkblue',
-  x: 50,
-  y: 50,
+  x: 50, y: 50,
   radius: 30
 });
 ```
@@ -21,8 +20,7 @@ $('canvas').drawArc({
 ```js
 $('canvas').drawArc({
   fillStyle: '#009',
-  x: 50,
-  y: 50,
+  x: 50, y: 50,
   radius: 30
 });
 ```
@@ -32,8 +30,7 @@ $('canvas').drawArc({
 ```js
 $('canvas').drawArc({
   fillStyle: 'rgb(0, 0, 153)',
-  x: 50,
-  y: 50,
+  x: 50, y: 50,
   radius: 30
 });
 ```
@@ -43,8 +40,7 @@ $('canvas').drawArc({
 ```js
 $('canvas').drawArc({
   fillStyle: 'rgba(0, 0, 153, 0.5)',
-  x: 50,
-  y: 50,
+  x: 50, y: 50,
   radius: 30
 });
 ```

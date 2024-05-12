@@ -16,10 +16,8 @@ When you click the star in the demo below, it will spin.
 $('canvas').drawPolygon({
   layer: true,
   fillStyle: '#c33',
-  x: 100,
-  y: 100,
-  radius: 50,
-  sides: 5,
+  x: 100, y: 100,
+  radius: 50, sides: 5,
   concavity: 0.5,
   click: function (layer) {
     // Spin star
@@ -42,10 +40,8 @@ for (var i = 0; i < 5; i += 1) {
   $('canvas').drawPolygon({
     layer: true,
     fillStyle: '#c33',
-    x: 50 + i * 60,
-    y: 50,
-    radius: 30,
-    sides: 5,
+    x: 50 + i * 60, y: 50,
+    radius: 30, sides: 5,
     concavity: 0.5,
     click: function (layer) {
       // Click a star to spin it
@@ -68,10 +64,8 @@ $('canvas').drawPolygon({
   fillStyle: '#fff',
   strokeStyle: '#333',
   strokeWidth: 2,
-  x: 160,
-  y: 150,
-  radius: 100,
-  sides: 3,
+  x: 160, y: 150,
+  radius: 100, sides: 3,
   mouseover: function (layer) {
     $(this).animateLayer(
       layer,

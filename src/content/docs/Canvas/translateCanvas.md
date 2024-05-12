@@ -15,10 +15,8 @@ $('canvas')
   })
   .drawRect({
     fillStyle: '#000',
-    x: 50,
-    y: 50,
-    width: 100,
-    height: 50
+    x: 50, y: 50,
+    width: 100, height: 50
   })
   .restoreCanvas();
 ```
@@ -34,10 +32,8 @@ $('canvas')
   })
   .drawRect({
     fillStyle: '#000',
-    x: 100,
-    y: 100,
-    width: 100,
-    height: 50
+    x: 100, y: 100,
+    width: 100, height: 50
   })
   .restoreCanvas();
 ```
@@ -49,10 +45,8 @@ Rather than translating the entire canvas, you can translate an individual shape
 ```js
 $('canvas').drawRect({
   fillStyle: '#474',
-  x: 50,
-  y: 50,
-  width: 100,
-  height: 50,
+  x: 50, y: 50,
+  width: 100, height: 50,
   translateX: 200,
   translateY: 100
 });

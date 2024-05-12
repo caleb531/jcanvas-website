@@ -76,8 +76,7 @@ $('canvas').drawHeart({
   draggable: true,
   fillStyle: '#c33',
   radius: 50,
-  x: 150,
-  y: 130,
+  x: 150, y: 130,
   rotate: 30
 });
 ```

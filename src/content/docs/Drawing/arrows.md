@@ -26,12 +26,9 @@ $('canvas').drawLine({
   startArrow: true,
   arrowRadius: 15,
   arrowAngle: 90,
-  x1: 100,
-  y1: 100,
-  x2: 150,
-  y2: 125,
-  x3: 200,
-  y3: 75
+  x1: 100, y1: 100,
+  x2: 150, y2: 125,
+  x3: 200, y3: 75
 });
 ```
 
@@ -45,8 +42,7 @@ $('canvas').drawVector({
   endArrow: true,
   arrowRadius: 15,
   arrowAngle: 90,
-  x: 50,
-  y: 50,
+  x: 50, y: 50,
   a1: 180,
   l1: 100,
   a2: 90,
@@ -64,12 +60,9 @@ $('canvas').drawQuadratic({
   endArrow: true,
   arrowRadius: 15,
   arrowAngle: 60,
-  x1: 50,
-  y1: 50,
-  cx1: 200,
-  cy1: 50,
-  x2: 250,
-  y2: 200
+  x1: 50, y1: 50,
+  cx1: 200, cy1: 50,
+  x2: 250, y2: 200
 });
 ```
 
@@ -84,20 +77,13 @@ $('canvas').drawBezier({
   endArrow: true,
   arrowRadius: 15,
   arrowAngle: 90,
-  x1: 100,
-  y1: 100,
-  cx1: 150,
-  cy1: 100,
-  cx2: 100,
-  cy2: 200,
-  x2: 150,
-  y2: 200,
-  cx3: 250,
-  cy3: 200,
-  cx4: 100,
-  cy4: 50,
-  x3: 250,
-  y3: 100
+  x1: 100, y1: 100,
+  cx1: 150, cy1: 100,
+  cx2: 100, cy2: 200,
+  x2: 150, y2: 200,
+  cx3: 250, cy3: 200,
+  cx4: 100, cy4: 50,
+  x3: 250, y3: 100
 });
 ```
 
@@ -111,8 +97,7 @@ $('canvas').drawArc({
   endArrow: true,
   arrowRadius: 15,
   arrowAngle: 90,
-  x: 160,
-  y: 120,
+  x: 160, y: 120,
   start: 90,
   end: 360,
   radius: 50
@@ -127,22 +112,17 @@ $('canvas').drawPath({
   strokeWidth: 5,
   p1: {
     type: 'line',
-    x1: 160,
-    y1: 200,
-    x2: 160,
-    y2: 50,
+    x1: 160, y1: 200,
+    x2: 160, y2: 50,
     endArrow: true,
     arrowRadius: 30,
     arrowAngle: 90
   },
   p2: {
     type: 'quadratic',
-    x1: 160,
-    y1: 50,
-    cx1: 160,
-    cy1: 150,
-    x2: 100,
-    y2: 200
+    x1: 160, y1: 50,
+    cx1: 160, cy1: 150,
+    x2: 100, y2: 200
   }
 });
 ```
