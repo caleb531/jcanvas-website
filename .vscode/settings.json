@@ -5,5 +5,9 @@
     "editor.codeActionsOnSave": {
       "source.organizeImports": "explicit"
     }
+  },
+  "emmet.includeLanguages": {
+    "mdx": "html",
+    "astro": "html"
   }
 }
