@@ -1,29 +1,21 @@
 // Section boxes
-.home-section {
-  clear: both;
-  width: 100%;
-  margin: 10px 0;
-  padding: 20px;
-  padding-top: 1px;
-  text-align: left;
-  font-size: 13pt;
-  box-sizing: border-box;
-  &.column-left,
-  &.column-right {
-    clear: none;
-    width: 48%;
-    @include layout(compact) {
-      width: 100%;
-    }
-  }
-  &.column-left {
-    float: left;
-  }
-  &.column-right {
-    float: right;
-  }
+.home-sections {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
   h2 {
     font-size: 1.2em;
+  }
+  .box {
+    flex-grow: 1;
+    flex-basis: 0;
+    width: 100%;
+    padding: 20px;
+    padding-top: 1px;
+    text-align: left;
+    font-size: 13pt;
+    box-sizing: border-box;
   }
 }
 
@@ -37,6 +29,8 @@ hr {
 
 // Main block
 #home-intro {
+  width: 100%;
+  flex-basis: auto;
   height: auto;
   padding: 15px;
   text-align: center;
@@ -121,6 +115,10 @@ hr {
     margin-left: auto;
     margin-right: auto;
   }
+}
+
+#home-about {
+  flex-basis: auto;
 }
 
 #home-more {

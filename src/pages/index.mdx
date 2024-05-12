@@ -12,24 +12,21 @@ import HomeExample from '~/components/Home/HomeExample.md';
 import HomeAbout from '~/components/Home/HomeAbout.md';
 import HomeMore from '~/components/Home/HomeMore.md';
 
-<div id="home-intro" class="home-section box" markdown="1">
-  <HomeIntro />
+<div className="home-sections">
+  <div id="home-intro" class="box">
+    <HomeIntro />
+  </div>
+  <div id="home-features" class="box">
+    <HomeFeatures />
+  </div>
+  <div id="home-example" class="box">
+    <HomeExample />
+  </div>
+  <div id="home-about" class="box">
+    <HomeAbout />
+  </div>
 </div>
 
-<div id="home-features" class="home-section box column-left" markdown="1">
-  <HomeFeatures />
-</div>
-
-<div id="home-example" class="home-section box column-right" markdown="1">
-  <HomeExample />
-</div>
-
-<div class="clearfix"></div>
-
-<div id="home-about" class="home-section box" markdown="1">
-  <HomeAbout />
-</div>
-
-<div id="home-more" markdown="1">
+<div id="home-more">
   <HomeMore />
 </div>
