@@ -13,7 +13,7 @@ export default defineConfig({
       themes: ['github-dark']
     }),
     starlight({
-      title: 'jCanvas',
+      title: 'jCanvas Documentation',
       components: {
         Head: './src/components/starlight/Head.astro'
       },
