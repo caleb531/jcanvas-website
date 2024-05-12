@@ -6,6 +6,7 @@ import { defineConfig } from 'astro/config';
 // https://astro.build/config
 export default defineConfig({
   site: 'http://localhost:4321/',
+  base: '/jcanvas/',
   integrations: [
     astroExpressiveCode({
       // Available Themes: <https://expressive-code.com/guides/themes/>
