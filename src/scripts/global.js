@@ -6,6 +6,8 @@ $(document).ready(function () {
   window.jQuery = $;
   window.$ = $;
 
+  var $body = $('body');
+
   // The pattern to replace in image paths; this allows image paths in the live
   // code editors (e.g. "images/fish.jpg" to be rewritten to point to the correct
   // URL on the server (e.g. "assets/images/fish.jpg")
@@ -53,7 +55,7 @@ $(document).ready(function () {
   };
 
   // Allow user to test any example in Sandbox
-  $('main').on('click', '.try-in-sandbox', function () {
+  $body.on('click', '.try-in-sandbox', function () {
     // Retrieve code for this example from neighboring <pre>
     var code = $(this).next().text();
     // Open code in a new sandbox instance
