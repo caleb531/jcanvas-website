@@ -89,7 +89,7 @@ $(document).ready(function () {
 
   makeExamplesDemoable();
 
-  document.addEventListener('astro:after-swap', function () {
+  $(document).on('astro:after-swap', function () {
     makeExamplesDemoable();
   });
 });
