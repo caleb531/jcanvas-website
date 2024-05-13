@@ -8,6 +8,7 @@ canvas {
 }
 
 .demo-container {
+  width: fit-content;
   position: relative;
   font-size: 0;
   border: solid 1px var(--input-border-color);
