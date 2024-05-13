@@ -6,3 +6,8 @@
   // Remove box shadow from code blocks
   --ec-frm-frameBoxShdCssVal: none !important;
 }
+
+// Remove double-spacing in code snippets
+.expressive-code .ec-line {
+  margin-top: 0 !important;
+}

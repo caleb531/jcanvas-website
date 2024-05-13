@@ -1,0 +1,36 @@
+canvas {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  border: solid 1px $input-border-color;
+  background-color: #fff;
+  background-clip: padding-box;
+}
+
+.demo-container {
+  position: relative;
+  font-size: 0;
+  border: solid 1px $input-border-color;
+  overflow: hidden;
+  canvas {
+    border-width: 0;
+    --border-radius: calc(var(--ec-brdRad) + var(--ec-brdWd));
+    border-bottom-left-radius: var(--border-radius);
+    border-bottom-right-radius: var(--border-radius);
+  }
+}
+
+// Override Starlight styling
+canvas,
+.demo-container {
+  margin-top: 0 !important;
+}
+
+.expressive-code.has-demo pre {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.demo-rerun {
+  font-size: 12px;
+}

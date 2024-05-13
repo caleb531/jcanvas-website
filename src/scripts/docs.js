@@ -27,6 +27,14 @@ $(document).ready(function () {
     }
   }
 
+  function getCodeContents($codeBlock) {
+    return $codeBlock
+      .find('.ec-line')
+      .map((l, line) => $(line).text())
+      .get()
+      .join('\n');
+  }
+
   function makeExamplesDemoable() {
     // Add live canvas demo of each example (if example draws on canvas)
     $body.find('.expressive-code').each(function () {
@@ -47,9 +55,10 @@ $(document).ready(function () {
       // Retrieve the data URI of the blank canvas so we can later detect if the
       // canvas has been drawn on
       var demoImageBlank = $demoCanvas[0].toDataURL();
-      var code = $codeBlock.text();
+      var code = getCodeContents($codeBlock);
       runDemo(code, $demoCanvas);
-      // If something was drawn on demo canvas (or if code draws asynchronously),
+      // If something was drawn on demo canvas (or if code draws
+      // asynchronously),
       if (
         $demoCanvas[0].toDataURL() !== demoImageBlank ||
         asyncPattern.test(code)
@@ -66,11 +75,15 @@ $(document).ready(function () {
   // Allow user to re-run demo via button
   $body.on('click', '.demo-rerun', function () {
     var $rerunButton = $(this);
-    var code = $rerunButton.parent().prev().find('pre').text();
+    var code = getCodeContents($rerunButton.parent().prev('.expressive-code'));
     var $demoCanvas = $rerunButton.next();
     $demoCanvas.resetCanvases();
     runDemo(code, $demoCanvas);
   });
 
   makeExamplesDemoable();
+
+  document.addEventListener('astro:after-swap', () => {
+    makeExamplesDemoable();
+  });
 });
