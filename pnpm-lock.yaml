@@ -17,6 +17,9 @@ dependencies:
   '@astrojs/starlight':
     specifier: ^0.21.1
     version: 0.21.5(astro@4.7.1)
+  '@fontsource/ubuntu':
+    specifier: ^5.0.13
+    version: 5.0.13
   astro:
     specifier: ^4.7.0
     version: 4.7.1(sass@1.76.0)(typescript@5.4.5)
@@ -943,6 +946,10 @@ packages:
     resolution: {integrity: sha512-gDdnQrfDRXw5Y+PKHJDkpAUdf2pthYOthGcgy3JB8GOTQ3EL1h+755Ct/bGc4MR6jn+dgnQP47uHMWQaccvN6Q==}
     dependencies:
       '@expressive-code/core': 0.35.3
+    dev: false
+
+  /@fontsource/ubuntu@5.0.13:
+    resolution: {integrity: sha512-uCnfknLk6ERUUgGPHqvtLGkHkW/0oyxEJy6CZLaHbh6d1om1jvqcnc5nSPel1UCX5frLxRSTkRKU/vAbL9QtJw==}
     dev: false
 
   /@humanwhocodes/config-array@0.11.14:

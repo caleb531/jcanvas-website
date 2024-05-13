@@ -1,0 +1,26 @@
+:root {
+  --sl-nav-height: 2.5rem;
+  @include layout(hybrid) {
+    --sl-nav-height: 4rem;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal !important;
+}
+
+.header,
+[data-has-sidebar] .header {
+  padding: 0;
+  padding-inline-start: 0;
+  padding-inline-end: 0;
+}
+
+.content-panel + .content-panel {
+  border-top-width: 0;
+}

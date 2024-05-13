@@ -1,5 +1,3 @@
-$duration: 250ms;
-
 body {
   margin: 0;
   margin-bottom: 25px;
@@ -7,10 +5,7 @@ body {
   background-image: url('../images/grid-bg.svg');
   background-size: 11px;
   background-attachment: fixed;
-  text-align: center;
-  font-family: $sans-serif;
-  font-weight: 300;
-  color: #fff;
+  text-align: left;
 }
 
 // Ensure that all HTML5 semantic elements render properly in all browsers
@@ -30,9 +25,9 @@ summary {
 
 // Main content
 main {
-  display: inline-block;
+  display: block;
   position: relative;
-  max-width: $main-max-width;
+  max-width: var(--main-max-width);
   margin-left: auto;
   margin-right: auto;
   padding-bottom: 10px;

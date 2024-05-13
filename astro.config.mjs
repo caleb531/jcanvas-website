@@ -24,7 +24,8 @@ export default defineConfig({
     starlight({
       title: 'jCanvas Documentation',
       components: {
-        Head: './src/components/starlight/Head.astro'
+        Head: './src/components/starlight/Head.astro',
+        Header: './src/components/starlight/Header.astro'
       },
       customCss: ['./src/assets/styles/docs.scss'],
       sidebar: [
