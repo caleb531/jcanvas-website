@@ -3,11 +3,11 @@ import $ from 'jquery';
 import './global.js';
 
 $(document).ready(function () {
-  var $body = $('body');
+  const $body = $('body');
   // The pattern to replace jQuery canvas selectors
-  var canvasSelectorPattern = /\$\(['"](.*?)canvas(.*?)\1\)/gi;
+  const canvasSelectorPattern = /\$\(['"](.*?)canvas(.*?)\1\)/gi;
   // The pattern to detect if code runs asynchronous functions
-  var asyncPattern = /drawImage|createPattern|(?:type: (['"])image\1)/gi;
+  const asyncPattern = /drawImage|createPattern|(?:type: (['"])image\1)/gi;
 
   function addAnchorLinks() {
     // Add anchor link to every subsection for easy access later
@@ -38,15 +38,15 @@ $(document).ready(function () {
   function makeExamplesDemoable() {
     // Add live canvas demo of each example (if example draws on canvas)
     $body.find('.expressive-code').each(function () {
-      var $codeBlock = $(this);
+      const $codeBlock = $(this);
       // Initialize a demo canvas
-      var $demoCanvas = $(document.createElement('canvas'));
+      const $demoCanvas = $(document.createElement('canvas'));
       $demoCanvas.prop({
         width: $codeBlock.width(),
         height: 250
       });
       // Create canvas container (will also contain demo controls like re-run)
-      var $demoContainer = $('<div class="demo-container">');
+      const $demoContainer = $('<div class="demo-container">');
       $demoContainer.append(
         '<button class="demo-rerun edge-button">Re-run</button>'
       );
@@ -54,8 +54,8 @@ $(document).ready(function () {
       $demoCanvas.resetCanvases();
       // Retrieve the data URI of the blank canvas so we can later detect if the
       // canvas has been drawn on
-      var demoImageBlank = $demoCanvas[0].toDataURL();
-      var code = getCodeContents($codeBlock);
+      const demoImageBlank = $demoCanvas[0].toDataURL();
+      const code = getCodeContents($codeBlock);
       runDemo(code, $demoCanvas);
       // If something was drawn on demo canvas (or if code draws
       // asynchronously),
@@ -74,16 +74,18 @@ $(document).ready(function () {
 
   // Allow user to re-run demo via button
   $body.on('click', '.demo-rerun', function () {
-    var $rerunButton = $(this);
-    var code = getCodeContents($rerunButton.parent().prev('.expressive-code'));
-    var $demoCanvas = $rerunButton.next();
+    const $rerunButton = $(this);
+    const code = getCodeContents(
+      $rerunButton.parent().prev('.expressive-code')
+    );
+    const $demoCanvas = $rerunButton.next();
     $demoCanvas.resetCanvases();
     runDemo(code, $demoCanvas);
   });
 
   makeExamplesDemoable();
 
-  document.addEventListener('astro:after-swap', () => {
+  document.addEventListener('astro:after-swap', function () {
     makeExamplesDemoable();
   });
 });

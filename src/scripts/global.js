@@ -6,12 +6,12 @@ $(document).ready(function () {
   window.jQuery = $;
   window.$ = $;
 
-  var $body = $('body');
+  const $body = $('body');
 
   // The pattern to replace in image paths; this allows image paths in the live
   // code editors (e.g. "images/fish.jpg" to be rewritten to point to the correct
   // URL on the server (e.g. "assets/images/fish.jpg")
-  var imagePathPattern = /(images\/(?:\w+)\.(jpg|png|svg))/gi;
+  const imagePathPattern = /(images\/(?:\w+)\.(jpg|png|svg))/gi;
 
   // Add jQuery method which adds a "Try in Sandbox"
   $.fn.addSandboxTryButton = function () {
@@ -23,7 +23,7 @@ $(document).ready(function () {
   // Reset context all attached data for the given canvas
   $.fn.resetCanvases = function () {
     this.each(function (canvas) {
-      var $canvas = $(this);
+      const $canvas = $(this);
       $canvas.removeLayers();
       $canvas.clearCanvas();
       $canvas.detectPixelRatio();
@@ -33,7 +33,7 @@ $(document).ready(function () {
   // Spawn a new sandbox with the given sandbox state
   $.spawnNewSandbox = function (sandboxState) {
     // Retrieve the sandbox state of the current page
-    var originalSandboxState = sessionStorage.getItem('jcanvas-sandbox');
+    const originalSandboxState = sessionStorage.getItem('jcanvas-sandbox');
     // Temporarily overwrite the current page's sandbox state with the new sandbox
     // code so that it gets copied into the sandbox state for the spawned page
     sessionStorage.setItem('jcanvas-sandbox', JSON.stringify(sandboxState));
@@ -57,7 +57,7 @@ $(document).ready(function () {
   // Allow user to test any example in Sandbox
   $body.on('click', '.try-in-sandbox', function () {
     // Retrieve code for this example from neighboring <pre>
-    var code = $(this).next().text();
+    const code = $(this).next().text();
     // Open code in a new sandbox instance
     $.spawnNewSandbox({
       code: code

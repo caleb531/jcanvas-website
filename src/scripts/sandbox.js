@@ -1,7 +1,7 @@
 import $ from 'jquery';
 
 $(document).ready(function () {
-  var $$ = {
+  const $$ = {
     editorArea: $('#sandbox-editor-area'),
     editor: $('#sandbox-editor'),
     run: $('#sandbox-run'),
@@ -13,7 +13,7 @@ $(document).ready(function () {
   };
 
   // Defaults and constants
-  var defaultSandboxState = {
+  const defaultSandboxState = {
     code: $$.defaultCode.html()?.replace(/(^\s+)|(\s+$)/gi, '') || '',
     cursor: {
       line: 0,
@@ -21,22 +21,22 @@ $(document).ready(function () {
     },
     ncanvases: 1
   };
-  var CANVAS_WIDTH = 320;
-  var CANVAS_BORDER_WIDTH = 1;
+  const CANVAS_WIDTH = 320;
+  const CANVAS_BORDER_WIDTH = 1;
 
   // Change number of canvases with which to test
   function changeCanvasCount(ncanvases) {
-    var editorHeight = $$.editorArea.outerHeight();
-    var canvasHeight = Math.round(
+    const editorHeight = $$.editorArea.outerHeight();
+    const canvasHeight = Math.round(
       editorHeight / ncanvases - 2 * CANVAS_BORDER_WIDTH
     );
     $$.canvases.empty();
-    for (var i = 0; i < ncanvases; i += 1) {
-      var $canvasContainer = $('<div>');
+    for (const i = 0; i < ncanvases; i += 1) {
+      const $canvasContainer = $('<div>');
       $canvasContainer.prop({
         class: 'canvas-container'
       });
-      var $canvas = $('<canvas>');
+      const $canvas = $('<canvas>');
       $canvas.prop({
         width: CANVAS_WIDTH,
         height: canvasHeight
@@ -49,7 +49,7 @@ $(document).ready(function () {
   // Load last-saved sandbox state (or defaults if the don't exist)
   function loadSandboxState() {
     // Load sandbox settings from local storage
-    var sandboxState = sessionStorage.getItem('jcanvas-sandbox');
+    const sandboxState = sessionStorage.getItem('jcanvas-sandbox');
     sandboxState = JSON.parse(sandboxState);
     if (sandboxState !== null) {
       sandboxState = $.extend({}, defaultSandboxState, sandboxState);
@@ -76,13 +76,13 @@ $(document).ready(function () {
 
   // Save sandbox state to session storage for current page
   function saveSandboxState(codemirror) {
-    var sandboxState = getSandboxState(codemirror);
+    const sandboxState = getSandboxState(codemirror);
     sessionStorage.setItem('jcanvas-sandbox', JSON.stringify(sandboxState));
   }
 
   // Run code
   function runCode(codemirror) {
-    var $canvasElems = $$.canvases.find('canvas');
+    const $canvasElems = $$.canvases.find('canvas');
     if ($canvasElems.length === 0) {
       return;
     }
@@ -102,7 +102,7 @@ $(document).ready(function () {
   // Initialize the sandbox CodeMirror editor
   function initSandboxEditor(sandboxState) {
     // Initialize code editor
-    var codemirror = CodeMirror($$.editor[0], {
+    const codemirror = CodeMirror($$.editor[0], {
       lineNumbers: true,
       indentUnit: 2
     });
@@ -119,7 +119,7 @@ $(document).ready(function () {
     // Insert spaces when tab key is pressed
     codemirror.setOption('extraKeys', {
       Tab: function (cm) {
-        var spaces = Array(cm.getOption('indentUnit') + 1).join(' ');
+        const spaces = Array(cm.getOption('indentUnit') + 1).join(' ');
         cm.replaceSelection(spaces);
       }
     });
@@ -156,9 +156,9 @@ $(document).ready(function () {
 
     // Fix an issue where the editor cursor/selection would be mispositioned
     // visually
-    requestAnimationFrame(() => {
-      requestAnimationFrame(() => {
-        requestAnimationFrame(() => {
+    requestAnimationFrame(function () {
+      requestAnimationFrame(function () {
+        requestAnimationFrame(function () {
           codemirror.refresh();
         });
       });
@@ -167,6 +167,6 @@ $(document).ready(function () {
     runCode(codemirror);
   }
 
-  var sandboxState = loadSandboxState();
+  const sandboxState = loadSandboxState();
   initSandboxEditor(sandboxState);
 });
