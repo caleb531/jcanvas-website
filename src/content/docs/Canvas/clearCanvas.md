@@ -37,7 +37,7 @@ $('canvas').clearCanvas();
 
 ## Clear a section
 
-Clearing a section works in the same way as [drawing a rectangle](/docs/rectangles/), with the rectangle being drawn from its center (by default).
+Clearing a section works in the same way as [drawing a rectangle](/jcanvas/docs/rectangles/), with the rectangle being drawn from its center (by default).
 
 ```js
 $('canvas')

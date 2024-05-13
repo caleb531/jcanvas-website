@@ -1,8 +1,11 @@
 ---
 title: Submitting Plugins
+slug: plugins/submitting
+sidebar:
+  order: 2
 ---
 
-If you'd like to submit a jCanvas plugin to this repository, please [contact me]({{ site.baseurl }}/support/#contact) with the following information.
+If you'd like to submit a jCanvas plugin to this repository, please [contact me](/jcanvas/support/#contact-me) with the following information.
 
 - A link to the plugin
 - A description of how to use the plugin

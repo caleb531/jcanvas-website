@@ -67,7 +67,7 @@ $('canvas').drawVector({
 });
 ```
 
-Details on the usage of these properties can be found in the [Lines](/docs/lines/) section.
+Details on the usage of these properties can be found in the [Lines](/jcanvas/docs/lines/) section.
 
 ### Notes
 

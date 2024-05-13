@@ -1,4 +1,8 @@
 import 'jcanvas';
+import 'jcanvas/dist/umd/jcanvas-crescents.min.js';
+import 'jcanvas/dist/umd/jcanvas-donuts.min.js';
+import 'jcanvas/dist/umd/jcanvas-handles.min.js';
+import 'jcanvas/dist/umd/jcanvas-hearts.min.js';
 import $ from 'jquery';
 import './global.js';
 

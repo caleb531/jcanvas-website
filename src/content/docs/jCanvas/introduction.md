@@ -49,4 +49,4 @@ HTML5 provides [a native JavaScript API](https://developer.mozilla.org/en-US/doc
 
 Using jCanvas requires basic knowledge of [using jQuery](http://docs.jquery.com/Tutorials:How_jQuery_Works).
 
-## [Learn the jCanvas syntax](/docs/syntax/)
+## [Learn the jCanvas syntax](/jcanvas/docs/syntax/)

@@ -33,7 +33,8 @@ export default defineConfig({
         { label: 'Drawing', autogenerate: { directory: 'Drawing' } },
         { label: 'Layers', autogenerate: { directory: 'Layers' } },
         { label: 'Events', autogenerate: { directory: 'Events' } },
-        { label: 'Styles', autogenerate: { directory: 'Styles' } }
+        { label: 'Styles', autogenerate: { directory: 'Styles' } },
+        { label: 'Plugins', autogenerate: { directory: 'Plugins' } }
         // ],
         // },
       ],
