@@ -27,12 +27,13 @@ button.edge-button,
   right: var(--button-position);
   z-index: 10;
   margin: 0;
-  padding: 4px 6px;
+  padding: 5px 7px;
   font-size: 12px;
   border-top-right-radius: 0;
   border-top-left-radius: 0;
   border-bottom-right-radius: 0;
   background-clip: border-box;
+  line-height: 1;
 }
 .expressive-code button.edge-button,
 .expressive-code .button.edge-button {
