@@ -3,6 +3,8 @@
  */
 
 :root {
+  // Remove excessive left padding from code blocks
+  --ec-codePadInl: 0;
   // Remove box shadow from code blocks
   --ec-frm-frameBoxShdCssVal: none !important;
 }
