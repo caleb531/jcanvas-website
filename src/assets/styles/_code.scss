@@ -9,6 +9,13 @@
   --ec-frm-frameBoxShdCssVal: none !important;
 }
 
+.expressive-code pre {
+  // Use consistent padding for all code blocks
+  --code-block-padding-h: 1rem;
+  padding-left: var(--code-block-padding-h) !important;
+  padding-right: var(--code-block-padding-h) !important;
+}
+
 // Remove double-spacing in code snippets
 .expressive-code .ec-line {
   margin-top: 0 !important;
