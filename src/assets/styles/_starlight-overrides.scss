@@ -1,26 +1,12 @@
-:root {
-  --sl-nav-height: 2.5rem;
-  @include layout(hybrid) {
-    --sl-nav-height: 4rem;
+// Override default button styles to
+button[aria-controls='starlight__sidebar'] {
+  margin: 0;
+  border-width: 0;
+  border-radius: 50%;
+  padding: 0.5rem;
+  background-color: #fff;
+  color: #000;
+  [aria-expanded='true'] & {
+    background-color: var(--sl-color-gray-2);
   }
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-weight: normal !important;
-}
-
-.header,
-[data-has-sidebar] .header {
-  padding: 0;
-  padding-inline-start: 0;
-  padding-inline-end: 0;
-}
-
-.content-panel + .content-panel {
-  border-top-width: 0;
 }
