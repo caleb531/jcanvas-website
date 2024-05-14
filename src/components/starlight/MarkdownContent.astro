@@ -2,7 +2,14 @@
 import StarlightMarkdownContent from '@astrojs/starlight/components/MarkdownContent.astro';
 import type { Props } from '@astrojs/starlight/props';
 import ExampleImages from '../ExampleImages.astro';
+import PluginDownloadLinks from '../PluginDownloadLinks.astro';
 ---
+
+{
+  Astro.props.entry.data.is_plugin ? (
+    <PluginDownloadLinks {...Astro.props} />
+  ) : null
+}
 
 <StarlightMarkdownContent {...Astro.props}><slot /></StarlightMarkdownContent>
 

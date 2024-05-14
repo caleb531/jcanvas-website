@@ -1,6 +1,7 @@
 ---
 title: Handles
 slug: plugins/handles
+is_plugin: true
 ---
 
 This plugin will enable any jCanvas rectangle or image to be resized using draggable handles on its four corners.

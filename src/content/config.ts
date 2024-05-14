@@ -15,6 +15,11 @@ const galleriesCollection = defineCollection({
 // Export a single `collections` object to register your collection(s)
 export const collections = {
   galleries: galleriesCollection,
-  docs: defineCollection({ schema: docsSchema() }),
-  plugins: defineCollection({ schema: docsSchema() })
+  docs: defineCollection({
+    schema: docsSchema({
+      extend: z.object({
+        is_plugin: z.optional(z.boolean())
+      })
+    })
+  })
 };

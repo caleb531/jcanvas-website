@@ -1,6 +1,7 @@
 ---
 title: Crescents
 slug: plugins/crescents
+is_plugin: true
 ---
 
 This plugin draws a crescent shape using the provided `drawCrescent()` method. This method also supports a special `eclipse` property, which is a multiple of the given `radius`, and determines how much the circle is eclipsed to create the crescent shape.

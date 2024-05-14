@@ -1,6 +1,7 @@
 ---
 title: Donuts
 slug: plugins/donuts
+is_plugin: true
 ---
 
 This plugin draws a donut shape using the provided `drawDonut()` method.
