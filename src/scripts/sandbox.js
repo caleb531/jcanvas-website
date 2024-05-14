@@ -31,7 +31,7 @@ $(document).ready(function () {
       editorHeight / ncanvases - 2 * CANVAS_BORDER_WIDTH
     );
     $$.canvases.empty();
-    for (const i = 0; i < ncanvases; i += 1) {
+    for (let i = 0; i < ncanvases; i += 1) {
       const $canvasContainer = $('<div>');
       $canvasContainer.prop({
         class: 'canvas-container'
@@ -49,7 +49,7 @@ $(document).ready(function () {
   // Load last-saved sandbox state (or defaults if the don't exist)
   function loadSandboxState() {
     // Load sandbox settings from local storage
-    const sandboxState = sessionStorage.getItem('jcanvas-sandbox');
+    let sandboxState = sessionStorage.getItem('jcanvas-sandbox');
     sandboxState = JSON.parse(sandboxState);
     if (sandboxState !== null) {
       sandboxState = $.extend({}, defaultSandboxState, sandboxState);
