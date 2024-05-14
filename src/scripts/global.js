@@ -1,5 +1,7 @@
 import $ from 'jquery';
 
+const DEMO_CANVAS_HEIGHT = 250;
+
 $(document).ready(function () {
   // Expose jQuery to global scope so users can interact with jQuery/jCanvas
   // from the console
@@ -22,10 +24,17 @@ $(document).ready(function () {
 
   // Reset context all attached data for the given canvas
   $.fn.resetCanvases = function () {
-    this.each(function (canvas) {
-      const $canvas = $(this);
+    this.each(function (c, canvas) {
+      const $canvas = $(canvas);
       $canvas.removeLayers();
       $canvas.clearCanvas();
+      $.removeData($canvas[0], 'jCanvas');
+      $canvas.removeAttr('style');
+      $.jCanvas.clearCache();
+      $canvas.prop({
+        width: $canvas.parent().parent().width(),
+        height: DEMO_CANVAS_HEIGHT
+      });
       $canvas.detectPixelRatio();
     });
   };

@@ -31,6 +31,12 @@ $(document).ready(function () {
     }
   }
 
+  function reRunDemo($demoCanvas) {
+    const code = getCodeContents($demoCanvas.parent().prev('.expressive-code'));
+    $demoCanvas.resetCanvases();
+    runDemo(code, $demoCanvas);
+  }
+
   function getCodeContents($codeBlock) {
     return $codeBlock
       .find('.ec-line')
@@ -79,17 +85,21 @@ $(document).ready(function () {
   // Allow user to re-run demo via button
   $body.on('click', '.demo-rerun', function () {
     const $rerunButton = $(this);
-    const code = getCodeContents(
-      $rerunButton.parent().prev('.expressive-code')
-    );
-    const $demoCanvas = $rerunButton.next();
-    $demoCanvas.resetCanvases();
-    runDemo(code, $demoCanvas);
+    const $demoCanvas = $rerunButton.next('canvas');
+    reRunDemo($demoCanvas);
   });
 
   makeExamplesDemoable();
 
   $(document).on('astro:after-swap', function () {
     makeExamplesDemoable();
+  });
+
+  $(window).on('resize', () => {
+    $('canvas').each((c, canvas) => {
+      const $canvas = $(canvas);
+      const $codeBlock = $canvas.parent().prev('.expressive-code');
+      reRunDemo($canvas);
+    });
   });
 });
