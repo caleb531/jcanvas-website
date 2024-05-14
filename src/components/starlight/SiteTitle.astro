@@ -3,4 +3,14 @@ import StarlightSiteTitle from '@astrojs/starlight/components/SiteTitle.astro';
 import type { Props } from '@astrojs/starlight/props';
 ---
 
-<StarlightSiteTitle {...Astro.props} />
+<div class="docs-header-site-title-container">
+  <StarlightSiteTitle
+    {...{
+      ...Astro.props,
+      locale: '/docs/'
+    }}
+  />
+  <a href="/jcanvas/" class="docs-header-site-title-return-link">
+    Return to website ›
+  </a>
+</div>
