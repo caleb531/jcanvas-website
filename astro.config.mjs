@@ -16,8 +16,8 @@ export default defineConfig({
         // being, since it gets in the way of the "Try in Sandbox" button
         showCopyToClipboardButton: false
       },
-      // Wrap all Expressive Code styles in a @layer with the given name to allow us to override
-      // them without struggle (see
+      // Wrap all Expressive Code styles in a @layer with the given name to
+      // allow us to override them without struggle (see
       // <https://expressive-code.com/reference/configuration/#cascadelayer>)
       cascadeLayer: 'ec-layer'
     }),
