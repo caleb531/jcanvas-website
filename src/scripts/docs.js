@@ -33,7 +33,7 @@ $(document).ready(function () {
 
   function reRunDemo($demoCanvas) {
     const code = getCodeContents($demoCanvas.parent().prev('.expressive-code'));
-    $demoCanvas.resetCanvases();
+    $demoCanvas.resetCanvases(true);
     runDemo(code, $demoCanvas);
   }
 
@@ -61,7 +61,7 @@ $(document).ready(function () {
         '<button class="demo-rerun edge-button">Re-run</button>'
       );
       $demoContainer.append($demoCanvas);
-      $demoCanvas.resetCanvases();
+      $demoCanvas.resetCanvases(true);
       // Retrieve the data URI of the blank canvas so we can later detect if the
       // canvas has been drawn on
       const demoImageBlank = $demoCanvas[0].toDataURL();
@@ -95,11 +95,18 @@ $(document).ready(function () {
     makeExamplesDemoable();
   });
 
+  var lastWindowWidth = window.innerWidth;
   $(window).on('resize', () => {
     $('canvas').each((c, canvas) => {
       const $canvas = $(canvas);
       const $codeBlock = $canvas.parent().prev('.expressive-code');
-      reRunDemo($canvas);
+      const newWindowWidth = window.innerWidth;
+      // Only resize canvas and re-run demo if window width has changed (do
+      // nothing if only height has changed)
+      if (lastWindowWidth !== newWindowWidth) {
+        lastWindowWidth = newWindowWidth;
+        reRunDemo($canvas);
+      }
     });
   });
 });

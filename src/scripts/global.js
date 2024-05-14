@@ -25,9 +25,15 @@ $(document).ready(function () {
   const baseDefaults = Object.assign({}, $.jCanvas.defaults);
 
   // Reset context all attached data for the given canvas
-  $.fn.resetCanvases = function () {
+  $.fn.resetCanvases = function (forceReset) {
     this.each(function (c, canvas) {
       const $canvas = $(canvas);
+      const newWidth = Math.floor($canvas.parent().parent().width());
+      const newHeight = DEMO_CANVAS_HEIGHT;
+      // Do not reset canvas if width hasn't changed
+      if (!forceReset && newWidth === $canvas.width()) {
+        return;
+      }
       $canvas.removeLayers();
       $.removeData(canvas, 'jCanvas');
       $.jCanvas.clearCache();
