@@ -22,19 +22,22 @@ $(document).ready(function () {
     );
   };
 
+  const baseDefaults = Object.assign({}, $.jCanvas.defaults);
+
   // Reset context all attached data for the given canvas
   $.fn.resetCanvases = function () {
     this.each(function (c, canvas) {
       const $canvas = $(canvas);
       $canvas.removeLayers();
-      $canvas.clearCanvas();
-      $.removeData($canvas[0], 'jCanvas');
-      $canvas.removeAttr('style');
+      $.removeData(canvas, 'jCanvas');
       $.jCanvas.clearCache();
+      Object.assign($.jCanvas.defaults, baseDefaults);
       $canvas.prop({
         width: $canvas.parent().parent().width(),
         height: DEMO_CANVAS_HEIGHT
       });
+      $canvas.removeAttr('style');
+      $canvas.clearCanvas();
       $canvas.detectPixelRatio();
     });
   };
