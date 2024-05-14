@@ -25,7 +25,8 @@ export default defineConfig({
       title: 'jCanvas Documentation',
       components: {
         Head: './src/components/starlight/Head.astro',
-        SiteTitle: './src/components/starlight/SiteTitle.astro'
+        SiteTitle: './src/components/starlight/SiteTitle.astro',
+        MarkdownContent: './src/components/starlight/MarkdownContent.astro'
       },
       customCss: ['./src/assets/styles/docs.scss'],
       sidebar: [
