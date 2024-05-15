@@ -13,6 +13,7 @@ a.button {
   color: var(--sl-color-text-invert);
   &:focus {
     outline-width: 0;
+    box-shadow: 0 0 3px 2px var(--sl-color-white);
   }
 }
 
