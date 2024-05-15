@@ -1,7 +1,6 @@
 import 'jcanvas';
 import $ from 'jquery';
-
-const DEMO_CANVAS_HEIGHT = 250;
+import { SANDBOX_STORAGE_KEY } from './constants.js';
 
 $(document).ready(function () {
   // Expose jQuery to global scope so users can interact with jQuery/jCanvas
@@ -26,23 +25,20 @@ $(document).ready(function () {
   const baseDefaults = Object.assign({}, $.jCanvas.defaults);
 
   // Reset context all attached data for the given canvas
-  $.fn.resetCanvases = function (forceReset) {
+  $.fn.resetCanvases = function ({ forceReset, width, height } = {}) {
     this.each(function (c, canvas) {
       const $canvas = $(canvas);
-      const newWidth = Math.floor($canvas.parent().parent().width());
-      const newHeight = DEMO_CANVAS_HEIGHT;
       // Do not reset canvas if width hasn't changed
-      if (!forceReset && newWidth === $canvas.width()) {
+      if (!forceReset && width === $canvas.width()) {
         return;
       }
       $canvas.removeLayers();
       $.removeData(canvas, 'jCanvas');
       $.jCanvas.clearCache();
       Object.assign($.jCanvas.defaults, baseDefaults);
-      $canvas.prop({
-        width: $canvas.parent().parent().width(),
-        height: DEMO_CANVAS_HEIGHT
-      });
+      if (width && height) {
+        $canvas.prop({ width, height });
+      }
       $canvas.removeAttr('style');
       $canvas.clearCanvas();
       $canvas.detectPixelRatio();
@@ -52,10 +48,10 @@ $(document).ready(function () {
   // Spawn a new sandbox with the given sandbox state
   $.spawnNewSandbox = function (sandboxState) {
     // Retrieve the sandbox state of the current page
-    const originalSandboxState = sessionStorage.getItem('jcanvas-sandbox');
+    const originalSandboxState = sessionStorage.getItem(SANDBOX_STORAGE_KEY);
     // Temporarily overwrite the current page's sandbox state with the new sandbox
     // code so that it gets copied into the sandbox state for the spawned page
-    sessionStorage.setItem('jcanvas-sandbox', JSON.stringify(sandboxState));
+    sessionStorage.setItem(SANDBOX_STORAGE_KEY, JSON.stringify(sandboxState));
     // window.open copies the session data for the current page into the session
     // storage for the spawned page
     window.open('/jcanvas/sandbox/');

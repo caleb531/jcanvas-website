@@ -51,7 +51,7 @@ function createEditorState(config) {
       history(),
       foldGutter(),
       drawSelection(),
-      indentUnit.of('    '),
+      indentUnit.of('  '),
       EditorState.allowMultipleSelections.of(true),
       indentOnInput(),
       bracketMatching(),

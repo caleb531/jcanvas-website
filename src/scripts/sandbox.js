@@ -1,6 +1,8 @@
-import { EditorView } from '@codemirror/view';
+import { Prec } from '@codemirror/state';
+import { EditorView, keymap } from '@codemirror/view';
 import 'jcanvas';
 import $ from 'jquery';
+import { SANDBOX_STORAGE_KEY } from './constants.js';
 import { createEditorState, createEditorView } from './editor.js';
 import './global.js';
 
@@ -19,10 +21,7 @@ $(document).ready(function () {
   // Defaults and constants
   const defaultSandboxState = {
     code: $$.defaultCode.html()?.replace(/(^\s+)|(\s+$)/gi, '') || '',
-    cursor: {
-      line: 0,
-      ch: 0
-    },
+    cursorOffset: 0,
     ncanvases: 1
   };
   const CANVAS_WIDTH = 320;
@@ -45,6 +44,10 @@ $(document).ready(function () {
         width: CANVAS_WIDTH,
         height: canvasHeight
       });
+      $canvas.attr({
+        'data-original-width': CANVAS_WIDTH,
+        'data-original-height': canvasHeight
+      });
       $canvasContainer.append($canvas);
       $$.canvases.append($canvasContainer);
     }
@@ -53,7 +56,7 @@ $(document).ready(function () {
   // Load last-saved sandbox state (or defaults if the don't exist)
   function loadSandboxState() {
     // Load sandbox settings from local storage
-    let sandboxState = sessionStorage.getItem('jcanvas-sandbox');
+    let sandboxState = sessionStorage.getItem(SANDBOX_STORAGE_KEY);
     sandboxState = JSON.parse(sandboxState);
     if (sandboxState !== null) {
       sandboxState = $.extend({}, defaultSandboxState, sandboxState);
@@ -74,7 +77,7 @@ $(document).ready(function () {
   // Save sandbox state to session storage for current page
   function saveSandboxState(editorView) {
     const sandboxState = getSandboxState(editorView);
-    sessionStorage.setItem('jcanvas-sandbox-v2', JSON.stringify(sandboxState));
+    sessionStorage.setItem(SANDBOX_STORAGE_KEY, JSON.stringify(sandboxState));
   }
 
   // Run code
@@ -83,7 +86,12 @@ $(document).ready(function () {
     if ($canvasElems.length === 0) {
       return;
     }
-    $canvasElems.resetCanvases();
+    const $firstCanvas = $canvasElems.eq(0);
+    $canvasElems.resetCanvases({
+      forceReset: true,
+      width: Number($firstCanvas.attr('data-original-width')),
+      height: Number($firstCanvas.attr('data-original-height'))
+    });
     $$.editor.removeClass('error');
     $$.console.html('');
     try {
@@ -108,16 +116,28 @@ $(document).ready(function () {
           if (viewUpdate.docChanged || viewUpdate.selectionSet) {
             saveSandboxState(viewUpdate.view);
           }
-        })
+        }),
+        Prec.highest(
+          keymap.of([
+            {
+              key: 'Mod-Enter',
+              run: (view) => {
+                runCode(view);
+                return true;
+              }
+            }
+          ])
+        )
       ]
     });
     const editorView = createEditorView(editorState, $$.editor[0]);
 
     // Convert persisted pos object to a CM6 offset
-    const pos = sandboxState.cursor;
-    const offset = editorState.doc.line(pos.line + 1).from + pos.ch;
     editorView.dispatch({
-      selection: { anchor: offset, head: offset }
+      selection: {
+        anchor: sandboxState.cursorOffset,
+        head: sandboxState.cursorOffset
+      }
     });
     $$.ncanvases.val(sandboxState.ncanvases);
     changeCanvasCount(sandboxState.ncanvases);
@@ -149,13 +169,13 @@ $(document).ready(function () {
     // });
 
     // // Add event bindings to sandbox controls
-    // $$.run.on('click', function () {
-    //   runCode(codemirror);
-    //   saveSandboxState(codemirror);
-    // });
-    // $$.duplicate.on('click', function () {
-    //   $.spawnNewSandbox(getSandboxState(codemirror));
-    // });
+    $$.run.on('click', function () {
+      runCode(editorView);
+      saveSandboxState(editorView);
+    });
+    $$.duplicate.on('click', function () {
+      $.spawnNewSandbox(getSandboxState(editorView));
+    });
     $$.ncanvases.on('change', function (event) {
       changeCanvasCount(Number(event.target.value));
       runCode(editorView);
@@ -163,19 +183,9 @@ $(document).ready(function () {
     });
 
     // // Focus window on desktop browsers
-    // if (window.ontouchstart === undefined) {
-    //   codemirror.focus();
-    // }
-
-    // // Fix an issue where the editor cursor/selection would be mispositioned
-    // // visually
-    // requestAnimationFrame(function () {
-    //   requestAnimationFrame(function () {
-    //     requestAnimationFrame(function () {
-    //       codemirror.refresh();
-    //     });
-    //   });
-    // });
+    if (window.ontouchstart === undefined) {
+      editorView.focus();
+    }
 
     runCode(editorView);
   }

@@ -77,6 +77,7 @@ label {
 
 // Code editor
 #sandbox-editor {
+  display: flex;
   clear: both;
   position: relative;
   height: 420px;
@@ -85,34 +86,8 @@ label {
   text-align: left;
   resize: none;
 }
-div.CodeMirror {
+.cm-editor {
   width: 100%;
-  height: inherit;
-  outline: none;
-  border-radius: 0;
-  border: solid 1px var(--input-border-color);
-  background-color: #fff;
-  background-clip: padding-box;
-  box-sizing: border-box;
-  font-family: var(--font-family-monospace);
-}
-div.CodeMirror div.cm-s-default {
-  height: inherit;
-  overflow: scroll;
-}
-div.CodeMirror pre {
-  border: none;
-  overflow: visible;
-}
-// Line numbers
-div.CodeMirror-gutter pre {
-  text-align: right;
-  color: #999;
-}
-
-// Change text selection color to blue
-.CodeMirror-focused .CodeMirror-selected {
-  background-color: #bdf;
 }
 
 // Error console

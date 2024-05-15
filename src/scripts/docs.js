@@ -6,6 +6,8 @@ import 'jcanvas/dist/umd/jcanvas-hearts.min.js';
 import $ from 'jquery';
 import './global.js';
 
+const DEMO_CANVAS_HEIGHT = 250;
+
 $(document).ready(function () {
   const $body = $('body');
   // The pattern to replace jQuery canvas selectors
@@ -31,9 +33,17 @@ $(document).ready(function () {
     }
   }
 
+  function resetCanvas($canvas) {
+    $canvas.resetCanvases({
+      forceReset: true,
+      width: Math.floor($canvas.parent().parent().width()),
+      height: DEMO_CANVAS_HEIGHT
+    });
+  }
+
   function reRunDemo($demoCanvas) {
     const code = getCodeContents($demoCanvas.parent().prev('.expressive-code'));
-    $demoCanvas.resetCanvases(true);
+    resetCanvas($demoCanvas);
     runDemo(code, $demoCanvas);
   }
 
@@ -61,7 +71,10 @@ $(document).ready(function () {
         '<button class="demo-rerun edge-button">Re-run</button>'
       );
       $demoContainer.append($demoCanvas);
-      $demoCanvas.resetCanvases(true);
+      // It is crucial we reset the canvas (by clearing it and setting specific
+      // dimensions) so that the base64 images (to be compared) are of the same
+      // width/height
+      resetCanvas($demoCanvas);
       // Retrieve the data URI of the blank canvas so we can later detect if the
       // canvas has been drawn on
       const demoImageBlank = $demoCanvas[0].toDataURL();
