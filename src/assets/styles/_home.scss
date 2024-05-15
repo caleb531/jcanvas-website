@@ -41,7 +41,7 @@ hr {
     margin: 0;
   }
 }
-#home-intro p:last-child {
+#home-intro p:last-of-type {
   display: inline-block;
   vertical-align: middle;
   line-height: normal;
@@ -54,7 +54,7 @@ hr {
     font-size: 14px;
   }
 }
-#home-intro p:first-child {
+#home-intro p:first-of-type {
   display: inline-block;
   width: 450px;
   min-width: 400px;
