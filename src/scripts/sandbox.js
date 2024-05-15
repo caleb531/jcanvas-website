@@ -1,4 +1,8 @@
+import { EditorView } from '@codemirror/view';
+import 'jcanvas';
 import $ from 'jquery';
+import { createEditorState, createEditorView } from './editor.js';
+import './global.js';
 
 $(document).ready(function () {
   const $$ = {
@@ -59,29 +63,22 @@ $(document).ready(function () {
     return sandboxState;
   }
 
-  function setSandboxSettings(codemirror, sandboxState) {
-    codemirror.setValue(sandboxState.code);
-    codemirror.setCursor(sandboxState.cursor);
-    $$.ncanvases.val(sandboxState.ncanvases);
-    changeCanvasCount(sandboxState.ncanvases);
-  }
-
-  function getSandboxState(codemirror) {
+  function getSandboxState(editorView) {
     return {
-      code: codemirror.getValue(),
-      cursor: codemirror.getCursor(),
+      code: editorView.state.doc.toString(),
+      cursorOffset: editorView.state.selection.main.head,
       ncanvases: $$.ncanvases.val()
     };
   }
 
   // Save sandbox state to session storage for current page
-  function saveSandboxState(codemirror) {
-    const sandboxState = getSandboxState(codemirror);
-    sessionStorage.setItem('jcanvas-sandbox', JSON.stringify(sandboxState));
+  function saveSandboxState(editorView) {
+    const sandboxState = getSandboxState(editorView);
+    sessionStorage.setItem('jcanvas-sandbox-v2', JSON.stringify(sandboxState));
   }
 
   // Run code
-  function runCode(codemirror) {
+  function runCode(editorView) {
     const $canvasElems = $$.canvases.find('canvas');
     if ($canvasElems.length === 0) {
       return;
@@ -90,7 +87,9 @@ $(document).ready(function () {
     $$.editor.removeClass('error');
     $$.console.html('');
     try {
-      new Function($.jCanvasCorrectImagePaths(codemirror.getValue()))();
+      new Function(
+        $.jCanvasCorrectImagePaths(editorView.state.doc.toString())
+      )();
     } catch (error) {
       // Report any errors to the editor
       $$.editor.addClass('error');
@@ -102,69 +101,83 @@ $(document).ready(function () {
   // Initialize the sandbox CodeMirror editor
   function initSandboxEditor(sandboxState) {
     // Initialize code editor
-    const codemirror = CodeMirror($$.editor[0], {
-      lineNumbers: true,
-      indentUnit: 2
+    const editorState = createEditorState({
+      doc: sandboxState.code,
+      extensions: [
+        EditorView.updateListener.of((viewUpdate) => {
+          if (viewUpdate.docChanged || viewUpdate.selectionSet) {
+            saveSandboxState(viewUpdate.view);
+          }
+        })
+      ]
+    });
+    const editorView = createEditorView(editorState, $$.editor[0]);
+
+    // Convert persisted pos object to a CM6 offset
+    const pos = sandboxState.cursor;
+    const offset = editorState.doc.line(pos.line + 1).from + pos.ch;
+    editorView.dispatch({
+      selection: { anchor: offset, head: offset }
+    });
+    $$.ncanvases.val(sandboxState.ncanvases);
+    changeCanvasCount(sandboxState.ncanvases);
+
+    // // Add CSS class for when editor is focused
+    // codemirror.on('focus', function (obj) {
+    //   $$.editor.addClass('focused');
+    // });
+    // codemirror.on('blur', function (obj) {
+    //   $$.editor.removeClass('focused');
+    // });
+    // // Insert spaces when tab key is pressed
+    // codemirror.setOption('extraKeys', {
+    //   Tab: function (cm) {
+    //     const spaces = Array(cm.getOption('indentUnit') + 1).join(' ');
+    //     cm.replaceSelection(spaces);
+    //   }
+    // });
+
+    // $('div.CodeMirror').on('keydown', function (event) {
+    //   if (event.metaKey || event.ctrlKey) {
+    //     // Press ctrl+enter to test
+    //     if (event.which === 13) {
+    //       runCode(codemirror);
+    //       saveSandboxState(codemirror);
+    //       return false;
+    //     }
+    //   }
+    // });
+
+    // // Add event bindings to sandbox controls
+    // $$.run.on('click', function () {
+    //   runCode(codemirror);
+    //   saveSandboxState(codemirror);
+    // });
+    // $$.duplicate.on('click', function () {
+    //   $.spawnNewSandbox(getSandboxState(codemirror));
+    // });
+    $$.ncanvases.on('change', function (event) {
+      changeCanvasCount(Number(event.target.value));
+      runCode(editorView);
+      saveSandboxState(editorView);
     });
 
-    setSandboxSettings(codemirror, sandboxState);
+    // // Focus window on desktop browsers
+    // if (window.ontouchstart === undefined) {
+    //   codemirror.focus();
+    // }
 
-    // Add CSS class for when editor is focused
-    codemirror.on('focus', function (obj) {
-      $$.editor.addClass('focused');
-    });
-    codemirror.on('blur', function (obj) {
-      $$.editor.removeClass('focused');
-    });
-    // Insert spaces when tab key is pressed
-    codemirror.setOption('extraKeys', {
-      Tab: function (cm) {
-        const spaces = Array(cm.getOption('indentUnit') + 1).join(' ');
-        cm.replaceSelection(spaces);
-      }
-    });
+    // // Fix an issue where the editor cursor/selection would be mispositioned
+    // // visually
+    // requestAnimationFrame(function () {
+    //   requestAnimationFrame(function () {
+    //     requestAnimationFrame(function () {
+    //       codemirror.refresh();
+    //     });
+    //   });
+    // });
 
-    $('div.CodeMirror').on('keydown', function (event) {
-      if (event.metaKey || event.ctrlKey) {
-        // Press ctrl+enter to test
-        if (event.which === 13) {
-          runCode(codemirror);
-          saveSandboxState(codemirror);
-          return false;
-        }
-      }
-    });
-
-    // Add event bindings to sandbox controls
-    $$.run.on('click', function () {
-      runCode(codemirror);
-      saveSandboxState(codemirror);
-    });
-    $$.duplicate.on('click', function () {
-      $.spawnNewSandbox(getSandboxState(codemirror));
-    });
-    $$.ncanvases.on('change', function () {
-      changeCanvasCount(Number(this.value));
-      runCode(codemirror);
-      saveSandboxState(codemirror);
-    });
-
-    // Focus window on desktop browsers
-    if (window.ontouchstart === undefined) {
-      codemirror.focus();
-    }
-
-    // Fix an issue where the editor cursor/selection would be mispositioned
-    // visually
-    requestAnimationFrame(function () {
-      requestAnimationFrame(function () {
-        requestAnimationFrame(function () {
-          codemirror.refresh();
-        });
-      });
-    });
-
-    runCode(codemirror);
+    runCode(editorView);
   }
 
   const sandboxState = loadSandboxState();
