@@ -1,6 +1,19 @@
+:root {
+  --sl-color-accent-high: #49e;
+}
+
 // Add box shadow to docs header to distinguish it from sidebar contents
 .page > .header {
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
+}
+
+button,
+a.button {
+  background-color: var(--sl-color-text-accent);
+  color: var(--sl-color-text-invert);
+  &:focus {
+    outline-width: 0;
+  }
 }
 
 // Override default button styles to
