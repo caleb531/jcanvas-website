@@ -5,7 +5,7 @@ sidebar:
   order: 1
 ---
 
-### Color Names
+## Color Names
 
 ```js
 $('canvas').drawArc({
@@ -15,7 +15,7 @@ $('canvas').drawArc({
 });
 ```
 
-### Hex Values
+## Hex Values
 
 ```js
 $('canvas').drawArc({
@@ -25,7 +25,7 @@ $('canvas').drawArc({
 });
 ```
 
-### RGB Values
+## RGB Values
 
 ```js
 $('canvas').drawArc({
@@ -35,7 +35,7 @@ $('canvas').drawArc({
 });
 ```
 
-### RGBA Values
+## RGBA Values
 
 ```js
 $('canvas').drawArc({

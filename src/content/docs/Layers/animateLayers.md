@@ -5,7 +5,7 @@ sidebar:
   order: 6
 ---
 
-### Animating layers
+## Animating layers
 
 jCanvas provides an `animateLayer()` method for animating the properties of a jCanvas layer.
 
@@ -62,7 +62,7 @@ $('canvas').animateLayer(0, {
 });
 ```
 
-### Functions as Property Values
+## Functions as Property Values
 
 You can also use a callback function . Whatever the function returns will be used as the end-value to which that property will be animated.
 
@@ -78,7 +78,7 @@ $('canvas').animateLayer('myLayer', {
 
 This capability is especially useful when using the below `animateLayerGroup()` method, in which you may not have direct access to each layer in the group. Now, such direct access to these layers is possible.
 
-### Animating layer groups
+## Animating layer groups
 
 You can also animate all layers in a layer group using the `animateLayerGroup()` method.
 
@@ -112,7 +112,7 @@ $('canvas')
   );
 ```
 
-### Stopping animation
+## Stopping animation
 
 Similar to jQuery's `stop()` method, you can stop any layer animation in progress by calling the `stopLayer()` method.
 
@@ -136,7 +136,7 @@ You can also stop animation for all layers in a group using the `stopLayerGroup(
 $('canvas').stopLayerGroup('myGroup');
 ```
 
-### Delaying animation
+## Delaying animation
 
 Similar to jQuery's `delay()` method, you can delay any layer's animation queue by calling the `delayLayer()` method.
 
@@ -152,7 +152,7 @@ You can also delay animation for all layers in a group using the `delayLayerGrou
 $('canvas').delayLayerGroup('myGroup', 500);
 ```
 
-### Running a function at every step
+## Running a function at every step
 
 Just like jQuery, the `animateLayer()` method in jCanvas supports an alternate syntax for providing additional options (like a `step` callback).
 
@@ -175,7 +175,7 @@ $('canvas').animateLayer(
 );
 ```
 
-### Notes
+## Notes
 
 Multiple `animateLayer()` calls can be queued up rather than using multiple callback functions.
 The callback parameter for the `animateLayerGroup()` method will run when _each_ layer in the group finishes animating.

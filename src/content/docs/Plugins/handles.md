@@ -10,7 +10,7 @@ Once you download and include the plugin on your page, you can add these drag ha
 
 It's important to note that each drag handle is an actual jCanvas layer.
 
-### Rectangles
+## Rectangles
 
 The following example will draw a resizable rectangle.
 
@@ -40,7 +40,7 @@ $('canvas')
   .drawLayers();
 ```
 
-### Resizing from a corner
+## Resizing from a corner
 
 By default, plugin resizes the rectangle from its center. However, you can easily change this behavior by setting the `resizeFromCenter` property to `false`.
 
@@ -70,7 +70,7 @@ $('canvas')
   .drawLayers();
 ```
 
-### Constraining proportions
+## Constraining proportions
 
 You can also constrain the original proportions of the shape using the `constrainProportions` property.
 
@@ -157,7 +157,7 @@ $('canvas')
 
 Note that the layer's `aspectRatio` is disregarded when `constrainProportions` is `false`.
 
-### Handle placement
+## Handle placement
 
 The plugin allows for handles to be placed on either the corners of the layer, or on its sides. This can be especially useful for shapes such as ellipses, which have no actual corners but whose sides extend to the ellipse's defined width and height.
 
@@ -213,7 +213,7 @@ $('canvas')
   .drawLayers();
 ```
 
-### Ellipses
+## Ellipses
 
 You can also add handles to ellipse layers in the same manner, though this is more practical using the `handlePlacement` property.
 
@@ -242,7 +242,7 @@ $('canvas')
   .drawLayers();
 ```
 
-### Images
+## Images
 
 You can also add handles to image layers in the same manner. However, note that in order for this to work properly, you _must_ specify the `width` and `height` properties.
 
@@ -271,7 +271,7 @@ $('canvas')
   .drawLayers();
 ```
 
-### Lines
+## Lines
 
 You can also add handles to line layers in the same manner.
 
@@ -300,7 +300,7 @@ $('canvas')
   .drawLayers();
 ```
 
-### Curves
+## Curves
 
 You can also add handles to quadratic or Bézier curve layers. It is recommended that you also set guides on your curve layers (via the `guide` property) so that the control points and anchor points are visually connected.
 
@@ -365,7 +365,7 @@ $('canvas')
   .drawLayers();
 ```
 
-### Events
+## Events
 
 The plugin also adds the following custom events: `handlestart`, `handlemove`, `handlestop`
 

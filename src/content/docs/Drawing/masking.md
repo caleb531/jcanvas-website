@@ -3,7 +3,7 @@ title: Masking
 slug: docs/masking
 ---
 
-### Basic Masking
+## Basic Masking
 
 To create a shape that masks other shapes, set the `mask` property to `true`.
 
@@ -28,7 +28,7 @@ $('canvas')
 
 To restore the mask and prevent masking of future shapes, call the `restoreCanvas()` method.
 
-### Layer masks
+## Layer masks
 
 You can also create layers that mask other layers by using the `mask` property. A layer that is a mask is generally referred to as a 'layer mask'.
 
@@ -57,7 +57,7 @@ $('canvas')
 
 However, when creating layer masks, the `restoreCanvas()` method must be made into a layer using the `layer` property, as demonstrated above.
 
-### Masking draggable layers
+## Masking draggable layers
 
 In this example, move the shapes to see how layer masks affects the draggability of other shapes.
 

@@ -5,7 +5,7 @@ sidebar:
   order: 3
 ---
 
-### Retrieving a single layer
+## Retrieving a single layer
 
 You can retrieve a specific layer using the `getLayer()` method. You can pass it the index of the layer, or the layer's assigned `name`.
 
@@ -33,7 +33,7 @@ Finally, a negative index is also acceptable, with `-1` being the index of the l
 $('canvas').getLayer(-1);
 ```
 
-### Retrieving all layers
+## Retrieving all layers
 
 To retrieve all layers (as an array) for any canvas element, use the `getLayers()` method.
 
@@ -60,7 +60,7 @@ $('canvas').getLayers(function (layer) {
 
 Note that the `getLayers()` method always returns an array, even for non-canvases.
 
-### Retrieving layer groups
+## Retrieving layer groups
 
 If you've defined the same `group` for a set of layers, you can get those layers using the `getLayerGroup()` method.
 
@@ -74,7 +74,7 @@ You can also retrieve all layers whose group name matches the given regular expr
 $('canvas').getLayerGroup(/box/gi);
 ```
 
-### Retrieving layer indexes
+## Retrieving layer indexes
 
 You can retrieve a layer's index in the layers array using the `getLayerIndex()` method.
 

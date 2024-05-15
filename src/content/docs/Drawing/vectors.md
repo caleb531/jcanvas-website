@@ -17,7 +17,7 @@ $('canvas').drawVector({
 });
 ```
 
-### Defining a starting point
+## Defining a starting point
 
 Additionally, you can specify a starting point for your vector using the `x` and `y` properties.
 
@@ -31,7 +31,7 @@ $('canvas').drawVector({
 });
 ```
 
-### Combining vectors
+## Combining vectors
 
 Of course, you can create multiple vectors. Keep in mind that no matter where any vector is positioned, its angle is always relative to the north (or 12:00 according to any analog clock).
 
@@ -48,7 +48,7 @@ $('canvas').drawVector({
 });
 ```
 
-### Using line properties
+## Using line properties
 
 Because the `drawVector()` method creates line segments just like the `drawLine()` method, the `drawVector()` method accepts many of the same properties as `drawLine()`. These properties include (but are not limited to) `closed` and `rounded`.
 
@@ -69,6 +69,6 @@ $('canvas').drawVector({
 
 Details on the usage of these properties can be found in the [Lines](/jcanvas/docs/lines/) section.
 
-### Notes
+## Notes
 
 Angles are specified in degrees by default. However, if you wish you specify your angles in radians, set the `inDegrees` property to `false`.

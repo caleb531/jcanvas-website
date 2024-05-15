@@ -7,7 +7,7 @@ sidebar:
 
 jCanvas allows you to run a callback when you perform a layer-related action, such as adding a new layer or removing an existing layer. These events are referred to in jCanvas terminology as _mechanical events_, though they work like any other jCanvas event.
 
-### The `add` event
+## The `add` event
 
 The `add` event fires when a layer is added (but _before_ it is drawn).
 
@@ -24,7 +24,7 @@ $('canvas').drawRect({
 });
 ```
 
-### The `remove` event
+## The `remove` event
 
 The `remove` event fires when a layer is removed using the `removeLayer()` method (or indirectly via `removeLayers()` or `removeLayerGroup()`).
 
@@ -42,7 +42,7 @@ $('canvas').drawRect({
 $('canvas').removeLayer('box');
 ```
 
-### The `change` event
+## The `change` event
 
 The `change` event fires when a layer's properties are changed using the `setLayer()` method (or indirectly via `setLayers()` or `setLayerGroup()`).
 
@@ -62,7 +62,7 @@ $('canvas').setLayer('box', {
 });
 ```
 
-### The `move` event
+## The `move` event
 
 The `move` event fires when a layer is moved to a new position using the `moveLayer()` method (or indirectly via `moveLayers()` or `moveLayerGroup()`).
 
@@ -80,7 +80,7 @@ $('canvas').drawRect({
 $('canvas').moveLayer('box', 2);
 ```
 
-### Animation events
+## Animation events
 
 jCanvas provides the following events pertaining to animation: `animatestart`, `animate`, and `animateend`.
 

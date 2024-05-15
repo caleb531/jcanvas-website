@@ -7,7 +7,7 @@ sidebar:
 
 jCanvas supports a number of standard mouse events that you can use on most types of jCanvas layers.
 
-### Events and animation
+## Events and animation
 
 When you click the star in the demo below, it will spin.
 
@@ -28,7 +28,7 @@ $('canvas').drawPolygon({
 });
 ```
 
-### Multiple layers with events
+## Multiple layers with events
 
 This example utilizes multiple layers with events attached.
 
@@ -53,7 +53,7 @@ for (var i = 0; i < 5; i += 1) {
 }
 ```
 
-### The `mouseover` and `mouseout` events
+## The `mouseover` and `mouseout` events
 
 The `mouseover` and `mouseout` can be used separately, or together.
 

@@ -7,7 +7,7 @@ sidebar:
 
 The `<canvas>` element is a new element apart of HTML5. It allows you to draw shapes, paths, images, and other drawings on a blank element called the canvas.
 
-### Creating a canvas
+## Creating a canvas
 
 Before you can draw on the canvas, you need to create one.
 
@@ -17,7 +17,7 @@ Before you can draw on the canvas, you need to create one.
 
 Of course, the canvas can be any width/height you want. You may also wish to give the canvas an ID (for future reference).
 
-#### Note: Setting width and height properly
+### Note: Setting width and height properly
 
 As a side note, you cannot accurately set a canvas's width and height via CSS; you can only do so through the canvas element's `width` and `height` attributes. This is best achieved through jQuery's `prop()` method.
 
@@ -28,7 +28,7 @@ $('#myCanvas').css({ width: 800, height: 500 });
 $('#myCanvas').prop({ width: 800, height: 500 });
 ```
 
-### Importing jCanvas
+## Importing jCanvas
 
 You also need to add jCanvas to your page somehow (usually a `<script>` element will do).
 
@@ -43,7 +43,7 @@ import $ from 'jquery';
 import 'jcanvas';
 ```
 
-### Drawing
+## Drawing
 
 HTML5 provides [a native JavaScript API](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Drawing_shapes) for drawing on the canvas. However, we will be using jCanvas instead.
 

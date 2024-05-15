@@ -5,7 +5,7 @@ sidebar:
   order: 3
 ---
 
-### Scaling the canvas context
+## Scaling the canvas context
 
 The `scaleCanvas()` method scales the canvas from the included point.
 
@@ -24,7 +24,7 @@ $('canvas')
   .restoreCanvas();
 ```
 
-### The `scale` property
+## The `scale` property
 
 You can also set both the `scaleX` and `scaleY` properties using the `scale` property.
 
@@ -41,7 +41,7 @@ $('canvas')
   .restoreCanvas();
 ```
 
-### Scaling an individual shape
+## Scaling an individual shape
 
 Rather than scaling the entire canvas, you can scale an individual shape using any of these three properties: `scale`, `scaleX`, or `scaleY`.
 
@@ -55,7 +55,7 @@ $('canvas').drawRect({
 });
 ```
 
-### Layers
+## Layers
 
 Although it may seem slightly counterintuitive, the `scaleCanvas()` method can actually be drawn as a layer. This allows for applying canvas transformations when drawing layers.
 
@@ -76,7 +76,7 @@ $('canvas').restoreCanvas({
 });
 ```
 
-### Notes
+## Notes
 
 The `scaleX` and `scaleY` values are multiples of the canvas's current width/height (i.e. `1` is the baseline).
 

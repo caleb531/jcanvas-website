@@ -16,7 +16,7 @@ $('canvas').draw({
 });
 ```
 
-### Draw Anything
+## Draw Anything
 
 The `draw()` method can be used to draw any other jCanvas drawing (although usually this is not necessary).
 
@@ -39,6 +39,6 @@ $('canvas').drawRect({
 });
 ```
 
-### Notes
+## Notes
 
 The `this` keyword in the callback function refers to the canvas DOM element.

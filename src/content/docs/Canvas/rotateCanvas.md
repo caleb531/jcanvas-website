@@ -5,7 +5,7 @@ sidebar:
   order: 2
 ---
 
-### Rotating the canvas context
+## Rotating the canvas context
 
 The `rotateCanvas()` method rotates the canvas from the included point.
 
@@ -25,7 +25,7 @@ $('canvas')
   .restoreCanvas();
 ```
 
-### Rotating an individual shape
+## Rotating an individual shape
 
 Rather than rotating the entire canvas, you can rotate an individual shape using the `rotate` properties.
 
@@ -60,7 +60,7 @@ $('canvas').drawRect({
 });
 ```
 
-### Layers
+## Layers
 
 Although it may seem slightly counterintuitive, the `rotateCanvas()` method can actually be drawn as a layer. This allows for applying canvas transformations when drawing layers.
 
@@ -81,6 +81,6 @@ $('canvas').restoreCanvas({
 });
 ```
 
-### Notes
+## Notes
 
 To revert to the canvas's previous state, call the `restoreCanvas()` method. However, you do not need to call this method when rotating an individual shape.

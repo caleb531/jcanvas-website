@@ -7,7 +7,7 @@ sidebar:
 
 Event hooks are, essentially, event callbacks that apply to all jCanvas layers. They do not override any existing event callbacks, but rather, complement them.
 
-### Canvas Event Hooks
+## Canvas Event Hooks
 
 jCanvas supports a type of event hook called a canvas event hook. Canvas event hooks apply only to layers on the selected canvases.
 
@@ -27,7 +27,7 @@ Similarly, to retrieve the object containing all event hooks for a canvas, use t
 $('canvas').getEventHooks();
 ```
 
-### Global Event Hooks
+## Global Event Hooks
 
 jCanvas supports another type of event hook called a global event hook. Global event hooks apply to all layers on all canvases, and do not override canvas event hooks.
 
@@ -37,7 +37,7 @@ $.jCanvas.eventHooks.add = function (layer) {
 };
 ```
 
-### Event Bubbling
+## Event Bubbling
 
 With the addition of event hooks, all jCanvas events bubble up, meaning for any jCanvas event that is triggered:
 
@@ -45,6 +45,6 @@ With the addition of event hooks, all jCanvas events bubble up, meaning for any 
 2. The canvas event hook runs second (if it exists)
 3. The global event hook runs last (if it exists)
 
-### Notes
+## Notes
 
 Event hooks can also be leveraged by jCanvas plugin developers to give their plugins tighter integration with jCanvas

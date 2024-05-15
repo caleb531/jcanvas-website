@@ -21,7 +21,7 @@ $('canvas')
   .restoreCanvas();
 ```
 
-### The `translate` property
+## The `translate` property
 
 You can also set both the `translateX` and `translateY` properties using the `translate` property.
 
@@ -38,7 +38,7 @@ $('canvas')
   .restoreCanvas();
 ```
 
-### Translating an individual shape
+## Translating an individual shape
 
 Rather than translating the entire canvas, you can translate an individual shape using any of these three properties.
 
@@ -54,7 +54,7 @@ $('canvas').drawRect({
 
 Please note that translating a shape changes its center of transformation (which will affect how the layer is rotated).
 
-### Layers
+## Layers
 
 Although it may seem slightly counterintuitive, the `translateCanvas()` method can actually be drawn as a layer. This allows for applying canvas transformations when drawing layers.
 
@@ -75,6 +75,6 @@ $('canvas').restoreCanvas({
 });
 ```
 
-### Notes
+## Notes
 
 To revert to the canvas's previous state, call the `restoreCanvas()` method. However, you do not need to call this method when translating an individual shape.

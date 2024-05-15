@@ -5,7 +5,7 @@ sidebar:
   order: 5
 ---
 
-### Setting layer properties
+## Setting layer properties
 
 Using the `setLayer()` method, you can set the properties of a layer. The method's arguments include:
 
@@ -55,7 +55,7 @@ $('canvas')
   .drawLayers();
 ```
 
-### Setting layer group properties
+## Setting layer group properties
 
 Using the `setLayerGroup()` method, you can set any properties of all layers in the group. The method accepts the same arguments as `setLayer()`.
 
@@ -72,7 +72,7 @@ $('canvas')
   .drawLayers();
 ```
 
-### Moving layers
+## Moving layers
 
 Using the `moveLayer()` method, you can move a layer to a new index in the layers array. Please note that the canvas does not change until you redraw it.
 
@@ -85,7 +85,7 @@ Also note that this method does not automatically redraw the canvas.
 $('canvas').moveLayer('box', 1);
 ```
 
-### Removing layers
+## Removing layers
 
 jCanvas provides a `removeLayer()` method for removing one layer from the jCanvas layers array.
 
@@ -117,7 +117,7 @@ $('canvas').removeLayers(function (layer) {
 });
 ```
 
-### Removing layer groups
+## Removing layer groups
 
 Using the `removeLayerGroup()` method, You can remove any layers from the layers array which are in the same layer group.
 
@@ -134,6 +134,6 @@ To dynamically remove an existing layer from a group, use the `removeLayerFromGr
 $('canvas').removeLayerFromGroup('box', 'myBoxes');
 ```
 
-### Notes
+## Notes
 
 None of the above methods redraw the canvas after being called. Therefore, you will need to redraw the canvas using the `drawLayers()` method to see the changes visually.

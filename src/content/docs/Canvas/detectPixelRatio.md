@@ -17,6 +17,6 @@ $('canvas').detectPixelRatio(function (ratio) {
 });
 ```
 
-### Notes
+## Notes
 
 Retina displays on Apple devices have a pixel ratio of 2.

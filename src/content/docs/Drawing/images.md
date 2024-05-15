@@ -10,7 +10,7 @@ $('canvas').drawImage({
 });
 ```
 
-### Custom width/height
+## Custom width/height
 
 ```js
 $('canvas').drawImage({
@@ -31,7 +31,7 @@ $('canvas').drawImage({
 });
 ```
 
-### Using an image element
+## Using an image element
 
 You can also use an image DOM element as the value for the `source` property.
 
@@ -44,7 +44,7 @@ $('canvas').drawImage({
 });
 ```
 
-### The `load` event
+## The `load` event
 
 In jCanvas, images are drawn asynchronously because they must load before they can be drawn. In some cases, this isn't an issue because the image loads fast enough, however this isn't always the case.
 
@@ -71,7 +71,7 @@ $('canvas').drawImage({
 
 Note that the `load` event fires when the image is initially drawn, but _also_ when it is redrawn. Therefore, dragging the image (for example) will cause the `load` event to fire continuously (as you are dragging).
 
-### Cropping
+## Cropping
 
 Including the `sx`, `sy`, `sWidth`, or `sHeight` properties allows you to choose which section of the image to crop.
 
@@ -107,7 +107,7 @@ $('canvas').drawImage({
 
 Now, the `sx` and `sy` properties define the top-left corner of the crop region, as you might expect.
 
-### Images and Layers
+## Images and Layers
 
 Beginning with version 13.04.05, image layers will always load completely before successive layers are drawn, as long as you use `addLayer()` in conjunction with `drawLayers()`:
 
@@ -131,6 +131,6 @@ $('canvas')
   .drawLayers();
 ```
 
-### Notes
+## Notes
 
 Internet Explorer 9 has a bug which prevents images from drawing on the canvas if they have not loaded. To fix this, use an existing `<img>` DOM element as the value for the `source` property.

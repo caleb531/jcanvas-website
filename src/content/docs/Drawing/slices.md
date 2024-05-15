@@ -5,7 +5,7 @@ slug: docs/slices
 
 A slice in jCanvas is, essentially, a slice of a circle (similar to a pizza slice).
 
-### Basic Usage
+## Basic Usage
 
 You can draw a slice using the `drawSlice()` method. The size of a slice is determined by its `start`, `end`, and `radius` properties.
 
@@ -22,7 +22,7 @@ $('canvas').drawSlice({
 });
 ```
 
-### Creating a pie chart
+## Creating a pie chart
 
 You can create a simple pie chart in jCanvas using the `drawSlice()` method.
 

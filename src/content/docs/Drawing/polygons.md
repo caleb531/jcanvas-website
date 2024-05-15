@@ -26,7 +26,7 @@ $('canvas').drawPolygon({
 });
 ```
 
-### Concave Polygons
+## Concave Polygons
 
 To create concave polygons (polygons that point inward), include the `concavity` property.
 

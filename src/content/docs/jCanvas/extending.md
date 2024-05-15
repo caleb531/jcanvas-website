@@ -28,7 +28,7 @@ $.jCanvas.extend({
 });
 ```
 
-### Example: `drawHeart()`
+## Example: `drawHeart()`
 
 To demonstrate how this works, we'll be creating a method that draws a heart on the canvas.
 
@@ -81,7 +81,7 @@ $('canvas').drawHeart({
 });
 ```
 
-### API Methods
+## API Methods
 
 The jCanvas object (`$.jCanvas`) provides a few useful methods for integrating your methods with jCanvas. All of these methods accept the same three arguments: the canvas DOM element (`this`), the canvas context (`ctx`), and the parameters object (`params`).
 
@@ -100,6 +100,6 @@ $.jCanvas.detectEvents(this, ctx, params);
 $.jCanvas.closePath(this, ctx, params);
 ```
 
-### Notes
+## Notes
 
 When calling your method, jCanvas will automatically loop through selected canvas elements, so you don't need to.

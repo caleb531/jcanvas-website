@@ -14,7 +14,7 @@ The `each` callback function accepts two parameters:
 1. An object containing the properties for red, green, blue, and alpha color values (`r`, `g`, `b`, `a`)
 2. The parameters passed to the `setPixels()` method
 
-### Basic usage
+## Basic usage
 
 ```js
 function invert() {
@@ -38,7 +38,7 @@ $('canvas').drawImage({
 });
 ```
 
-### Pixels and Events
+## Pixels and Events
 
 In this example, hovering over the image will manipulate the pixels closest to the part you hovered over.
 
@@ -64,7 +64,7 @@ $('canvas').drawImage({
 });
 ```
 
-### Notes
+## Notes
 
 If the `width`, and `height` properties are not specified, the method loops through every pixel on the canvas.
 

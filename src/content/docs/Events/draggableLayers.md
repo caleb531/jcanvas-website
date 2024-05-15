@@ -5,7 +5,7 @@ sidebar:
   order: 5
 ---
 
-### Basic Usage
+## Basic Usage
 
 Layers can be made draggable using the `draggable` property.
 
@@ -49,7 +49,7 @@ $('canvas')
   });
 ```
 
-### Drag Events
+## Drag Events
 
 You can provide callbacks for when any drag event occurs by defining `dragstart`, `drag`, `dragstop`, and `dragcancel` callbacks.
 
@@ -78,11 +78,11 @@ $('canvas').drawArc({
 });
 ```
 
-### The `dragging` property
+## The `dragging` property
 
 At any time, you can determine if a layer is currently being dragged by checking its `dragging` property. When the layer is being dragged, its value is `true`. Otherwise, its value is `false`.
 
-### Drag groups
+## Drag groups
 
 jCanvas allows you to assign a drag group to a layer. This means that when the layer is dragged, all other layers in the same layer `group` will also be dragged.
 
@@ -111,7 +111,7 @@ $('canvas')
   });
 ```
 
-### Restricting dragging to an axis
+## Restricting dragging to an axis
 
 You can restrict the dragging of any layer to either the _x_ or _y_ axis using the `restrictDragToAxis` property.
 
@@ -137,7 +137,7 @@ $('canvas')
 
 Please note that if a layer in a drag group has restricted draggability, then all the draggability of all other layers in that drag group will also be restricted _only when the original layer is dragged_.
 
-### Snap-to-grid dragging
+## Snap-to-grid dragging
 
 If you wish to have your layers snap to a grid when dragged, you can do with the
 `updateDragX` and `updateDragY` callbacks, along with some simple math.

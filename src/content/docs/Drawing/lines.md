@@ -5,7 +5,7 @@ slug: docs/lines
 
 A line path in jCanvas is, essentially, one or more contiguous line segments.
 
-### Basic Usage
+## Basic Usage
 
 You can draw a line path using the `drawLine()` method. Coordinates are defined using `x1`, `y1`, `x2`, `y2`, and so on (as many as necessary).
 
@@ -20,7 +20,7 @@ $('canvas').drawLine({
 });
 ```
 
-### Closing a line path
+## Closing a line path
 
 You can, optionally, close a line path, which will connect its start and end points with an extra line. To do so, use the `closed` property.
 
@@ -36,7 +36,7 @@ $('canvas').drawLine({
 });
 ```
 
-### Rounded Corners
+## Rounded Corners
 
 You can round the corners of a line path using the `rounded` property.
 
@@ -52,7 +52,7 @@ $('canvas').drawLine({
 });
 ```
 
-### Plotting an array of points
+## Plotting an array of points
 
 If you wish to utilize an array containing your points, you can easily construct the `drawLine()` object using a loop.
 
@@ -82,7 +82,7 @@ for (var p = 0; p < pts.length; p += 1) {
 $('canvas').drawLine(obj);
 ```
 
-### Dashed lines
+## Dashed lines
 
 Browsers began recently adopting the ability to create dashed lines. To do so in jCanvas, specify the `strokeDash` and `strokeDashOffset` properties.
 
@@ -101,6 +101,6 @@ $('canvas').drawLine({
 });
 ```
 
-### Vectors
+## Vectors
 
 Instead of the `drawLine()` method, you can also plot line segments using the `[drawVector()](/jcanvas/docs/vectors/)` method (which draws lines using vectors rather than (_x_, _y_) coordinates).

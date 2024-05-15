@@ -9,7 +9,7 @@ The `createGradient()` method returns a canvas gradient object, which is used as
 
 Gradient colors are defined using `c1`, `c2`, `c3`, and so on. Optional color stops are defined using `s1`, `s2`, `s3`, and so on (and can be any number from `0` through `1`).
 
-### Linear
+## Linear
 
 ```js
 var linear = $('canvas').createGradient({
@@ -43,7 +43,7 @@ $('canvas').drawArc({
 });
 ```
 
-### Radial
+## Radial
 
 Radial gradients are created when the `r1` or `r2` properties are defined.
 
@@ -63,7 +63,7 @@ $('canvas').drawArc({
 });
 ```
 
-### Animating Layers with Gradients
+## Animating Layers with Gradients
 
 There are cases where you may wish to animate a layer that has a gradient fill/stroke. However, animating the layer's position or size will leave the gradient unaffected, because gradients are relative to the canvas.
 
@@ -126,6 +126,6 @@ $('canvas').animateLayer(
 );
 ```
 
-### Notes
+## Notes
 
 Color stops are optional, and are measured from 0 to 1.

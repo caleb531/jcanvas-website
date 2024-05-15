@@ -24,6 +24,6 @@ $('canvas').drawArc({
 });
 ```
 
-### Notes
+## Notes
 
 The return value of the given function will be used as the resulting fill/stroke style.

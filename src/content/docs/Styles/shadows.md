@@ -17,7 +17,7 @@ $('canvas').drawArc({
 });
 ```
 
-### Offset Position
+## Offset Position
 
 The shadow can be offset relative to itself using the `shadowX` and `shadowY` properties:
 

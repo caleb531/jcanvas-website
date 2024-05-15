@@ -5,7 +5,7 @@ sidebar:
   order: 2
 ---
 
-### Adding layers
+## Adding layers
 
 The `addLayer()` method adds a layer to the canvas in the form of an object or a function. The layer is _not_ drawn after calling this method.
 
@@ -37,7 +37,7 @@ $('canvas').drawRect({
 
 Because we are creating a layer and calling the `drawRect()` method simultaneously, this will also draw the layer.
 
-### Naming layers
+## Naming layers
 
 To name a layer, use the `name` property. This name can be used later to retrieve, remove, or animate the layer.
 
@@ -54,7 +54,7 @@ $('canvas').drawRect({
 
 Note that the layer `name` must be unique (that is, no two layers on the canvas can have the same name). The layer name can not be a number, either.
 
-### Grouping layers
+## Grouping layers
 
 To assign one or more groups to a layer, use the `groups` property. Doing so will not change the order in which the layer is drawn. The property is merely for categorization purposes.
 
@@ -96,7 +96,7 @@ $('canvas').drawRect({
 $('canvas').removeLayerFromGroup('box', 'myBoxes');
 ```
 
-### Hiding layers
+## Hiding layers
 
 To temporarily hide a layer, set its `visible` property to `false`. This also will prevent any of the layer's events from triggering.
 
@@ -113,7 +113,7 @@ $('canvas').drawRect({
 });
 ```
 
-### Function layers
+## Function layers
 
 Instead of an object, the `addLayer()` method accepts a function using the `fn` property (this function will run when the layer is drawn). The function also accepts one parameter: the canvas context.
 
@@ -147,7 +147,7 @@ $('canvas').draw({
 });
 ```
 
-### Setting a layer's index
+## Setting a layer's index
 
 You can also set a layer's index (in the current layers array) using the `index` property.
 
@@ -212,7 +212,7 @@ $('canvas')
   .drawLayers();
 ```
 
-### Storing Data
+## Storing Data
 
 You can also store arbitrary data on any jCanvas layer using the `data` property.
 

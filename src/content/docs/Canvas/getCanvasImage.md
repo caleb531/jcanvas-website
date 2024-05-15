@@ -18,7 +18,7 @@ $('canvas').getCanvasImage('png');
 $('canvas').getCanvasImage('jpeg');
 ```
 
-### Setting Quality
+## Setting Quality
 
 If you choose to retrieve the canvas image as a JPEG, you may also set the JPEG's quality (which ranges from `0` to `1`).
 
@@ -26,6 +26,6 @@ If you choose to retrieve the canvas image as a JPEG, you may also set the JPEG'
 $('canvas').getCanvasImage('jpeg', 0.5);
 ```
 
-### Notes
+## Notes
 
 This method does not work on Google Chrome if the page is served from a file URL (`file://`). This is a limitation of Google Chrome's sandboxing architecture, and therefore cannot be fixed. However, this method still works when the page is served from a server (either online or running locally via `localhost://`).

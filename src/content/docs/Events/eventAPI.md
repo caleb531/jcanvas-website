@@ -7,7 +7,7 @@ sidebar:
 
 jCanvas supports mouse and touch events for most drawings through the included Event API. Events are used in conjunction with the [Layer API](/jcanvas/docs/layerAPI/).
 
-### Binding Events
+## Binding Events
 
 Any number of jCanvas events can be bound to any jCanvas layer.
 
@@ -28,7 +28,7 @@ $('canvas').drawRect({
 });
 ```
 
-### Trigger an event
+## Trigger an event
 
 You can also manually trigger an existing event or trigger a nonexisting event to create your own. To do so, use the `triggerLayerEvent()` method.
 
@@ -42,7 +42,7 @@ $('canvas').triggerLayerEvent('myLayer', 'resize');
 
 Note that the `triggerLayerEvent()` method will trigger all defined event callbacks and event hooks for the given event.
 
-### Supported Methods
+## Supported Methods
 
 - `drawRect()`
 - `drawArc()`
@@ -56,7 +56,7 @@ Note that the `triggerLayerEvent()` method will trigger all defined event callba
 - `drawImage()`
 - `drawText()`
 
-### Supported Events
+## Supported Events
 
 - `click`
 - `dblclick`

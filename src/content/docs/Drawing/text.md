@@ -23,13 +23,13 @@ $('canvas').drawText({
 });
 ```
 
-### Font Sizes
+## Font Sizes
 
 The value for the `fontSize` property accepts two different types of values. If you specify the value as a plain number (_e.g._ `48`), the font size is interpreted in pixels.
 
 However, you can also specify the number as a string with additional units attached (_e.g._ `'36pt'`). Examples of both use cases can be found throughout this section.
 
-### Transforming text
+## Transforming text
 
 Just like other shapes, the `drawText()` method respects the value of the `fromCenter` and transformation properties such as `rotate`.
 
@@ -49,7 +49,7 @@ $('canvas').drawText({
 });
 ```
 
-### Scaling text
+## Scaling text
 
 You can animate the font size of text using the `scale`, `scaleX`, or `scaleY` properties.
 
@@ -77,7 +77,7 @@ $('canvas').drawText({
 });
 ```
 
-### Measuring text
+## Measuring text
 
 The `measureText()` method returns an object containing the text's calculated `width` and `height` (as well as of its other properties).
 
@@ -108,7 +108,7 @@ $('canvas')
   });
 ```
 
-### Wrapping text
+## Wrapping text
 
 You can also define a maximum line width for the text using the `maxWidth` property. In doing so, each line of text will never be longer than the maximum width (this is known as text 'wrapping').
 
@@ -126,7 +126,7 @@ $('canvas').drawText({
 });
 ```
 
-### Aligning text
+## Aligning text
 
 If you wish to align your text to the `left` or `right` (rather than the `center` by default), use the `align` property.
 
@@ -143,7 +143,7 @@ $('canvas').drawText({
 });
 ```
 
-### Aligning text to a margin
+## Aligning text to a margin
 
 With the above `align` property, the text will, by default, appear to align the text to either the left or right, but will still be centered relative to its `x` and `y` coordinates.
 
@@ -163,7 +163,7 @@ $('canvas').drawText({
 });
 ```
 
-### Changing line height
+## Changing line height
 
 The `lineHeight` property will change the line height of your text. The value of this property is a multiple of the default line height (which is `1`).
 
@@ -201,7 +201,7 @@ $('canvas').drawText({
 
 Note that a negative line height will produce a negative number when retrieving the height of the text (using the `measureText()` method).
 
-### Text along an arc
+## Text along an arc
 
 jCanvas can also draw arc text (that is, text along an arc). Doing so only requires specifying one extra property: the `radius` property.
 
@@ -232,7 +232,7 @@ $('canvas').drawText({
 
 Technically speaking, the value of the `letterSpacing` property represents a multiple of _pi_, which in turn represents the angular distance between each letter. For example, a value of `0.05` implies that each character is 9 degrees apart (0.05&pi; is equivalent to 9&deg;)
 
-#### Flipping arc text
+### Flipping arc text
 
 Sometimes, you may wish to orient the text such that it curves upward (like a smile). Normally, attempting to do so will yield undesirable flipped text.
 

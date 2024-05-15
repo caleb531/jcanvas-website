@@ -17,6 +17,6 @@ $('canvas').drawCrescent({
 });
 ```
 
-### Notes
+## Notes
 
 When the `eclipse` property has a value of `0`, a full circle will be drawn. When the `eclipse` property has a value of `1`, nothing will be drawn.

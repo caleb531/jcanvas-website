@@ -7,7 +7,7 @@ sidebar:
 
 jCanvas supports a number of event-related properties which make the Event API more powerful and flexible.
 
-### The `eventX` and `eventY` properties
+## The `eventX` and `eventY` properties
 
 In any event callback, you have access to the layer's `eventX` and `eventY` properties. These are the coordinates of the pointer (either mouse or finger) when the event fired.
 
@@ -30,7 +30,7 @@ $('canvas').drawArc({
 });
 ```
 
-### The `dx` and `dy` properties.
+## The `dx` and `dy` properties.
 
 In any drag-related event callback for a draggable layer, you have access to the layer's `dx` and `dy` properties. These properties represent the change in the layer's position when dragging.
 
@@ -54,7 +54,7 @@ $('canvas').drawArc({
 });
 ```
 
-### The `cursors` property
+## The `cursors` property
 
 The `cursors` property is used to display a specific cursor when a particular layer event fires.
 
@@ -85,7 +85,7 @@ jCanvas also adds the correct vendor prefix to a select few CSS3 cursors that re
 
 Please note that the cursor always reverts to its previous state when you mouse off the layer.
 
-### The `intangible` property
+## The `intangible` property
 
 The `intangible` property essentially allows you to "click through" a layer as if it didn't exist.
 

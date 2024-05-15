@@ -5,7 +5,7 @@ slug: docs/rectangles
 
 A rectangle in jCanvas is, essentially, a rectangle of any width or height.
 
-### Basic Usage
+## Basic Usage
 
 You can draw a rectangle using the `drawRect()` method. The size of a rectangle is determined by its `width` and `height` properties.
 
@@ -17,7 +17,7 @@ $('canvas').drawRect({
 });
 ```
 
-### Positioning
+## Positioning
 
 The `fromCenter` property (used above) determines if a rectangle's `x` and `y` properties lie at its center (as opposed to its top-left corner). This property is `true` by default.
 
@@ -49,7 +49,7 @@ $('canvas').drawRect({
 });
 ```
 
-### Rounded Corners
+## Rounded Corners
 
 You may round the corners of a rectangle using the `cornerRadius` property.
 

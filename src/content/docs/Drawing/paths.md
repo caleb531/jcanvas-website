@@ -5,7 +5,7 @@ slug: docs/paths
 
 A path in jCanvas consists of one or more connected [lines](/jcanvas/docs/lines/), [arcs](/jcanvas/docs/arcs/), [curves](/jcanvas/docs/curves/), or [vectors](/jcanvas/docs/vectors/).
 
-### Basic usage
+## Basic usage
 
 You can draw a path using the `drawPath()` method. It accepts a variable number of arguments which define the different kinds of subpaths within your path. These arguments are defined using `p1`, `p2`, `p3`, and so on (however many as desired).
 
@@ -56,7 +56,7 @@ $('canvas').drawPath({
 });
 ```
 
-### Arcs
+## Arcs
 
 You can also use the `drawPath()` method to create sequences of interconnected arcs.
 
@@ -103,7 +103,7 @@ Note that the `x` and `y` coordinates for each subpath are _relative_ to the _x_
 
 Also note that the subpath objects inherit default property values from the global jCanvas preferences (which is set through the `jCanvas()` method.
 
-### Arrows
+## Arrows
 
 Just like every other path type in jCanvas, generic paths support arrows at either end of the path. See [the section on arrows](/jcanvas/docs/arrows/) for descriptions of the arrow properties.
 
@@ -134,7 +134,7 @@ $('canvas').drawPath({
 });
 ```
 
-### SVG Paths
+## SVG Paths
 
 You can also draw an SVG path with `drawPath()` via the `d` property (new as of jCanvas v22.1.0). This allows you to integrate SVG with jCanvas, and even take advantage of jCanvas features like [masking](/jcanvas/docs/masking/).
 

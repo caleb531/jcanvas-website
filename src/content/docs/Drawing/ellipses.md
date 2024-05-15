@@ -5,7 +5,7 @@ slug: docs/ellipses
 
 An ellipse in jCanvas is, essentially, an elongated circle. The size of an ellipse is determined by its `width` and `height` properties.
 
-### Basic Usage
+## Basic Usage
 
 You can draw an ellipse using the `drawEllipse()` method.
 

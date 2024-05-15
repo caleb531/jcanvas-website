@@ -24,7 +24,7 @@ var patt = $('canvas').createPattern({
 });
 ```
 
-### Referencing an Image Element
+## Referencing an Image Element
 
 You can also use an image DOM element as the value for the `source` property.
 
@@ -45,7 +45,7 @@ var patt = $('canvas').createPattern({
 });
 ```
 
-### Creating a pattern using a function
+## Creating a pattern using a function
 
 As of version 5.3, anything that can be drawn on the canvas can also be used as a pattern.
 
@@ -81,6 +81,6 @@ $('canvas').drawEllipse({
 });
 ```
 
-### Notes
+## Notes
 
 By default, the pattern repeats on both the X- and Y-axis

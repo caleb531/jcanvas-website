@@ -7,7 +7,7 @@ sidebar:
 
 All jCanvas methods are regular jQuery methods, and are used in the same manner. Calling a jCanvas method will apply to all canvas elements in the jQuery collection.
 
-### Basic Usage
+## Basic Usage
 
 Most jCanvas methods accept a map of properties, which may be listed in any order.
 
@@ -20,11 +20,11 @@ $('canvas').drawArc({
 });
 ```
 
-### Numeric Values
+## Numeric Values
 
 Most numeric property values are measured in pixels, although some are relative to the values of other properties. The description for any property will usually mention these special cases when necessary.
 
-### Chaining
+## Chaining
 
 Most jCanvas methods support [chaining](http://tobiasahlin.com/blog/quick-guide-chaining-in-jquery/) for cleaner and faster code.
 
@@ -42,7 +42,7 @@ $('canvas')
   });
 ```
 
-### Multiple Canvases
+## Multiple Canvases
 
 As demonstrated in the examples above, jCanvas can draw the same drawing on multiple canvases.
 

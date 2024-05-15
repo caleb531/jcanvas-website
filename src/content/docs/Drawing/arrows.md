@@ -5,7 +5,7 @@ slug: docs/arrows
 
 You can draw arrows in the same way you draw lines or curves, except that you must provide some arrow-specific properties.
 
-### Basic Usage
+## Basic Usage
 
 There are four basic properties which you can use to add an arrow to an existing path:
 
@@ -16,7 +16,7 @@ There are four basic properties which you can use to add an arrow to an existing
 
 Note that you are not _required_ to specify both the `startArrow` and `endArrow` properties. However, you _must_ specify one or the other, and you _may_ specify both.
 
-### Lines
+## Lines
 
 ```js
 $('canvas').drawLine({
@@ -32,7 +32,7 @@ $('canvas').drawLine({
 });
 ```
 
-### Vectors
+## Vectors
 
 ```js
 $('canvas').drawVector({
@@ -50,7 +50,7 @@ $('canvas').drawVector({
 });
 ```
 
-### Quadratic Curves
+## Quadratic Curves
 
 ```js
 $('canvas').drawQuadratic({
@@ -66,7 +66,7 @@ $('canvas').drawQuadratic({
 });
 ```
 
-### Bézier Curves
+## Bézier Curves
 
 ```js
 $('canvas').drawBezier({
@@ -87,7 +87,7 @@ $('canvas').drawBezier({
 });
 ```
 
-### Arcs
+## Arcs
 
 ```js
 $('canvas').drawArc({
@@ -103,7 +103,7 @@ $('canvas').drawArc({
 });
 ```
 
-### Paths
+## Paths
 
 ```js
 $('canvas').drawPath({

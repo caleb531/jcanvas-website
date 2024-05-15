@@ -3,7 +3,7 @@ title: Curves
 slug: docs/curves
 ---
 
-### Quadratic Curves
+## Quadratic Curves
 
 A quadratic curve consists of three components:
 
@@ -23,7 +23,7 @@ $('canvas').drawQuadratic({
 });
 ```
 
-### Bézier Curves
+## Bézier Curves
 
 A Beziér curve consists of four components:
 

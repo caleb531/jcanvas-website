@@ -5,7 +5,7 @@ slug: docs/arcs
 
 An arc in jCanvas is, essentially, part of the rim of a circle (similar to the smile on a smiley-face).
 
-### Basic Usage
+## Basic Usage
 
 You can draw an arc using the `drawArc()` method. The size of an arc is determined by its `start`, `end`, and `radius` properties.
 
@@ -35,7 +35,7 @@ $('canvas').drawArc({
 });
 ```
 
-### Radian values
+## Radian values
 
 The `start` and `end` values are measured in degrees by default. If you'd prefer to use radians, include the `inDegrees` property with a value of `false`.
 
@@ -51,7 +51,7 @@ $('canvas').drawArc({
 });
 ```
 
-### Closed Arc
+## Closed Arc
 
 Using the `closed` property, you can also close an arc, which connects the start and end points.
 

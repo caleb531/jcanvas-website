@@ -7,7 +7,7 @@ sidebar:
 
 This `clearCanvas()` clears all or any part of the canvas.
 
-### A note about layers
+## A note about layers
 
 This method is _not_ meant to be used if you are using the jCanvas Layer API, because the API handles redrawing for you in many cases, and so if you try to clear the canvas. you layers will eventually be redrawn by jCanvas when it deems necessary.
 
@@ -27,7 +27,7 @@ If you want to remove a layer permanently, call `removeLayer()` followed by `dra
 $('canvas').removeLayer('myLayerName').drawLayers();
 ```
 
-### Clear entire canvas
+## Clear entire canvas
 
 If nothing is passed, the entire canvas is cleared.
 
