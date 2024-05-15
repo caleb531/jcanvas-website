@@ -58,9 +58,9 @@ $(document).ready(function () {
     // Restore the original sandbox state for the current page (this should not
     // affect the sandbox state of the spawned page)
     if (originalSandboxState !== null) {
-      sessionStorage.setItem('jcanvas-sandbox', originalSandboxState);
+      sessionStorage.setItem(SANDBOX_STORAGE_KEY, originalSandboxState);
     } else {
-      sessionStorage.removeItem('jcanvas-sandbox');
+      sessionStorage.removeItem(SANDBOX_STORAGE_KEY);
     }
   };
 
@@ -69,13 +69,22 @@ $(document).ready(function () {
     return code.replace(imagePathPattern, '/jcanvas/assets/$1');
   };
 
+  // Retrieve the code contents of the ancestor expressive-code element
+  $.fn.getCodeContents = function () {
+    return this.find('.ec-line')
+      .map((l, line) => $(line).text())
+      .get()
+      .join('\n');
+  };
+
   // Allow user to test any example in Sandbox
   $body.on('click', '.try-in-sandbox', function () {
-    // Retrieve code for this example from neighboring <pre>
-    const code = $(this).next().text();
+    // Retrieve code for this example from ancestor code block
+    const code = $(this).closest('.expressive-code').getCodeContents();
     // Open code in a new sandbox instance
     $.spawnNewSandbox({
-      code: code
+      code: code,
+      cursorOffset: 0
     });
   });
 });

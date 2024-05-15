@@ -42,17 +42,12 @@ $(document).ready(function () {
   }
 
   function reRunDemo($demoCanvas) {
-    const code = getCodeContents($demoCanvas.parent().prev('.expressive-code'));
+    const code = $demoCanvas
+      .parent()
+      .prev('.expressive-code')
+      .getCodeContents();
     resetCanvas($demoCanvas);
     runDemo(code, $demoCanvas);
-  }
-
-  function getCodeContents($codeBlock) {
-    return $codeBlock
-      .find('.ec-line')
-      .map((l, line) => $(line).text())
-      .get()
-      .join('\n');
   }
 
   function makeExamplesDemoable() {
@@ -78,7 +73,7 @@ $(document).ready(function () {
       // Retrieve the data URI of the blank canvas so we can later detect if the
       // canvas has been drawn on
       const demoImageBlank = $demoCanvas[0].toDataURL();
-      const code = getCodeContents($codeBlock);
+      const code = $codeBlock.getCodeContents();
       runDemo(code, $demoCanvas);
       // If something was drawn on demo canvas (or if code draws
       // asynchronously),
