@@ -1,3 +1,4 @@
+import 'jcanvas';
 import $ from 'jquery';
 
 const DEMO_CANVAS_HEIGHT = 250;
