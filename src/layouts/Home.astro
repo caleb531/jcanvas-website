@@ -1,0 +1,9 @@
+---
+import PageLayout from './Page.astro';
+const { frontmatter } = Astro.props;
+---
+
+<PageLayout frontmatter={frontmatter}>
+  <slot />
+  <script src="../scripts/home.js"></script>
+</PageLayout>

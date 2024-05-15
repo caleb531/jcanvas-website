@@ -1,6 +1,6 @@
 ---
-import Header from '../components/Header.astro';
 import '../assets/styles/main.scss';
+import Header from '../components/Header.astro';
 import '../fonts.js';
 
 interface Props {
@@ -25,7 +25,5 @@ const { title } = Astro.props;
     <main>
       <slot />
     </main>
-    <script src="../scripts/home.js"></script>
-    <script src="../scripts/sandbox.js"></script>
   </body>
 </html>
