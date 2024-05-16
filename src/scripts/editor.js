@@ -25,14 +25,12 @@ import { highlightSelectionMatches } from '@codemirror/search';
 import { EditorState } from '@codemirror/state';
 import {
   EditorView,
-  crosshairCursor,
   drawSelection,
   highlightActiveLine,
   highlightActiveLineGutter,
   highlightSpecialChars,
   keymap,
-  lineNumbers,
-  rectangularSelection
+  lineNumbers
 } from '@codemirror/view';
 
 // Theme
@@ -57,8 +55,6 @@ function createEditorState(config) {
       bracketMatching(),
       closeBrackets(),
       autocompletion(),
-      rectangularSelection(),
-      crosshairCursor(),
       highlightActiveLine(),
       highlightSelectionMatches(),
       keymap.of([
