@@ -1,6 +1,5 @@
 import { Prec } from '@codemirror/state';
 import { EditorView, keymap } from '@codemirror/view';
-import 'jcanvas';
 import $ from 'jquery';
 import { SANDBOX_STORAGE_KEY } from './constants.js';
 import { createEditorState, createEditorView } from './editor.js';
