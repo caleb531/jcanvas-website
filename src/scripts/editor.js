@@ -47,6 +47,8 @@ function createEditorState(config) {
     extensions: [
       // Display line numbers
       lineNumbers(),
+      // Soft-wrap lines
+      EditorView.lineWrapping,
       // Highlighting
       highlightActiveLine(),
       highlightActiveLineGutter(),
@@ -91,7 +93,7 @@ function createEditorState(config) {
   });
 }
 
-function createEditorView(state, parent) {
+function createEditorView({ state, parent }) {
   return new EditorView({ state, parent });
 }
 

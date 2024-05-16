@@ -129,7 +129,10 @@ $(document).ready(function () {
         )
       ]
     });
-    const editorView = createEditorView(editorState, $$.editor[0]);
+    const editorView = createEditorView({
+      state: editorState,
+      parent: $$.editor[0]
+    });
 
     // Convert persisted pos object to a CM6 offset
     editorView.dispatch({
