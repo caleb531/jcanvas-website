@@ -21,7 +21,6 @@ import {
   indentUnit,
   syntaxHighlighting
 } from '@codemirror/language';
-import { highlightSelectionMatches } from '@codemirror/search';
 import { EditorState } from '@codemirror/state';
 import {
   EditorView,
@@ -53,7 +52,6 @@ function createEditorState(config) {
       highlightActiveLine(),
       highlightActiveLineGutter(),
       highlightSpecialChars(),
-      highlightSelectionMatches(),
       // Undo/redo
       history(),
       // Code foldering
