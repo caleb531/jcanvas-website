@@ -122,6 +122,8 @@ $(document).ready(function () {
               key: 'Mod-Enter',
               run: (view) => {
                 runCode(view);
+                // Returning true effectively prevents the default editor
+                // behavior (in this case, a newline being inserted)
                 return true;
               }
             }
