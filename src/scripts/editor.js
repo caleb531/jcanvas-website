@@ -42,22 +42,40 @@ import { javascript } from '@codemirror/lang-javascript';
 function createEditorState(config) {
   return EditorState.create({
     ...config,
+    // For a full list of available extensions, see
+    // <https://codemirror.net/docs/extensions/>
     extensions: [
+      // Display line numbers
       lineNumbers(),
+      // Highlighting
+      highlightActiveLine(),
       highlightActiveLineGutter(),
       highlightSpecialChars(),
-      history(),
-      foldGutter(),
-      drawSelection(),
-      indentUnit.of('  '),
-      EditorState.allowMultipleSelections.of(true),
-      indentOnInput(),
-      bracketMatching(),
-      closeBrackets(),
-      autocompletion(),
-      highlightActiveLine(),
       highlightSelectionMatches(),
+      // Undo/redo
+      history(),
+      // Code foldering
+      foldGutter(),
+      // Replaces the native selection with a custom-drawn selection in
+      // traditional text editor style, with support for multiple selection
+      // ranges.
+      drawSelection(),
+      // Allow for multiple cursors
+      EditorState.allowMultipleSelections.of(true),
+      // Highlights the bracket that matches the one the cursor is currently on
+      // (if any).
+      bracketMatching(),
+      // Causes matching close brackets to be inserted when the user types an
+      // opening bracket.
+      closeBrackets(),
+      // Autocomplete suggestions as the user types
+      autocompletion(),
+      // Reindents any code that is reinserted/pasted into the editor
+      indentOnInput(),
+      // Use 2-space indent
+      indentUnit.of('  '),
       keymap.of([
+        // Increase indent on Tab, and decrease indent on Shift+Tab
         indentWithTab,
         ...closeBracketsKeymap,
         ...defaultKeymap,
