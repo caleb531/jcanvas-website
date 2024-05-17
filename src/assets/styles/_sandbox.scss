@@ -44,17 +44,15 @@ article.page-sandbox {
   }
 }
 #sandbox-controls {
-  display: table;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   width: 100%;
   box-sizing: border-box;
   padding: 2px 0;
   @include layout(compact) {
     padding: 3px 5px;
   }
-}
-#sandbox-button-controls {
-  display: table-cell;
-  text-align: left;
 }
 button {
   position: relative;
@@ -66,10 +64,6 @@ button {
 }
 label {
   font-size: 10pt;
-}
-#sandbox-ncanvases-controls {
-  display: table-cell;
-  text-align: right;
 }
 #sandbox-ncanvases {
   margin-left: 2px;
