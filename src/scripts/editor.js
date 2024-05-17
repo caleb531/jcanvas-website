@@ -39,6 +39,8 @@ import { oneDark } from '@codemirror/theme-one-dark';
 import { javascript } from '@codemirror/lang-javascript';
 
 function createEditorState(config) {
+  let lastSelection = null;
+
   return EditorState.create({
     ...config,
     // For a full list of available extensions, see
@@ -84,44 +86,72 @@ function createEditorState(config) {
         ...completionKeymap,
         // Implement the equivalent of VS Code's "Add Selection To Next Find
         // Match" command (cmd+d on Mac)
+
         {
           key: 'Mod-d',
           run: (view) => {
             const code = view.state.doc.toString();
             const selectionRanges = view.state.selection.ranges;
-            const lastSelection = selectionRanges[selectionRanges.length - 1];
-            const cursorAnchor = lastSelection.anchor;
-            const cursorHead = lastSelection.head;
+            const mainSelection = view.state.selection.main;
+            const cursorAnchor = mainSelection.anchor;
+            const cursorHead = mainSelection.head;
+
             const selectionLength = Math.abs(cursorHead - cursorAnchor);
+
             // If selection is empty, do nothing
             if (selectionLength === 0) {
-              // Returning true prevents the default browser behavior for cmd+d
               return true;
             }
-            const selectedCode = code.substring(cursorAnchor, cursorHead);
-            const cursorOffset = Math.max(cursorAnchor, cursorHead);
+
+            // Reset lastSelection if the number of ranges has changed (i.e., new selection made)
+            if (selectionRanges.length === 1 || !lastSelection) {
+              lastSelection = mainSelection;
+            }
+
+            // Use the last selection if it exists, otherwise use the current
+            // selection
+            const effectiveSelection = lastSelection;
+            const effectiveCursorAnchor = effectiveSelection.anchor;
+            const effectiveCursorHead = effectiveSelection.head;
+
+            const selectedCode = code.substring(
+              lastSelection.anchor,
+              lastSelection.head
+            );
+            const cursorOffset = Math.max(
+              effectiveCursorAnchor,
+              effectiveCursorHead
+            );
             let offsetOfNextMatch;
+
+            // Try to find the next match after the current selection
             offsetOfNextMatch = code.indexOf(selectedCode, cursorOffset);
-            // If no initial match, try looping around
+
+            // If no match is found, try wrapping around
             if (offsetOfNextMatch === -1) {
-              offsetOfNextMatch = code.indexOf(
-                selectedCode.slice(0, cursorOffset)
-              );
+              offsetOfNextMatch = code.indexOf(selectedCode);
             }
+
+            // If still no match is found, do nothing
             if (offsetOfNextMatch === -1) {
               return true;
             }
+
+            // Update lastSelection with the new selection
+            lastSelection = EditorSelection.range(
+              offsetOfNextMatch,
+              offsetOfNextMatch + selectionLength
+            );
+
+            // Dispatch the new selection, ensuring we maintain existing
+            // selections
             view.dispatch({
               selection: EditorSelection.create([
-                // Maintain existing selections
-                ...view.state.selection.ranges,
-                // Add a new selection for the next match
-                EditorSelection.range(
-                  offsetOfNextMatch,
-                  offsetOfNextMatch + selectionLength
-                )
+                ...selectionRanges,
+                lastSelection
               ])
             });
+
             return true;
           }
         }
