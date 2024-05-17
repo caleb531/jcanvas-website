@@ -21,7 +21,7 @@ import {
   indentUnit,
   syntaxHighlighting
 } from '@codemirror/language';
-import { EditorState } from '@codemirror/state';
+import { EditorSelection, EditorState } from '@codemirror/state';
 import {
   EditorView,
   drawSelection,
@@ -81,7 +81,50 @@ function createEditorState(config) {
         ...defaultKeymap,
         ...historyKeymap,
         ...foldKeymap,
-        ...completionKeymap
+        ...completionKeymap,
+        // Implement the equivalent of VS Code's "Add Selection To Next Find
+        // Match" command (cmd+d on Mac)
+        {
+          key: 'Mod-d',
+          run: (view) => {
+            const code = view.state.doc.toString();
+            const selectionRanges = view.state.selection.ranges;
+            const lastSelection = selectionRanges[selectionRanges.length - 1];
+            const cursorAnchor = lastSelection.anchor;
+            const cursorHead = lastSelection.head;
+            const selectionLength = Math.abs(cursorHead - cursorAnchor);
+            // If selection is empty, do nothing
+            if (selectionLength === 0) {
+              // Returning true prevents the default browser behavior for cmd+d
+              return true;
+            }
+            const selectedCode = code.substring(cursorAnchor, cursorHead);
+            const cursorOffset = Math.max(cursorAnchor, cursorHead);
+            let offsetOfNextMatch;
+            offsetOfNextMatch = code.indexOf(selectedCode, cursorOffset);
+            // If no initial match, try looping around
+            if (offsetOfNextMatch === -1) {
+              offsetOfNextMatch = code.indexOf(
+                selectedCode.slice(0, cursorOffset)
+              );
+            }
+            if (offsetOfNextMatch === -1) {
+              return true;
+            }
+            view.dispatch({
+              selection: EditorSelection.create([
+                // Maintain existing selections
+                ...view.state.selection.ranges,
+                // Add a new selection for the next match
+                EditorSelection.range(
+                  offsetOfNextMatch,
+                  offsetOfNextMatch + selectionLength
+                )
+              ])
+            });
+            return true;
+          }
+        }
       ]),
       javascript(),
       syntaxHighlighting(defaultHighlightStyle, { fallback: true }),
