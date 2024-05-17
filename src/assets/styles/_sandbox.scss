@@ -89,11 +89,15 @@ label {
 .cm-editor {
   width: 100%;
 }
-// Increase prominence of selection
+// Increase prominence of selections
 .ͼo.cm-focused > .cm-scroller > .cm-selectionLayer .cm-selectionBackground,
 .ͼo .cm-selectionBackground,
 .ͼo .cm-content ::selection {
   background-color: rgba(#9cf, 0.25);
+}
+// Increase prominence of active line
+.cm-line.cm-activeLine {
+  background-color: rgba(#fff, 0.05);
 }
 
 // Error console
