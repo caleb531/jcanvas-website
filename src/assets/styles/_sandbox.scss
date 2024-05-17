@@ -89,6 +89,12 @@ label {
 .cm-editor {
   width: 100%;
 }
+// Increase prominence of selection
+.ͼo.cm-focused > .cm-scroller > .cm-selectionLayer .cm-selectionBackground,
+.ͼo .cm-selectionBackground,
+.ͼo .cm-content ::selection {
+  background-color: rgba(#9cf, 0.25);
+}
 
 // Error console
 #sandbox-console {
