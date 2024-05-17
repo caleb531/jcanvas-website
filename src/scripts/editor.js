@@ -108,19 +108,13 @@ function createEditorState(config) {
               lastSelection = mainSelection;
             }
 
-            // Use the last selection if it exists, otherwise use the current
-            // selection
-            const effectiveSelection = lastSelection;
-            const effectiveCursorAnchor = effectiveSelection.anchor;
-            const effectiveCursorHead = effectiveSelection.head;
-
             const selectedCode = code.substring(
               lastSelection.anchor,
               lastSelection.head
             );
             const cursorOffset = Math.max(
-              effectiveCursorAnchor,
-              effectiveCursorHead
+              lastSelection.anchor,
+              lastSelection.head
             );
             let offsetOfNextMatch;
 
