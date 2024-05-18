@@ -11,7 +11,7 @@ const siteOrigin = 'https://projects.calebevans.me';
 
 const { frontmatter } = Astro.props;
 
-const title =
+const pageSeoTitle =
   frontmatter.id === 'home'
     ? `${frontmatter.title} | ${frontmatter.subtitle}`
     : `${frontmatter.title} | jCanvas`;
@@ -46,7 +46,7 @@ const pageSeoImage = `${siteOrigin}/jcanvas/assets/images/social-image.png`;
       ) : null
     }
     <meta name="twitter:image" content={pageSeoImage} />
-    <title>{title}</title>
+    <title>{pageSeoTitle}</title>
   </head>
   <body>
     <Header />
