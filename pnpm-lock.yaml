@@ -61,6 +61,9 @@ dependencies:
     version: 5.4.5
 
 devDependencies:
+  '@types/jquery':
+    specifier: ^3.5.30
+    version: 3.5.30
   astro-vtbot:
     specifier: ^1.7.17
     version: 1.7.17
@@ -1818,6 +1821,12 @@ packages:
       '@types/unist': 3.0.2
     dev: false
 
+  /@types/jquery@3.5.30:
+    resolution: {integrity: sha512-nbWKkkyb919DOUxjmRVk8vwtDb0/k8FKncmUKFi+NY+QXqWltooxTrswvz4LspQwxvLdvzBN1TImr6cw3aQx2A==}
+    dependencies:
+      '@types/sizzle': 2.3.8
+    dev: true
+
   /@types/mdast@4.0.3:
     resolution: {integrity: sha512-LsjtqsyF+d2/yFOYaN22dHZI1Cpwkrj+g06G8+qtUKlhovPW89YhqSnfKtMbkgmEtYpH2gydRNULd6y8mciAFg==}
     dependencies:
@@ -1853,6 +1862,10 @@ packages:
     dependencies:
       '@types/node': 17.0.45
     dev: false
+
+  /@types/sizzle@2.3.8:
+    resolution: {integrity: sha512-0vWLNK2D5MT9dg0iOo8GlKguPAU02QjmZitPEsXRuJXU/OGIOt9vT9Fc26wtYuavLxtO45v9PGleoL9Z0k1LHg==}
+    dev: true
 
   /@types/unist@2.0.10:
     resolution: {integrity: sha512-IfYcSBWE3hLpBg8+X2SEa8LVkJdJEkT2Ese2aaLs3ptGdVtABxndrMaxuFlQ1qdFf9Q5rDvDpxI3WwgvKFAsQA==}

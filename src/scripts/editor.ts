@@ -21,7 +21,13 @@ import {
   indentUnit,
   syntaxHighlighting
 } from '@codemirror/language';
-import { EditorSelection, EditorState } from '@codemirror/state';
+import {
+  EditorSelection,
+  EditorState,
+  type EditorStateConfig,
+  type Extension,
+  type SelectionRange
+} from '@codemirror/state';
 import {
   EditorView,
   drawSelection,
@@ -38,8 +44,10 @@ import { oneDark } from '@codemirror/theme-one-dark';
 // Language
 import { javascript } from '@codemirror/lang-javascript';
 
-function createEditorState(config) {
-  let lastSelection = null;
+function createEditorState(
+  config: Partial<EditorStateConfig> & { extensions?: Extension[] }
+) {
+  let lastSelection: SelectionRange | null = null;
 
   return EditorState.create({
     ...config,
@@ -153,12 +161,18 @@ function createEditorState(config) {
       javascript(),
       syntaxHighlighting(defaultHighlightStyle, { fallback: true }),
       oneDark,
-      ...(config.extensions || [])
+      ...(config.extensions ?? [])
     ]
   });
 }
 
-function createEditorView({ state, parent }) {
+function createEditorView({
+  state,
+  parent
+}: {
+  state: EditorState;
+  parent: HTMLElement;
+}) {
   return new EditorView({ state, parent });
 }
 

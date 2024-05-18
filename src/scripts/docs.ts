@@ -8,40 +8,40 @@ import './global.js';
 
 const DEMO_CANVAS_HEIGHT = 250;
 
-$(document).ready(function () {
+$(function () {
   const $body = $('body');
   // The pattern to replace jQuery canvas selectors
   const canvasSelectorPattern = /\$\(['"](.*?)canvas(.*?)\1\)/gi;
   // The pattern to detect if code runs asynchronous functions
   const asyncPattern = /drawImage|createPattern|(?:type: (['"])image\1)/gi;
 
-  function addAnchorLinks() {
-    // Add anchor link to every subsection for easy access later
-    $body.find('h3').each(function () {
-      $(this).append('<a href="#' + this.id + '" class="subsection-link"></a>');
-    });
-  }
+  // function addAnchorLinks() {
+  //   // Add anchor link to every subsection for easy access later
+  //   $body.find('h3').each(function () {
+  //     $(this).append('<a href="#' + this.id + '" class="subsection-link"></a>');
+  //   });
+  // }
 
   // Run the given demo code on the given canvas
-  function runDemo(code, $demoCanvas) {
+  function runDemo(code: string, $demoCanvas: JQuery<HTMLCanvasElement>) {
     code = $.jCanvasCorrectImagePaths(code);
     // If code contains a jCanvas method acting on a canvas element
     if (canvasSelectorPattern.test(code)) {
       // Inject canvas jQuery element into demo code
       code = code.replace(canvasSelectorPattern, '$demoCanvas');
-      new Function(['$demoCanvas'], code)($demoCanvas);
+      new Function('$demoCanvas', code)($demoCanvas);
     }
   }
 
-  function resetCanvas($canvas) {
+  function resetCanvas($canvas: JQuery<HTMLCanvasElement>) {
     $canvas.resetCanvases({
       forceReset: true,
-      width: Math.floor($canvas.parent().parent().width()),
+      width: Math.floor($canvas.parent().parent().width() || 0),
       height: DEMO_CANVAS_HEIGHT
     });
   }
 
-  function reRunDemo($demoCanvas) {
+  function reRunDemo($demoCanvas: JQuery<HTMLCanvasElement>) {
     const code = $demoCanvas
       .parent()
       .prev('.expressive-code')
@@ -105,9 +105,8 @@ $(document).ready(function () {
 
   var lastWindowWidth = window.innerWidth;
   $(window).on('resize', () => {
-    $('canvas').each((c, canvas) => {
-      const $canvas = $(canvas);
-      const $codeBlock = $canvas.parent().prev('.expressive-code');
+    $('canvas').each((_c, canvas) => {
+      const $canvas = $(canvas as HTMLCanvasElement);
       const newWindowWidth = window.innerWidth;
       // Only resize canvas and re-run demo if window width has changed (do
       // nothing if only height has changed)

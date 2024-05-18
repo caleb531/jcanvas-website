@@ -1,11 +1,12 @@
 import { Prec } from '@codemirror/state';
 import { EditorView, keymap } from '@codemirror/view';
 import $ from 'jquery';
-import { SANDBOX_STORAGE_KEY } from './constants.js';
-import { createEditorState, createEditorView } from './editor.js';
+import { SANDBOX_STORAGE_KEY } from './constants';
+import { createEditorState, createEditorView } from './editor';
 import './global.js';
+import { type SandboxState } from './types';
 
-$(document).ready(function () {
+$(function () {
   const $$ = {
     editorArea: $('#sandbox-editor-area'),
     editor: $('#sandbox-editor'),
@@ -27,8 +28,8 @@ $(document).ready(function () {
   const CANVAS_BORDER_WIDTH = 1;
 
   // Change number of canvases with which to test
-  function changeCanvasCount(ncanvases) {
-    const editorHeight = $$.editorArea.outerHeight();
+  function changeCanvasCount(ncanvases: number) {
+    const editorHeight = $$.editorArea.outerHeight() || 0;
     const canvasHeight = Math.round(
       editorHeight / ncanvases - 2 * CANVAS_BORDER_WIDTH
     );
@@ -55,32 +56,32 @@ $(document).ready(function () {
   // Load last-saved sandbox state (or defaults if the don't exist)
   function loadSandboxState() {
     // Load sandbox settings from local storage
-    let sandboxState = sessionStorage.getItem(SANDBOX_STORAGE_KEY);
-    sandboxState = JSON.parse(sandboxState);
+    const sandboxState = JSON.parse(
+      String(sessionStorage.getItem(SANDBOX_STORAGE_KEY))
+    );
     if (sandboxState !== null) {
-      sandboxState = $.extend({}, defaultSandboxState, sandboxState);
+      return $.extend({}, defaultSandboxState, sandboxState);
     } else {
-      sandboxState = defaultSandboxState;
+      return defaultSandboxState;
     }
-    return sandboxState;
   }
 
-  function getSandboxState(editorView) {
+  function getSandboxState(editorView: EditorView): SandboxState {
     return {
       code: editorView.state.doc.toString(),
       cursorOffset: editorView.state.selection.main.head,
-      ncanvases: $$.ncanvases.val()
+      ncanvases: Number($$.ncanvases.val())
     };
   }
 
   // Save sandbox state to session storage for current page
-  function saveSandboxState(editorView) {
+  function saveSandboxState(editorView: EditorView) {
     const sandboxState = getSandboxState(editorView);
     sessionStorage.setItem(SANDBOX_STORAGE_KEY, JSON.stringify(sandboxState));
   }
 
   // Run code
-  function runCode(editorView) {
+  function runCode(editorView: EditorView) {
     const $canvasElems = $$.canvases.find('canvas');
     if ($canvasElems.length === 0) {
       return;
@@ -99,14 +100,16 @@ $(document).ready(function () {
       )();
     } catch (error) {
       // Report any errors to the editor
-      $$.editor.addClass('error');
-      $$.console.html('Error: ' + error.message);
-      console.error(error.stack || String(error));
+      if (error instanceof Error) {
+        $$.editor.addClass('error');
+        $$.console.html('Error: ' + error.message);
+        console.error(error.stack || String(error));
+      }
     }
   }
 
   // Initialize the sandbox CodeMirror editor
-  function initSandboxEditor(sandboxState) {
+  function initSandboxEditor(sandboxState: SandboxState) {
     // Initialize code editor
     const editorState = createEditorState({
       doc: sandboxState.code,
@@ -181,7 +184,8 @@ $(document).ready(function () {
       $.spawnNewSandbox(getSandboxState(editorView));
     });
     $$.ncanvases.on('change', function (event) {
-      changeCanvasCount(Number(event.target.value));
+      const input = event.target as HTMLInputElement;
+      changeCanvasCount(Number(input.value));
       runCode(editorView);
       saveSandboxState(editorView);
     });

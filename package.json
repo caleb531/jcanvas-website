@@ -36,6 +36,7 @@
     "typescript": "^5.4.5"
   },
   "devDependencies": {
+    "@types/jquery": "^3.5.30",
     "astro-vtbot": "^1.7.17",
     "codemirror": "^6.0.1",
     "eslint": "^8.57.0",

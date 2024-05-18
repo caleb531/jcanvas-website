@@ -4,9 +4,32 @@ import 'jcanvas/dist/umd/jcanvas-donuts.min.js';
 import 'jcanvas/dist/umd/jcanvas-handles.min.js';
 import 'jcanvas/dist/umd/jcanvas-hearts.min.js';
 import $ from 'jquery';
-import { SANDBOX_STORAGE_KEY } from './constants.js';
+import { SANDBOX_STORAGE_KEY } from './constants';
+import type { SandboxState } from './types';
 
-$(document).ready(function () {
+interface ResetCanvasesParams {
+  forceReset?: boolean;
+  width?: number;
+  height?: number;
+}
+
+declare global {
+  interface Window {
+    jQuery: JQueryStatic;
+    $: JQueryStatic;
+  }
+  interface JQueryStatic {
+    spawnNewSandbox(sandboxState: Partial<SandboxState>): void;
+    jCanvasCorrectImagePaths(code: string): string;
+  }
+  interface JQuery {
+    addSandboxTryButton(): JQuery;
+    resetCanvases(params?: ResetCanvasesParams): JQuery;
+    getCodeContents(): string;
+  }
+}
+
+$(function () {
   // Expose jQuery to global scope so users can interact with jQuery/jCanvas
   // from the console
   window.jQuery = $;
@@ -24,13 +47,18 @@ $(document).ready(function () {
     this.find('pre').prepend(
       '<button class="try-in-sandbox edge-button">Try in Sandbox</button>'
     );
+    return this;
   };
 
   const baseDefaults = Object.assign({}, $.jCanvas.defaults);
 
   // Reset context all attached data for the given canvas
-  $.fn.resetCanvases = function ({ forceReset, width, height } = {}) {
-    this.each(function (c, canvas) {
+  $.fn.resetCanvases = function ({
+    forceReset,
+    width,
+    height
+  }: ResetCanvasesParams = {}) {
+    return this.each(function (_c, canvas) {
       const $canvas = $(canvas);
       // Do not reset canvas if width hasn't changed
       if (!forceReset && width === $canvas.width()) {
@@ -69,14 +97,14 @@ $(document).ready(function () {
   };
 
   // Modify any image paths to point to the real images directory
-  $.jCanvasCorrectImagePaths = function (code) {
+  $.jCanvasCorrectImagePaths = function (code: string) {
     return code.replace(imagePathPattern, '/jcanvas/assets/$1');
   };
 
   // Retrieve the code contents of the ancestor expressive-code element
   $.fn.getCodeContents = function () {
     return this.find('.ec-line')
-      .map((l, line) => $(line).text())
+      .map((_l, line) => $(line).text())
       .get()
       .join('\n');
   };
