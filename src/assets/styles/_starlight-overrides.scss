@@ -1,3 +1,12 @@
+// Adjust font size of headings to create more of a visual distinction between
+// heading levels
+:root {
+  --sl-text-h1: var(--sl-text-5xl);
+  --sl-text-h2: var(--sl-text-3xl);
+  --sl-text-h3: var(--sl-text-xl);
+  --sl-text-h4: var(--sl-text-lg);
+}
+
 // Add box shadow to docs header to distinguish it from sidebar contents
 .page > .header {
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
