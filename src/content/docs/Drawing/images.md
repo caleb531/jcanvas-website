@@ -75,10 +75,10 @@ Note that the `load` event fires when the image is initially drawn, but _also_ w
 
 Including the `sx`, `sy`, `sWidth`, or `sHeight` properties allows you to choose which section of the image to crop.
 
-- `sWidth:` Defines the width of the crop region
-- `sHeight:` Defines the height of the crop region
 - `sx:` Defines the x-position of the crop region
 - `sy:` Defines the y-position of the crop region
+- `sWidth:` Defines the width of the crop region
+- `sHeight:` Defines the height of the crop region
 
 ```js
 $('canvas').drawImage({
@@ -97,10 +97,8 @@ By default, the `sx` and `sy` properties defines the center of the crop region (
 $('canvas').drawImage({
   source: 'images/fish.jpg',
   x: 150, y: 150,
-  sWidth: 100,
-  sHeight: 50,
-  sx: 100,
-  sy: 70,
+  sx: 100, sy: 70,
+  sWidth: 100, sHeight: 50,
   cropFromCenter: false
 });
 ```
