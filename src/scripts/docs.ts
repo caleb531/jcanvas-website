@@ -15,12 +15,12 @@ $(function () {
   // The pattern to detect if code runs asynchronous functions
   const asyncPattern = /drawImage|createPattern|(?:type: (['"])image\1)/gi;
 
-  // function addAnchorLinks() {
-  //   // Add anchor link to every subsection for easy access later
-  //   $body.find('h3').each(function () {
-  //     $(this).append('<a href="#' + this.id + '" class="subsection-link"></a>');
-  //   });
-  // }
+  function addAnchorLinks() {
+    // Add anchor link to every subsection for easy access later
+    $body.find('h2, h3').each(function () {
+      $(this).append('<a href="#' + this.id + '" class="subsection-link"></a>');
+    });
+  }
 
   // Run the given demo code on the given canvas
   function runDemo(code: string, $demoCanvas: JQuery<HTMLCanvasElement>) {
@@ -98,9 +98,11 @@ $(function () {
   });
 
   makeExamplesDemoable();
+  addAnchorLinks();
 
   $(document).on('astro:after-swap', function () {
     makeExamplesDemoable();
+    addAnchorLinks();
   });
 
   var lastWindowWidth = window.innerWidth;

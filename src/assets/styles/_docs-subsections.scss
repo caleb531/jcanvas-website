@@ -1,0 +1,12 @@
+// Anchor link to a particular subsection
+.subsection-link {
+  --icon-size: 18px;
+  display: inline-block;
+  width: var(--icon-size);
+  height: var(--icon-size);
+  margin-left: 8px;
+  background-image: url('../images/chain.svg');
+  background-size: var(--icon-size);
+  font-size: inherit;
+  vertical-align: middle;
+}
