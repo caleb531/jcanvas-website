@@ -19,7 +19,7 @@
     "@astrojs/check": "^0.7.0",
     "@astrojs/mdx": "^3.0.0",
     "@astrojs/preact": "^3.3.0",
-    "@astrojs/starlight": "^0.23.0",
+    "@astrojs/starlight": "^0.23.1",
     "@codemirror/autocomplete": "^6.16.0",
     "@codemirror/commands": "^6.5.0",
     "@codemirror/lang-javascript": "^6.2.2",
@@ -37,7 +37,7 @@
   },
   "devDependencies": {
     "@types/jquery": "^3.5.30",
-    "astro-vtbot": "^1.7.17",
+    "astro-vtbot": "^1.7.18",
     "codemirror": "^6.0.1",
     "eslint": "^8.57.0",
     "eslint-config-prettier": "^9.1.0",
