@@ -1,6 +1,8 @@
-// Adjust font size of headings to create more of a visual distinction between
-// heading levels
 :root {
+  // Adjust theme colors
+  --sl-color-accent-high: #4af;
+  // Adjust font size of headings to create more of a visual distinction between
+  // heading levels
   --sl-text-h1: var(--sl-text-5xl);
   --sl-text-h2: var(--sl-text-3xl);
   --sl-text-h3: var(--sl-text-xl);
