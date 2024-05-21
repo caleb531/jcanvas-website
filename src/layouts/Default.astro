@@ -1,4 +1,5 @@
 ---
+import astroConfig from '../../astro.config';
 import '../assets/styles/main.scss';
 import Header from '../components/Header.astro';
 import '../fonts';
@@ -7,8 +8,6 @@ interface Props {
   frontmatter: Record<string, string>;
 }
 
-const siteOrigin = 'https://projects.calebevans.me';
-
 const { frontmatter } = Astro.props;
 
 const pageSeoTitle =
@@ -16,7 +15,9 @@ const pageSeoTitle =
     ? `${frontmatter.title} | ${frontmatter.subtitle}`
     : `${frontmatter.title} | jCanvas`;
 
-const pageSeoImage = `${siteOrigin}/jcanvas/assets/images/social-image.png`;
+const pageSeoImage = Astro.site
+  ? `${Astro.site.origin}${astroConfig.base}assets/images/social-image.png`
+  : '';
 ---
 
 <!doctype html>
