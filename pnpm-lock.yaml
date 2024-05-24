@@ -15,8 +15,8 @@ dependencies:
     specifier: ^3.3.0
     version: 3.3.0(@babel/core@7.24.5)(preact@10.21.0)(vite@5.2.11)
   '@astrojs/starlight':
-    specifier: ^0.23.0
-    version: 0.23.0(astro@4.8.6)
+    specifier: ^0.23.1
+    version: 0.23.1(astro@4.8.6)
   '@codemirror/autocomplete':
     specifier: ^6.16.0
     version: 6.16.0(@codemirror/language@6.10.1)(@codemirror/state@6.4.1)(@codemirror/view@6.26.3)(@lezer/common@1.2.1)
@@ -65,8 +65,8 @@ devDependencies:
     specifier: ^3.5.30
     version: 3.5.30
   astro-vtbot:
-    specifier: ^1.7.17
-    version: 1.7.17
+    specifier: ^1.7.18
+    version: 1.7.20
   codemirror:
     specifier: ^6.0.1
     version: 6.0.1(@lezer/common@1.2.1)
@@ -250,11 +250,11 @@ packages:
     dependencies:
       sitemap: 7.1.1
       stream-replace-string: 2.0.0
-      zod: 3.23.6
+      zod: 3.23.8
     dev: false
 
-  /@astrojs/starlight@0.23.0(astro@4.8.6):
-    resolution: {integrity: sha512-DV7OEWQDVwQNXxBAGwOKd7Fwa0yb0/WamuUcQYhCIIRjFstaJ1KDc2gNOO2m3nHoCwFx4R7hj/WEeXlgHKE1tg==}
+  /@astrojs/starlight@0.23.1(astro@4.8.6):
+    resolution: {integrity: sha512-BMVRpM4suTq4K2plzcISs/t5W3Xw2fHGWhSmF7lg90nps595yHp3j4gFpeukRrynwEhoNu0Bds1zgOBebC3Egg==}
     peerDependencies:
       astro: ^4.8.6
     dependencies:
@@ -2075,8 +2075,8 @@ packages:
       rehype-expressive-code: 0.35.3
     dev: false
 
-  /astro-vtbot@1.7.17:
-    resolution: {integrity: sha512-DWArck5gK03xXsm7weVFYBVA09Z0WFhyOZIf/Rk/uDQPp4pqIQYadZdE9cnA7gcfyoYSNJIwexJAx7tmC8x3zg==}
+  /astro-vtbot@1.7.20:
+    resolution: {integrity: sha512-7sinDwFcPbBhGVKrwrS7gzDEKrIrqW3B/Q5XadH5w1Dkg9S+g/fdyqvdKGJPpl9Bfay9ew9Cp4+7eSst4axZcQ==}
     dev: true
 
   /astro@4.8.6(sass@1.77.2)(typescript@5.4.5):
@@ -6101,10 +6101,6 @@ packages:
       zod: ^3.23.3
     dependencies:
       zod: 3.23.8
-    dev: false
-
-  /zod@3.23.6:
-    resolution: {integrity: sha512-RTHJlZhsRbuA8Hmp/iNL7jnfc4nZishjsanDAfEY1QpDQZCahUp3xDzl+zfweE9BklxMUcgBgS1b7Lvie/ZVwA==}
     dev: false
 
   /zod@3.23.8:
