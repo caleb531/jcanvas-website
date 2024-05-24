@@ -1,11 +1,14 @@
 import 'jcanvas';
-import 'jcanvas/dist/umd/jcanvas-crescents.min.js';
-import 'jcanvas/dist/umd/jcanvas-donuts.min.js';
-import 'jcanvas/dist/umd/jcanvas-handles.min.js';
-import 'jcanvas/dist/umd/jcanvas-hearts.min.js';
 import $ from 'jquery';
 import { SANDBOX_STORAGE_KEY } from './constants';
 import type { SandboxState } from './types';
+
+$.jCanvasPromise = Promise.all([
+  import('jcanvas/dist/umd/jcanvas-crescents.min.js'),
+  import('jcanvas/dist/umd/jcanvas-donuts.min.js'),
+  import('jcanvas/dist/umd/jcanvas-handles.min.js'),
+  import('jcanvas/dist/umd/jcanvas-hearts.min.js')
+]);
 
 interface ResetCanvasesParams {
   forceReset?: boolean;
@@ -19,6 +22,8 @@ declare global {
     $: JQueryStatic;
   }
   interface JQueryStatic {
+    jCanvasPromise: Promise<object>;
+    waitForScripts(): Promise<object>;
     spawnNewSandbox(sandboxState: Partial<SandboxState>): void;
     jCanvasCorrectImagePaths(code: string): string;
   }
@@ -75,6 +80,10 @@ $(function () {
       $canvas.clearCanvas();
       $canvas.detectPixelRatio();
     });
+  };
+
+  $.waitForScripts = function () {
+    return $.jCanvasPromise;
   };
 
   // Spawn a new sandbox with the given sandbox state

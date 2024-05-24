@@ -1,8 +1,3 @@
-import 'jcanvas';
-import 'jcanvas/dist/umd/jcanvas-crescents.min.js';
-import 'jcanvas/dist/umd/jcanvas-donuts.min.js';
-import 'jcanvas/dist/umd/jcanvas-handles.min.js';
-import 'jcanvas/dist/umd/jcanvas-hearts.min.js';
 import $ from 'jquery';
 import './global.js';
 
@@ -23,10 +18,11 @@ $(function () {
   }
 
   // Run the given demo code on the given canvas
-  function runDemo(code: string, $demoCanvas: JQuery<HTMLCanvasElement>) {
+  async function runDemo(code: string, $demoCanvas: JQuery<HTMLCanvasElement>) {
     code = $.jCanvasCorrectImagePaths(code);
     // If code contains a jCanvas method acting on a canvas element
     if (canvasSelectorPattern.test(code)) {
+      await $.waitForScripts();
       // Inject canvas jQuery element into demo code
       code = code.replace(canvasSelectorPattern, '$demoCanvas');
       new Function('$demoCanvas', code)($demoCanvas);
@@ -41,7 +37,7 @@ $(function () {
     });
   }
 
-  function reRunDemo($demoCanvas: JQuery<HTMLCanvasElement>) {
+  async function reRunDemo($demoCanvas: JQuery<HTMLCanvasElement>) {
     const code = $demoCanvas
       .parent()
       .prev('.expressive-code')
@@ -50,44 +46,46 @@ $(function () {
     runDemo(code, $demoCanvas);
   }
 
-  function makeExamplesDemoable() {
+  async function makeExamplesDemoable() {
     // Add live canvas demo of each example (if example draws on canvas)
-    $body.find('.expressive-code').each(function () {
-      const $codeBlock = $(this);
-      // Initialize a demo canvas
-      const $demoCanvas = $(document.createElement('canvas'));
-      $demoCanvas.prop({
-        width: $codeBlock.width(),
-        height: 250
-      });
-      // Create canvas container (will also contain demo controls like re-run)
-      const $demoContainer = $('<div class="demo-container">');
-      $demoContainer.append(
-        '<button class="demo-rerun edge-button">Re-run</button>'
-      );
-      $demoContainer.append($demoCanvas);
-      // It is crucial we reset the canvas (by clearing it and setting specific
-      // dimensions) so that the base64 images (to be compared) are of the same
-      // width/height
-      resetCanvas($demoCanvas);
-      // Retrieve the data URI of the blank canvas so we can later detect if the
-      // canvas has been drawn on
-      const demoImageBlank = $demoCanvas[0].toDataURL();
-      const code = $codeBlock.getCodeContents();
-      runDemo(code, $demoCanvas);
-      // If something was drawn on demo canvas (or if code draws
-      // asynchronously),
-      if (
-        $demoCanvas[0].toDataURL() !== demoImageBlank ||
-        asyncPattern.test(code)
-      ) {
-        // Append canvas below code block
-        $codeBlock.after($demoContainer);
-        $codeBlock.addClass('has-demo');
-        // Add to code block a button that allows user to try code in Sandbox
-        $codeBlock.addSandboxTryButton();
+    Array.from($body.find('.expressive-code')).forEach(
+      async function (codeBlock) {
+        const $codeBlock = $(codeBlock);
+        // Initialize a demo canvas
+        const $demoCanvas = $(document.createElement('canvas'));
+        $demoCanvas.prop({
+          width: $codeBlock.width(),
+          height: 250
+        });
+        // Create canvas container (will also contain demo controls like re-run)
+        const $demoContainer = $('<div class="demo-container">');
+        $demoContainer.append(
+          '<button class="demo-rerun edge-button">Re-run</button>'
+        );
+        $demoContainer.append($demoCanvas);
+        // It is crucial we reset the canvas (by clearing it and setting specific
+        // dimensions) so that the base64 images (to be compared) are of the same
+        // width/height
+        resetCanvas($demoCanvas);
+        // Retrieve the data URI of the blank canvas so we can later detect if the
+        // canvas has been drawn on
+        const demoImageBlank = $demoCanvas[0].toDataURL();
+        const code = $codeBlock.getCodeContents();
+        await runDemo(code, $demoCanvas);
+        // If something was drawn on demo canvas (or if code draws
+        // asynchronously),
+        if (
+          $demoCanvas[0].toDataURL() !== demoImageBlank ||
+          asyncPattern.test(code)
+        ) {
+          // Append canvas below code block
+          $codeBlock.after($demoContainer);
+          $codeBlock.addClass('has-demo');
+          // Add to code block a button that allows user to try code in Sandbox
+          $codeBlock.addSandboxTryButton();
+        }
       }
-    });
+    );
   }
 
   // Allow user to re-run demo via button

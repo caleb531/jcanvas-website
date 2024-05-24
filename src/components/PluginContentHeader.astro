@@ -14,12 +14,15 @@ const plugin_id = path.basename(Astro.props.entry.slug);
 <Code
   lang="js"
   code={`
+// In order for the external 'jcanvas' and 'jquery' dependencies
+// in these plugin modules to be resolved correctly, you will
+// probably need to import the modules asynchronously with \`import()\`
+// (the 'jcanvas' core library can still be imported synchronously)
+
 // UMD import
-import 'jcanvas';
-import 'jcanvas/dist/umd/jcanvas-${plugin_id}.min.js';
+await import('jcanvas/dist/umd/jcanvas-${plugin_id}.min.js');
 
 // ESM import
-import 'jcanvas';
-import 'jcanvas/dist/esm/jcanvas-${plugin_id}.min.js';'
+await import('jcanvas/dist/esm/jcanvas-${plugin_id}.min.js');
 `}
 />
