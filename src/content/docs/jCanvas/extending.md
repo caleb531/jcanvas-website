@@ -81,6 +81,26 @@ $('canvas').drawHeart({
 });
 ```
 
+## TypeScript
+
+If you use TypeScript, the `$.jCanvas.extend` method is generic and accepts a
+single type argument representing the types of any new props you define.
+
+```ts
+// Create a drawCrescent() method
+$.jCanvas.extend<{ eclipse: number; }>({
+  name: 'drawCrescent',
+  type: 'crescent',
+  props: {
+    eclipse: 0.5
+  },
+  fn: function (ctx, params) {
+    console.log(params.eclipse); // eclipse: number
+    // ...
+  }
+});
+```
+
 ## API Methods
 
 The jCanvas object (`$.jCanvas`) provides a few useful methods for integrating your methods with jCanvas. All of these methods accept the same three arguments: the canvas DOM element (`this`), the canvas context (`ctx`), and the parameters object (`params`).
