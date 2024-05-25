@@ -19,10 +19,10 @@ $(function () {
 
   // Run the given demo code on the given canvas
   async function runDemo(code: string, $demoCanvas: JQuery<HTMLCanvasElement>) {
+    await $.waitForScripts();
     code = $.jCanvasCorrectImagePaths(code);
     // If code contains a jCanvas method acting on a canvas element
     if (canvasSelectorPattern.test(code)) {
-      await $.waitForScripts();
       // Inject canvas jQuery element into demo code
       code = code.replace(canvasSelectorPattern, '$demoCanvas');
       new Function('$demoCanvas', code)($demoCanvas);
