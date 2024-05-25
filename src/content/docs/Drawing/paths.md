@@ -146,3 +146,7 @@ $('canvas').drawPath({
   d: 'M 25 25 l 50 50 q 25 -25 50 0 t 50 50 c 25 25 50 25 75 0 s 50 -25 75 0 a 20 20 0 0 1 25 25 z'
 });
 ```
+
+### Using an SVG path as a mask
+
+You can also use SVG paths as masks. See the [relevant section of the Masking documentation](/jcanvas/docs/masking/#using-an-svg-path-as-a-mask) for a comprehensive example.

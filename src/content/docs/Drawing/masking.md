@@ -110,3 +110,28 @@ $('canvas')
     layer: true
   });
 ```
+
+### Using an SVG path as a mask
+
+You can also use an SVG path as a mask using the [`drawPath()`](/jcanvas/docs/paths/) method's SVG path support.
+
+```js
+$('canvas')
+  .drawPath({
+    layer: true,
+    mask: true,
+    strokeStyle: '#000',
+    strokeWidth: 2,
+    d: 'm46 71c-12.2 0-22-9.8-22-22 0-12.2 9.8-22 22-22 12.2 0 22 9.8 22 22 0 12.2-9.8 22-22 22z m103.5 159c-20.2 0-36.5-16.3-36.5-36.5 0-20.2 16.3-36.5 36.5-36.5 20.2 0 36.5 16.3 36.5 36.5 0 20.2-16.3 36.5-36.5 36.5z'
+  })
+  .drawRect({
+    layer: true,
+    fillStyle: '#c33',
+    x: 50, y: 50,
+    width: 100, height: 150,
+    fromCenter: false
+  })
+  .restoreCanvas({
+    layer: true
+  });
+```
