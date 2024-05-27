@@ -103,6 +103,25 @@ $('canvas').drawArc({
 });
 ```
 
+## Ellipses
+
+```js
+$('canvas').drawEllipse({
+  layer: true,
+  strokeStyle: '#000',
+  strokeWidth: 4,
+  rounded: true,
+  x: 150, y: 100,
+  width: 200, height: 100,
+  start: -45, end: 105,
+  ccw: true,
+  startArrow: true,
+  endArrow: true,
+  arrowRadius: 15,
+  arrowAngle: 90
+});
+```
+
 ## Paths
 
 ```js
