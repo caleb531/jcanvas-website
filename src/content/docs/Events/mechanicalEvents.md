@@ -29,17 +29,19 @@ $('canvas').drawRect({
 The `remove` event fires when a layer is removed using the `removeLayer()` method (or indirectly via `removeLayers()` or `removeLayerGroup()`).
 
 ```js
-$('canvas').drawRect({
-  layer: true,
-  name: 'box',
-  fillStyle: '#6c0',
-  x: 100, y: 100,
-  width: 100, height: 100,
-  remove: function (layer) {
-    // code to run when layer is removed
-  }
-});
-$('canvas').removeLayer('box');
+$('canvas')
+  .drawRect({
+    layer: true,
+    name: 'box',
+    fillStyle: '#6c0',
+    x: 100, y: 100,
+    width: 100, height: 100,
+    remove: function (layer) {
+      // code to run when layer is removed
+    }
+  })
+  .removeLayer('box')
+  .drawLayers();
 ```
 
 ## The `change` event
