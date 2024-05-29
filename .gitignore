@@ -23,3 +23,6 @@ pnpm-debug.log*
 # jetbrains setting folder
 .idea/
 /jCanvas
+
+# Legacy Jekyll
+_site
