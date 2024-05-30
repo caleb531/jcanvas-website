@@ -5,7 +5,7 @@ sidebar:
   order: 2
 ---
 
-jCanvas supports a number of standard mouse events that you can use on most types of jCanvas layers.
+jCanvas supports a number of standard mouse events that you can use on most types of jCanvas layers. Supported events include `click`, `dblclick`, `mousedown`, `mousemove`, `mouseup`, `pointerdown`, `pointermove`, `pointerup`, and `contextmenu`.
 
 ## Events and animation
 
