@@ -1,5 +1,4 @@
 ---
-import astroConfig from '../../astro.config';
 import '../assets/styles/main.scss';
 import Header from '../components/Header.astro';
 import '../fonts';
@@ -16,7 +15,7 @@ const pageSeoTitle =
     : `${frontmatter.title} | jCanvas`;
 
 const pageSeoImage = Astro.site
-  ? `${Astro.site.origin}${astroConfig.base}assets/images/social-image.png`
+  ? `${Astro.site.origin}${import.meta.env.BASE_URL}assets/images/social-image.png`
   : '';
 ---
 
