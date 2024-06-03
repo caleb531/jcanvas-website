@@ -81,7 +81,7 @@ $(function () {
   }
 
   // Run code
-  async function runCode(editorView: EditorView) {
+  function runCode(editorView: EditorView) {
     const $canvasElems = $$.canvases.find('canvas');
     if ($canvasElems.length === 0) {
       return;
@@ -95,7 +95,6 @@ $(function () {
     $$.editor.removeClass('error');
     $$.console.html('');
     try {
-      await $.waitForScripts();
       new Function(
         $.jCanvasCorrectImagePaths(editorView.state.doc.toString())
       )();

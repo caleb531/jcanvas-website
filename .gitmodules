@@ -1,0 +1,3 @@
+[submodule "src/scripts/jcanvas"]
+	path = src/scripts/jcanvas
+	url = https://github.com/caleb531/jcanvas.git
