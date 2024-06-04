@@ -50,5 +50,24 @@ export default defineConfig({
       favicon: '/assets/images/favicon.png'
     }),
     mdx()
-  ]
+  ],
+  // jCanvas requires jQuery as a peer dependency for consuming applications
+  // (like this website) to install, so this website requires jQuery as a
+  // dependency; however the core jCanvas repository also has jQuery installed
+  // as a dev dependency for testing; this means that when Vite attempts to
+  // resolve jQuery required by jCanvas, it will resolve to the dev dependency
+  // instance rather than the website instance of jQuery (i.e. at the parent
+  // level); this prevents jCanvas from properly loading on the page, because
+  // jCanvas modifies the global on its own installed jQuery rather than the
+  // instance of the website's installed jQuery (which is also being imported by
+  // the website itself); to solve this, we alias all imports of jquery to the
+  // website's installed jQuery, so there is only ever one instance of the
+  // jQuery module being imported
+  vite: {
+    resolve: {
+      alias: {
+        jquery: 'node_modules/jquery'
+      }
+    }
+  }
 });
