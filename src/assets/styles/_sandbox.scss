@@ -83,6 +83,10 @@ label {
 .cm-editor {
   width: 100%;
 }
+.cm-editor,
+.cm-editor .cm-gutters {
+  background-color: #24292e;
+}
 // Increase prominence of selections
 .ͼo.cm-focused > .cm-scroller > .cm-selectionLayer .cm-selectionBackground,
 .ͼo .cm-selectionBackground,
