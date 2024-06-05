@@ -67,7 +67,7 @@ function createEditorState(
       highlightSpecialChars(),
       // Undo/redo
       history(),
-      // Code foldering
+      // Code folding
       foldGutter(),
       // Replaces the native selection with a custom-drawn selection in
       // traditional text editor style, with support for multiple selection
