@@ -82,6 +82,12 @@ label {
 }
 .cm-editor {
   width: 100%;
+  border-radius: 5px;
+  overflow: hidden;
+  &:focus-within {
+    outline-width: 0;
+    box-shadow: 0 0 0 2px #5af;
+  }
 }
 .cm-editor,
 .cm-editor .cm-gutters {
