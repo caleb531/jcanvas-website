@@ -1,0 +1,57 @@
+.cm-editor {
+  width: 100%;
+  border-radius: 5px;
+  overflow: hidden;
+  &:focus-within {
+    outline-width: 0;
+    box-shadow: 0 0 0 2px #5af;
+  }
+}
+.cm-editor,
+.cm-editor .cm-gutters {
+  background-color: #24292e;
+}
+// Increase prominence of selections
+.ͼo.cm-focused > .cm-scroller > .cm-selectionLayer .cm-selectionBackground,
+.ͼo .cm-selectionBackground,
+.ͼo .cm-content ::selection {
+  background-color: rgba(#9cf, 0.25);
+}
+// Increase prominence of active line
+.cm-line.cm-activeLine {
+  background-color: rgba(#fff, 0.05);
+}
+
+// Default text (including property names)
+.ͼq,
+// Dots
+.ͼv {
+  color: #e1e4e8;
+}
+// Strings
+.ͼ13 {
+  color: #9ecbff;
+}
+// Numbers
+.ͼu,
+// Booleans
+.ͼ12 {
+  color: #79b8ff;
+}
+
+.cm-tooltip-autocomplete li {
+  padding: 3px 3px !important;
+  background-color: #222 !important;
+  color: #999 !important;
+}
+.cm-tooltip-autocomplete li[aria-selected] {
+  background-color: #445 !important;
+  font-weight: bold;
+  color: #fff !important;
+}
+.cm-completionMatchedText {
+  text-decoration: none !important;
+}
+.cm-completionDetail {
+  font-style: normal !important;
+}
