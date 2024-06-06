@@ -81,8 +81,9 @@ $(function () {
   $.spawnNewSandbox = function (sandboxState) {
     // Retrieve the sandbox state of the current page
     const originalSandboxState = sessionStorage.getItem(SANDBOX_STORAGE_KEY);
-    // Temporarily overwrite the current page's sandbox state with the new sandbox
-    // code so that it gets copied into the sandbox state for the spawned page
+    // Temporarily overwrite the current page's sandbox state with the new
+    // sandbox code so that it gets copied into the sandbox state for the
+    // spawned page
     sessionStorage.setItem(SANDBOX_STORAGE_KEY, JSON.stringify(sandboxState));
     // window.open copies the session data for the current page into the session
     // storage for the spawned page
