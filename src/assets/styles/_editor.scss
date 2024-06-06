@@ -2,9 +2,11 @@
   width: 100%;
   border-radius: 5px;
   overflow: hidden;
+  border: solid 1px rgba(#000, 0.5);
   &.cm-focused {
+    --focus-color: #5af;
+    border-color: var(--focus-color);
     outline-width: 0;
-    box-shadow: 0 0 0 2px #5af;
   }
 }
 .cm-editor,
