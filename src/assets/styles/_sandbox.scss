@@ -23,7 +23,7 @@ article.page-sandbox {
 
 // Add border to canvas container instead of the canvas itself (otherwise, the canvas's left border would be clipped incorrectly)
 .canvas-container {
-  border: solid 1px var(--input-border-color);
+  border: solid 1px var(--input-border-color-dark);
   canvas {
     border-width: 0;
     background-color: #fff;
@@ -90,13 +90,16 @@ label {
 #sandbox-console {
   display: none;
   height: 60px;
-  padding: 0;
-  border: solid 1px var(--input-border-color);
+  padding: 6px 10px;
+  border: solid 1px #111;
+  border-top-width: 0;
+  border-bottom-left-radius: var(--editor-border-radius);
+  border-bottom-right-radius: var(--editor-border-radius);
   background-color: #222;
   background-clip: padding-box;
   text-align: left;
   font-size: 16px;
-  color: #c33;
+  color: var(--editor-error-color);
   overflow-x: hidden;
   overflow-y: scroll;
 }
@@ -104,10 +107,16 @@ label {
 #sandbox-editor.error {
   height: 352px;
   border-width: 1px;
+  .cm-editor {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  .cm-focused {
+    --editor-focus-color: var(--editor-error-color);
+  }
 }
 #sandbox-editor.error + #sandbox-console {
   display: block;
-  padding: 6px 10px;
 }
 
 #sandbox-default-code {

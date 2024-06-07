@@ -1,11 +1,16 @@
+:root {
+  --editor-border-radius: 5px;
+  --editor-focus-color: #5af;
+  --editor-error-color: #f55;
+}
+
 .cm-editor {
   width: 100%;
-  border-radius: 5px;
+  border-radius: var(--editor-border-radius);
   overflow: hidden;
   border: solid 1px rgba(#000, 0.5);
   &.cm-focused {
-    --focus-color: #5af;
-    border-color: var(--focus-color);
+    border-color: var(--editor-focus-color);
     outline-width: 0;
   }
 }
