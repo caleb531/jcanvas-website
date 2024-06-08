@@ -74,6 +74,14 @@ $(function () {
     };
   }
 
+  function setEditorSuccess() {
+    $$.run.html('Rerun');
+  }
+
+  function setEditorToDirty() {
+    $$.run.html('Run');
+  }
+
   // Save sandbox state to session storage for current page
   function saveSandboxState(editorView: EditorView) {
     const sandboxState = getSandboxState(editorView);
@@ -98,6 +106,7 @@ $(function () {
       new Function(
         $.jCanvasCorrectImagePaths(editorView.state.doc.toString())
       )();
+      setEditorSuccess();
     } catch (error) {
       // Report any errors to the editor
       if (error instanceof Error) {
@@ -115,7 +124,11 @@ $(function () {
       doc: sandboxState.code,
       extensions: [
         EditorView.updateListener.of((viewUpdate) => {
-          if (viewUpdate.docChanged || viewUpdate.selectionSet) {
+          if (viewUpdate.docChanged) {
+            setEditorToDirty();
+            saveSandboxState(viewUpdate.view);
+          }
+          if (viewUpdate.selectionSet) {
             saveSandboxState(viewUpdate.view);
           }
         }),
