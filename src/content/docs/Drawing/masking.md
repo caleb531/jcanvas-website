@@ -57,7 +57,7 @@ $('canvas')
 
 However, when creating layer masks, the `restoreCanvas()` method must be made into a layer using the `layer` property, as demonstrated above.
 
-## Masking draggable layers
+### Masking draggable layers
 
 In this example, move the shapes to see how layer masks affects the draggability of other shapes.
 
@@ -111,7 +111,7 @@ $('canvas')
   });
 ```
 
-### Using an SVG path as a mask
+## Using an SVG path as a mask
 
 You can also use an SVG path as a mask using the [`drawPath()`](/jcanvas/docs/paths/) method's SVG path support.
 
