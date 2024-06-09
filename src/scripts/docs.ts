@@ -100,7 +100,7 @@ $(function () {
     addAnchorLinks();
   });
 
-  var lastWindowWidth = window.innerWidth;
+  let lastWindowWidth = window.innerWidth;
   $(window).on('resize', () => {
     $('canvas').each((_c, canvas) => {
       const $canvas = $(canvas as HTMLCanvasElement);
