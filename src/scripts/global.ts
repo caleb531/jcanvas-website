@@ -11,6 +11,7 @@ interface ResetCanvasesParams {
   forceReset?: boolean;
   width?: number;
   height?: number;
+  willReadFrequently?: boolean;
 }
 
 declare global {
@@ -56,7 +57,8 @@ $(function () {
   $.fn.resetCanvases = function ({
     forceReset,
     width,
-    height
+    height,
+    willReadFrequently
   }: ResetCanvasesParams = {}) {
     return this.each(function (_c, canvas) {
       const $canvas = $(canvas);
@@ -68,6 +70,7 @@ $(function () {
       $.removeData(canvas, 'jCanvas');
       $.jCanvas.clearCache();
       Object.assign($.jCanvas.defaults, baseDefaults);
+      $.jCanvas.defaults.willReadFrequently = willReadFrequently ?? false;
       if (width && height) {
         $canvas.prop({ width, height });
       }

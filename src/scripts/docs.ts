@@ -28,11 +28,15 @@ $(function () {
     }
   }
 
-  function resetCanvas($canvas: JQuery<HTMLCanvasElement>) {
+  function resetCanvas(
+    $canvas: JQuery<HTMLCanvasElement>,
+    options: { willReadFrequently: boolean } = { willReadFrequently: false }
+  ) {
     $canvas.resetCanvases({
       forceReset: true,
       width: Math.floor($canvas.parent().parent().width() || 0),
-      height: DEMO_CANVAS_HEIGHT
+      height: DEMO_CANVAS_HEIGHT,
+      willReadFrequently: options.willReadFrequently ?? false
     });
   }
 
@@ -49,6 +53,7 @@ $(function () {
     // Add live canvas demo of each example (if example draws on canvas)
     Array.from($body.find('.expressive-code')).forEach(function (codeBlock) {
       const $codeBlock = $(codeBlock);
+      const code = $codeBlock.getCodeContents();
       // Initialize a demo canvas
       const $demoCanvas = $(document.createElement('canvas'));
       $demoCanvas.prop({
@@ -64,11 +69,12 @@ $(function () {
       // It is crucial we reset the canvas (by clearing it and setting specific
       // dimensions) so that the base64 images (to be compared) are of the same
       // width/height
-      resetCanvas($demoCanvas);
+      resetCanvas($demoCanvas, {
+        willReadFrequently: code.indexOf('willReadFrequently') !== -1
+      });
       // Retrieve the data URI of the blank canvas so we can later detect if the
       // canvas has been drawn on
       const demoImageBlank = $demoCanvas[0].toDataURL();
-      const code = $codeBlock.getCodeContents();
       runDemo(code, $demoCanvas);
       // If something was drawn on demo canvas (or if code draws
       // asynchronously),
