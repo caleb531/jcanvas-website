@@ -28,4 +28,4 @@ $('canvas').getCanvasImage('jpeg', 0.5);
 
 ## Notes
 
-This method does not work on Google Chrome if the page is served from a file URL (`file://`). This is a limitation of Google Chrome's sandboxing architecture, and therefore cannot be fixed. However, this method still works when the page is served from a server (either online or running locally via `localhost://`).
+This method does not work on Google Chrome if the page is served from a file URL (`file://`). This is a limitation of Google Chrome's sandboxing architecture, and therefore cannot be fixed. However, this method still works when the page is served from a server (either online or running locally via `localhost`).
