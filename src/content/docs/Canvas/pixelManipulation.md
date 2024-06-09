@@ -43,6 +43,12 @@ $('canvas').drawImage({
 In this example, hovering over the image will manipulate the pixels closest to the part you hovered over.
 
 ```js
+// For better canvas performance when frequently reading
+// image data, Chrome recommends we instruct the browser
+// to use a software-rendered canvas, rather than a
+// hardware-accelerated canvas
+$.jCanvas.defaults.willReadFrequently = true;
+
 function invert(params) {
   $(this).setPixels({
     x: params.eventX, y: params.eventY,
