@@ -86,7 +86,9 @@ Please note that the cursor always reverts to its previous state when you mouse 
 
 ## The `intangible` property
 
-The `intangible` property essentially allows you to "click through" a layer as if it didn't exist.
+The `intangible` property essentially allows you to "click through" a layer as
+if it didn't exist. While a layer is intangible, any mouse events attached to it
+don't fire, and any interactions with the layer pass through to layers below.
 
 ```js
 $('canvas')
