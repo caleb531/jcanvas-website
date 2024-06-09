@@ -12,7 +12,7 @@ Gradient colors are defined using `c1`, `c2`, `c3`, and so on. Optional color st
 ## Linear
 
 ```js
-var linear = $('canvas').createGradient({
+const linear = $('canvas').createGradient({
   x1: 0, y1: 20,
   x2: 0, y2: 80,
   c1: 'rgb(0, 0, 0)',
@@ -27,7 +27,7 @@ $('canvas').drawArc({
 ```
 
 ```js
-var linear = $('canvas').createGradient({
+const linear = $('canvas').createGradient({
   x1: 0, y1: 20,
   x2: 0, y2: 80,
   c1: 'rgb(0, 0, 0)',
@@ -48,7 +48,7 @@ $('canvas').drawArc({
 Radial gradients are created when the `r1` or `r2` properties are defined.
 
 ```js
-var radial = $('canvas').createGradient({
+const radial = $('canvas').createGradient({
   x1: 50, y1: 50,
   x2: 50, y2: 50,
   r1: 10,
@@ -71,7 +71,7 @@ To demonstrate this behavior, consider the following example:
 
 ```js
 // Create and store a linear gradient
-var gradient = $('canvas').createGradient({
+const gradient = $('canvas').createGradient({
   // Gradient is drawn relative to layer position
   x1: 0, y1: 20,
   x2: 0, y2: 140,

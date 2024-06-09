@@ -58,14 +58,14 @@ If you wish to utilize an array containing your points, you can easily construct
 
 ```js
 // The .drawLine() object
-var obj = {
+const obj = {
   strokeStyle: '#000',
   strokeWidth: 6,
   rounded: true
 };
 
 // Your array of points
-var pts = [
+const pts = [
   [80, 50],
   [100, 150],
   [200, 100],
@@ -73,10 +73,10 @@ var pts = [
 ];
 
 // Add the points from the array to the object
-for (var p = 0; p < pts.length; p += 1) {
+pts.forEach((pt, p) => {
   obj['x' + (p + 1)] = pts[p][0];
   obj['y' + (p + 1)] = pts[p][1];
-}
+});
 
 // Draw the line
 $('canvas').drawLine(obj);

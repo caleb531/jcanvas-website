@@ -20,11 +20,10 @@ $('canvas').drawArc({
   x: 160, y: 200,
   radius: 100,
   mousemove: function (layer) {
-    var distX, distY, dist;
-    distX = layer.eventX - layer.x;
-    distY = layer.eventY - layer.y;
+    const distX = layer.eventX - layer.x;
+    const distY = layer.eventY - layer.y;
     // the distance from the circle's center
-    dist = Math.sqrt(Math.pow(distX, 2) + Math.pow(distY, 2));
+    const dist = Math.sqrt(Math.pow(distX, 2) + Math.pow(distY, 2));
     layer.opacity = dist / layer.radius;
   }
 });
@@ -46,7 +45,7 @@ $('canvas').drawArc({
   x: 160, y: 160,
   radius: 50,
   mousemove: function (layer) {
-    var delta = Math.sqrt(Math.pow(layer.dx, 2) + Math.pow(layer.dy, 2));
+    const delta = Math.sqrt(Math.pow(layer.dx, 2) + Math.pow(layer.dy, 2));
     if (delta !== 0) {
       layer.opacity = 1 / delta;
     }

@@ -16,7 +16,7 @@ function draw(patt) {
   });
 }
 
-var patt = $('canvas').createPattern({
+const patt = $('canvas').createPattern({
   source: 'images/water.jpg',
   repeat: 'repeat',
   // Draw ellipse when pattern loads
@@ -37,7 +37,7 @@ function draw(patt) {
   });
 }
 
-var patt = $('canvas').createPattern({
+const patt = $('canvas').createPattern({
   source: $('#water')[0],
   repeat: 'repeat',
   // Draw ellipse when pattern loads
@@ -55,7 +55,7 @@ Finally, if you would rather use a existing canvas element, feel free to do so u
 
 ```js
 // Create pattern
-var patt = $('canvas').createPattern({
+const patt = $('canvas').createPattern({
   // Define width/height of pattern (before repeating)
   width: 40, height: 40,
   source: function (context) {

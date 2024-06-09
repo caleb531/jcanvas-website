@@ -44,7 +44,7 @@ $('canvas').getLayers();
 ```
 
 ```js
-var layers = $('canvas').getLayers();
+const layers = $('canvas').getLayers();
 // Reverse layer order
 layers.reverse();
 ```

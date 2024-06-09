@@ -40,7 +40,7 @@ $.jCanvas.extend({
   props: {},
   fn: function (ctx, params) {
     // Just to keep our lines short
-    var p = params;
+    const p = params;
     // Enable layer transformations like scale and rotate
     $.jCanvas.transformShape(this, ctx, p);
     // Draw heart
