@@ -9,7 +9,7 @@ This `clearCanvas()` clears all or any part of the canvas.
 
 ## A note about layers
 
-This method is _not_ meant to be used if you are using the jCanvas Layer API, because the API handles redrawing for you in many cases, and so if you try to clear the canvas. you layers will eventually be redrawn by jCanvas when it deems necessary.
+This method is _not_ meant to be used if you are using the jCanvas Layer API, because the API handles redrawing for you in many cases, and so if you try to clear the canvas. your layers will eventually be redrawn by jCanvas when it deems necessary.
 
 If you want to hide a layer temporarily, use `setLayer()` to set the layer's `visible` property, then call `drawLayers()`:
 
