@@ -36,6 +36,7 @@
   },
   "devDependencies": {
     "@types/jquery": "^3.5.30",
+    "@types/react": "^18.3.3",
     "astro-vtbot": "^1.7.23",
     "codemirror": "^6.0.1",
     "eslint": "^8.57.0",
