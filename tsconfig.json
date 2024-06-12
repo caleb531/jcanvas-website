@@ -8,7 +8,7 @@
     "sourceMap": true,
     "baseUrl": ".",
     "paths": {
-      "~/*": ["src/*"]
+      "$src/*": ["src/*"]
     },
     "strictFunctionTypes": false
   },
