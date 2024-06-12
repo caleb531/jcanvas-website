@@ -5,11 +5,11 @@
   </defs>
   <g fill="none">
     <!-- letter j body -->
-    <path d="M 114,116 L 114,234 A 20,20 0,0,1 80,245" stroke="#58e" stroke-width="20" />
+    <path d="M 114,116 L 114,234 A 20,20 0,0,1 80,245" stroke="#36e" stroke-width="20" />
   </g>
   <!-- dot atop letter j -->
-  <circle cx="114" cy="95" r="10" fill="#58e" />
-  <g fill="#149" transform="translate(0,100) rotate(-30)">
+  <circle cx="114" cy="95" r="10" fill="#36e" />
+  <g fill="#39f" transform="translate(0,100) rotate(-30)">
     <!-- dot in letter c -->
     <circle cx="160" cy="160" r="20" />
     <path d="M 160,100 A 60,60,0,0,0,160,220 L 160,240 A 80,80,0,0,1,160,80 Z" />
