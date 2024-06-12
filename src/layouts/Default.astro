@@ -1,7 +1,7 @@
 ---
-import '../assets/styles/main.scss';
 import Header from '../components/Header.astro';
 import '../fonts';
+import '../styles/main.scss';
 
 interface Props {
   frontmatter: Record<string, string>;
@@ -15,7 +15,7 @@ const pageSeoTitle =
     : `${frontmatter.title} | jCanvas`;
 
 const pageSeoImage = Astro.site
-  ? `${Astro.site.origin}${import.meta.env.BASE_URL}assets/images/social-image.png`
+  ? `${Astro.site.origin}${import.meta.env.BASE_URL}images/social-image.png`
   : '';
 ---
 
@@ -25,7 +25,7 @@ const pageSeoImage = Astro.site
     <meta charset="UTF-8" />
     <meta name="description" content="Astro description" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="shortcut icon" href="/jcanvas/assets/images/favicon.png" />
+    <link rel="shortcut icon" href="/jcanvas/images/favicon.png" />
     <meta name="generator" content={Astro.generator} />
     <meta name="og:title" content={frontmatter.title} />
     <meta name="og:site_name" content="jCanvas" />

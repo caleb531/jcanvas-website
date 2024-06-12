@@ -28,7 +28,7 @@ export default defineConfig({
         SiteTitle: './src/components/starlight/SiteTitle.astro',
         MarkdownContent: './src/components/starlight/MarkdownContent.astro'
       },
-      customCss: ['./src/assets/styles/docs.scss'],
+      customCss: ['./src/styles/docs.scss'],
       sidebar: [
         { label: 'jCanvas', autogenerate: { directory: 'jCanvas' } },
         { label: 'Canvas', autogenerate: { directory: 'Canvas' } },
@@ -47,7 +47,7 @@ export default defineConfig({
       social: {
         github: 'https://github.com/caleb531/jcanvas-website'
       },
-      favicon: '/assets/images/favicon.png'
+      favicon: '/images/favicon.png'
     }),
     mdx()
   ],

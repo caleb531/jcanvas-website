@@ -40,7 +40,7 @@ $(function () {
 
   // The pattern to replace in image paths; this allows image paths in the live
   // code editors (e.g. "images/fish.jpg" to be rewritten to point to the correct
-  // URL on the server (e.g. "assets/images/fish.jpg")
+  // URL on the server (e.g. "images/fish.jpg")
   const imagePathPattern = /(images\/(?:\w+)\.(jpg|png|svg))/gi;
 
   // Add jQuery method which adds a "Try in Sandbox"
@@ -102,7 +102,7 @@ $(function () {
 
   // Modify any image paths to point to the real images directory
   $.jCanvasCorrectImagePaths = function (code: string) {
-    return code.replace(imagePathPattern, '/jcanvas/assets/$1');
+    return code.replace(imagePathPattern, '/jcanvas/$1');
   };
 
   // Retrieve the code contents of the ancestor expressive-code element
