@@ -27,7 +27,7 @@ const pageSeoImage = Astro.site
     <meta name="viewport" content="width=device-width" />
     <link rel="shortcut icon" href="/jcanvas/images/favicon.png" />
     <meta name="generator" content={Astro.generator} />
-    <meta name="og:title" content={frontmatter.title} />
+    <meta name="og:title" content={pageSeoTitle} />
     <meta name="og:site_name" content="jCanvas" />
     {
       frontmatter.description ? (
@@ -39,7 +39,7 @@ const pageSeoImage = Astro.site
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@caleb531" />
     <meta name="twitter:creator" content="@caleb531" />
-    <meta name="twitter:title" content={frontmatter.title} />
+    <meta name="twitter:title" content={pageSeoTitle} />
     {
       frontmatter.description ? (
         <meta name="twitter:description" content={frontmatter.description} />
