@@ -35,48 +35,41 @@ To demonstrate how this works, we'll be creating a method that draws a heart on 
 ```js
 // Create a drawHeart() method
 $.jCanvas.extend({
-  name: 'drawHeart',
-  type: 'heart',
-  props: {},
-  fn: function (ctx, params) {
-    // Just to keep our lines short
-    const p = params;
-    // Enable layer transformations like scale and rotate
-    $.jCanvas.transformShape(this, ctx, p);
-    // Draw heart
-    ctx.beginPath();
-    ctx.moveTo(p.x, p.y + p.radius);
-    // Left side of heart
-    ctx.quadraticCurveTo(
-      p.x - p.radius * 2,
-      p.y - p.radius * 2,
-      p.x,
-      p.y - p.radius / 1.5
-    );
-    // Right side of heart
-    ctx.quadraticCurveTo(
-      p.x + p.radius * 2,
-      p.y - p.radius * 2,
-      p.x,
-      p.y + p.radius
-    );
-    // Call the detectEvents() function to enable jCanvas events
-    // Be sure to pass it these arguments, too!
-    $.jCanvas.detectEvents(this, ctx, p);
-    // Call the closePath() functions to fill, stroke, and close the path
-    // This function also enables masking support and events
-    // It accepts the same arguments as detectEvents()
-    $.jCanvas.closePath(this, ctx, p);
-  }
+	name: "drawHeart",
+	type: "heart",
+	props: {
+		size: 0,
+	},
+	fn: function (ctx, params) {
+		const canvas = this,
+			width = params.size,
+			factor = 0.75,
+			height = width * factor,
+			angle = PI * (factor * (1 - factor));
+
+		// Enable shape transformation
+		$.jCanvas.transformShape(canvas, ctx, params, width, height);
+
+		const x = params.x;
+		const y = params.y + width / 8;
+
+		ctx.beginPath();
+		ctx.moveTo(x, y + height / 2);
+		ctx.arc(x + width / 4, y - height / 2, width / 4, angle, PI, true);
+		ctx.arc(x - width / 4, y - height / 2, width / 4, 0, PI - angle, true);
+		params.closed = true;
+		$.jCanvas.detectEvents(canvas, ctx, params);
+		$.jCanvas.closePath(canvas, ctx, params);
+	},
 });
 
 // Use the drawHeart() method
 $('canvas').drawHeart({
   layer: true,
   draggable: true,
-  fillStyle: '#c33',
-  radius: 50,
-  x: 150, y: 130,
+  fillStyle: '#f6c',
+  x: 160, y: 100,
+  size: 140,
   rotate: 30
 });
 ```
@@ -99,6 +92,25 @@ $.jCanvas.extend<{ eclipse: number; }>({
     // ...
   }
 });
+```
+
+### Creating a definitions file (d.ts)
+
+To extend the native jCanvas types to support your new methods/properties, create a `d.ts` file with the same base name as your plugin file (e.g. if your plugin filename is `jcanvas-crescent.ts`, then the definitions file should be `jcanvas-crescent.d.ts`):
+
+The definitions file should look something like this:
+
+```ts
+/// <reference path="./node_modules/jcanvas/dist/esm/jcanvas.min.d.ts" />
+// You might need to adjust the above path
+
+interface JCanvasDefaults {
+	eclipse: number;
+}
+
+interface JQuery {
+	drawCrescent(args: Partial<JCanvasObject>): JQuery;
+}
 ```
 
 ## API Methods
