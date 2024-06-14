@@ -13,5 +13,5 @@
     "strictFunctionTypes": false
   },
   "include": ["src"],
-  "exclude": ["src/scripts/jcanvas/tests"]
+  "exclude": ["src/scripts/jcanvas/src", "src/scripts/jcanvas/tests"]
 }

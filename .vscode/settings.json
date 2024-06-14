@@ -1,11 +1,6 @@
 {
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "[javascript][javascriptreact][typescript][typescriptreact][astro]": {
-    "editor.codeActionsOnSave": {
-      "source.organizeImports": "explicit"
-    }
-  },
   "emmet.includeLanguages": {
     "mdx": "html",
     "astro": "html"

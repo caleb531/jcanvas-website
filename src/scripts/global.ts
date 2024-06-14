@@ -1,10 +1,10 @@
 import $ from 'jquery';
 import { SANDBOX_STORAGE_KEY } from './constants';
-import './jcanvas/src/jcanvas';
-import './jcanvas/src/jcanvas-crescents';
-import './jcanvas/src/jcanvas-donuts';
-import './jcanvas/src/jcanvas-handles';
-import './jcanvas/src/jcanvas-hearts';
+import './jcanvas/dist/esm/jcanvas.min.js';
+import './jcanvas/dist/esm/jcanvas-crescents.min.js';
+import './jcanvas/dist/esm/jcanvas-donuts.min.js';
+import './jcanvas/dist/esm/jcanvas-handles.min.js';
+import './jcanvas/dist/esm/jcanvas-hearts.min.js';
 import type { SandboxState } from './types';
 
 interface ResetCanvasesParams {
