@@ -9,6 +9,10 @@
   --ec-frm-frameBoxShdCssVal: none !important;
 }
 
+.expressive-code {
+  margin-block-start: 0.83em;
+}
+
 .expressive-code pre {
   // Use consistent padding for all code blocks
   --code-block-padding-h: 1rem;
