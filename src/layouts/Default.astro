@@ -24,7 +24,6 @@ const pageSeoImage = Astro.site
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Astro description" />
     <meta name="viewport" content="width=device-width" />
     <link rel="shortcut icon" href="/jcanvas/images/favicon.png" />
     <meta name="generator" content={Astro.generator} />
@@ -32,7 +31,10 @@ const pageSeoImage = Astro.site
     <meta name="og:site_name" content="jCanvas" />
     {
       frontmatter.description ? (
-        <meta name="og:description" content={frontmatter.description} />
+        <>
+          <meta name="description" content={frontmatter.description} />
+          <meta name="og:description" content={frontmatter.description} />
+        </>
       ) : null
     }
     <meta name="og:image" content={pageSeoImage} />
