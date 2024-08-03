@@ -1,5 +1,6 @@
 ---
 import Header from '../components/Header.astro';
+import Analytics from '../components/Analytics.astro';
 import '../fonts';
 import '../styles/main.scss';
 
@@ -53,5 +54,6 @@ const pageSeoImage = Astro.site
     <main>
       <slot />
     </main>
+    <Analytics />
   </body>
 </html>

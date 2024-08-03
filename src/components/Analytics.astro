@@ -1,0 +1,14 @@
+---
+interface Props {
+  settings?: object;
+}
+---
+
+<script
+  data-goatcounter="https://calebevans-projects.goatcounter.com/count"
+  data-goatcounter-settings=`${JSON.stringify(Astro.props.settings ?? {})}`
+  async
+  src="https://gc.zgo.at/count.v4.js"
+  crossorigin="anonymous"
+  integrity="sha384-nRw6qfbWyJha9LhsOtSb2YJDyZdKvvCFh0fJYlkquSFjUxp9FVNugbfy8q1jdxI+"
+  is:inline></script>

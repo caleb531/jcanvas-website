@@ -2,6 +2,7 @@
 import type { Props } from '@astrojs/starlight/props';
 import StarlightHead from '@astrojs/starlight/components/Head.astro';
 import VtbotStarlight from 'astro-vtbot/components/starlight/Base.astro';
+import Analytics from '../Analytics.astro';
 ---
 
 <VtbotStarlight {...Astro.props}>
@@ -11,4 +12,18 @@ import VtbotStarlight from 'astro-vtbot/components/starlight/Base.astro';
 <script>
   import '../../scripts/docs';
   import '../../fonts';
+  // The main jCanvas website is a Multi-Page Application (MPA), but the
+  // documentation site is a SPA; to handle this, we must count pageviews
+  // manually using the astro:after-swap event
+  document.addEventListener('astro:page-load', () => {
+    if (window.goatcounter) {
+      window.goatcounter.count({
+        path: location.pathname + location.search + location.hash
+      });
+    } else {
+      console.log('could not count pageview; goatcounter not loaded yet');
+    }
+  });
 </script>
+
+<Analytics settings={{ no_onload: true }} />
