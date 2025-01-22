@@ -1,3 +1,5 @@
+@use 'mixins' as *;
+
 // Download links
 #downloads {
   float: right;
@@ -7,7 +9,6 @@
   text-align: right;
   color: #789;
   a {
-    @extend button;
     font-size: 16pt;
   }
   @include layout(compact) {

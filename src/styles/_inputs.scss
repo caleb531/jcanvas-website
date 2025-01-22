@@ -1,6 +1,8 @@
 // Buttons
 button,
-.button {
+.button,
+#downloads a,
+#home-intro p:last-of-type a:first-of-type {
   display: inline-block;
   margin: 2px 0;
   border: solid 1px var(--input-border-color-dark);
