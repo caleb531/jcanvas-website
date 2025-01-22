@@ -49,5 +49,11 @@
     "stylelint-config-recommended-scss": "^14.1.0",
     "stylelint-config-standard": "^37.0.0",
     "typescript-eslint": "^8.21.0"
+  },
+  "pnpm": {
+    "overrides": {
+      "micromatch@<4.0.8": ">=4.0.8",
+      "nanoid@<3.3.8": ">=3.3.8"
+    }
   }
 }
