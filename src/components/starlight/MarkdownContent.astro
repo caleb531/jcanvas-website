@@ -1,16 +1,15 @@
 ---
 import StarlightMarkdownContent from '@astrojs/starlight/components/MarkdownContent.astro';
-import type { Props } from '@astrojs/starlight/props';
 import ExampleImages from '../ExampleImages.astro';
 import PluginContentHeader from '../PluginContentHeader.astro';
 ---
 
 {
-  Astro.props.entry.data.is_plugin ? (
-    <PluginContentHeader {...Astro.props} />
+  Astro.locals.starlightRoute.entry.data.is_plugin ? (
+    <PluginContentHeader />
   ) : null
 }
 
-<StarlightMarkdownContent {...Astro.props}><slot /></StarlightMarkdownContent>
+<StarlightMarkdownContent><slot /></StarlightMarkdownContent>
 
 <ExampleImages />

@@ -1,7 +1,7 @@
 ---
 import { Code } from 'astro-expressive-code/components';
 import path from 'node:path';
-const plugin_id = path.basename(Astro.props.entry.slug);
+const plugin_id = path.basename(Astro.locals.starlightRoute.entry.slug);
 ---
 
 <a

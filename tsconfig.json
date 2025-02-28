@@ -10,7 +10,8 @@
     "paths": {
       "$src/*": ["src/*"]
     },
-    "strictFunctionTypes": false
+    "strictFunctionTypes": false,
+    "types": ["@astrojs/starlight/locals"]
   },
   "include": ["src"],
   "exclude": ["src/scripts/jcanvas/src", "src/scripts/jcanvas/tests"]
